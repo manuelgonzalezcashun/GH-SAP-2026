@@ -67,6 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Moon Garden.slnx",
+    "dotnet.defaultSolution": "My project.slnx",
     "dotnet.enableWorkspaceBasedDevelopment": false
 }
