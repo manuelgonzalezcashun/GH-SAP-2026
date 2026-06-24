@@ -1,13 +1,16 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BattleUnit : MonoBehaviour
 {
-    private Battler _battlerInstance;
-    public Battler GetBattlerInstance => _battlerInstance;
-    public void SendIntoBattle(Battler battler)
+    [SerializeField] Image battlerImage = null;
+    private Battler _battler;
+    public Battler Battler => _battler;
+
+    public void SetBattlerInUnit(Battler battler)
     {
-        if (battler == null) return;
-        _battlerInstance = battler;
+        _battler = battler;
+        battlerImage.color = _battler.Color;
     }
 }

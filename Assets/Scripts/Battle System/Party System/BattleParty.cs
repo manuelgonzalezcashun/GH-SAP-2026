@@ -4,14 +4,16 @@ using UnityEngine;
 
 public abstract class BattleParty : MonoBehaviour
 {
-    const int PARTY_SIZE = 6;
-    [SerializeField] SO_Battler[] _members = new SO_Battler[PARTY_SIZE];
+    [SerializeField] int PARTY_SIZE = 4;
+    [SerializeField] SO_Battler[] _members;
     private List<Battler> _battlers = new();
     public List<Battler> Battlers => _battlers;
     protected int _battlersCount = 0;
     void OnValidate()
     {
         _members ??= new SO_Battler[PARTY_SIZE];
+
+        if (PARTY_SIZE < 0) return;
 
         if (_members.Length != PARTY_SIZE)
             Array.Resize(ref _members, PARTY_SIZE);

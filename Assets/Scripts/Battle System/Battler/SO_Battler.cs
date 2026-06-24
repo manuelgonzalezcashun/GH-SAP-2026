@@ -9,7 +9,6 @@ public class SO_Battler : ScriptableObject
     [SerializeField] private int _healing;
 
     [Header("Battler Display")]
-    [SerializeField] private string _displayName;
     [SerializeField] private Color _color = Color.white;
 
     public Battler CreateBattler()
@@ -20,7 +19,7 @@ public class SO_Battler : ScriptableObject
     private Battler CreateBaseBattler()
     {
         return new Battler.Builder()
-        .WithName(_displayName)
+        .WithName(name)
         .WithColor(_color)
         .WithPower(_power)
         .WithHealing(_healing)

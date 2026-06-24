@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 public class BattleSystem : StateMachine
 {
@@ -8,6 +10,8 @@ public class BattleSystem : StateMachine
 
     public Battler Player { get; private set; }
     public Battler Opponent { get; private set; }
+
+    public Queue<Battler> TurnQueue { get; private set; }
 
     // TODO: Change Start to Custom Method For Entering Battle
     void Start()
@@ -30,7 +34,7 @@ public class BattleSystem : StateMachine
     }
     public void OnMoveButton()
     {
-        // Debug.Log($"{Player.Name} is using an item!");
+
     }
     public void SetupBattle(Battler player, Battler opponent)
     {
@@ -38,5 +42,9 @@ public class BattleSystem : StateMachine
         Opponent = opponent;
 
         BattleEvents.StartBattle(Player, Opponent);
+    }
+    public void SetupTurnQueue(List<Battler> battlers)
+    {
+        TurnQueue = new Queue<Battler>(battlers);
     }
 }

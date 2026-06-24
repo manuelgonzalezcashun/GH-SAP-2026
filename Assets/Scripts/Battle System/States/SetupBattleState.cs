@@ -1,4 +1,5 @@
-using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class SetupBattleState : BattleState
 {
@@ -8,10 +9,17 @@ public class SetupBattleState : BattleState
     {
         // TODO: Check which monster goes first (Higher Initiative Goes First)
 
-        var playerBattler = _system.PlayerParty.GetBattler();
-        var oppBattler = _system.OpponentParty.GetBattler();
+        var playerParty = _system.PlayerParty.Battlers;
+        var oppParty = _system.OpponentParty.Battlers;
 
-        _system.SetupBattle(playerBattler, oppBattler);
-        _system.SetState(new PlayerTurnState(_system));
+        SetPartyToZone(playerParty, Zone.P_BACKLINE);
+        SetPartyToZone(oppParty, Zone.O_BACKLINE);
+
+        // _system.SetState(new SpeedCheckState(_system));
+    }
+
+    public void SetPartyToZone(IEnumerable<Battler> party, Zone zone)
+    {
+        foreach (var battler in party) BattleEvents.SetBattlerInZone(battler, zone);
     }
 }
