@@ -1,3 +1,4 @@
+using Ink.Runtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,7 +22,7 @@ public class DialogueController : MonoBehaviour
     {
         model.Initialize();
         view.SetStory(model.Story);
-        StartCoroutine(view.TypeWriterAnimation(model.Story.Continue()));
+        StepThroughDialogue();
     }
 
     void Update()
@@ -40,6 +41,7 @@ public class DialogueController : MonoBehaviour
         }
 
         string line = model.Story.Continue();
+        model.TagHandler.HandleTags(model.Story.currentTags);
         StartCoroutine(view.TypeWriterAnimation(line));
     }
     public void EndStory()
@@ -48,6 +50,5 @@ public class DialogueController : MonoBehaviour
     }
 }
 
-public class DialogueTagHandler { }
 public class DialogueEventObserver { }
 public class DialogueExternalFunctionHandler { }

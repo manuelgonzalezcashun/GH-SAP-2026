@@ -5,9 +5,14 @@ using System;
 [Serializable]
 public class DialogueModel
 {
+    // Ink Story Data //
     [SerializeField] TextAsset _storyJson;
     public Story Story { get; private set; }
     private static string _loadedState;
+
+    // Ink Classes //
+    DialogueTagHandler tagHandler;
+    public DialogueTagHandler TagHandler => tagHandler;
     public void Initialize()
     {
         Story = new Story(_storyJson.text);
@@ -16,6 +21,8 @@ public class DialogueModel
             Story.state.LoadJson(_loadedState);
             _loadedState = null;
         }
+
+        tagHandler = new DialogueTagHandler();
     }
 
     #region Story State

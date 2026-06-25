@@ -14,6 +14,7 @@ public class DialogueView : MonoBehaviour
     // Dialogue UI //
     [SerializeField] RectTransform dialogueContainer;
     [SerializeField] TMP_Text dialogueText;
+    [SerializeField] TMP_Text nameTagText;
     [SerializeField] RectTransform choiceContainer;
     [SerializeField] Button choicePrefab;
 
@@ -22,6 +23,15 @@ public class DialogueView : MonoBehaviour
     [SerializeField] float dialogueWaitTime = 0.02f;
     bool isTyping = false;
     Story _story = null;
+
+    void OnEnable()
+    {
+        SpeakerTag.onNameUpdate += SetNameTag;
+    }
+    void OnDisable()
+    {
+        SpeakerTag.onNameUpdate -= SetNameTag;
+    }
 
     public void SetStory(Story story)
     {
@@ -49,6 +59,10 @@ public class DialogueView : MonoBehaviour
         dialogueText.text = string.Empty;
         dialogueContainer.gameObject.SetActive(visible);
         ClearStoryChoices();
+    }
+    void SetNameTag(string name)
+    {
+        nameTagText.text = name;
     }
 
     void DisplayStoryChoices()
