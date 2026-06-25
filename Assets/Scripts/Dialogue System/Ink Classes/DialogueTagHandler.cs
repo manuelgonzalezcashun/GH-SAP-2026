@@ -4,9 +4,9 @@ using UnityEngine;
 public class DialogueTagHandler
 {
     const string SPEAKER = "Speaker";
-    Dictionary<string, InkTag> tagRegistry = new Dictionary<string, InkTag>
+    Dictionary<string, ITagStrategy> tagRegistry = new Dictionary<string, ITagStrategy>
     {
-        {SPEAKER , new SpeakerTag()}
+        {SPEAKER , new SpeakerTagStrategy()}
     };
     public void HandleTags(List<string> currentTags)
     {

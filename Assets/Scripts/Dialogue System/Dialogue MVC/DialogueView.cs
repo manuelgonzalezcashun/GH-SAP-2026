@@ -26,11 +26,11 @@ public class DialogueView : MonoBehaviour
 
     void OnEnable()
     {
-        SpeakerTag.onNameUpdate += SetNameTag;
+        SpeakerTagStrategy.onNameUpdate += SetNameTag;
     }
     void OnDisable()
     {
-        SpeakerTag.onNameUpdate -= SetNameTag;
+        SpeakerTagStrategy.onNameUpdate -= SetNameTag;
     }
 
     public void SetStory(Story story)
