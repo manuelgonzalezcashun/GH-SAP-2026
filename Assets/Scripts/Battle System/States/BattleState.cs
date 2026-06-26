@@ -25,4 +25,8 @@ public abstract class BattleState
     {
         yield break;
     }
+    public virtual IEnumerator Move()
+    {
+        yield break;
+    }
 }

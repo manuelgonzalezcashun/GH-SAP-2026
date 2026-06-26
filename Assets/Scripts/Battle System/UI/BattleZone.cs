@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Zone { P_BACK, P_FRONT, O_BACK, O_FRONT }
+public enum Zone
+{ P_BACK, P_FRONT, O_BACK, O_FRONT }
 public class BattleZone : MonoBehaviour
 {
     const int ZONE_SIZE = 20;
@@ -23,6 +24,8 @@ public class BattleZone : MonoBehaviour
 
     void SetBattlerInZone(Battler battler, Zone zone)
     {
+        if (this.zone == zone && activeBattleUnits.ContainsKey(battler)) return;
+
         if (CanMoveToThisZone(battler, zone))
         {
             BattleUnit _battleUnit = GetBattleUnit();

@@ -1,16 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 public class BattleSystem : StateMachine
 {
     [SerializeField] TrainerParty _playerParty = null;
     [SerializeField] TrainerParty _oppParty = null;
-    private List<BattleZone> battleZones;
+    Zone[] _zones;
 
     public Queue<Battler> TurnQueue { get; private set; } = new Queue<Battler>();
     public List<Battler> AllBattlers { get; private set; }
-    public Battler activeBattler { get; private set; } = null;
+    public Battler ActiveBattler { get; private set; }
+    public Zone[] Zones => _zones;
+
+    void OnValidate()
+    {
+        _zones = (Zone[])Enum.GetValues(typeof(Zone));
+    }
 
     // TODO: Change Start to Custom Method For Entering Battle
     void Start()
@@ -58,5 +66,9 @@ public class BattleSystem : StateMachine
             BattleEvents.SetBattlerInZone(battler, zone);
             BattleEvents.SetupBattle(battler);
         }
+    }
+    public void SetActiveBattler(Battler battler)
+    {
+        ActiveBattler = battler;
     }
 }

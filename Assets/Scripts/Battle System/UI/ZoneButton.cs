@@ -3,23 +3,18 @@ using UnityEngine;
 public class ZoneButton : MonoBehaviour
 {
     [SerializeField] Zone destinationZone;
-
     private Battler _activeBattler = null;
-
-    void OnEnable()
-    {
-        BattleEvents.onBroadcastActiveBattler += GetActiveBattler;
-    }
-    void OnDisable()
-    {
-        BattleEvents.onBroadcastActiveBattler -= GetActiveBattler;
-    }
     public void MoveBattler()
     {
         if (_activeBattler == null) return;
+
         BattleEvents.SetBattlerInZone(_activeBattler, destinationZone);
+        BattleEvents.MoveComplete();
+
+        _activeBattler = null;
+        transform.parent.gameObject.SetActive(false);
     }
-    void GetActiveBattler(Battler battler)
+    public void SetActiveBattler(Battler battler)
     {
         _activeBattler = battler;
     }

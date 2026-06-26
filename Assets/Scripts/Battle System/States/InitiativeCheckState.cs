@@ -6,5 +6,6 @@ public class InitiativeCheckState : BattleState
     public override void EnterState()
     {
         _system.SetupTurnQueue();
+        _system.SetState(new TurnSelectionState(_system));
     }
 }
