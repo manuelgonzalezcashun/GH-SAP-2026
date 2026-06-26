@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 248915411}
   - component: {fileID: 248915412}
   m_Layer: 5
-  m_Name: Opponent Combat Line
+  m_Name: Opponent Front Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -662,8 +662,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Scripts::MultiBattleUIHandler
   playerHUDContainer: {fileID: 1846957276}
   opponentHUDContainer: {fileID: 454014339}
+  zoneOptionsContainer: {fileID: 1649225095}
   hudPrefab: {fileID: 4906275615931374425, guid: 6179e914f377b4246b545c726b2c7e7d, type: 3}
-  battleZone: {fileID: 1834992604}
 --- !u!1 &1317992694
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,10 +721,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1160670294}
     m_Modifications:
-    - target: {fileID: 363252407326060451, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
-      propertyPath: m_text
-      value: Enemy Backline
-      objectReference: {fileID: 0}
     - target: {fileID: 3617838904013116767, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -732,10 +728,6 @@ PrefabInstance:
     - target: {fileID: 3617838904013116767, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
       propertyPath: m_AnchorMin.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3617838904013116767, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3617838904013116767, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -745,12 +737,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    - target: {fileID: 4324977876949488458, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
-      propertyPath: m_text
-      value: 'Player Backline
-
-'
-      objectReference: {fileID: 0}
+    - target: {fileID: 4415683451474168701, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
+      propertyPath: _system
+      value: 
+      objectReference: {fileID: 1761198132}
     - target: {fileID: 4555390837464319637, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -758,10 +748,6 @@ PrefabInstance:
     - target: {fileID: 4555390837464319637, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
       propertyPath: m_AnchorMin.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4555390837464319637, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4555390837464319637, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -771,12 +757,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    - target: {fileID: 5575385515265367085, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
-      propertyPath: m_text
-      value: 'Enemy Combat Zone
-
-'
-      objectReference: {fileID: 0}
+    - target: {fileID: 5020246903819812766, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
+      propertyPath: _system
+      value: 
+      objectReference: {fileID: 1761198132}
     - target: {fileID: 5767896528323412335, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -784,10 +768,6 @@ PrefabInstance:
     - target: {fileID: 5767896528323412335, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
       propertyPath: m_AnchorMin.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5767896528323412335, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5767896528323412335, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -877,12 +857,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6753159418094723064, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
-      propertyPath: m_text
-      value: 'Player Combat Zone
-
-'
-      objectReference: {fileID: 0}
     - target: {fileID: 7405628555637607022, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -892,10 +866,6 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7405628555637607022, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 7405628555637607022, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 525
       objectReference: {fileID: 0}
@@ -903,6 +873,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
+    - target: {fileID: 7651883073950809596, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
+      propertyPath: _system
+      value: 
+      objectReference: {fileID: 1761198132}
     - target: {fileID: 7868138676114410288, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
       propertyPath: m_Name
       value: Zone Button Container
@@ -911,6 +885,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8329014076157900034, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
+      propertyPath: _system
+      value: 
+      objectReference: {fileID: 1761198132}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -970,7 +948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72c33e6dc3406da42aad6bd6ff181991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleSystem
-  delay: 1
+  delay: 1.5
   _playerParty: {fileID: 1097428575}
   _oppParty: {fileID: 1317992696}
 --- !u!1001 &1765915315
@@ -1358,7 +1336,7 @@ GameObject:
   - component: {fileID: 1834992607}
   - component: {fileID: 1834992608}
   m_Layer: 5
-  m_Name: Player Combat Line
+  m_Name: Player Front Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

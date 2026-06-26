@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 419382558448403424}
   - component: {fileID: 2182972296582477703}
   - component: {fileID: 7933971935966310288}
+  - component: {fileID: 4415683451474168701}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -37,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 50}
+  m_SizeDelta: {x: 150, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &419382558448403424
 CanvasRenderer:
@@ -120,7 +121,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2182972296582477703}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4415683451474168701}
+        m_TargetAssemblyTypeName: ZoneButton, Assembly-CSharp
+        m_MethodName: MoveBattler
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4415683451474168701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348233361269239634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64251d994d5b3bc4599ec69360e0aea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneButton
+  destinationZone: 1
+  _system: {fileID: 0}
 --- !u!1 &567035591837676569
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +160,7 @@ GameObject:
   - component: {fileID: 4926564314916537482}
   - component: {fileID: 8956319279606840433}
   - component: {fileID: 1331969997511368310}
+  - component: {fileID: 8329014076157900034}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -158,7 +186,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 50}
+  m_SizeDelta: {x: 150, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4926564314916537482
 CanvasRenderer:
@@ -241,7 +269,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8956319279606840433}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8329014076157900034}
+        m_TargetAssemblyTypeName: ZoneButton, Assembly-CSharp
+        m_MethodName: MoveBattler
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8329014076157900034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567035591837676569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64251d994d5b3bc4599ec69360e0aea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneButton
+  destinationZone: 0
+  _system: {fileID: 0}
 --- !u!1 &5833184148041456261
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,7 +361,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Move
+  m_text: 'Player Frontline
 
 '
   m_isRightToLeft: 0
@@ -446,7 +500,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Heal
+  m_text: 'Enemy Frontline
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f80395f43d8db7449931fd0e0bb0cbc, type: 2}
   m_sharedMaterial: {fileID: -6231865252232747160, guid: 8f80395f43d8db7449931fd0e0bb0cbc, type: 2}
@@ -530,6 +586,7 @@ GameObject:
   - component: {fileID: 6736949050798663668}
   - component: {fileID: 4795182584132540941}
   - component: {fileID: 3357192430653475675}
+  - component: {fileID: 7651883073950809596}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -555,7 +612,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 50}
+  m_SizeDelta: {x: 150, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6736949050798663668
 CanvasRenderer:
@@ -638,7 +695,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4795182584132540941}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7651883073950809596}
+        m_TargetAssemblyTypeName: ZoneButton, Assembly-CSharp
+        m_MethodName: MoveBattler
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7651883073950809596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7385453139459550336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64251d994d5b3bc4599ec69360e0aea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneButton
+  destinationZone: 3
+  _system: {fileID: 0}
 --- !u!1 &7868138676114410288
 GameObject:
   m_ObjectHideFlags: 0
@@ -717,6 +800,7 @@ GameObject:
   - component: {fileID: 6103004573997305132}
   - component: {fileID: 8772654037503449277}
   - component: {fileID: 6912982641492158249}
+  - component: {fileID: 5020246903819812766}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -742,7 +826,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 50}
+  m_SizeDelta: {x: 150, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6103004573997305132
 CanvasRenderer:
@@ -825,7 +909,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8772654037503449277}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5020246903819812766}
+        m_TargetAssemblyTypeName: ZoneButton, Assembly-CSharp
+        m_MethodName: MoveBattler
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5020246903819812766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8007346305793111484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64251d994d5b3bc4599ec69360e0aea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoneButton
+  destinationZone: 2
+  _system: {fileID: 0}
 --- !u!1 &8103346473723310060
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,9 +1001,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Run
-
-'
+  m_text: Enemy Backline
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f80395f43d8db7449931fd0e0bb0cbc, type: 2}
   m_sharedMaterial: {fileID: -6231865252232747160, guid: 8f80395f43d8db7449931fd0e0bb0cbc, type: 2}
@@ -1030,7 +1138,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Attack
+  m_text: 'Player Backline
 
 '
   m_isRightToLeft: 0
