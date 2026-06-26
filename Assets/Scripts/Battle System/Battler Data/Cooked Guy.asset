@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_Battler
   _maxHealth: 80
   _power: 15
+  _initiative: 4
   _healing: 15
   _color: {r: 1, g: 0, b: 0, a: 1}

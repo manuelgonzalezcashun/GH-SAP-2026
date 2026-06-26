@@ -6,6 +6,7 @@ public class SO_Battler : ScriptableObject
     [Header("Battler Stats")]
     [SerializeField] private float _maxHealth;
     [SerializeField] private int _power;
+    [SerializeField] private float _initiative;
     [SerializeField] private int _healing;
 
     [Header("Battler Display")]
@@ -25,6 +26,7 @@ public class SO_Battler : ScriptableObject
         .WithHealing(_healing)
         .WithMaxHealth(_maxHealth)
         .WithHealth()
+        .WithInitiative(_initiative)
         .Build();
     }
 }

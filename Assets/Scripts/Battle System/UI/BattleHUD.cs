@@ -11,7 +11,6 @@ public class BattleHUD : MonoBehaviour
     [SerializeField] TMP_Text nameText;
     [SerializeField] TMP_Text healthText;
     [SerializeField] Slider healthBar;
-    [SerializeField] Image fighterImage;
 
     private Battler _battler;
     public void SetupBattleHUD(Battler battler)
@@ -22,7 +21,6 @@ public class BattleHUD : MonoBehaviour
 
         nameText.text = _battler.Name;
         SetHP(_battler.Health, _battler.MaxHealth);
-        fighterImage.color = _battler.Color;
     }
     public void ShowBattleOptions(bool show)
     {

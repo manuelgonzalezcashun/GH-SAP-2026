@@ -11,8 +11,10 @@ public class Battler
     public float MaxHealth { get; private set; }
     public float Healing { get; private set; }
     public int Power { get; private set; }
+    public float Initiative { get; private set; }
     public string Name { get; private set; }
     public Color Color { get; private set; }
+    public Faction Faction { get; private set; }
 
     public bool TakeDamage(int damage)
     {
@@ -30,12 +32,14 @@ public class Battler
 
         onHealthChanged?.Invoke(Health, MaxHealth);
     }
+    public void SetFaction(Faction faction) => Faction = faction;
 
     public class Builder
     {
         // Battler Stats //
         private float maxHealth = 50;
         private int power = 50;
+        private float initiative = 5;
         private float healing = 50;
         private float health = -1;
 
@@ -56,6 +60,11 @@ public class Battler
         public Builder WithPower(int power)
         {
             this.power = power;
+            return this;
+        }
+        public Builder WithInitiative(float initiative)
+        {
+            this.initiative = initiative;
             return this;
         }
         public Builder WithHealing(float healing)
@@ -85,6 +94,7 @@ public class Battler
                 Name = name,
                 Color = color,
                 Power = power,
+                Initiative = initiative,
                 Healing = healing,
                 MaxHealth = maxHealth,
                 Health = health
@@ -93,3 +103,5 @@ public class Battler
         }
     }
 }
+
+public enum Faction { PLAYER, OPPONENT }

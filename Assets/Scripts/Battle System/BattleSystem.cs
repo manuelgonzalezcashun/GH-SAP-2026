@@ -1,24 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 public class BattleSystem : StateMachine
 {
     [SerializeField] TrainerParty _playerParty = null;
     [SerializeField] TrainerParty _oppParty = null;
-    public TrainerParty PlayerParty => _playerParty;
-    public TrainerParty OpponentParty => _oppParty;
+    private List<BattleZone> battleZones;
 
-    public Battler Player { get; private set; }
-    public Battler Opponent { get; private set; }
-
-    public Queue<Battler> TurnQueue { get; private set; }
+    public Queue<Battler> TurnQueue { get; private set; } = new Queue<Battler>();
+    public List<Battler> AllBattlers { get; private set; }
+    public Battler activeBattler { get; private set; } = null;
 
     // TODO: Change Start to Custom Method For Entering Battle
     void Start()
     {
         SetState(new SetupBattleState(this));
     }
-
     public void OnAttackButton()
     {
         StartCoroutine(_currentState.Attack());
@@ -29,22 +27,36 @@ public class BattleSystem : StateMachine
     }
     public void OnRunButton()
     {
-        Debug.Log($"{Player.Name} ran away...");
-
+        Debug.Log("Player Selected to Run Away!");
     }
-    public void OnMoveButton()
+    public void SetupBattle()
     {
+        InitializeBattlers(_playerParty.Battlers, Faction.PLAYER, Zone.P_BACK);
+        InitializeBattlers(_oppParty.Battlers, Faction.OPPONENT, Zone.O_BACK);
 
+        AllBattlers = _playerParty.Battlers
+        .Concat(_oppParty.Battlers)
+        .OrderByDescending(battler => battler.Initiative)
+        .ToList();
     }
-    public void SetupBattle(Battler player, Battler opponent)
+    public void SetupTurnQueue()
     {
-        Player = player;
-        Opponent = opponent;
-
-        BattleEvents.StartBattle(Player, Opponent);
+        TurnQueue.Clear();
+        foreach (var battler in AllBattlers) TurnQueue.Enqueue(battler);
     }
-    public void SetupTurnQueue(List<Battler> battlers)
+    public bool isSideFainted(Faction faction)
     {
-        TurnQueue = new Queue<Battler>(battlers);
+        return AllBattlers
+        .Where(battler => battler.Faction == faction)
+        .All(battler => battler.Health <= 0);
+    }
+    void InitializeBattlers(IEnumerable<Battler> battlers, Faction faction, Zone zone)
+    {
+        foreach (var battler in battlers)
+        {
+            battler.SetFaction(faction);
+            BattleEvents.SetBattlerInZone(battler, zone);
+            BattleEvents.SetupBattle(battler);
+        }
     }
 }

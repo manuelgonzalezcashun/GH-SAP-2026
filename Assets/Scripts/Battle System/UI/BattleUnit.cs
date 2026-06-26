@@ -13,4 +13,10 @@ public class BattleUnit : MonoBehaviour
         _battler = battler;
         battlerImage.color = _battler.Color;
     }
+    public void ClearUnit()
+    {
+        _battler = null;
+        battlerImage.color = Color.white;
+        gameObject.SetActive(false);
+    }
 }
