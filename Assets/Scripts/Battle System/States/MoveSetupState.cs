@@ -1,23 +1,26 @@
 using UnityEngine;
 
-public class TurnSelectionState : BattleState
+public class MoveSetupState : BattleState
 {
-    public TurnSelectionState(BattleSystem system) : base(system) { }
+    public MoveSetupState(BattleSystem system) : base(system) { }
 
     public override void EnterState()
     {
         if (_system.TurnQueue.Count <= 0)
         {
-            _system.SetupTurnQueue();
+            _system.UpdateMovePhaseFlag(true);
+            _system.SetState(new InitiativeCheckState(_system));
+            return;
         }
 
         var activeBattler = _system.TurnQueue.Dequeue();
 
         if (activeBattler.Health <= 0)
         {
-            _system.SetState(new TurnSelectionState(_system));
+            _system.SetState(new MoveSetupState(_system));
             return;
         }
+
         _system.SetActiveBattler(activeBattler);
         _system.SetState(new MoveBattlerState(_system));
     }

@@ -15,6 +15,9 @@ public class BattleSystem : StateMachine
     public Battler ActiveBattler { get; private set; }
     public Zone[] Zones => _zones;
 
+    public bool MovePhaseComplete { get; private set; }
+    public bool AttackPhaseComplete { get; private set; }
+
     void OnValidate()
     {
         _zones = (Zone[])Enum.GetValues(typeof(Zone));
@@ -39,8 +42,8 @@ public class BattleSystem : StateMachine
     }
     public void SetupBattle()
     {
-        InitializeBattlers(_playerParty.Battlers, Faction.PLAYER, Zone.P_BACK);
-        InitializeBattlers(_oppParty.Battlers, Faction.OPPONENT, Zone.O_BACK);
+        InitializeBattlers(_playerParty.Battlers, Team.PLAYER, Zone.P_BACK);
+        InitializeBattlers(_oppParty.Battlers, Team.OPPONENT, Zone.O_BACK);
 
         AllBattlers = _playerParty.Battlers
         .Concat(_oppParty.Battlers)
@@ -52,17 +55,17 @@ public class BattleSystem : StateMachine
         TurnQueue.Clear();
         foreach (var battler in AllBattlers) TurnQueue.Enqueue(battler);
     }
-    public bool isSideFainted(Faction faction)
+    public bool isSideFainted(Team faction)
     {
         return AllBattlers
-        .Where(battler => battler.Faction == faction)
+        .Where(battler => battler.Team == faction)
         .All(battler => battler.Health <= 0);
     }
-    void InitializeBattlers(IEnumerable<Battler> battlers, Faction faction, Zone zone)
+    void InitializeBattlers(IEnumerable<Battler> battlers, Team faction, Zone zone)
     {
         foreach (var battler in battlers)
         {
-            battler.SetFaction(faction);
+            battler.SetTeam(faction);
             BattleEvents.SetBattlerInZone(battler, zone);
             BattleEvents.SetupBattle(battler);
         }
@@ -70,5 +73,14 @@ public class BattleSystem : StateMachine
     public void SetActiveBattler(Battler battler)
     {
         ActiveBattler = battler;
+    }
+
+    public void UpdateAttackPhaseFlag(bool flag)
+    {
+        AttackPhaseComplete = flag;
+    }
+    public void UpdateMovePhaseFlag(bool flag)
+    {
+        MovePhaseComplete = flag;
     }
 }

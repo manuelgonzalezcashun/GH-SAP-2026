@@ -14,7 +14,7 @@ public class Battler
     public float Initiative { get; private set; }
     public string Name { get; private set; }
     public Color Color { get; private set; }
-    public Faction Faction { get; private set; }
+    public Team Team { get; private set; }
 
     public bool TakeDamage(int damage)
     {
@@ -32,7 +32,7 @@ public class Battler
 
         onHealthChanged?.Invoke(Health, MaxHealth);
     }
-    public void SetFaction(Faction faction) => Faction = faction;
+    public void SetTeam(Team team) => Team = team;
 
     public class Builder
     {
@@ -104,4 +104,4 @@ public class Battler
     }
 }
 
-public enum Faction { PLAYER, OPPONENT }
+public enum Team { PLAYER, OPPONENT }

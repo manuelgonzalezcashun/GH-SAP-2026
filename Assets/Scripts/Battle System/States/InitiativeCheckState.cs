@@ -1,4 +1,6 @@
 
+using Unity.VisualScripting;
+
 public class InitiativeCheckState : BattleState
 {
     public InitiativeCheckState(BattleSystem system) : base(system) { }
@@ -6,6 +8,13 @@ public class InitiativeCheckState : BattleState
     public override void EnterState()
     {
         _system.SetupTurnQueue();
-        _system.SetState(new TurnSelectionState(_system));
+
+        if (_system.MovePhaseComplete && !_system.AttackPhaseComplete)
+        {
+            _system.SetState(new AttackSetupState(_system));
+            return;
+        }
+
+        _system.SetState(new MoveSetupState(_system));
     }
 }

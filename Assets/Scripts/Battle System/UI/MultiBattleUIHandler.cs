@@ -38,7 +38,7 @@ public class MultiBattleUIHandler : MonoBehaviour
 
     void SetupBattleUI(Battler battler)
     {
-        var hudParent = (battler.Faction == Faction.PLAYER)
+        var hudParent = (battler.Team == Team.PLAYER)
         ? playerHUDContainer
         : opponentHUDContainer;
 

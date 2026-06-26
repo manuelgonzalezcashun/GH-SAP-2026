@@ -20,7 +20,7 @@ public class MoveBattlerState : BattleState
         }
         BattleEvents.onMoveCompleted += onMoveCompletedHandler;
 
-        if (_system.ActiveBattler.Faction == Faction.PLAYER)
+        if (_system.ActiveBattler.Team == Team.PLAYER)
         {
             BattleEvents.ShowZoneOptions(_system.ActiveBattler);
         }
@@ -35,7 +35,7 @@ public class MoveBattlerState : BattleState
         yield return new WaitUntil(() => hasMoved);
         yield return new WaitForSeconds(_system.Delay);
 
-        _system.SetState(new TurnSelectionState(_system));
+        _system.SetState(new MoveSetupState(_system));
     }
 
 
