@@ -7,6 +7,7 @@ public class MultiBattleUIHandler : MonoBehaviour
 {
     [SerializeField] Transform playerHUDContainer = null;
     [SerializeField] Transform opponentHUDContainer = null;
+    [SerializeField] GameObject battleOptionContainer = null;
     [SerializeField] GameObject zoneOptionsContainer = null;
     [SerializeField] BattleHUD hudPrefab = null;
 
@@ -15,12 +16,21 @@ public class MultiBattleUIHandler : MonoBehaviour
     {
         BattleEvents.onSetupBattle += SetupBattleUI;
         BattleEvents.onShowZoneOptions += ShowZoneOptions;
+        BattleEvents.onShowOptions += ShowBattleOptions;
     }
     void OnDisable()
     {
         BattleEvents.onSetupBattle -= SetupBattleUI;
         BattleEvents.onShowZoneOptions -= ShowZoneOptions;
+        BattleEvents.onShowOptions -= ShowBattleOptions;
+
     }
+
+    private void ShowBattleOptions(bool show)
+    {
+        battleOptionContainer.SetActive(show);
+    }
+
     void Awake()
     {
         zoneButtons = zoneOptionsContainer.GetComponentsInChildren<ZoneButton>();

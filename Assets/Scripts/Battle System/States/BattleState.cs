@@ -9,6 +9,10 @@ public abstract class BattleState
     }
 
     public abstract void EnterState();
+    public virtual void UpdateState()
+    {
+
+    }
     public virtual IEnumerator Attack()
     {
         yield break;

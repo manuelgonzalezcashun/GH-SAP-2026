@@ -10,6 +10,7 @@ public static class BattleEvents
     public static event Action<bool> onShowOptions;
     public static event Action<Battler> onSetupBattle;
     public static event Action<Battler> onShowZoneOptions;
+    public static event Action<Battler> onSelectTarget;
     public static event Action onMoveCompleted;
 
     public static void ShowBattleOptions(bool show)
@@ -36,5 +37,9 @@ public static class BattleEvents
     public static void MoveComplete()
     {
         onMoveCompleted?.Invoke();
+    }
+    public static void SelectTargetBattler(Battler target)
+    {
+        onSelectTarget?.Invoke(target);
     }
 }

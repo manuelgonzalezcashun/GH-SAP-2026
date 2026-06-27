@@ -122,9 +122,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4415683451474168701}
-        m_TargetAssemblyTypeName: ZoneButton, Assembly-CSharp
-        m_MethodName: MoveBattler
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+        m_MethodName: OnAttackButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -147,7 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZoneButton
   destinationZone: 1
-  _system: {fileID: 0}
 --- !u!1 &567035591837676569
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,9 +269,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8329014076157900034}
-        m_TargetAssemblyTypeName: ZoneButton, Assembly-CSharp
-        m_MethodName: MoveBattler
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+        m_MethodName: OnAttackButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -295,7 +294,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZoneButton
   destinationZone: 0
-  _system: {fileID: 0}
 --- !u!1 &5833184148041456261
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +359,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Player Frontline
+  m_text: 'Item
 
 '
   m_isRightToLeft: 0
@@ -500,9 +498,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Enemy Frontline
-
-'
+  m_text: Heal
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f80395f43d8db7449931fd0e0bb0cbc, type: 2}
   m_sharedMaterial: {fileID: -6231865252232747160, guid: 8f80395f43d8db7449931fd0e0bb0cbc, type: 2}
@@ -696,9 +692,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7651883073950809596}
-        m_TargetAssemblyTypeName: ZoneButton, Assembly-CSharp
-        m_MethodName: MoveBattler
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+        m_MethodName: OnAttackButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -721,7 +717,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZoneButton
   destinationZone: 3
-  _system: {fileID: 0}
 --- !u!1 &7868138676114410288
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,9 +905,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5020246903819812766}
-        m_TargetAssemblyTypeName: ZoneButton, Assembly-CSharp
-        m_MethodName: MoveBattler
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
+        m_MethodName: OnAttackButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -935,7 +930,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZoneButton
   destinationZone: 2
-  _system: {fileID: 0}
 --- !u!1 &8103346473723310060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,7 +995,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Enemy Backline
+  m_text: Run
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f80395f43d8db7449931fd0e0bb0cbc, type: 2}
   m_sharedMaterial: {fileID: -6231865252232747160, guid: 8f80395f43d8db7449931fd0e0bb0cbc, type: 2}
@@ -1138,9 +1132,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Player Backline
-
-'
+  m_text: Attack
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f80395f43d8db7449931fd0e0bb0cbc, type: 2}
   m_sharedMaterial: {fileID: -6231865252232747160, guid: 8f80395f43d8db7449931fd0e0bb0cbc, type: 2}

@@ -19,6 +19,12 @@ public class AttackSetupState : BattleState
         }
 
         _system.SetActiveBattler(activeBattler);
-        _system.SetState(new AttackBattlerState(_system));
+
+        BattleState state = _system.ActiveBattler.Team == Team.PLAYER
+        ? new PlayerTurnState(_system)
+        : new OpponentAttackState(_system);
+
+
+        _system.SetState(state);
     }
 }

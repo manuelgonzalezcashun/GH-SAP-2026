@@ -1,8 +1,6 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 public class BattleSystem : StateMachine
 {
@@ -27,6 +25,10 @@ public class BattleSystem : StateMachine
     void Start()
     {
         SetState(new SetupBattleState(this));
+    }
+    void Update()
+    {
+        _currentState.UpdateState();
     }
     public void OnAttackButton()
     {
