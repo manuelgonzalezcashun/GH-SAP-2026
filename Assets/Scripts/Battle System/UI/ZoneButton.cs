@@ -7,9 +7,7 @@ public class ZoneButton : MonoBehaviour
     public void MoveBattler()
     {
         if (_activeBattler == null) return;
-
-        BattleEvents.SetBattlerInZone(_activeBattler, destinationZone);
-        BattleEvents.MoveComplete();
+        EventBus.Raise(new OnMoveEvent { _Battler = _activeBattler, _Zone = destinationZone });
 
         _activeBattler = null;
         transform.parent.gameObject.SetActive(false);

@@ -57,19 +57,13 @@ public class BattleSystem : StateMachine
         TurnQueue.Clear();
         foreach (var battler in AllBattlers) TurnQueue.Enqueue(battler);
     }
-    public bool isSideFainted(Team faction)
-    {
-        return AllBattlers
-        .Where(battler => battler.Team == faction)
-        .All(battler => battler.Health <= 0);
-    }
     void InitializeBattlers(IEnumerable<Battler> battlers, Team faction, Zone zone)
     {
         foreach (var battler in battlers)
         {
             battler.SetTeam(faction);
-            BattleEvents.SetBattlerInZone(battler, zone);
-            BattleEvents.SetupBattle(battler);
+
+            EventBus.Raise(new SetupBattleEvent { _Battler = battler, _Zone = zone });
         }
     }
     public void SetActiveBattler(Battler battler)

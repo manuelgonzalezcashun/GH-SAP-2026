@@ -2,17 +2,19 @@ using System.Collections;
 using UnityEngine;
 using System.Linq;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class PlayerAttackState : BattleState
 {
     public PlayerAttackState(BattleSystem system) : base(system) { }
 
+    List<Battler> eligibleTargets => _system.AllBattlers.Where(battler => battler.Team == Team.OPPONENT && battler.Health > 0).ToList();
     Battler _target = null;
     int _selectedIndex = 0;
 
     public override void EnterState()
     {
-        BattleEvents.ShowBattleOptions(false);
+        EventBus.Raise(new ShowOptionsEvent { BO_Show = false });
         _target = null;
         _selectedIndex = 0;
     }
@@ -20,37 +22,51 @@ public class PlayerAttackState : BattleState
     {
         if (_target != null) return;
 
-        var eligibleTargets = _system.AllBattlers.Where(battler => battler.Team == Team.OPPONENT && battler.Health > 0).ToList();
+        if (eligibleTargets.Count <= 0)
+        {
+            _system.SetState(new PlayerWinState(_system));
+            return;
+        }
 
-        if (eligibleTargets.Count <= 0) return;
+        EventBus.Raise(new SelectTargetEvent { _Target = eligibleTargets[_selectedIndex] });
 
         if (Keyboard.current.upArrowKey.wasPressedThisFrame)
         {
             _selectedIndex--;
             if (_selectedIndex < 0) _selectedIndex = eligibleTargets.Count - 1;
-            BattleEvents.SelectTargetBattler(eligibleTargets[_selectedIndex]);
         }
         else if (Keyboard.current.downArrowKey.wasPressedThisFrame)
         {
             _selectedIndex++;
             if (_selectedIndex >= eligibleTargets.Count) _selectedIndex = 0;
-            BattleEvents.SelectTargetBattler(eligibleTargets[_selectedIndex]);
         }
         else if (Keyboard.current.enterKey.wasPressedThisFrame)
         {
             _target = eligibleTargets[_selectedIndex];
-            BattleEvents.SelectTargetBattler(null);
+            EventBus.Raise(new SelectTargetEvent { _Target = null });
             _system.StartCoroutine(Attack());
         }
     }
     public override IEnumerator Attack()
     {
         var attacker = _system.ActiveBattler;
+        bool targetFainted = _target.TakeDamage(attacker.Power);
 
-        _target.TakeDamage(attacker.Power);
-        Debug.Log($"{attacker.Name} Attacked {_target.Name}!");
+        if (targetFainted)
+        {
+            EventBus.Raise(new TargetFaintedEvent { _Target = _target });
+        }
 
+        // TODO: Replace with UI Text
+        // Debug.Log($"{attacker.Name} Attacked {_target.Name}!");
         yield return new WaitForSeconds(_system.Delay);
+
+        if (eligibleTargets.Count <= 0)
+        {
+            _system.SetState(new PlayerWinState(_system));
+            yield break;
+        }
+
         _system.SetState(new AttackSetupState(_system));
     }
 }

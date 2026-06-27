@@ -14,21 +14,19 @@ public class MultiBattleUIHandler : MonoBehaviour
     ZoneButton[] zoneButtons;
     void OnEnable()
     {
-        BattleEvents.onSetupBattle += SetupBattleUI;
-        BattleEvents.onShowZoneOptions += ShowZoneOptions;
-        BattleEvents.onShowOptions += ShowBattleOptions;
+        EventBus.Subscribe<SetupBattleEvent>(SetupBattleUI);
+        EventBus.Subscribe<ShowOptionsEvent>(ShowZoneOptions);
+        EventBus.Subscribe<ShowOptionsEvent>(ShowBattleOptions);
     }
     void OnDisable()
     {
-        BattleEvents.onSetupBattle -= SetupBattleUI;
-        BattleEvents.onShowZoneOptions -= ShowZoneOptions;
-        BattleEvents.onShowOptions -= ShowBattleOptions;
-
+        EventBus.UnSubscribe<SetupBattleEvent>(SetupBattleUI);
+        EventBus.UnSubscribe<ShowOptionsEvent>(ShowBattleOptions);
     }
 
-    private void ShowBattleOptions(bool show)
+    private void ShowBattleOptions(ShowOptionsEvent data)
     {
-        battleOptionContainer.SetActive(show);
+        battleOptionContainer.SetActive(data.BO_Show);
     }
 
     void Awake()
@@ -36,23 +34,26 @@ public class MultiBattleUIHandler : MonoBehaviour
         zoneButtons = zoneOptionsContainer.GetComponentsInChildren<ZoneButton>();
     }
 
-    private void ShowZoneOptions(Battler battler)
+    private void ShowZoneOptions(ShowOptionsEvent data)
     {
+        if (data.ZO_Battler == null) return;
+
         foreach (var button in zoneButtons)
         {
-            button.SetActiveBattler(battler);
+            button.SetActiveBattler(data.ZO_Battler);
         }
 
         zoneOptionsContainer.SetActive(true);
+        data.ZO_Battler = null;
     }
 
-    void SetupBattleUI(Battler battler)
+    void SetupBattleUI(SetupBattleEvent data)
     {
-        var hudParent = (battler.Team == Team.PLAYER)
+        var hudParent = (data._Battler.Team == Team.PLAYER)
         ? playerHUDContainer
         : opponentHUDContainer;
 
         var hud = Instantiate(hudPrefab, hudParent).GetComponent<BattleHUD>();
-        hud.SetupBattleHUD(battler);
+        hud.SetupBattleHUD(data._Battler);
     }
 }

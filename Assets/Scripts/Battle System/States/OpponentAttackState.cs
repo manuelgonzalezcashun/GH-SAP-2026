@@ -16,11 +16,18 @@ public class OpponentAttackState : BattleState
     {
         var attacker = _system.ActiveBattler;
 
-        List<Battler> eligibleTargets = _system.AllBattlers.Where(battler => battler.Team == Team.PLAYER).ToList();
+        List<Battler> eligibleTargets = _system.AllBattlers.Where(battler => battler.Team == Team.PLAYER && battler.Health > 0).ToList();
+        if (eligibleTargets.Count <= 0)
+        {
+            _system.SetState(new PlayerLoseState(_system));
+            yield break;
+        }
+
         int index = Random.Range(0, eligibleTargets.Count);
         var target = eligibleTargets[index];
 
-        Debug.Log($"{attacker.Name} Attacked {target.Name}!");
+        // TODO: Replace with UI Text
+        // Debug.Log($"{attacker.Name} Attacked {target.Name}!");
         yield return new WaitForSeconds(_system.Delay);
 
         target.TakeDamage(attacker.Power);

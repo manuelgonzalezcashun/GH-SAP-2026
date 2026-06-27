@@ -13,23 +13,22 @@ public class MoveBattlerState : BattleState
     public override IEnumerator Move()
     {
         bool hasMoved = false;
-        void onMoveCompletedHandler()
+        void onMoveCompletedHandler(OnMoveEvent data)
         {
             hasMoved = true;
-            BattleEvents.onMoveCompleted -= onMoveCompletedHandler;
+            EventBus.UnSubscribe<OnMoveEvent>(onMoveCompletedHandler);
         }
-        BattleEvents.onMoveCompleted += onMoveCompletedHandler;
+        EventBus.Subscribe<OnMoveEvent>(onMoveCompletedHandler);
 
         if (_system.ActiveBattler.Team == Team.PLAYER)
         {
-            BattleEvents.ShowZoneOptions(_system.ActiveBattler);
+            EventBus.Raise(new ShowOptionsEvent { ZO_Battler = _system.ActiveBattler });
         }
         else
         {
             int index = Random.Range(0, _system.Zones.Length);
             Zone randZone = _system.Zones[index];
-            BattleEvents.SetBattlerInZone(_system.ActiveBattler, randZone);
-            BattleEvents.MoveComplete();
+            EventBus.Raise(new OnMoveEvent { _Battler = _system.ActiveBattler, _Zone = randZone });
         }
 
         yield return new WaitUntil(() => hasMoved);

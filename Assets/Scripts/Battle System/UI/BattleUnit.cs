@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,11 +12,13 @@ public class BattleUnit : MonoBehaviour
 
     void OnEnable()
     {
-        BattleEvents.onSelectTarget += HighlightBattler;
+        EventBus.Subscribe<SelectTargetEvent>(HighlightBattler);
+        EventBus.Subscribe<TargetFaintedEvent>(ClearUnit);
     }
     void OnDisable()
     {
-        BattleEvents.onSelectTarget -= HighlightBattler;
+        EventBus.UnSubscribe<SelectTargetEvent>(HighlightBattler);
+        EventBus.UnSubscribe<TargetFaintedEvent>(ClearUnit);
     }
 
     public void SetBattlerInUnit(Battler battler)
@@ -25,21 +27,23 @@ public class BattleUnit : MonoBehaviour
         originalColor = _battler.Color;
         battlerImage.color = originalColor;
     }
+    public void ClearUnit(TargetFaintedEvent data)
+    {
+        if (data._Target != _battler) return;
+        ClearUnit();
+    }
     public void ClearUnit()
     {
         _battler = null;
         battlerImage.color = Color.white;
         gameObject.SetActive(false);
     }
-    void HighlightBattler(Battler target)
+    void HighlightBattler(SelectTargetEvent data)
     {
-        if (target == null)
-        {
-            battlerImage.CrossFadeColor(originalColor, 0f, true, true);
-            return;
-        }
+        Color highlightColor = (data._Target != null && data._Target == _battler)
+         ? selectedColor
+         : originalColor;
 
-        Color hightlightColor = target == _battler ? selectedColor : originalColor;
-        battlerImage.CrossFadeColor(hightlightColor, 0.15f, true, true);
+        battlerImage.color = highlightColor;
     }
 }

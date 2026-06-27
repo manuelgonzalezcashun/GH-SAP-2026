@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,12 +15,24 @@ public class BattleZone : MonoBehaviour
 
     void OnEnable()
     {
-        BattleEvents.onBattleZoneChanged += SetBattlerInZone;
+        EventBus.Subscribe<SetupBattleEvent>(SetBattlerInZone);
+        EventBus.Subscribe<OnMoveEvent>(SetBattlerInZone);
     }
 
     void OnDisable()
     {
-        BattleEvents.onBattleZoneChanged -= SetBattlerInZone;
+        EventBus.UnSubscribe<SetupBattleEvent>(SetBattlerInZone);
+        EventBus.UnSubscribe<OnMoveEvent>(SetBattlerInZone);
+    }
+
+    private void SetBattlerInZone(OnMoveEvent data)
+    {
+        SetBattlerInZone(data._Battler, data._Zone);
+    }
+
+    void SetBattlerInZone(SetupBattleEvent data)
+    {
+        SetBattlerInZone(data._Battler, data._Zone);
     }
 
     void SetBattlerInZone(Battler battler, Zone zone)
