@@ -1,6 +1,7 @@
-using Ink.Runtime;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Linq;
 
 public class DialogueController : MonoBehaviour
 {
@@ -10,9 +11,8 @@ public class DialogueController : MonoBehaviour
 
     void Start()
     {
-        view.onChoiceMade += StepThroughDialogue;
+        view.onChoiceMade += HandleChoiceSelected;
         model.Initialize();
-        view.SetStory(model.Story);
         StepThroughDialogue();
     }
 
@@ -32,12 +32,24 @@ public class DialogueController : MonoBehaviour
         }
 
         string line = model.Story.Continue();
+
+        if (model.HasChoices)
+        {
+            List<string> choicesText = (from choice in model.Story.currentChoices select choice.text).ToList();
+            view.HandleStoryChoices(choicesText);
+        }
+
         model.TagHandler.HandleTags(model.Story.currentTags);
         StartCoroutine(view.TypeWriterAnimation(line));
     }
+    void HandleChoiceSelected(int index)
+    {
+        model.Story.ChooseChoiceIndex(index);
+        StepThroughDialogue();
+    }
     public void EndStory()
     {
-        view.onChoiceMade -= StepThroughDialogue;
+        view.onChoiceMade -= HandleChoiceSelected;
         view.ShowDialogue(false);
     }
 }

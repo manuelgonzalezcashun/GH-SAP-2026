@@ -4,11 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Ink.Runtime;
-
 public class DialogueView : MonoBehaviour
 {
-    public event Action onChoiceMade;
+    public event Action<int> onChoiceMade;
     Queue<Button> choicePool = new Queue<Button>();
 
     // Dialogue UI //
@@ -21,8 +19,9 @@ public class DialogueView : MonoBehaviour
     // Runtime Variables //
     [Range(0.01f, 0.05f)]
     [SerializeField] float dialogueWaitTime = 0.02f;
+
+    List<string> currentChoices = new List<string>();
     bool isTyping = false;
-    Story _story = null;
 
     void OnEnable()
     {
@@ -31,11 +30,6 @@ public class DialogueView : MonoBehaviour
     void OnDisable()
     {
         SpeakerTagStrategy.onNameUpdate -= SetNameTag;
-    }
-
-    public void SetStory(Story story)
-    {
-        _story = story;
     }
 
     public IEnumerator TypeWriterAnimation(string dialogueLine)
@@ -60,6 +54,11 @@ public class DialogueView : MonoBehaviour
         dialogueContainer.gameObject.SetActive(visible);
         ClearStoryChoices();
     }
+
+    public void HandleStoryChoices(List<string> choices)
+    {
+        currentChoices = choices;
+    }
     void SetNameTag(string name)
     {
         nameTagText.text = name;
@@ -67,28 +66,24 @@ public class DialogueView : MonoBehaviour
 
     void DisplayStoryChoices()
     {
-        var choices = _story.currentChoices;
         choiceContainer.gameObject.SetActive(true);
 
-        foreach (var choice in choices)
+        for (int i = 0; i < currentChoices.Count; i++)
         {
             Button choiceButton = GetChoiceButton();
             TMP_Text choiceText = choiceButton.GetComponentInChildren<TMP_Text>();
-
-            choiceText.text = choice.text;
-
+            choiceText.text = currentChoices[i];
             choiceButton.onClick.RemoveAllListeners();
-            choiceButton.onClick.AddListener(() => MakeChoice(choice.index));
+            int index = i;
+            choiceButton.onClick.AddListener(() => MakeChoice(index));
         }
     }
 
     #region Choice Helper Methods
     private void MakeChoice(int choiceIndex)
     {
-        _story.ChooseChoiceIndex(choiceIndex);
         ClearStoryChoices();
-
-        onChoiceMade?.Invoke();
+        onChoiceMade?.Invoke(choiceIndex);
     }
     private Button GetChoiceButton()
     {
@@ -109,6 +104,8 @@ public class DialogueView : MonoBehaviour
 
     private void ClearStoryChoices()
     {
+        currentChoices.Clear();
+
         foreach (Transform child in choiceContainer)
         {
             Button childButton = child.gameObject.GetComponent<Button>();

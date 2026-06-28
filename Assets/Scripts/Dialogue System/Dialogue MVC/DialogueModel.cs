@@ -9,6 +9,7 @@ public class DialogueModel
     [SerializeField] TextAsset _storyJson;
     public Story Story { get; private set; }
     private static string _loadedState;
+    public bool HasChoices => Story.currentChoices.Count > 0;
 
     // Ink Classes //
     DialogueTagHandler tagHandler;
