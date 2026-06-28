@@ -8,18 +8,9 @@ public class DialogueController : MonoBehaviour
     [SerializeField] DialogueView view;
     [SerializeField] DialogueModel model;
 
-
-    void OnEnable()
-    {
-        view.onChoiceMade += StepThroughDialogue;
-    }
-    void OnDisable()
-    {
-        view.onChoiceMade -= StepThroughDialogue;
-    }
-
     void Start()
     {
+        view.onChoiceMade += StepThroughDialogue;
         model.Initialize();
         view.SetStory(model.Story);
         StepThroughDialogue();
@@ -46,6 +37,7 @@ public class DialogueController : MonoBehaviour
     }
     public void EndStory()
     {
+        view.onChoiceMade -= StepThroughDialogue;
         view.ShowDialogue(false);
     }
 }
