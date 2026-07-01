@@ -17,7 +17,6 @@ public class EnemyMovement : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _Awareness = GetComponent<Awareness>();
-
     }
 
     // Update is called once per frame

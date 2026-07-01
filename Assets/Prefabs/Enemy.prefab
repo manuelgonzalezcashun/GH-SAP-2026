@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   _speed: 3
-  _rotationSpd: 100
+  _rotationSpd: 10000
 --- !u!1 &4710380654915109938
 GameObject:
   m_ObjectHideFlags: 0

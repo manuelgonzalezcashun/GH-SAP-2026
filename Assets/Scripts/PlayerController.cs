@@ -5,24 +5,27 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 3;
     public Rigidbody2D rb;
-    float horiz;
-    float vert;
+    private Vector2 moveInput;
 
     void Start()
     {
         
     }
 
+    void Update()
+    {
+        
+    }
+
     void FixedUpdate()
     {
-        rb.linearVelocityX = new Vector2(horiz * speed, vert * speed);
-        rb.linearVelocityY = new Vector2(horiz * speed, vert * speed);
+        rb.linearVelocity = moveInput.normalized * speed;
         
     }
 
     public void Move(InputAction.CallbackContext context)
     {
-        horiz = context.ReadValue<Vector2>().x;
-        vert = context.ReadValue<Vector2>().y;
+        moveInput = context.ReadValue<Vector2>();
     }
+
 }
