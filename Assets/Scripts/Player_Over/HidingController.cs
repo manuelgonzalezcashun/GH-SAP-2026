@@ -32,9 +32,11 @@ public class HidingController : MonoBehaviour
     public void hide()
     {
         hidden = true;
+        EventBus.Raise<PlayerHideEvent>(new PlayerHideEvent{_hidingMode = true});
     }
     public void unhide()
     {
         hidden = false;
+        EventBus.Raise<PlayerHideEvent>(new PlayerHideEvent{_hidingMode = false});
     }
 }

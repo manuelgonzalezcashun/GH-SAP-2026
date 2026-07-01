@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     private Vector2 moveInput;
 
-    public bool hidden = false;
 
     void Start()
     {
@@ -28,22 +27,6 @@ public class PlayerController : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
-    }
-
-    public bool getHidden()
-    {
-        return hidden;
-    }
-
-    public void hide()
-    {
-        hidden = true;
-        Debug.Log("hide");
-    }
-    public void unhide()
-    {
-        hidden = false;
-        Debug.Log("unhide");
     }
 
 }
