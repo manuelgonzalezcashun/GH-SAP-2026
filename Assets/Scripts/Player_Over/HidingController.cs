@@ -3,8 +3,6 @@ using UnityEngine;
 public class HidingController : MonoBehaviour
 {
     
-    public bool hidden = false;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -24,19 +22,13 @@ public class HidingController : MonoBehaviour
     }
 
 
-    public bool getHidden()
-    {
-        return hidden;
-    }
 
     public void hide()
-    {
-        hidden = true;
+    { 
         EventBus.Raise<PlayerHideEvent>(new PlayerHideEvent{_hidingMode = true});
     }
     public void unhide()
     {
-        hidden = false;
         EventBus.Raise<PlayerHideEvent>(new PlayerHideEvent{_hidingMode = false});
     }
 }
