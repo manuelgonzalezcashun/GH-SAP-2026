@@ -6,18 +6,18 @@ public class HidingController : MonoBehaviour
     public bool hidden = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "hidingSpot")
+        if (other.CompareTag("hidingSpot"))
         {
             hide();
         }
     }
 
     // Update is called once per frame
-    void OnTriggerExit(Collider other)
+    void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "hidingSpot")
+        if (other.CompareTag("hidingSpot"))
         {
             unhide();
         }
@@ -32,11 +32,9 @@ public class HidingController : MonoBehaviour
     public void hide()
     {
         hidden = true;
-        Debug.Log("hide");
     }
     public void unhide()
     {
         hidden = false;
-        Debug.Log("unhide");
     }
 }
