@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ac68b3323344e5ab260acfe11b5af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
-  _speed: 3
+  _speed: 4.2
   _rotationSpd: 10000
 --- !u!1 &4710380654915109938
 GameObject:
