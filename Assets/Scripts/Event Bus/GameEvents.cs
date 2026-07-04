@@ -28,3 +28,7 @@ public class TargetFaintedEvent
     public Battler _Target = null;
 }
 
+public class PlayerHideEvent
+{
+    public bool _hidingMode = false;
+}
