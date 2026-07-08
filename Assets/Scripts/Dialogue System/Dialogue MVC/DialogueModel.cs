@@ -13,7 +13,9 @@ public class DialogueModel
 
     // Ink Classes //
     DialogueTagHandler tagHandler;
+    DialogueVariableObserver observer;
     public DialogueTagHandler TagHandler => tagHandler;
+    public DialogueVariableObserver Observer => observer;
     public void Initialize()
     {
         Story = new Story(_storyJson.text);
@@ -24,6 +26,7 @@ public class DialogueModel
         }
 
         tagHandler = new DialogueTagHandler();
+        observer = new DialogueVariableObserver();
     }
 
     #region Story State
