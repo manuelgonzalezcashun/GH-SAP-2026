@@ -13,9 +13,9 @@ public class DialogueController : MonoBehaviour
     {
         view.onChoiceMade += HandleChoiceSelected;
         model.Initialize();
+        model.Observer.StartListening(model.Story);
         StepThroughDialogue();
     }
-
     void Update()
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
@@ -49,10 +49,9 @@ public class DialogueController : MonoBehaviour
     }
     public void EndStory()
     {
+        model.Observer.StopListening(model.Story);
         view.onChoiceMade -= HandleChoiceSelected;
         view.ShowDialogue(false);
     }
 }
-
-public class DialogueEventObserver { }
 public class DialogueExternalFunctionHandler { }
