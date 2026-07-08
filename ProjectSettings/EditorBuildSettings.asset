@@ -5,8 +5,14 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Overworld Scenes/OverWorld.unity
+    guid: d6ff9e392866e4e54bb0517a526526b5
+  - enabled: 1
+    path: Assets/Scenes/Overworld Scenes/OverWorld2.unity
+    guid: d7d86fd66e3414b27803665ec9960747
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

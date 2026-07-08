@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4221128051599129487}
   - component: {fileID: 8019437179848534313}
   - component: {fileID: 5354540677816725605}
+  - component: {fileID: 778849716771117057}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -300,3 +301,15 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &778849716771117057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895429064760470953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed2c66fce744480e97c8de0ac49b07b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HidingController
