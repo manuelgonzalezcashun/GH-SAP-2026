@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0736ee5f3a5aeec49b995dd38300ec07, type: 3}
-  m_Name: Chopped Guy
+  m_Name: Big Guy
   m_EditorClassIdentifier: Assembly-CSharp::SO_Battler
-  _maxHealth: 6
+  _maxHealth: 12
   _power: 2
-  _initiative: 3
-  _healing: 1
-  _color: {r: 0, g: 0.3962264, b: 0.11967447, a: 1}
+  _initiative: 4
+  _healing: 2
+  _color: {r: 0.6836612, g: 0, b: 1, a: 1}

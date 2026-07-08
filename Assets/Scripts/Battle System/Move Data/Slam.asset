@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0736ee5f3a5aeec49b995dd38300ec07, type: 3}
-  m_Name: Chopped Guy
-  m_EditorClassIdentifier: Assembly-CSharp::SO_Battler
-  _maxHealth: 6
-  _power: 2
-  _initiative: 3
-  _healing: 1
-  _color: {r: 0, g: 0.3962264, b: 0.11967447, a: 1}
+  m_Script: {fileID: 11500000, guid: 4e93fd1865023414eab16b42e318b52f, type: 3}
+  m_Name: Slam
+  m_EditorClassIdentifier: Assembly-CSharp::SO_Move
+  _Damage: 0
+  _Distance: 0
+  _Row: 0
+  _Ally: 0
+  _Type: 
+  _Desc: 
