@@ -2,6 +2,7 @@
 public class ShowOptionsEvent
 {
     public bool BO_Show = false;
+    public bool MO_Show = false;
     public Battler ZO_Battler = null;
 }
 
