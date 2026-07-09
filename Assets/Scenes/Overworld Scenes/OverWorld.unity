@@ -155,7 +155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4053196181150420316, guid: 0892bf6e99588499bb95a6f561821610, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15
+      value: 15.1
       objectReference: {fileID: 0}
     - target: {fileID: 4053196181150420316, guid: 0892bf6e99588499bb95a6f561821610, type: 3}
       propertyPath: m_LocalPosition.y
@@ -196,6 +196,10 @@ PrefabInstance:
     - target: {fileID: 4534725819013700307, guid: 0892bf6e99588499bb95a6f561821610, type: 3}
       propertyPath: m_Name
       value: Teleport (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972546210253799951, guid: 0892bf6e99588499bb95a6f561821610, type: 3}
+      propertyPath: xDropOff
+      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 5972546210253799951, guid: 0892bf6e99588499bb95a6f561821610, type: 3}
       propertyPath: SceneToLoad
@@ -681,7 +685,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4053196181150420316, guid: 0892bf6e99588499bb95a6f561821610, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4053196181150420316, guid: 0892bf6e99588499bb95a6f561821610, type: 3}
       propertyPath: m_LocalPosition.x
@@ -689,7 +693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4053196181150420316, guid: 0892bf6e99588499bb95a6f561821610, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 9.1
       objectReference: {fileID: 0}
     - target: {fileID: 4053196181150420316, guid: 0892bf6e99588499bb95a6f561821610, type: 3}
       propertyPath: m_LocalPosition.z
@@ -726,6 +730,14 @@ PrefabInstance:
     - target: {fileID: 4534725819013700307, guid: 0892bf6e99588499bb95a6f561821610, type: 3}
       propertyPath: m_Name
       value: Teleport
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972546210253799951, guid: 0892bf6e99588499bb95a6f561821610, type: 3}
+      propertyPath: xDropOff
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972546210253799951, guid: 0892bf6e99588499bb95a6f561821610, type: 3}
+      propertyPath: yDropOff
+      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 5972546210253799951, guid: 0892bf6e99588499bb95a6f561821610, type: 3}
       propertyPath: SceneToLoad

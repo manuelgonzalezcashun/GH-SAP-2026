@@ -6,16 +6,12 @@ public class PlayerController : MonoBehaviour
     public float speed = 3;
     public Rigidbody2D rb;
     private Vector2 moveInput;
-
+    private static float SpawnpointX;
+    private static float SpawnpointY;
 
     void Start()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        transform.position = new Vector2(SpawnpointX,SpawnpointY);
     }
 
     void FixedUpdate()
@@ -41,7 +37,8 @@ public class PlayerController : MonoBehaviour
 
     private void EntryPoint(SceneTransition data)
     {
-        transform.position = new Vector2(data._X,data._Y);
+        SpawnpointX = data._X;
+        SpawnpointY = data._Y;
     }
 
 }

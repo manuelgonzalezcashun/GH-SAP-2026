@@ -35,6 +35,6 @@ public class PlayerHideEvent
 
 public class SceneTransition
 {
-    public int _X = 0;
-    public int _Y = 0;
+    public float _X = 0;
+    public float _Y = 0;
 }
