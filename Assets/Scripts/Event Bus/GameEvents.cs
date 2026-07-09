@@ -32,3 +32,9 @@ public class PlayerHideEvent
 {
     public bool _hidingMode = false;
 }
+
+public class SceneTransition
+{
+    public int _X = 0;
+    public int _Y = 0;
+}

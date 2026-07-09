@@ -29,4 +29,19 @@ public class PlayerController : MonoBehaviour
         moveInput = context.ReadValue<Vector2>();
     }
 
+    void OnEnable()
+    {
+        EventBus.Subscribe<SceneTransition>(EntryPoint);
+    }
+
+    void OnDisable()
+    {
+        EventBus.UnSubscribe<SceneTransition>(EntryPoint);
+    }
+
+    private void EntryPoint(SceneTransition data)
+    {
+        transform.position = new Vector2(data._X,data._Y);
+    }
+
 }
