@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+public enum MoveCategory { DAMAGING, HEALING }
 [Serializable]
 public class Move
 {
@@ -23,6 +24,7 @@ public class Move
     public string Desc { get; private set; }
     //the description/explanation of the move
 
+    public MoveCategory Category { get; private set; }
     //public Effect effect {get; private set; }
     // ^to be added later but will encompass forced movement, poison, and other weird things
 
@@ -30,69 +32,75 @@ public class Move
     public class Maker
     {
 
-        private int Damage = 2;
-        private int Healing = 0;
-        private int Distance = 1;
-        private bool Row = false;
-        private bool AlliesAffected = false;
+        private int damage = 2;
+        private int healing = 0;
+        private int distance = 1;
+        private bool row = false;
+        private bool alliesAffected = false;
 
-        private string Type = "Lead";
-        private string Name = "Slam";
-        private string Desc = "A normal punch";
+        private string type = "Lead";
+        private string name = "Slam";
+        private string desc = "A normal punch";
+        private MoveCategory category = MoveCategory.DAMAGING;
 
         public Maker WithName(string name)
         {
-            this.Name = name;
+            this.name = name;
             return this;
         }
         public Maker WithType(string type)
         {
-            this.Type = type;
+            this.type = type;
             return this;
         }
         public Maker WithDesc(string desc)
         {
-            this.Desc = desc;
+            this.desc = desc;
             return this;
         }
         public Maker WithDamage(int damage)
         {
-            this.Damage = damage;
+            this.damage = damage;
             return this;
         }
         public Maker WithHealing(int healing)
         {
-            this.Healing = healing;
+            this.healing = healing;
             return this;
         }
         public Maker WithDistance(int distance)
         {
-            this.Distance = distance;
+            this.distance = distance;
             return this;
         }
         public Maker WithRow(bool row)
         {
-            this.Row = row;
+            this.row = row;
             return this;
         }
         public Maker WithAllyHit(bool ally)
         {
-            this.AlliesAffected = ally;
+            this.alliesAffected = ally;
+            return this;
+        }
+        public Maker WithCategory(MoveCategory category)
+        {
+            this.category = category;
             return this;
         }
         public Move Make()
         {
             var move = new Move
             {
-                Name = Name,
-                Type = Type,
-                Desc = Desc,
-                Damage = Damage,
-                Healing = Healing,
-                Distance = Distance,
-                Row = Row,
-                AlliesAffected = AlliesAffected,
-
+                Name = name,
+                Type = type,
+                Desc = desc,
+                Damage = damage,
+                Healing = healing,
+                Distance = distance,
+                Row = row,
+                AlliesAffected = alliesAffected,
+                Category = category
             };
             return move;
         }

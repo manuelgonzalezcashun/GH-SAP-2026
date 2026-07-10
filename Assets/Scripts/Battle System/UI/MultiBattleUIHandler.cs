@@ -37,13 +37,15 @@ public class MultiBattleUIHandler : MonoBehaviour
     }
     private void ShowMoveOptions(ShowOptionsEvent data)
     {
+        // Makes sure each button is clear before setting up moves
         foreach (var move in moveOptions)
+        {
             move.onClick.RemoveAllListeners();
+            move.gameObject.SetActive(false);
+        }
 
         moveOptionsContainer.SetActive(data.MO_Show);
-
-        if (data.MO_Battler != null)
-            SetupMoves(data.MO_Battler);
+        if (data.MO_Battler != null) SetupMoves(data.MO_Battler);
     }
 
     private void SetupMoves(Battler battler)
@@ -54,10 +56,12 @@ public class MultiBattleUIHandler : MonoBehaviour
         {
             if (i >= moveCount) return;
 
+            // Sets up each button UI to contain move data
             moveOptions[i].gameObject.SetActive(i < moveCount);
             TMP_Text moveText = moveOptions[i].GetComponentInChildren<TMP_Text>();
             moveText.text = battler.Moves[i].Name;
 
+            // Sends Move data to battle System
             MoveSelectedEvent evtData = new MoveSelectedEvent { move = battler.Moves[i] };
             moveOptions[i].onClick.AddListener(() => EventBus.Raise(evtData));
             moveOptions[i].onClick.AddListener(() => EventBus.Raise(new ShowOptionsEvent { MO_Show = false, MO_Battler = null }));

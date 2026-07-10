@@ -19,3 +19,4 @@ MonoBehaviour:
   _CanTargetAlly: 1
   _Type: Bismuth
   _Description: The user expells a gas to mend the wounds of its allies
+  _Category: 1
