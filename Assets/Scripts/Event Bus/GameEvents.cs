@@ -34,16 +34,12 @@ public class PlayerHideEvent
 {
     public bool _hidingMode = false;
 }
-
-<<<<<<< HEAD
 public class SceneTransition
 {
     public float _X = 0;
     public float _Y = 0;
 }
-=======
 public class MoveSelectedEvent
 {
     public Move move = null;
 }
->>>>>>> origin/manuel
