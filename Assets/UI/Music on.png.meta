@@ -11,6 +11,12 @@ TextureImporter:
   - first:
       213: -868067533995975538
     second: Music on_2
+  - first:
+      213: -3944167304262961186
+    second: Music on_3
+  - first:
+      213: -752891096179009627
+    second: Music on_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,10 +115,10 @@ TextureImporter:
       name: Music on_0
       rect:
         serializedVersion: 2
-        x: 59
-        y: 4
-        width: 95
-        height: 221
+        x: 42
+        y: 192
+        width: 31
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,10 +137,10 @@ TextureImporter:
       name: Music on_1
       rect:
         serializedVersion: 2
-        x: 85
-        y: 213
-        width: 30
-        height: 28
+        x: 59
+        y: 3
+        width: 95
+        height: 221
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +159,10 @@ TextureImporter:
       name: Music on_2
       rect:
         serializedVersion: 2
-        x: 154
-        y: 188
-        width: 29
-        height: 26
+        x: 160
+        y: 191
+        width: 24
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,6 +173,50 @@ TextureImporter:
       bones: []
       spriteID: e8cde135d2104f3f0800000000000000
       internalID: -868067533995975538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Music on_3
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 63
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed732bedbb08349c0800000000000000
+      internalID: -3944167304262961186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Music on_4
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 69
+        width: 13
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a712b979813d85f0800000000000000
+      internalID: -752891096179009627
       vertices: []
       indices: 
       edges: []
@@ -188,6 +238,8 @@ TextureImporter:
       Music on_0: -5307504561195789448
       Music on_1: -5754158534740310825
       Music on_2: -868067533995975538
+      Music on_3: -3944167304262961186
+      Music on_4: -752891096179009627
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
