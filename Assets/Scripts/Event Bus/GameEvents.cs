@@ -34,7 +34,11 @@ public class PlayerHideEvent
 {
     public bool _hidingMode = false;
 }
-
+public class SceneTransition
+{
+    public float _X = 0;
+    public float _Y = 0;
+}
 public class MoveSelectedEvent
 {
     public Move move = null;
