@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lucky Guy
   m_EditorClassIdentifier: Assembly-CSharp::SO_Battler
   _maxHealth: 10
-  _power: 2
   _initiative: 8
-  _healing: 2
+  moves:
+  - {fileID: 11400000, guid: 95aeb65b24a5b44b0a78c91818922eaa, type: 2}
   _color: {r: 0, g: 0, b: 1, a: 1}

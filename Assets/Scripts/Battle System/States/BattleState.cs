@@ -13,7 +13,7 @@ public abstract class BattleState
     {
 
     }
-    public virtual IEnumerator Attack()
+    public virtual IEnumerator Attack(Move move)
     {
         yield break;
     }

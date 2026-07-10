@@ -9,9 +9,9 @@ public class PlayerTurnState : BattleState
     {
         EventBus.Raise(new ShowOptionsEvent { BO_Show = true });
     }
-    public override IEnumerator Attack()
+    public override IEnumerator Attack(Move move)
     {
-        _system.SetState(new PlayerAttackState(_system));
+        _system.SetState(new PlayerAttackState(_system, move));
         yield return null;
     }
     public override IEnumerator Heal()
@@ -23,7 +23,7 @@ public class PlayerTurnState : BattleState
         // TODO: replace with UI text
         // Debug.Log($"{healer.Name} is recovering strength!");
 
-        healer.Heal(healer.Healing);
+        // healer.Heal(healer.Healing);
         yield return new WaitForSeconds(_system.Delay);
 
         BattleState state = new AttackSetupState(_system);

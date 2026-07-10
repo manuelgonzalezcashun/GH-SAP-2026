@@ -9,12 +9,15 @@ public class OpponentAttackState : BattleState
 
     public override void EnterState()
     {
-        _system.StartCoroutine(Attack());
+        Move move = null; // * Band-Aid Solution
+        _system.StartCoroutine(Attack(move));
     }
 
-    public override IEnumerator Attack()
+    public override IEnumerator Attack(Move move)
     {
         var attacker = _system.ActiveBattler;
+        Move selectedMove = attacker.Moves[Random.Range(0, attacker.Moves.Length)];
+
 
         List<Battler> eligibleTargets = _system.AllBattlers.Where(battler => battler.Team == Team.PLAYER && battler.Health > 0).ToList();
         if (eligibleTargets.Count <= 0)
@@ -30,7 +33,7 @@ public class OpponentAttackState : BattleState
         // Debug.Log($"{attacker.Name} Attacked {target.Name}!");
         yield return new WaitForSeconds(_system.Delay);
 
-        target.TakeDamage(attacker.Power);
+        target.TakeDamage(selectedMove.Damage);
         _system.SetState(new AttackSetupState(_system));
     }
 }

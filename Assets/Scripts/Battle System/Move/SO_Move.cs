@@ -5,14 +5,12 @@ public class SO_Move : ScriptableObject
 {
     [Header("Move Details")]
     [SerializeField] private int _Damage;
-    [SerializeField] private int _Distance;
+    [SerializeField] private int _Healing;
+    [Range(-1, 2)][SerializeField] private int _Distance;
     [SerializeField] private bool _HitsAllInRow;
     [SerializeField] private bool _CanTargetAlly;
-    [SerializeField] private string _Type;
+    [SerializeField] private string _Type; // TODO: Change to a different type (Enum or Struct perhaps)
     [SerializeField] private string _Description;
-
-
-
 
     public Move MakeMove()
     {
@@ -26,6 +24,7 @@ public class SO_Move : ScriptableObject
         .WithDesc(_Description)
         .WithType(_Type)
         .WithDamage(_Damage)
+        .WithHealing(_Healing)
         .WithDistance(_Distance)
         .WithRow(_HitsAllInRow)
         .WithAllyHit(_CanTargetAlly)

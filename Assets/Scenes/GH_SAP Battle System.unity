@@ -669,8 +669,14 @@ MonoBehaviour:
   playerHUDContainer: {fileID: 1846957276}
   opponentHUDContainer: {fileID: 454014339}
   battleOptionContainer: {fileID: 769850852}
+  moveOptionsContainer: {fileID: 7868138675802309679}
   zoneOptionsContainer: {fileID: 7868138675606054581}
   hudPrefab: {fileID: 4906275615931374425, guid: 6179e914f377b4246b545c726b2c7e7d, type: 3}
+  moveOptions:
+  - {fileID: 1331969996936368489}
+  - {fileID: 7933971937670914191}
+  - {fileID: 3357192428783223876}
+  - {fileID: 6912982639728044086}
 --- !u!1 &1317992694
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,6 +785,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1761198132}
+    - target: {fileID: 1331969997511368310, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShowMoveOptions
+      objectReference: {fileID: 0}
     - target: {fileID: 3357192430653475675, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1682,7 +1692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &363252406571753660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1922,7 +1932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &744497993221325072
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2004,19 +2014,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8956319280279384942}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1761198132}
-        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-        m_MethodName: OnAttackButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1331969997012579315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2242,10 +2240,10 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 1
+  m_ChildAlignment: 0
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
@@ -2320,19 +2318,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4795182585999676690}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1761198132}
-        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-        m_MethodName: OnHealButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &3357192429013182174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3426,19 +3412,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8772654039020099490}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1761198132}
-        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-        m_MethodName: OnRunButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &6912982639919614636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3570,7 +3544,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7405628555130431467
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3770,19 +3744,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2182972295095220376}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1761198132}
-        m_TargetAssemblyTypeName: BattleSystem, Assembly-CSharp
-        m_MethodName: OnRunButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &8007346305218680889
 GameObject:
   m_ObjectHideFlags: 0
@@ -3822,7 +3784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &8103346474186399987
 GameObject:
   m_ObjectHideFlags: 0
