@@ -20,6 +20,14 @@ public class BattleSystem : StateMachine
     {
         _zones = (Zone[])Enum.GetValues(typeof(Zone));
     }
+    void OnEnable()
+    {
+        EventBus.Subscribe<MoveSelectedEvent>(OnMoveSelected);
+    }
+    void OnDisable()
+    {
+        EventBus.UnSubscribe<MoveSelectedEvent>(OnMoveSelected);
+    }
 
     // TODO: Change Start to Custom Method For Entering Battle
     void Start()
@@ -30,9 +38,9 @@ public class BattleSystem : StateMachine
     {
         _currentState.UpdateState();
     }
-    public void OnAttackButton()
+    public void OnMoveSelected(MoveSelectedEvent data)
     {
-        StartCoroutine(_currentState.Attack());
+        StartCoroutine(_currentState.Attack(data.move));
     }
     public void OnHealButton()
     {
@@ -78,5 +86,9 @@ public class BattleSystem : StateMachine
     public void UpdateMovePhaseFlag(bool flag)
     {
         MovePhaseComplete = flag;
+    }
+    public void ShowMoveOptions()
+    {
+        EventBus.Raise(new ShowOptionsEvent { MO_Show = true, MO_Battler = ActiveBattler });
     }
 }

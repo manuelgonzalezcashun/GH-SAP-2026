@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +13,7 @@ public class MultiBattleUIHandler : MonoBehaviour
     [SerializeField] GameObject moveOptionsContainer = null;
     [SerializeField] GameObject zoneOptionsContainer = null;
     [SerializeField] BattleHUD hudPrefab = null;
+    [SerializeField] Button[] moveOptions = null;
 
     ZoneButton[] zoneButtons;
     void OnEnable()
@@ -34,7 +37,31 @@ public class MultiBattleUIHandler : MonoBehaviour
     }
     private void ShowMoveOptions(ShowOptionsEvent data)
     {
+        foreach (var move in moveOptions)
+            move.onClick.RemoveAllListeners();
+
         moveOptionsContainer.SetActive(data.MO_Show);
+
+        if (data.MO_Battler != null)
+            SetupMoves(data.MO_Battler);
+    }
+
+    private void SetupMoves(Battler battler)
+    {
+        int moveCount = battler.Moves.Length;
+
+        for (int i = 0; i < moveOptions.Length; i++)
+        {
+            if (i >= moveCount) return;
+
+            moveOptions[i].gameObject.SetActive(i < moveCount);
+            TMP_Text moveText = moveOptions[i].GetComponentInChildren<TMP_Text>();
+            moveText.text = battler.Moves[i].Name;
+
+            MoveSelectedEvent evtData = new MoveSelectedEvent { move = battler.Moves[i] };
+            moveOptions[i].onClick.AddListener(() => EventBus.Raise(evtData));
+            moveOptions[i].onClick.AddListener(() => EventBus.Raise(new ShowOptionsEvent { MO_Show = false, MO_Battler = null }));
+        }
     }
 
     void Awake()

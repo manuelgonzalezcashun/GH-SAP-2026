@@ -1,9 +1,10 @@
-// * BO = Battle Options, ZO = Zone Options
+// * BO = Battle Options, ZO = Zone Options, MO = Move Options
 public class ShowOptionsEvent
 {
     public bool BO_Show = false;
     public bool MO_Show = false;
     public Battler ZO_Battler = null;
+    public Battler MO_Battler = null;
 }
 
 public class EndBattleEvent { }
@@ -34,8 +35,15 @@ public class PlayerHideEvent
     public bool _hidingMode = false;
 }
 
+<<<<<<< HEAD
 public class SceneTransition
 {
     public float _X = 0;
     public float _Y = 0;
 }
+=======
+public class MoveSelectedEvent
+{
+    public Move move = null;
+}
+>>>>>>> origin/manuel

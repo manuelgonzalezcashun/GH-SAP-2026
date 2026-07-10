@@ -6,11 +6,12 @@ using System.Collections.Generic;
 
 public class PlayerAttackState : BattleState
 {
-    public PlayerAttackState(BattleSystem system) : base(system) { }
+    public PlayerAttackState(BattleSystem system, Move move) : base(system) { currentMove = move; }
 
     List<Battler> eligibleTargets => _system.AllBattlers.Where(battler => battler.Team == Team.OPPONENT && battler.Health > 0).ToList();
     Battler _target = null;
     int _selectedIndex = 0;
+    Move currentMove = null;
 
     public override void EnterState()
     {
@@ -30,12 +31,12 @@ public class PlayerAttackState : BattleState
 
         EventBus.Raise(new SelectTargetEvent { _Target = eligibleTargets[_selectedIndex] });
 
-        if (Keyboard.current.upArrowKey.wasPressedThisFrame)
+        if (Keyboard.current.upArrowKey.wasPressedThisFrame || Keyboard.current.rightArrowKey.wasPressedThisFrame)
         {
             _selectedIndex--;
             if (_selectedIndex < 0) _selectedIndex = eligibleTargets.Count - 1;
         }
-        else if (Keyboard.current.downArrowKey.wasPressedThisFrame)
+        else if (Keyboard.current.downArrowKey.wasPressedThisFrame || Keyboard.current.leftArrowKey.wasPressedThisFrame)
         {
             _selectedIndex++;
             if (_selectedIndex >= eligibleTargets.Count) _selectedIndex = 0;
@@ -44,13 +45,13 @@ public class PlayerAttackState : BattleState
         {
             _target = eligibleTargets[_selectedIndex];
             EventBus.Raise(new SelectTargetEvent { _Target = null });
-            _system.StartCoroutine(Attack());
+            _system.StartCoroutine(Attack(currentMove));
         }
     }
-    public override IEnumerator Attack()
+    public override IEnumerator Attack(Move move)
     {
         var attacker = _system.ActiveBattler;
-        bool targetFainted = _target.TakeDamage(attacker.Power);
+        bool targetFainted = _target.TakeDamage(move.Damage);
 
         if (targetFainted)
         {

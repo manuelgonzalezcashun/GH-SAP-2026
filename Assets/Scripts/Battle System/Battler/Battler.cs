@@ -9,8 +9,10 @@ public class Battler
     // Getters //
     public float Health { get; private set; }
     public float MaxHealth { get; private set; }
-    public float Healing { get; private set; }
-    public int Power { get; private set; }
+    // ! REMOVE ONCE MOVES ARE IMPLEMENTED
+    // public float Healing { get; private set; }
+    // public int Power { get; private set; }
+    public Move[] Moves { get; private set; }
     public float Initiative { get; private set; }
     public string Name { get; private set; }
     public Color Color { get; private set; }
@@ -42,6 +44,7 @@ public class Battler
         private float initiative = 5;
         private float healing = 50;
         private float health = -1;
+        private Move[] moves = null;
 
         // Battler Display //
         private string name = "Foo";
@@ -87,17 +90,23 @@ public class Battler
             health = maxHealth;
             return this;
         }
+        public Builder WithMoves(Move[] moves)
+        {
+            this.moves = moves;
+            return this;
+        }
         public Battler Build()
         {
             var battler = new Battler
             {
                 Name = name,
                 Color = color,
-                Power = power,
+                // Power = power,
                 Initiative = initiative,
-                Healing = healing,
+                // Healing = healing,
                 MaxHealth = maxHealth,
-                Health = health
+                Health = health,
+                Moves = moves
             };
             return battler;
         }

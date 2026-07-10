@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e93fd1865023414eab16b42e318b52f, type: 3}
   m_Name: Healing Gas
   m_EditorClassIdentifier: Assembly-CSharp::SO_Move
-  _Damage: -2
+  _Damage: 0
+  _Healing: 2
   _Distance: 1
   _HitsAllInRow: 0
   _CanTargetAlly: 1
