@@ -71,12 +71,18 @@ public class BattleSystem : StateMachine
         {
             battler.SetTeam(faction);
 
+            
+
             EventBus.Raise(new SetupBattleEvent { _Battler = battler, _Zone = zone });
         }
     }
     public void SetActiveBattler(Battler battler)
     {
         ActiveBattler = battler;
+    }
+    public Battler GetActiveBattler()
+    {
+        return ActiveBattler;
     }
 
     public void UpdateAttackPhaseFlag(bool flag)

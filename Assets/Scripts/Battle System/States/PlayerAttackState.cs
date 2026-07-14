@@ -30,8 +30,24 @@ public class PlayerAttackState : BattleState
             _system.SetState(new PlayerWinState(_system));
             return;
         }
-
         var targets = currentMove.AlliesAffected ? eligibleTargets : eligibleEnemies;
+        if (targets.Count<=0)
+        {
+            _system.SetState(new AttackSetupState(_system));
+            return;
+        }
+        for (int i = 0; i < targets.Count;i++)
+        {
+            if(!(_system.ActiveBattler.getRow()-currentMove.Distance <= targets[i].getRow() && _system.ActiveBattler.getRow() + currentMove.Distance >= targets[i].getRow()))
+            {
+                targets.RemoveAt(i);
+            }
+            if (targets.Count<=0)
+            {
+                _system.SetState(new AttackSetupState(_system));
+                return;
+            }
+        }
         SelectTarget(targets);
     }
 
@@ -72,10 +88,10 @@ public class PlayerAttackState : BattleState
         }
 
         // TODO: Replace with UI Text
-        // Debug.Log($"{attacker.Name} Attacked {_target.Name}!");
+        Debug.Log($"{attacker.Name} Attacked {_target.Name}!");
         yield return new WaitForSeconds(_system.Delay);
 
-        if (eligibleTargets.Count <= 0)
+        if (eligibleEnemies.Count <= 0)
         {
             _system.SetState(new PlayerWinState(_system));
             yield break;

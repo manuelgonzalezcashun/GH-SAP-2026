@@ -15,6 +15,6 @@ MonoBehaviour:
   _maxHealth: 9
   _initiative: 6
   moves:
-  - {fileID: 11400000, guid: 95aeb65b24a5b44b0a78c91818922eaa, type: 2}
+  - {fileID: 11400000, guid: 88bde78ff98664731b18872e1e6351cb, type: 2}
   - {fileID: 11400000, guid: 12f079669d1cd4b7797f304fb18f89aa, type: 2}
   _color: {r: 1, g: 0, b: 0.84489083, a: 1}

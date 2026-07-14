@@ -25,12 +25,24 @@ public class OpponentAttackState : BattleState
             _system.SetState(new PlayerLoseState(_system));
             yield break;
         }
+        for (int i = 0; i < eligibleTargets.Count;i++)
+        {
+            if(!(attacker.getRow()-selectedMove.Distance <= eligibleTargets[i].getRow() && attacker.getRow() + selectedMove.Distance >= eligibleTargets[i].getRow()))
+            {
+                eligibleTargets.RemoveAt(i);
+            }
+            if (eligibleTargets.Count<=0)
+            {
+                _system.SetState(new AttackSetupState(_system));
+                yield break;
+            }
+        }
 
         int index = Random.Range(0, eligibleTargets.Count);
         var target = eligibleTargets[index];
 
         // TODO: Replace with UI Text
-        // Debug.Log($"{attacker.Name} Attacked {target.Name}!");
+        Debug.Log($"{attacker.Name} Attacked {target.Name}!");
         yield return new WaitForSeconds(_system.Delay);
 
         target.TakeDamage(selectedMove.Damage);

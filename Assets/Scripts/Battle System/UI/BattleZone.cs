@@ -27,7 +27,24 @@ public class BattleZone : MonoBehaviour
 
     private void SetBattlerInZone(OnMoveEvent data)
     {
+        if (data._Zone == Zone.P_BACK)
+        {
+            data._Battler.setRow(0);
+        }
+        else if (data._Zone == Zone.P_FRONT)
+        {
+            data._Battler.setRow(1);
+        }
+        else if (data._Zone == Zone.O_FRONT)
+        {
+            data._Battler.setRow(2);
+        }
+        else if (data._Zone == Zone.O_BACK)
+        {
+            data._Battler.setRow(3);
+        }
         SetBattlerInZone(data._Battler, data._Zone);
+
     }
 
     void SetBattlerInZone(SetupBattleEvent data)

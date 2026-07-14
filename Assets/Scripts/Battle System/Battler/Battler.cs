@@ -9,12 +9,12 @@ public class Battler
     // Getters //
     public float Health { get; private set; }
     public float MaxHealth { get; private set; }
-    // ! REMOVE ONCE MOVES ARE IMPLEMENTED
-    // public float Healing { get; private set; }
-    // public int Power { get; private set; }
     public Move[] Moves { get; private set; }
     public float Initiative { get; private set; }
     public string Name { get; private set; }
+    private int Row;
+    // public int aptitude { get; private set; }
+    // for when customizing movesets is added, its the max amount of moves a creature can have
     public Color Color { get; private set; }
     public Team Team { get; private set; }
 
@@ -36,13 +36,25 @@ public class Battler
     }
     public void SetTeam(Team team) => Team = team;
 
+    public int getRow()
+    {
+        return Row;
+    }
+    public void setRow(int newrow)
+    {
+        Row = newrow;
+        Debug.Log(Row);
+    }
+    public Team GetTeam()
+    {
+        return Team;
+    }
+
     public class Builder
     {
         // Battler Stats //
         private float maxHealth = 50;
-        private int power = 50;
         private float initiative = 5;
-        private float healing = 50;
         private float health = -1;
         private Move[] moves = null;
 
@@ -60,19 +72,9 @@ public class Battler
             this.color = color;
             return this;
         }
-        public Builder WithPower(int power)
-        {
-            this.power = power;
-            return this;
-        }
         public Builder WithInitiative(float initiative)
         {
             this.initiative = initiative;
-            return this;
-        }
-        public Builder WithHealing(float healing)
-        {
-            this.healing = healing;
             return this;
         }
         public Builder WithMaxHealth(float maxHealth)
@@ -101,9 +103,7 @@ public class Battler
             {
                 Name = name,
                 Color = color,
-                // Power = power,
                 Initiative = initiative,
-                // Healing = healing,
                 MaxHealth = maxHealth,
                 Health = health,
                 Moves = moves
