@@ -8,7 +8,9 @@ public class PlayerAttackState : BattleState
 {
     public PlayerAttackState(BattleSystem system, Move move) : base(system) { currentMove = move; }
 
-    List<Battler> eligibleTargets => _system.AllBattlers.Where(battler => battler.Team == Team.OPPONENT && battler.Health > 0).ToList();
+    List<Battler> eligibleTargets => _system.AllBattlers.Where(battler => battler.Health > 0).ToList();
+    List<Battler> eligibleEnemies => _system.AllBattlers.Where(battler => battler.Team == Team.OPPONENT && battler.Health > 0).ToList();
+    List<Battler> eligibleAllies => _system.AllBattlers.Where(battler => battler.Team == Team.PLAYER && battler.Health > 0).ToList();
     Battler _target = null;
     int _selectedIndex = 0;
     Move currentMove = null;
@@ -29,25 +31,36 @@ public class PlayerAttackState : BattleState
             return;
         }
 
-        EventBus.Raise(new SelectTargetEvent { _Target = eligibleTargets[_selectedIndex] });
+        var targets = currentMove.AlliesAffected ? eligibleTargets : eligibleEnemies;
+        SelectTarget(targets);
+    }
+
+    private void SelectTarget(List<Battler> battlers)
+    {
+        EventBus.Raise(new SelectTargetEvent { _Target = battlers[_selectedIndex] });
 
         if (Keyboard.current.upArrowKey.wasPressedThisFrame || Keyboard.current.rightArrowKey.wasPressedThisFrame)
         {
             _selectedIndex--;
-            if (_selectedIndex < 0) _selectedIndex = eligibleTargets.Count - 1;
+            if (_selectedIndex < 0) _selectedIndex = battlers.Count - 1;
         }
         else if (Keyboard.current.downArrowKey.wasPressedThisFrame || Keyboard.current.leftArrowKey.wasPressedThisFrame)
         {
             _selectedIndex++;
-            if (_selectedIndex >= eligibleTargets.Count) _selectedIndex = 0;
+            if (_selectedIndex >= battlers.Count) _selectedIndex = 0;
         }
         else if (Keyboard.current.enterKey.wasPressedThisFrame)
         {
-            _target = eligibleTargets[_selectedIndex];
+            _target = battlers[_selectedIndex];
             EventBus.Raise(new SelectTargetEvent { _Target = null });
-            _system.StartCoroutine(Attack(currentMove));
+
+            if (currentMove.Category == MoveCategory.DAMAGING)
+                _system.StartCoroutine(Attack(currentMove));
+            else
+                _system.StartCoroutine(Heal());
         }
     }
+
     public override IEnumerator Attack(Move move)
     {
         var attacker = _system.ActiveBattler;
@@ -69,5 +82,20 @@ public class PlayerAttackState : BattleState
         }
 
         _system.SetState(new AttackSetupState(_system));
+    }
+    public override IEnumerator Heal()
+    {
+        EventBus.Raise(new ShowOptionsEvent { BO_Show = false });
+
+        var healer = _system.ActiveBattler;
+
+        // TODO: replace with UI text
+        // Debug.Log($"{healer.Name} is recovering strength!");
+
+        _target.Heal(currentMove.Healing);
+        yield return new WaitForSeconds(_system.Delay);
+
+        BattleState state = new AttackSetupState(_system);
+        _system.SetState(state);
     }
 }

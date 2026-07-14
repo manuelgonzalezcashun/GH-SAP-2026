@@ -11,6 +11,7 @@ public class SO_Move : ScriptableObject
     [SerializeField] private bool _CanTargetAlly;
     [SerializeField] private string _Type; // TODO: Change to a different type (Enum or Struct perhaps)
     [SerializeField] private string _Description;
+    [SerializeField] private MoveCategory _Category;
 
     public Move MakeMove()
     {
@@ -28,6 +29,7 @@ public class SO_Move : ScriptableObject
         .WithDistance(_Distance)
         .WithRow(_HitsAllInRow)
         .WithAllyHit(_CanTargetAlly)
+        .WithCategory(_Category)
         .Make();
     }
 }
