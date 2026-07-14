@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Big Guy
   m_EditorClassIdentifier: Assembly-CSharp::SO_Battler
   _maxHealth: 12
-  _power: 2
   _initiative: 4
-  _healing: 2
+  moves:
+  - {fileID: 11400000, guid: 95aeb65b24a5b44b0a78c91818922eaa, type: 2}
   _color: {r: 0.6836612, g: 0, b: 1, a: 1}

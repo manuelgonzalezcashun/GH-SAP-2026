@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cooked Guy
   m_EditorClassIdentifier: Assembly-CSharp::SO_Battler
   _maxHealth: 8
-  _power: 1
   _initiative: 4
-  _healing: 1
+  moves:
+  - {fileID: 11400000, guid: 95aeb65b24a5b44b0a78c91818922eaa, type: 2}
   _color: {r: 1, g: 0, b: 0, a: 1}
