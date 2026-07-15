@@ -82,6 +82,20 @@ public class PlayerAttackState : BattleState
         var attacker = _system.ActiveBattler;
         bool targetFainted = _target.TakeDamage(move.Damage);
 
+        if (move.Row)
+        {
+            for (int i = 0; i < eligibleTargets.Count; i++)
+            {
+                if (eligibleTargets[i].getRow() == _target.getRow())
+                {
+                    if ((eligibleTargets[i] != _target) && (eligibleTargets[i] != _system.ActiveBattler))
+                    {
+                        eligibleTargets[i].TakeDamage(move.Damage);
+                    }
+                }
+            }
+        }
+    
         if (targetFainted)
         {
             EventBus.Raise(new TargetFaintedEvent { _Target = _target });
