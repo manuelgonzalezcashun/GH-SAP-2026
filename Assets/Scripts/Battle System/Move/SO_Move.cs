@@ -9,7 +9,7 @@ public class SO_Move : ScriptableObject
     [Range(-1, 2)][SerializeField] private int _Distance;
     [SerializeField] private bool _HitsAllInRow;
     [SerializeField] private bool _CanTargetAlly;
-    [SerializeField] private string _Type; // TODO: Change to a different type (Enum or Struct perhaps)
+    [SerializeField] private Type _Type; 
     [SerializeField] private string _Description;
     [SerializeField] private MoveCategory _Category;
 

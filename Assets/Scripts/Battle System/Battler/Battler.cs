@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
+public enum Type { NONE,SALT,SULFUR,MERCURY,LEAD}
 [Serializable]
 public class Battler
 {
@@ -9,17 +11,22 @@ public class Battler
     // Getters //
     public float Health { get; private set; }
     public float MaxHealth { get; private set; }
+    public Type FirstType { get; private set; }
+    public Type SecondType { get; private set; }
     public Move[] Moves { get; private set; }
     public float Initiative { get; private set; }
     public string Name { get; private set; }
     private int Row;
     // public int aptitude { get; private set; }
     // for when customizing movesets is added, its the max amount of moves a creature can have
+    [SerializeField] private StatusEffectsUI statusEffectsUI;
+    private Dictionary<StatusType, int> statusEffects = new();
     public Color Color { get; private set; }
     public Team Team { get; private set; }
 
     public bool TakeDamage(int damage)
     {
+        
         Health -= damage;
         Health = Health < 0 ? 0 : Health;
 
@@ -57,6 +64,8 @@ public class Battler
         private float initiative = 5;
         private float health = -1;
         private Move[] moves = null;
+        private Type firstType = Type.LEAD;
+        private Type secondType = Type.NONE;
 
         // Battler Display //
         private string name = "Foo";
@@ -97,6 +106,16 @@ public class Battler
             this.moves = moves;
             return this;
         }
+        public Builder WithFirstType(Type type)
+        {
+            this.firstType = type;
+            return this;
+        }
+        public Builder WithSecondType(Type type)
+        {
+            this.secondType = type;
+            return this;
+        }
         public Battler Build()
         {
             var battler = new Battler
@@ -106,10 +125,43 @@ public class Battler
                 Initiative = initiative,
                 MaxHealth = maxHealth,
                 Health = health,
-                Moves = moves
+                Moves = moves,
+                FirstType = firstType,
+                SecondType = secondType
+
             };
             return battler;
         }
+    }
+
+    public void AddStatus(StatusType type, int stackCount)
+    {
+        if (statusEffects.ContainsKey(type))
+        {
+            statusEffects[type]+= stackCount;
+        }
+        else
+        {
+            statusEffects.Add(type, stackCount);
+        }
+        statusEffectsUI.UpdateStatusEffectUI(type,GetStatusEffectStacks(type));
+    }
+    public void RemoveStatus(StatusType type, int stackCount)
+    {
+        if (statusEffects.ContainsKey(type))
+        {
+            statusEffects[type]-= stackCount;
+            if (statusEffects[type] <=0)
+            {
+                statusEffects.Remove(type);
+            }
+        }
+        statusEffectsUI.UpdateStatusEffectUI(type,GetStatusEffectStacks(type));
+    }
+    public int GetStatusEffectStacks(StatusType type)
+    {
+        if(statusEffects.ContainsKey(type)) return statusEffects[type];
+        else return 0;
     }
 }
 

@@ -16,4 +16,6 @@ MonoBehaviour:
   _initiative: 3
   moves:
   - {fileID: 11400000, guid: 95aeb65b24a5b44b0a78c91818922eaa, type: 2}
+  type1: 4
+  type2: 0
   _color: {r: 0, g: 0.3962264, b: 0.11967447, a: 1}

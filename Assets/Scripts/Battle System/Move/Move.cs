@@ -16,13 +16,14 @@ public class Move
     //determining if it affects a whole row of creatures
     public bool AlliesAffected { get; private set; }
     // true means it effects everyone, false means it only hits enemies
-    public string Type { get; private set; }
+    public Type Type { get; private set; }
     //the type
     //the move's real name (for moves that increase in power over time) i.e Slam lvl 1 vs Slam lvl 3
     public string Name { get; private set; }
     //the display name
     public string Desc { get; private set; }
     //the description/explanation of the move
+    
 
     public MoveCategory Category { get; private set; }
     //public Effect effect {get; private set; }
@@ -38,7 +39,7 @@ public class Move
         private bool row = false;
         private bool alliesAffected = false;
 
-        private string type = "Lead";
+        private Type type = Type.LEAD;
         private string name = "Slam";
         private string desc = "A normal punch";
         private MoveCategory category = MoveCategory.DAMAGING;
@@ -48,7 +49,7 @@ public class Move
             this.name = name;
             return this;
         }
-        public Maker WithType(string type)
+        public Maker WithType(Type type)
         {
             this.type = type;
             return this;

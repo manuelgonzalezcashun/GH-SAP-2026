@@ -8,6 +8,8 @@ public class SO_Battler : ScriptableObject
     [SerializeField] private float _maxHealth;
     [SerializeField] private float _initiative;
     [SerializeField] private SO_Move[] moves;
+    [SerializeField] private Type type1;
+    [SerializeField] private Type type2;
 
     [Header("Battler Display")]
     [SerializeField] private Color _color = Color.white;
@@ -26,6 +28,8 @@ public class SO_Battler : ScriptableObject
         .WithHealth()
         .WithInitiative(_initiative)
         .WithMoves(moves.Select(move => move.MakeMove()).ToArray())
+        .WithFirstType(type1)
+        .WithSecondType(type2)
         .Build();
     }
 }

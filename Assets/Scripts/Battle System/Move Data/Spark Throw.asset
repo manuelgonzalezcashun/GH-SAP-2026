@@ -17,6 +17,6 @@ MonoBehaviour:
   _Distance: 2
   _HitsAllInRow: 0
   _CanTargetAlly: 0
-  _Type: Sulfur
+  _Type: 2
   _Description: User Ignites a small object and throws it
   _Category: 0

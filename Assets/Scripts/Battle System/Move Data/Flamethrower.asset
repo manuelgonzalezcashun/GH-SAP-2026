@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e93fd1865023414eab16b42e318b52f, type: 3}
   m_Name: Flamethrower
   m_EditorClassIdentifier: Assembly-CSharp::SO_Move
-  _Damage: 0
+  _Damage: 1
   _Healing: 0
-  _Distance: 0
-  _HitsAllInRow: 0
+  _Distance: 1
+  _HitsAllInRow: 1
   _CanTargetAlly: 0
-  _Type: 
-  _Description: 
+  _Type: 2
+  _Description: The user expells flammable material, and ignites it
   _Category: 0
