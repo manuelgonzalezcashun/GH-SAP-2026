@@ -8,12 +8,40 @@ public class DialogueController : MonoBehaviour
     // MVC // 
     [SerializeField] DialogueView view;
     [SerializeField] DialogueModel model;
+    void OnEnable()
+    {
+        EventBus.Subscribe<InitiateDialogueEvent>(StartDialogueAtKnot);
+    }
+    void OnDisable()
+    {
+        EventBus.UnSubscribe<InitiateDialogueEvent>(StartDialogueAtKnot);
+    }
+
+    void StartDialogueAtKnot(InitiateDialogueEvent data)
+    {
+        StartDialogueAtKnot(data.knotName);
+    }
+
+    void StartDialogueAtKnot(string knotName)
+    {
+        if (knotName == null || knotName == string.Empty)
+        {
+            Debug.Log($"Knot Name came back empty! Continuing without staring dialogue");
+            return;
+        }
+
+        view.ShowDialogue(true);
+        model.Story.ChoosePathString(knotName);
+
+        StepThroughDialogue();
+    }
 
     void Start()
     {
-        view.onChoiceMade += HandleChoiceSelected;
         model.Initialize();
         model.Observer.StartListening(model.Story);
+        view.onChoiceMade += HandleChoiceSelected;
+
         StepThroughDialogue();
     }
     void Update()
@@ -30,7 +58,6 @@ public class DialogueController : MonoBehaviour
             EndStory();
             return;
         }
-
         string line = model.Story.Continue();
 
         if (model.HasChoices)
