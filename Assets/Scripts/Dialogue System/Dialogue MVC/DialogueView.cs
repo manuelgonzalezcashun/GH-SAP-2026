@@ -72,8 +72,10 @@ public class DialogueView : MonoBehaviour
         {
             Button choiceButton = GetChoiceButton();
             TMP_Text choiceText = choiceButton.GetComponentInChildren<TMP_Text>();
+
             choiceText.text = currentChoices[i];
             choiceButton.onClick.RemoveAllListeners();
+
             int index = i;
             choiceButton.onClick.AddListener(() => MakeChoice(index));
         }
