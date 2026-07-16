@@ -26,7 +26,7 @@ public class Move
     
 
     public MoveCategory Category { get; private set; }
-    //public Effect effect {get; private set; }
+    public MoveEffects Effect {get; private set; }
     // ^to be added later but will encompass forced movement, poison, and other weird things
 
 
@@ -43,6 +43,7 @@ public class Move
         private string name = "Slam";
         private string desc = "A normal punch";
         private MoveCategory category = MoveCategory.DAMAGING;
+        private MoveEffects effect = null;
 
         public Maker WithName(string name)
         {
@@ -89,6 +90,11 @@ public class Move
             this.category = category;
             return this;
         }
+        public Maker WithEffect(MoveEffects effect)
+        {
+            this.effect = effect;
+            return this;
+        }
         public Move Make()
         {
             var move = new Move
@@ -101,7 +107,8 @@ public class Move
                 Distance = distance,
                 Row = row,
                 AlliesAffected = alliesAffected,
-                Category = category
+                Category = category,
+                Effect = null
             };
             return move;
         }

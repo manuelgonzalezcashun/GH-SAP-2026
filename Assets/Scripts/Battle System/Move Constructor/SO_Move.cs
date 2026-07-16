@@ -12,6 +12,7 @@ public class SO_Move : ScriptableObject
     [SerializeField] private Type _Type; 
     [SerializeField] private string _Description;
     [SerializeField] private MoveCategory _Category;
+    [SerializeField] private MoveEffects _Effect;
 
     public Move MakeMove()
     {
@@ -30,6 +31,7 @@ public class SO_Move : ScriptableObject
         .WithRow(_HitsAllInRow)
         .WithAllyHit(_CanTargetAlly)
         .WithCategory(_Category)
+        .WithEffect(_Effect)
         .Make();
     }
 }

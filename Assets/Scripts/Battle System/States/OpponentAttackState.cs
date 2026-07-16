@@ -45,7 +45,7 @@ public class OpponentAttackState : BattleState
         Debug.Log($"{attacker.Name} Attacked {target.Name}!");
         yield return new WaitForSeconds(_system.Delay);
 
-        target.TakeDamage(selectedMove.Damage);
+        target.TakeDamage(selectedMove.Damage,selectedMove.Type);
         _system.SetState(new AttackSetupState(_system));
     }
 }

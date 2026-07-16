@@ -2,11 +2,13 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public enum Type { NONE,SALT,SULFUR,MERCURY,LEAD}
 [Serializable]
 public class Battler
 {
     public event Action<float, float> onHealthChanged;
+    private TypeManager typeManager;
 
     // Getters //
     public float Health { get; private set; }
@@ -24,8 +26,10 @@ public class Battler
     public Color Color { get; private set; }
     public Team Team { get; private set; }
 
-    public bool TakeDamage(int damage)
+    public bool TakeDamage(int damage, Type type)
     {
+        damage = LoopTypes(FirstType,type,damage);
+        damage = LoopTypes(SecondType,type,damage);
         
         Health -= damage;
         Health = Health < 0 ? 0 : Health;
@@ -162,6 +166,15 @@ public class Battler
     {
         if(statusEffects.ContainsKey(type)) return statusEffects[type];
         else return 0;
+    }
+
+    public int LoopTypes(Type def,Type atk,int damage)
+    {
+        if (def == Type.SULFUR)
+        {
+            return typeManager.CalculateDamage(atk,damage);
+        }
+        return damage;
     }
 }
 
