@@ -9,12 +9,12 @@ public class SceneChanger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             DontDestroyOnLoad(gameObject);
             SceneManager.LoadScene(SceneToLoad);
 
-            EventBus.Raise<SceneTransition>(new SceneTransition{_X = xDropOff, _Y = yDropOff});
+            EventBus.Raise(new SceneTransition { _X = xDropOff, _Y = yDropOff });
             Destroy(gameObject);
         }
     }

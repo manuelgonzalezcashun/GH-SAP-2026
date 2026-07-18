@@ -1,4 +1,6 @@
 // * BO = Battle Options, ZO = Zone Options, MO = Move Options
+using UnityEngine;
+
 public class ShowOptionsEvent
 {
     public bool BO_Show = false;
@@ -46,4 +48,18 @@ public class MoveSelectedEvent
 public class InitiateDialogueEvent
 {
     public string knotName = string.Empty;
+    public bool dialoguePlaying = false;
 }
+// TODO: Workshop name, this is to control whether the player can move
+public class PlayerMoveEvent
+{
+    public bool canMove = true;
+}
+
+public class ItemSearchEvent
+{
+    public float _interactDistance = 0f;
+    public Vector2 _interactPosition = Vector2.zero;
+}
+public class PlayerInteractEvent { }
+

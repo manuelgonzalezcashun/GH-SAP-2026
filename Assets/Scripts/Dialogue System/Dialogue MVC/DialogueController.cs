@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using System.Linq;
 
 public class DialogueController : MonoBehaviour
@@ -8,13 +7,21 @@ public class DialogueController : MonoBehaviour
     // MVC // 
     [SerializeField] DialogueView view;
     [SerializeField] DialogueModel model;
+
     void OnEnable()
     {
         EventBus.Subscribe<InitiateDialogueEvent>(StartDialogueAtKnot);
+        view.onChoiceMade += HandleChoiceSelected;
+
+        model.Initialize();
+        model.Observer.StartListening(model.Story);
     }
     void OnDisable()
     {
         EventBus.UnSubscribe<InitiateDialogueEvent>(StartDialogueAtKnot);
+        view.onChoiceMade -= HandleChoiceSelected;
+
+        model.Observer.StopListening(model.Story);
     }
 
     void StartDialogueAtKnot(InitiateDialogueEvent data)
@@ -24,34 +31,39 @@ public class DialogueController : MonoBehaviour
 
     void StartDialogueAtKnot(string knotName)
     {
-        if (knotName == null || knotName == string.Empty)
+        if (knotName != null && knotName != string.Empty)
         {
-            Debug.Log($"Knot Name came back empty! Continuing without staring dialogue");
-            return;
+            view.ShowDialogue(true);
+            model.Story.ChoosePathString(knotName);
+            InputHandler.ChangeActionMaps(InputHandler.dialogueInput);
         }
 
-        view.ShowDialogue(true);
-        model.Story.ChoosePathString(knotName);
-
-        StepThroughDialogue();
+        NextDialogueLine();
     }
 
     void Start()
     {
-        model.Initialize();
-        model.Observer.StartListening(model.Story);
-        view.onChoiceMade += HandleChoiceSelected;
-
-        StepThroughDialogue();
+        StartDialogueAtKnot(string.Empty);
     }
     void Update()
     {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        StepThroughDialogue();
+    }
+    private void StepThroughDialogue()
+    {
+        if (!InputHandler.SubmitPressed) return;
+        if (view.isTyping)
         {
-            StepThroughDialogue();
+            view.DisplayCompletedDialogueLine();
+            return;
+        }
+        if (!model.HasChoices && !view.isTyping)
+        {
+            NextDialogueLine();
         }
     }
-    void StepThroughDialogue()
+
+    void NextDialogueLine()
     {
         if (!model.Story.canContinue)
         {
@@ -59,7 +71,6 @@ public class DialogueController : MonoBehaviour
             return;
         }
         string line = model.Story.Continue();
-
         if (model.HasChoices)
         {
             List<string> choicesText = (from choice in model.Story.currentChoices select choice.text).ToList();
@@ -67,18 +78,18 @@ public class DialogueController : MonoBehaviour
         }
 
         model.TagHandler.HandleTags(model.Story.currentTags);
-        StartCoroutine(view.TypeWriterAnimation(line));
+        view.DisplayDialogueLine(line);
     }
     void HandleChoiceSelected(int index)
     {
         model.Story.ChooseChoiceIndex(index);
-        StepThroughDialogue();
+        NextDialogueLine();
     }
     public void EndStory()
     {
-        model.Observer.StopListening(model.Story);
-        view.onChoiceMade -= HandleChoiceSelected;
+        EventBus.Raise(new PlayerMoveEvent { canMove = true });
         view.ShowDialogue(false);
+        InputHandler.ChangeActionMaps(InputHandler.playerInput);
     }
 }
 public class DialogueExternalFunctionHandler { }
