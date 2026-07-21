@@ -43,3 +43,8 @@ public class MoveSelectedEvent
 {
     public Move move = null;
 }
+
+public class InitiateDialogueEvent
+{
+    public string knotName = string.Empty;
+}

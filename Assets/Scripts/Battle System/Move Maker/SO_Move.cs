@@ -10,6 +10,7 @@ public class SO_Move : ScriptableObject
     [SerializeField] private bool _HitsAllInRow;
     [SerializeField] private bool _CanTargetAlly;
     [SerializeField] private Type _Type; 
+    //[SerializeField] private 
     [SerializeField] private string _Description;
     [SerializeField] private MoveCategory _Category;
     [SerializeField] private MoveEffects _Effect;

@@ -80,7 +80,7 @@ public class PlayerAttackState : BattleState
     public override IEnumerator Attack(Move move)
     {
         var attacker = _system.ActiveBattler;
-        bool targetFainted = _target.TakeDamage(move.Damage, move.Type);
+        bool targetFainted = _target.TakeDamage(move);
 
         if (move.Row)
         {
@@ -90,7 +90,7 @@ public class PlayerAttackState : BattleState
                 {
                     if ((eligibleTargets[i] != _target) && (eligibleTargets[i] != _system.ActiveBattler))
                     {
-                        bool Faint = eligibleTargets[i].TakeDamage(move.Damage, move.Type);
+                        bool Faint = eligibleTargets[i].TakeDamage(move);
                         //if (Faint)
                         //{
                             //EventBus.Raise(new TargetFaintedEvent { _Target = eligibleTargets[i] });

@@ -39,7 +39,7 @@ public class Move
         private bool row = false;
         private bool alliesAffected = false;
 
-        private Type type = Type.LEAD;
+        private Type type = new Lead();
         private string name = "Slam";
         private string desc = "A normal punch";
         private MoveCategory category = MoveCategory.DAMAGING;
