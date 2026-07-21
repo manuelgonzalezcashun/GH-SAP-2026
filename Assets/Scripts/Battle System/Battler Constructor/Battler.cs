@@ -170,11 +170,7 @@ public class Battler
 
     public int LoopTypes(Type def,Type atk,int damage)
     {
-        if (def == Type.SULFUR)
-        {
-            return typeManager.CalculateDamage(atk,damage);
-        }
-        return damage;
+        return typeManager.CalculateDamage(def,atk,damage);
     }
 }
 

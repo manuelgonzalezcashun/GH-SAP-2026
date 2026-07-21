@@ -2,40 +2,72 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 
-public abstract class TypeManager : MonoBehaviour
+public class TypeManager : MonoBehaviour
 {
-    private Type[] Weaknesses = {};
-    private Type[] Resistances = {};
-    private SulfurType sulfurType;
-
-    public virtual Type[] OverrideWeakness()
+    public int CalculateDamage(Type def, Type atk, int damage)
     {
-        return Weaknesses;
-    }
-    public virtual Type[] OverrideResistance()
-    {
-        return Resistances;
-    }
-
-    public int CalculateDamage(Type atk, int damage)
-    {
-        Resistances = OverrideResistance();
-        Weaknesses = OverrideWeakness();
-        for (int i = 0; i<Weaknesses.Count(); i++)
+        if (def == Type.NONE)
         {
-            if (Weaknesses[i] == atk)
+            return damage;
+        }
+        else if (def == Type.SALT)
+        {
+            if (atk == Type.SULFUR)
             {
-                return damage+1;
+                return Weakness(damage);
             }
-            if (Resistances[i] == atk)
+            else if (atk == Type.MERCURY || atk == Type.SALT)
             {
-                if (damage - 1 >= 0)
-                {
-                    return damage-1;
-                }
+                return Resistance(damage);
             }
         }
+        else if (def == Type.SULFUR)
+        {
+            if (atk == Type.MERCURY)
+            {
+                return Weakness(damage);
+            }
+            else if (atk == Type.SALT || atk == Type.SULFUR)
+            {
+                return Resistance(damage);
+            }
+        }
+        else if (def == Type.MERCURY)
+        {
+            if (atk == Type.SALT || atk == Type.MERCURY)
+            {
+                return Weakness(damage);
+            }
+            else if (atk == Type.SULFUR)
+            {
+                return Resistance(damage);
+            }
+        }
+        else if (def == Type.LEAD)
+        {
+            if (atk == Type.MERCURY)
+            {
+                return Resistance(damage);
+            }
+        }
+
         return damage;
+    }
+
+    public int Weakness(int dam)
+    {
+        return dam+10;
+    }
+    public int Resistance(int dam)
+    {
+        if (dam - 10 >= 0)
+        {
+            return dam-10;
+        }
+        else
+        {
+            return 0;
+        }
     }
 
 
