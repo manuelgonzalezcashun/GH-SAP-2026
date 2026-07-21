@@ -19,9 +19,9 @@ public class DialogueView : MonoBehaviour
     // Runtime Variables //
     [Range(0.01f, 0.05f)]
     [SerializeField] float dialogueWaitTime = 0.02f;
-
     List<string> currentChoices = new List<string>();
-    bool isTyping = false;
+    public bool isTyping { get; private set; } = false;
+    private Coroutine displayLineCoroutine;
 
     void OnEnable()
     {
@@ -32,7 +32,23 @@ public class DialogueView : MonoBehaviour
         SpeakerTagStrategy.onNameUpdate -= SetNameTag;
     }
 
-    public IEnumerator TypeWriterAnimation(string dialogueLine)
+    public void DisplayDialogueLine(string dialogueLine)
+    {
+        if (displayLineCoroutine != null) StopCoroutine(displayLineCoroutine);
+
+        displayLineCoroutine = StartCoroutine(TypeWriterAnimation(dialogueLine));
+    }
+    public void DisplayCompletedDialogueLine()
+    {
+        if (!isTyping) return;
+
+        if (displayLineCoroutine != null) StopCoroutine(displayLineCoroutine);
+        dialogueText.maxVisibleCharacters = dialogueText.text.Length;
+        isTyping = false;
+        if (currentChoices.Count > 0) DisplayStoryChoices();
+    }
+
+    IEnumerator TypeWriterAnimation(string dialogueLine)
     {
         dialogueText.text = dialogueLine; // Set UI Text to dialogueLine
         dialogueText.maxVisibleCharacters = 0; // Hide All Characters
@@ -45,8 +61,8 @@ public class DialogueView : MonoBehaviour
             yield return new WaitForSeconds(dialogueWaitTime);
         }
 
-        DisplayStoryChoices();
         isTyping = false;
+        DisplayStoryChoices();
     }
     public void ShowDialogue(bool visible)
     {

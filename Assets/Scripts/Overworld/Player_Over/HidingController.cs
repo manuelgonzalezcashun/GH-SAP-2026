@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HidingController : MonoBehaviour
 {
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,15 +20,12 @@ public class HidingController : MonoBehaviour
             unhide();
         }
     }
-
-
-
     public void hide()
-    { 
-        EventBus.Raise<PlayerHideEvent>(new PlayerHideEvent{_hidingMode = true});
+    {
+        EventBus.Raise(new PlayerHideEvent { _hidingMode = true });
     }
     public void unhide()
     {
-        EventBus.Raise<PlayerHideEvent>(new PlayerHideEvent{_hidingMode = false});
+        EventBus.Raise(new PlayerHideEvent { _hidingMode = false });
     }
 }
