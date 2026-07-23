@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum Type { NONE,SALT,SULFUR,MERCURY,LEAD}
+public enum Type { NONE,SALT,SULFUR,MERCURY,LEAD,PHOSPHORUS,ANTIMONY,BISMUTH,ARSENIC}
 [Serializable]
 public class Battler
 {
@@ -168,13 +168,13 @@ public class Battler
 
     public int LoopTypes(Type def, Type atk, int damage)
     {
-        if (def == Type.NONE)
+        if (def == Type.NONE || atk == Type.NONE)
         {
             return damage;
         }
         else if (def == Type.SALT)
         {
-            if (atk == Type.SULFUR)
+            if (atk == Type.SULFUR || atk == Type.ARSENIC)
             {
                 return Weakness(damage);
             }
@@ -185,7 +185,7 @@ public class Battler
         }
         else if (def == Type.SULFUR)
         {
-            if (atk == Type.MERCURY)
+            if (atk == Type.MERCURY || atk == Type.PHOSPHORUS || atk == Type.BISMUTH)
             {
                 return Weakness(damage);
             }
@@ -196,7 +196,7 @@ public class Battler
         }
         else if (def == Type.MERCURY)
         {
-            if (atk == Type.SALT || atk == Type.MERCURY)
+            if (atk == Type.SALT || atk == Type.MERCURY || atk == Type.LEAD)
             {
                 return Weakness(damage);
             }
@@ -207,7 +207,51 @@ public class Battler
         }
         else if (def == Type.LEAD)
         {
-            if (atk == Type.MERCURY)
+            if (atk == Type.MERCURY || atk == Type.ARSENIC)
+            {
+                return Resistance(damage);
+            }
+        }
+        else if (def == Type.PHOSPHORUS)
+        {
+            if (atk == Type.SULFUR || atk == Type.ANTIMONY)
+            {
+                return Weakness(damage);
+            }
+            else if (atk == Type.BISMUTH || atk == Type.ARSENIC)
+            {
+                return Resistance(damage);
+            }
+        }
+        else if (def == Type.ANTIMONY)
+        {
+            if (atk == Type.PHOSPHORUS)
+            {
+                return Weakness(damage);
+            }
+            else if (atk == Type.BISMUTH)
+            {
+                return Resistance(damage);
+            }
+        }
+        else if (def == Type.BISMUTH)
+        {
+            if (atk == Type.PHOSPHORUS || atk == Type.ANTIMONY)
+            {
+                return Weakness(damage);
+            }
+            else if (atk == Type.SULFUR)
+            {
+                return Resistance(damage);
+            }
+        }
+        else if (def == Type.ARSENIC)
+        {
+            if (atk == Type.PHOSPHORUS || atk == Type.BISMUTH)
+            {
+                return Weakness(damage);
+            }
+            else if (atk == Type.SALT)
             {
                 return Resistance(damage);
             }

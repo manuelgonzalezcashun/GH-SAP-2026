@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e93fd1865023414eab16b42e318b52f, type: 3}
-  m_Name: Slam
+  m_Name: Liquid Lash 1
   m_EditorClassIdentifier: Assembly-CSharp::SO_Move
   _Damage: 2
   _Healing: 0
-  _Distance: 1
+  _Distance: 2
   _HitsAllInRow: 0
   _CanTargetAlly: 0
-  _Type: 4
-  _Description: A basic slamming attack
+  _Type: 3
+  _Description: User distorts liquid metal to slash at targets from a distance
   _Category: 0
-  _Effect:
-  - {fileID: 11400000, guid: 841d11abb25cd433c9854e5261b9f037, type: 2}
+  _Effect: []

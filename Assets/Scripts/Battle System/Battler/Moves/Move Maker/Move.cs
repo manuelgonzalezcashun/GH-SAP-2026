@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public enum MoveCategory { DAMAGING, HEALING }
+public enum MoveCategory { DAMAGING, HEALING, DEBUFF, BUFF }
 [Serializable]
 public class Move
 {
