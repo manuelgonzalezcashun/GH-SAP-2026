@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class EX_DMG : ScriptableObject
 {
-    public SO_Battler Template { get; private set; }
+    public BonusDamageCalc Calc { get; private set; }
     
     public class ExtraMaker
     {
 
-        private SO_Battler template = null;
+        private BonusDamageCalc calc = null;
 
-        public ExtraMaker WithTemplate(SO_Battler template)
+        public ExtraMaker WithCalc(BonusDamageCalc calc)
         {
-            this.template = template;
+            this.calc = calc;
             return this;
         }
         
@@ -19,7 +19,7 @@ public class EX_DMG : ScriptableObject
         {
             var ex_dmg = new EX_DMG
             {
-                Template = template,
+                Calc = calc,
                 
 
             };

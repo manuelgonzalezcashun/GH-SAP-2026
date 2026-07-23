@@ -6,19 +6,18 @@ using UnityEngine;
 public class SO_EX_DMG : ScriptableObject
 {
     [Header("Damage Details")]
-    [SerializeField] private SO_Battler _Template;
+    [SerializeField] private BonusDamageCalc _Calc;
     
 
-    public Summon MakeSummon()
+    public EX_DMG MakeDMG()
     {
-        _Template.CreateBattler();
-        return MakeBaseSummon();
+        return MakeBaseDMG();
     }
 
-    private Summon MakeBaseSummon()
+    private EX_DMG MakeBaseDMG()
     {
-        return new Summon.SummonMaker()
-        .WithTemplate(_Template)
+        return new EX_DMG.ExtraMaker()
+        .WithCalc(_Calc)
         .Make();
     }
 }
