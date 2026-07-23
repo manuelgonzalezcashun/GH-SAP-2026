@@ -1,8 +1,19 @@
+<<<<<<<< HEAD:Assets/UI/Tilemap/Tilemap_114.asset.meta
 fileFormatVersion: 2
-guid: 55e3fad81bd64ac4e91e52643221cde1
+guid: b871120ec030c8449af0e239052bceca
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+========
+fileFormatVersion: 2
+guid: 495a6cfd051d33f44a46f841ce56a28d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>>> origin/monica:Assets/UI/Tilemap/Tilemap_115.asset.meta
