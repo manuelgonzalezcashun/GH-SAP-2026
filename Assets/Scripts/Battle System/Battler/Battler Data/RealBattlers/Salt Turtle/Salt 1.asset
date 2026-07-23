@@ -20,4 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d85a75089ab0f425faf5c66e5306ae6c, type: 2}
   type1: 1
   type2: 0
-  _color: {r: 1, g: 1, b: 1, a: 1}
+  _color: {r: 0.5385814, g: 0.8584906, b: 0.84345406, a: 1}
