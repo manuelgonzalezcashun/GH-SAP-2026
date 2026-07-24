@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0736ee5f3a5aeec49b995dd38300ec07, type: 3}
   m_Name: Weak Guy
   m_EditorClassIdentifier: Assembly-CSharp::SO_Battler
-  _maxHealth: 1
-  _initiative: 5
+  _maxHealth: 11
+  _initiative: 10
   moves:
-  - {fileID: 11400000, guid: 88bde78ff98664731b18872e1e6351cb, type: 2}
+  - {fileID: 11400000, guid: 9d30bcba07015484bbe869c338807c08, type: 2}
   type1: 4
   type2: 0
   _color: {r: 1, g: 1, b: 1, a: 1}

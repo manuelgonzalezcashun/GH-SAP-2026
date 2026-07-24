@@ -46,6 +46,26 @@ public class OpponentAttackState : BattleState
         yield return new WaitForSeconds(_system.Delay);
 
         target.TakeDamage(selectedMove.Damage,selectedMove.Type);
+        
+        // if (move.Row)
+        // {
+        //     for (int i = 0; i < _system.AllBattlers.Count; i++)
+        //     {
+        //         if (_system.AllBattlers[i].getRow() == target.getRow())
+        //         {
+        //             if ((_system.AllBattlers[i] != target) && (_system.AllBattlers[i] != _system.ActiveBattler))
+        //             {
+        //                 bool Faint = _system.AllBattlers[i].TakeDamage(move.Damage, move.Type);
+        //                 //if (Faint)
+        //                 //{
+        //                     //EventBus.Raise(new TargetFaintedEvent { target = _system.AllBattlers[i] });
+        //                 //}
+        //                 _system.AllBattlers[i].Heal(move.Healing);
+        //             }
+        //         }
+        //     }
+        // }
+
         _system.SetState(new AttackSetupState(_system));
     }
 }

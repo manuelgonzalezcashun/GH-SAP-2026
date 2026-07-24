@@ -5,8 +5,8 @@ using System.Linq;
 public class SO_Battler : ScriptableObject
 {
     [Header("Battler Stats")]
-    [SerializeField] private float _maxHealth;
-    [SerializeField] private float _initiative;
+    [SerializeField] private int _maxHealth;
+    [SerializeField] private int _initiative;
     [SerializeField] private SO_Move[] moves;
     [SerializeField] private Type type1;
     [SerializeField] private Type type2;

@@ -9,12 +9,12 @@ public class Battler
 {
     public event Action<float, float> onHealthChanged;
     // Getters //
-    public float Health { get; private set; }
-    public float MaxHealth { get; private set; }
+    public int Health { get; private set; }
+    public int MaxHealth { get; private set; }
     public Type FirstType { get; private set; }
     public Type SecondType { get; private set; }
     public Move[] Moves { get; private set; }
-    public float Initiative { get; private set; }
+    public int Initiative { get; private set; }
     public string Name { get; private set; }
     private int Row;
     // public int aptitude { get; private set; }
@@ -28,7 +28,6 @@ public class Battler
     {
         damage = LoopTypes(FirstType,type,damage);
         damage = LoopTypes(SecondType,type,damage);
-        
         Health -= damage;
         Health = Health < 0 ? 0 : Health;
 
@@ -36,7 +35,7 @@ public class Battler
 
         return Health <= 0;
     }
-    public void Heal(float healing)
+    public void Heal(int healing)
     {
         Health += healing;
         Health = Health < MaxHealth ? Health : MaxHealth;
@@ -62,9 +61,9 @@ public class Battler
     public class Builder
     {
         // Battler Stats //
-        private float maxHealth = 50;
-        private float initiative = 5;
-        private float health = -1;
+        private int maxHealth = 50;
+        private int initiative = 5;
+        private int health = -1;
         private Move[] moves = null;
         private Type firstType = Type.LEAD;
         private Type secondType = Type.NONE;
@@ -83,17 +82,17 @@ public class Battler
             this.color = color;
             return this;
         }
-        public Builder WithInitiative(float initiative)
+        public Builder WithInitiative(int initiative)
         {
             this.initiative = initiative;
             return this;
         }
-        public Builder WithMaxHealth(float maxHealth)
+        public Builder WithMaxHealth(int maxHealth)
         {
             this.maxHealth = maxHealth;
             return this;
         }
-        public Builder WithHealth(float currentHealth)
+        public Builder WithHealth(int currentHealth)
         {
             health = currentHealth;
             return this;
@@ -176,6 +175,8 @@ public class Battler
         {
             if (atk == Type.SULFUR || atk == Type.ARSENIC)
             {
+                Debug.Log(damage);
+
                 return Weakness(damage);
             }
             else if (atk == Type.MERCURY || atk == Type.SALT)
@@ -262,7 +263,14 @@ public class Battler
 
     public int Weakness(int dam)
     {
-        return dam+1;
+        if (dam == 0)
+        {
+            return 0;
+        }
+        else
+        {
+            return dam+1;
+        }
     }
     public int Resistance(int dam)
     {
@@ -272,7 +280,14 @@ public class Battler
         }
         else
         {
-            return 1;
+            if (dam == 0)
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
+            }
         }
     }
 }

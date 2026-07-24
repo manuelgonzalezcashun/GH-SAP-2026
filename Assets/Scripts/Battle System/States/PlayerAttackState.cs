@@ -48,6 +48,12 @@ public class PlayerAttackState : BattleState
                 return;
             }
         }
+        if (currentMove.Distance == -1)
+        {
+            List<Battler> i = new List<Battler>();
+            i.Add(_system.ActiveBattler);
+            targets = i;
+        }
         SelectTarget(targets);
     }
 
@@ -84,17 +90,18 @@ public class PlayerAttackState : BattleState
 
         if (move.Row)
         {
-            for (int i = 0; i < eligibleTargets.Count; i++)
+            for (int i = 0; i < _system.AllBattlers.Count; i++)
             {
-                if (eligibleTargets[i].getRow() == _target.getRow())
+                if (_system.AllBattlers[i].getRow() == _target.getRow())
                 {
-                    if ((eligibleTargets[i] != _target) && (eligibleTargets[i] != _system.ActiveBattler))
+                    if ((_system.AllBattlers[i] != _target) && (_system.AllBattlers[i] != _system.ActiveBattler))
                     {
-                        bool Faint = eligibleTargets[i].TakeDamage(move.Damage, move.Type);
+                        bool Faint = _system.AllBattlers[i].TakeDamage(move.Damage, move.Type);
                         //if (Faint)
                         //{
-                            //EventBus.Raise(new TargetFaintedEvent { _Target = eligibleTargets[i] });
+                            //EventBus.Raise(new TargetFaintedEvent { _Target = _system.AllBattlers[i] });
                         //}
+                        _system.AllBattlers[i].Heal(move.Healing);
                     }
                 }
             }
