@@ -30,8 +30,30 @@ public class PlayerAttackState : BattleState
             _system.SetState(new PlayerWinState(_system));
             return;
         }
-
         var targets = currentMove.AlliesAffected ? eligibleTargets : eligibleEnemies;
+        if (targets.Count<=0)
+        {
+            _system.SetState(new AttackSetupState(_system));
+            return;
+        }
+        for (int i = 0; i < targets.Count;i++)
+        {
+            if(!(_system.ActiveBattler.getRow()-currentMove.Distance <= targets[i].getRow() && _system.ActiveBattler.getRow() + currentMove.Distance >= targets[i].getRow()))
+            {
+                targets.RemoveAt(i);
+            }
+            if (targets.Count<=0)
+            {
+                _system.SetState(new AttackSetupState(_system));
+                return;
+            }
+        }
+        if (currentMove.Distance == -1)
+        {
+            List<Battler> i = new List<Battler>();
+            i.Add(_system.ActiveBattler);
+            targets = i;
+        }
         SelectTarget(targets);
     }
 
@@ -64,18 +86,37 @@ public class PlayerAttackState : BattleState
     public override IEnumerator Attack(Move move)
     {
         var attacker = _system.ActiveBattler;
-        bool targetFainted = _target.TakeDamage(move.Damage);
+        bool targetFainted = _target.TakeDamage(move.Damage, move.Type);
 
+        if (move.Row)
+        {
+            for (int i = 0; i < _system.AllBattlers.Count; i++)
+            {
+                if (_system.AllBattlers[i].getRow() == _target.getRow())
+                {
+                    if ((_system.AllBattlers[i] != _target) && (_system.AllBattlers[i] != _system.ActiveBattler))
+                    {
+                        bool Faint = _system.AllBattlers[i].TakeDamage(move.Damage, move.Type);
+                        //if (Faint)
+                        //{
+                            //EventBus.Raise(new TargetFaintedEvent { _Target = _system.AllBattlers[i] });
+                        //}
+                        _system.AllBattlers[i].Heal(move.Healing);
+                    }
+                }
+            }
+        }
+    
         if (targetFainted)
         {
             EventBus.Raise(new TargetFaintedEvent { _Target = _target });
         }
 
         // TODO: Replace with UI Text
-        // Debug.Log($"{attacker.Name} Attacked {_target.Name}!");
+        Debug.Log($"{attacker.Name} Attacked {_target.Name}!");
         yield return new WaitForSeconds(_system.Delay);
 
-        if (eligibleTargets.Count <= 0)
+        if (eligibleEnemies.Count <= 0)
         {
             _system.SetState(new PlayerWinState(_system));
             yield break;

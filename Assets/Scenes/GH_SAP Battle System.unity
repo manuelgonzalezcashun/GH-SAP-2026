@@ -542,7 +542,7 @@ MonoBehaviour:
   PARTY_SIZE: 4
   _members:
   - {fileID: 11400000, guid: e0cd79e5a025dd849a8da6809ab677a7, type: 2}
-  - {fileID: 11400000, guid: 4e1cc379def6d0645ad93a05f86ab331, type: 2}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!1 &1160670290
@@ -723,9 +723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TrainerParty
   PARTY_SIZE: -1
   _members:
-  - {fileID: 11400000, guid: 4927d3e6320b1d94e8651661f9f94b7e, type: 2}
-  - {fileID: 11400000, guid: 4927d3e6320b1d94e8651661f9f94b7e, type: 2}
-  - {fileID: 11400000, guid: 4927d3e6320b1d94e8651661f9f94b7e, type: 2}
+  - {fileID: 11400000, guid: d2568cef5134a4438a773d35e8fb7825, type: 2}
 --- !u!1 &1761198130
 GameObject:
   m_ObjectHideFlags: 0
