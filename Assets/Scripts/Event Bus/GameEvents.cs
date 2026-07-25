@@ -11,12 +11,15 @@ public class ShowOptionsEvent
 
 public class EndBattleEvent { }
 
-public class OnMoveEvent
+public class OnMoveZoneEvent
 {
     public Battler _Battler = null;
-    public Zone _Zone;
+    public int _ZoneStep = 0;
 }
-
+public class OnZoneSelectedEvent
+{
+    public Battler _Battler = null;
+}
 public class SetupBattleEvent
 {
     public Battler _Battler = null;
