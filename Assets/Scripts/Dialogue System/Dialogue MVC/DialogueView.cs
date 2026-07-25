@@ -4,11 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Ink.Runtime;
-
 public class DialogueView : MonoBehaviour
 {
-    public event Action onChoiceMade;
+    public event Action<int> onChoiceMade;
     Queue<Button> choicePool = new Queue<Button>();
 
     // Dialogue UI //
@@ -21,8 +19,9 @@ public class DialogueView : MonoBehaviour
     // Runtime Variables //
     [Range(0.01f, 0.05f)]
     [SerializeField] float dialogueWaitTime = 0.02f;
-    bool isTyping = false;
-    Story _story = null;
+    List<string> currentChoices = new List<string>();
+    public bool isTyping { get; private set; } = false;
+    private Coroutine displayLineCoroutine;
 
     void OnEnable()
     {
@@ -33,12 +32,23 @@ public class DialogueView : MonoBehaviour
         SpeakerTagStrategy.onNameUpdate -= SetNameTag;
     }
 
-    public void SetStory(Story story)
+    public void DisplayDialogueLine(string dialogueLine)
     {
-        _story = story;
+        if (displayLineCoroutine != null) StopCoroutine(displayLineCoroutine);
+
+        displayLineCoroutine = StartCoroutine(TypeWriterAnimation(dialogueLine));
+    }
+    public void DisplayCompletedDialogueLine()
+    {
+        if (!isTyping) return;
+
+        if (displayLineCoroutine != null) StopCoroutine(displayLineCoroutine);
+        dialogueText.maxVisibleCharacters = dialogueText.text.Length;
+        isTyping = false;
+        if (currentChoices.Count > 0) DisplayStoryChoices();
     }
 
-    public IEnumerator TypeWriterAnimation(string dialogueLine)
+    IEnumerator TypeWriterAnimation(string dialogueLine)
     {
         dialogueText.text = dialogueLine; // Set UI Text to dialogueLine
         dialogueText.maxVisibleCharacters = 0; // Hide All Characters
@@ -51,14 +61,19 @@ public class DialogueView : MonoBehaviour
             yield return new WaitForSeconds(dialogueWaitTime);
         }
 
-        DisplayStoryChoices();
         isTyping = false;
+        DisplayStoryChoices();
     }
     public void ShowDialogue(bool visible)
     {
         dialogueText.text = string.Empty;
         dialogueContainer.gameObject.SetActive(visible);
         ClearStoryChoices();
+    }
+
+    public void HandleStoryChoices(List<string> choices)
+    {
+        currentChoices = choices;
     }
     void SetNameTag(string name)
     {
@@ -67,28 +82,26 @@ public class DialogueView : MonoBehaviour
 
     void DisplayStoryChoices()
     {
-        var choices = _story.currentChoices;
         choiceContainer.gameObject.SetActive(true);
 
-        foreach (var choice in choices)
+        for (int i = 0; i < currentChoices.Count; i++)
         {
             Button choiceButton = GetChoiceButton();
             TMP_Text choiceText = choiceButton.GetComponentInChildren<TMP_Text>();
 
-            choiceText.text = choice.text;
-
+            choiceText.text = currentChoices[i];
             choiceButton.onClick.RemoveAllListeners();
-            choiceButton.onClick.AddListener(() => MakeChoice(choice.index));
+
+            int index = i;
+            choiceButton.onClick.AddListener(() => MakeChoice(index));
         }
     }
 
     #region Choice Helper Methods
     private void MakeChoice(int choiceIndex)
     {
-        _story.ChooseChoiceIndex(choiceIndex);
         ClearStoryChoices();
-
-        onChoiceMade?.Invoke();
+        onChoiceMade?.Invoke(choiceIndex);
     }
     private Button GetChoiceButton()
     {
@@ -109,6 +122,8 @@ public class DialogueView : MonoBehaviour
 
     private void ClearStoryChoices()
     {
+        currentChoices.Clear();
+
         foreach (Transform child in choiceContainer)
         {
             Button childButton = child.gameObject.GetComponent<Button>();

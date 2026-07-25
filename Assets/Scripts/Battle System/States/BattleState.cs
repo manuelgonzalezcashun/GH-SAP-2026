@@ -9,7 +9,11 @@ public abstract class BattleState
     }
 
     public abstract void EnterState();
-    public virtual IEnumerator Attack()
+    public virtual void UpdateState()
+    {
+
+    }
+    public virtual IEnumerator Attack(Move move)
     {
         yield break;
     }
@@ -22,6 +26,10 @@ public abstract class BattleState
         yield break;
     }
     public virtual IEnumerator Run()
+    {
+        yield break;
+    }
+    public virtual IEnumerator Move()
     {
         yield break;
     }

@@ -1,33 +1,92 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Zone { P_BACKLINE, P_COMBAT, O_BACKLINE, O_COMBAT }
+public enum Zone
+{ P_BACK, P_FRONT, O_BACK, O_FRONT }
 public class BattleZone : MonoBehaviour
 {
     const int ZONE_SIZE = 20;
+    Dictionary<Battler, BattleUnit> activeBattleUnits = new Dictionary<Battler, BattleUnit>();
     Queue<BattleUnit> unitPool = new Queue<BattleUnit>();
 
     [SerializeField] Zone zone;
     [SerializeField] BattleUnit unitPrefab;
-    private int _zoneCount = 0;
 
     void OnEnable()
     {
-        BattleEvents.onBattlerMove += SetBattlerInZone;
+        EventBus.Subscribe<SetupBattleEvent>(SetBattlerInZone);
+        EventBus.Subscribe<OnMoveEvent>(SetBattlerInZone);
     }
 
     void OnDisable()
     {
-        BattleEvents.onBattlerMove -= SetBattlerInZone;
+        EventBus.UnSubscribe<SetupBattleEvent>(SetBattlerInZone);
+        EventBus.UnSubscribe<OnMoveEvent>(SetBattlerInZone);
+    }
+
+    private void SetBattlerInZone(OnMoveEvent data)
+    {
+        if (data._Zone == Zone.P_BACK)
+        {
+            data._Battler.setRow(0);
+        }
+        else if (data._Zone == Zone.P_FRONT)
+        {
+            data._Battler.setRow(1);
+        }
+        else if (data._Zone == Zone.O_FRONT)
+        {
+            data._Battler.setRow(2);
+        }
+        else if (data._Zone == Zone.O_BACK)
+        {
+            data._Battler.setRow(3);
+        }
+        SetBattlerInZone(data._Battler, data._Zone);
+
+    }
+
+    void SetBattlerInZone(SetupBattleEvent data)
+    {
+        SetBattlerInZone(data._Battler, data._Zone);
     }
 
     void SetBattlerInZone(Battler battler, Zone zone)
     {
-        if (_zoneCount >= ZONE_SIZE) return; // Too many battlers
-        if (this.zone != zone) return; // Ignores Battler if not set to this zone
+        if (this.zone == zone && activeBattleUnits.ContainsKey(battler)) return;
 
-        var _battleUnit = Instantiate(unitPrefab, transform);
-        _battleUnit.SetBattlerInUnit(battler);
-        unitPool.Enqueue(_battleUnit);
+        if (CanMoveToThisZone(battler, zone))
+        {
+            BattleUnit _battleUnit = GetBattleUnit();
+            _battleUnit.SetBattlerInUnit(battler);
+            activeBattleUnits.Add(battler, _battleUnit);
+        }
+        else if (activeBattleUnits.TryGetValue(battler, out BattleUnit unit))
+        {
+            ClearBattleUnit(unit);
+            activeBattleUnits.Remove(battler);
+        }
+    }
+
+    private BattleUnit GetBattleUnit()
+    {
+        BattleUnit _battleUnit = unitPool.Count > 0 ? unitPool.Dequeue() : Instantiate(unitPrefab, transform);
+        _battleUnit.gameObject.SetActive(true);
+        return _battleUnit;
+    }
+    private void ClearBattleUnit(BattleUnit unit)
+    {
+        unit.ClearUnit();
+        unitPool.Enqueue(unit);
+    }
+
+    private bool CanMoveToThisZone(Battler battler, Zone zone)
+    {
+        if (this.zone != zone) return false; // Ignores Battler if not set to this zone
+        if (activeBattleUnits.Count >= ZONE_SIZE) return false; // Too many battlers
+        if (activeBattleUnits.ContainsKey(battler)) return false; // Battler already exists in this zone
+
+        return true;
     }
 }
