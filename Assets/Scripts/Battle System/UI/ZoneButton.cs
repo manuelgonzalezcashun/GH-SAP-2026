@@ -2,12 +2,11 @@ using UnityEngine;
 
 public class ZoneButton : MonoBehaviour
 {
-    [SerializeField] Zone destinationZone;
     private Battler _activeBattler = null;
-    public void MoveBattler()
+    public void MoveBattler(int zoneStep)
     {
         if (_activeBattler == null) return;
-        EventBus.Raise(new OnMoveEvent { _Battler = _activeBattler, _Zone = destinationZone });
+        EventBus.Raise(new OnMoveZoneEvent { _Battler = _activeBattler, _ZoneStep = zoneStep });
         _activeBattler = null;
         transform.parent.gameObject.SetActive(false);
     }

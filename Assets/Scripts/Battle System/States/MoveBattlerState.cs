@@ -13,12 +13,12 @@ public class MoveBattlerState : BattleState
     public override IEnumerator Move()
     {
         bool hasMoved = false;
-        void onMoveCompletedHandler(OnMoveEvent data)
+        void onMoveCompletedHandler(OnMoveZoneEvent data)
         {
             hasMoved = true;
-            EventBus.UnSubscribe<OnMoveEvent>(onMoveCompletedHandler);
+            EventBus.UnSubscribe<OnMoveZoneEvent>(onMoveCompletedHandler);
         }
-        EventBus.Subscribe<OnMoveEvent>(onMoveCompletedHandler);
+        EventBus.Subscribe<OnMoveZoneEvent>(onMoveCompletedHandler);
 
         if (_system.ActiveBattler.Team == Team.PLAYER)
         {
@@ -26,9 +26,9 @@ public class MoveBattlerState : BattleState
         }
         else
         {
-            int index = Random.Range(0, _system.Zones.Length);
-            Zone randZone = _system.Zones[index];
-            EventBus.Raise(new OnMoveEvent { _Battler = _system.ActiveBattler, _Zone = randZone });
+            int randomStep = Random.Range(-1, 2);
+            Debug.Log($"Enemy Row: {_system.ActiveBattler.getRow()} Enemy Selected Step: {randomStep}");
+            EventBus.Raise(new OnMoveZoneEvent { _Battler = _system.ActiveBattler, _ZoneStep = randomStep });
         }
 
         yield return new WaitUntil(() => hasMoved);

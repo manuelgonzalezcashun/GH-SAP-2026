@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum Type { NONE,SALT,SULFUR,MERCURY,LEAD,PHOSPHORUS,ANTIMONY,BISMUTH,ARSENIC}
+public enum Type { NONE, SALT, SULFUR, MERCURY, LEAD, PHOSPHORUS, ANTIMONY, BISMUTH, ARSENIC }
 [Serializable]
 public class Battler
 {
@@ -26,8 +26,8 @@ public class Battler
 
     public bool TakeDamage(int damage, Type type)
     {
-        damage = LoopTypes(FirstType,type,damage);
-        damage = LoopTypes(SecondType,type,damage);
+        damage = LoopTypes(FirstType, type, damage);
+        damage = LoopTypes(SecondType, type, damage);
         Health -= damage;
         Health = Health < 0 ? 0 : Health;
 
@@ -51,7 +51,6 @@ public class Battler
     public void setRow(int newrow)
     {
         Row = newrow;
-        Debug.Log(Row);
     }
     public Team GetTeam()
     {
@@ -139,29 +138,29 @@ public class Battler
     {
         if (statusEffects.ContainsKey(type))
         {
-            statusEffects[type]+= stackCount;
+            statusEffects[type] += stackCount;
         }
         else
         {
             statusEffects.Add(type, stackCount);
         }
-        statusEffectsUI.UpdateStatusEffectUI(type,GetStatusEffectStacks(type));
+        statusEffectsUI.UpdateStatusEffectUI(type, GetStatusEffectStacks(type));
     }
     public void RemoveStatus(StatusType type, int stackCount)
     {
         if (statusEffects.ContainsKey(type))
         {
-            statusEffects[type]-= stackCount;
-            if (statusEffects[type] <=0)
+            statusEffects[type] -= stackCount;
+            if (statusEffects[type] <= 0)
             {
                 statusEffects.Remove(type);
             }
         }
-        statusEffectsUI.UpdateStatusEffectUI(type,GetStatusEffectStacks(type));
+        statusEffectsUI.UpdateStatusEffectUI(type, GetStatusEffectStacks(type));
     }
     public int GetStatusEffectStacks(StatusType type)
     {
-        if(statusEffects.ContainsKey(type)) return statusEffects[type];
+        if (statusEffects.ContainsKey(type)) return statusEffects[type];
         else return 0;
     }
 
@@ -269,14 +268,14 @@ public class Battler
         }
         else
         {
-            return dam+1;
+            return dam + 1;
         }
     }
     public int Resistance(int dam)
     {
         if (dam - 1 >= 1)
         {
-            return dam-1;
+            return dam - 1;
         }
         else
         {

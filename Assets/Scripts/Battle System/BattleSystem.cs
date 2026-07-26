@@ -71,7 +71,6 @@ public class BattleSystem : StateMachine
         {
             battler.SetTeam(faction);
 
-            
 
             EventBus.Raise(new SetupBattleEvent { _Battler = battler, _Zone = zone });
         }
