@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +13,8 @@ public class MultiBattleUIHandler : MonoBehaviour
     [SerializeField] BattleHUD hudPrefab = null;
     [SerializeField] Button[] moveOptions = null;
 
+    Dictionary<Battler, BattleHUD> activeBattleHUDs = new Dictionary<Battler, BattleHUD>();
+    Queue<BattleHUD> hudPool = new Queue<BattleHUD>();
     ZoneButton[] zoneButtons;
     void OnEnable()
     {
@@ -22,6 +22,8 @@ public class MultiBattleUIHandler : MonoBehaviour
         EventBus.Subscribe<ShowOptionsEvent>(ShowZoneOptions);
         EventBus.Subscribe<ShowOptionsEvent>(ShowBattleOptions);
         EventBus.Subscribe<ShowOptionsEvent>(ShowMoveOptions);
+        EventBus.Subscribe<EndBattleEvent>(ClearBattleUI);
+        EventBus.Subscribe<TargetFaintedEvent>(ClearBattleHUD);
     }
     void OnDisable()
     {
@@ -29,12 +31,13 @@ public class MultiBattleUIHandler : MonoBehaviour
         EventBus.UnSubscribe<ShowOptionsEvent>(ShowZoneOptions);
         EventBus.UnSubscribe<ShowOptionsEvent>(ShowBattleOptions);
         EventBus.UnSubscribe<ShowOptionsEvent>(ShowMoveOptions);
+        EventBus.UnSubscribe<EndBattleEvent>(ClearBattleUI);
+        EventBus.UnSubscribe<TargetFaintedEvent>(ClearBattleHUD);
     }
 
-    private void ShowBattleOptions(ShowOptionsEvent data)
-    {
-        battleOptionContainer.SetActive(data.BO_Show);
-    }
+
+    private void ShowBattleOptions(ShowOptionsEvent data) => battleOptionContainer.SetActive(data.BO_Show);
+
     private void ShowMoveOptions(ShowOptionsEvent data)
     {
         // Makes sure each button is clear before setting up moves
@@ -88,11 +91,66 @@ public class MultiBattleUIHandler : MonoBehaviour
 
     void SetupBattleUI(SetupBattleEvent data)
     {
-        var hudParent = (data._Battler.Team == Team.PLAYER)
+        var hud = GetBattleHUD(data._Battler);
+        hud.SetupBattleHUD(data._Battler);
+
+        activeBattleHUDs[data._Battler] = hud;
+    }
+    private void ClearBattleUI(EndBattleEvent data)
+    {
+        EventBus.Raise(new ShowOptionsEvent { MO_Battler = null, MO_Show = false, BO_Show = false, ZO_Battler = null });
+        ReturnToHudPool();
+        activeBattleHUDs.Clear();
+
+        foreach (var move in moveOptions)
+        {
+            move.onClick.RemoveAllListeners();
+        }
+        foreach (var zoneBtn in zoneButtons)
+        {
+            zoneBtn.SetActiveBattler(null);
+        }
+    }
+
+    private void ReturnToHudPool()
+    {
+        BattleHUD[] playerHUDS = playerHUDContainer.GetComponentsInChildren<BattleHUD>();
+        BattleHUD[] oppHUDS = opponentHUDContainer.GetComponentsInChildren<BattleHUD>();
+
+        foreach (BattleHUD hud in playerHUDS)
+        {
+            hud.ClearBattleHUD();
+            hudPool.Enqueue(hud);
+        }
+        foreach (BattleHUD hud in oppHUDS)
+        {
+            hud.ClearBattleHUD();
+            hudPool.Enqueue(hud);
+        }
+    }
+    private void ReturnToHudPool(Battler battler)
+    {
+        BattleHUD current = activeBattleHUDs[battler];
+        current.ClearBattleHUD();
+        hudPool.Enqueue(current);
+
+        activeBattleHUDs.Remove(battler);
+    }
+    private void ClearBattleHUD(TargetFaintedEvent data)
+    {
+        ReturnToHudPool(data._Target);
+    }
+    private BattleHUD GetBattleHUD(Battler battler)
+    {
+        var hudParent = (battler.Team == Team.PLAYER)
         ? playerHUDContainer
         : opponentHUDContainer;
 
-        var hud = Instantiate(hudPrefab, hudParent).GetComponent<BattleHUD>();
-        hud.SetupBattleHUD(data._Battler);
+        BattleHUD battleHUD = hudPool.Count > 0
+        ? hudPool.Dequeue()
+        : Instantiate(hudPrefab, hudParent).GetComponent<BattleHUD>();
+
+        battleHUD.transform.SetParent(hudParent);
+        return battleHUD;
     }
 }

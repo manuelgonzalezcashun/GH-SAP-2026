@@ -35,7 +35,7 @@ public class BattleUnit : MonoBehaviour
     public void ClearUnit()
     {
         _battler = null;
-        battlerImage.color = Color.white;
+        battlerImage.color = Color.hotPink;
         gameObject.SetActive(false);
     }
     void HighlightBattler(SelectTargetEvent data)

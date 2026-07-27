@@ -12,6 +12,9 @@ public class EnemyMovement : MonoBehaviour
     private Awareness _Awareness;
     private Vector2 _target;
 
+    TrainerParty party => GetComponent<TrainerParty>();
+    TrainerParty playerParty => _Awareness.Player.GetComponent<TrainerParty>();
+
 
     private void Awake()
     {
@@ -25,8 +28,17 @@ public class EnemyMovement : MonoBehaviour
         UpdateTargetDirection();
         RotateToPlayer();
         SetVelocity();
+        ChallengePlayer();
     }
-
+    private void ChallengePlayer()
+    {
+        float distance = Vector2.Distance(transform.position, _Awareness.playerLocation);
+        if (distance < 5f)
+        {
+            BattleSystem._instance.EnterBattle(playerParty, party);
+            gameObject.SetActive(false);
+        }
+    }
     private void UpdateTargetDirection()
     {
         if (_Awareness.aggro)
@@ -47,7 +59,7 @@ public class EnemyMovement : MonoBehaviour
         }
 
         Quaternion targetRotation = Quaternion.LookRotation(transform.forward, _target);
-        Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, _rotationSpd*Time.deltaTime);
+        Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, _rotationSpd * Time.deltaTime);
 
         _rigidbody.SetRotation(rotation);
     }
