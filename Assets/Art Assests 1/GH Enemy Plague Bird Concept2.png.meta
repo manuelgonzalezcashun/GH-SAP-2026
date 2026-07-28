@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: e8ad088e2a305684998ec471e08d24b1
+guid: ba128695c12c445a6ad4789901799d57
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -594866346881508313
-    second: GH Enemy Seal Concept_0
+      213: 2181493286894604435
+    second: GH Enemy Plague Bird Concept2_0
+  - first:
+      213: 7868830808566296397
+    second: GH Enemy Plague Bird Concept2_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GH Enemy Seal Concept_0
+      name: GH Enemy Plague Bird Concept2_0
       rect:
         serializedVersion: 2
-        x: 112
-        y: 29
-        width: 1097
-        height: 1592
+        x: 330
+        y: 984
+        width: 12
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 72c1b41953c9eb7f0800000000000000
-      internalID: -594866346881508313
+      spriteID: 390904d1698364e10800000000000000
+      internalID: 2181493286894604435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GH Enemy Plague Bird Concept2_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 47
+        width: 881
+        height: 929
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4f6e36fde3b33d60800000000000000
+      internalID: 7868830808566296397
       vertices: []
       indices: 
       edges: []
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GH Enemy Seal Concept_0: -594866346881508313
+      GH Enemy Plague Bird Concept2_0: 2181493286894604435
+      GH Enemy Plague Bird Concept2_1: 7868830808566296397
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

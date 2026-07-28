@@ -17,5 +17,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Overworld Scenes/OverWorld_Side.unity
     guid: 397965ed88db34a75a06c5f40d2053f7
+  - enabled: 1
+    path: Assets/Scenes/Alpha Build/Levels/Bus Stop.unity
+    guid: ec119c18f59154adfae9096db336b2ba
+  - enabled: 1
+    path: Assets/Scenes/Alpha Build/Levels/After_Bus_Path.unity
+    guid: 62e04b218c638448092ce21037066b9a
+  - enabled: 1
+    path: Assets/Scenes/Alpha Build/Levels/Mitzi_House.unity
+    guid: 433a3fa5b016d4cb6b906dc7ec6be5f8
+  - enabled: 0
+    path: Assets/Scenes/Alpha Build/Levels/Path_1.unity
+    guid: b6f175fd8ebe646528f3b8af9ee1a4a9
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

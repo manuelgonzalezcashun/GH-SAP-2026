@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6f445180903f5be45b0e256e14b0df08
+guid: 363f6ad71d5a54ba386ec12406f696d3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2656810135346895890
-    second: GH Enemy Ghost Fish School_0
+      213: 833560129088999986
+    second: GH Boss Enemy Concept_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GH Enemy Ghost Fish School_0
+      name: GH Boss Enemy Concept_0
       rect:
         serializedVersion: 2
-        x: 81
-        y: 66
-        width: 1239
-        height: 1333
+        x: 70
+        y: 0
+        width: 2703
+        height: 1940
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 21c5201edb2eed420800000000000000
-      internalID: 2656810135346895890
+      spriteID: 23257416586619b00800000000000000
+      internalID: 833560129088999986
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GH Enemy Ghost Fish School_0: 2656810135346895890
+      GH Boss Enemy Concept_0: 833560129088999986
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
