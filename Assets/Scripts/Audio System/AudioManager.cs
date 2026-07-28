@@ -3,15 +3,33 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    #region Singleton
+    public static AudioManager Instance { get; private set; } = null;
+    void Awake()
+    {
+        if (Instance != null && Instance != this) Destroy(gameObject);
+
+        Instance = this;
+        DontDestroyOnLoad(Instance);
+    }
+    #endregion
     Dictionary<AudioEffect, AudioSource> loadedAudioSources = new Dictionary<AudioEffect, AudioSource>();
     Queue<AudioSource> sourcePool = new Queue<AudioSource>();
     List<AudioSource> activeAudioSources = new List<AudioSource>();
-    [SerializeField] AudioEffect mainMenuAudioEffect;
-    void Start()
+    void OnEnable()
     {
-        Play(mainMenuAudioEffect);
+        EventBus.Subscribe<PlayAudioEvent>(ctx => Play(ctx.audioEffect));
+        EventBus.Subscribe<PauseAudioEvent>(ctx => Pause(ctx.audioEffect));
+        EventBus.Subscribe<ResumeAudioEvent>(ctx => Resume(ctx.audioEffect));
+        EventBus.Subscribe<StopAudioEvent>(ctx => Stop(ctx.audioEffect));
     }
-
+    void OnDisable()
+    {
+        EventBus.UnSubscribe<PlayAudioEvent>(ctx => Play(ctx.audioEffect));
+        EventBus.UnSubscribe<PauseAudioEvent>(ctx => Pause(ctx.audioEffect));
+        EventBus.UnSubscribe<ResumeAudioEvent>(ctx => Resume(ctx.audioEffect));
+        EventBus.UnSubscribe<StopAudioEvent>(ctx => Stop(ctx.audioEffect));
+    }
     void Play(AudioEffect effect)
     {
         AudioSource audioSource = GetAudioSource();

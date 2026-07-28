@@ -13,6 +13,7 @@ public class InputHandler : MonoBehaviour
             Destroy(gameObject);
 
         _instance = this;
+        DontDestroyOnLoad(Instance);
     }
     #endregion
     [SerializeField] InputActionAsset inputActions;
