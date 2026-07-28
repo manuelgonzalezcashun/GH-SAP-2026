@@ -4,10 +4,6 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    [Header("Menu Controls")]
-    [SerializeField] Button playButton = null;
-    [SerializeField] Button controlsButton = null;
-    [SerializeField] Button quitButton = null;
     [Header("Mute Controls")]
     [SerializeField] Button musicOnButton = null;
     [SerializeField] Button musicOffButton = null;
@@ -16,7 +12,7 @@ public class MainMenu : MonoBehaviour
     [Header("Main Menu Theme")]
     [SerializeField] AudioEffect mainMenuAudioEffect;
     [Header("Scenes")]
-    [SerializeField] SceneReference systemsScene = null;
+    [SerializeField] SceneReference coreScene = null;
     [SerializeField] SceneReference levelOneScene = null;
 
     void Start()
@@ -27,7 +23,7 @@ public class MainMenu : MonoBehaviour
     public void OnPlay()
     {
         // Enter Systems Scene Async
-        SceneManager.LoadSceneAsync(systemsScene);
+        SceneManager.LoadSceneAsync(coreScene);
         // Enter Level One Scene Asyc, Additive
         SceneManager.LoadSceneAsync(levelOneScene, LoadSceneMode.Additive);
         // Stop Main Menu Music
