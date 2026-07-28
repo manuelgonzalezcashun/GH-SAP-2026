@@ -1300,7 +1300,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 58dc323261588e445baa029d56287caa, type: 3}
+  m_Sprite: {fileID: 3971081898555863002, guid: d24b2c3761227f74aa52c4cda3b442fe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2758,9 +2758,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a04293095bef01f40acda931c5f86fff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
-  playButton: {fileID: 1690910788}
-  controlsButton: {fileID: 626281715}
-  quitButton: {fileID: 1282172355}
   musicOnButton: {fileID: 916616432}
   musicOffButton: {fileID: 620565807}
   mainMenuPanel: {fileID: 695989405}
