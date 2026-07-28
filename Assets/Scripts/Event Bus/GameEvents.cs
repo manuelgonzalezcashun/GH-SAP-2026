@@ -66,3 +66,9 @@ public class ItemSearchEvent
 }
 public class PlayerInteractEvent { }
 
+public class EnterBattleEvent
+{
+    public TrainerParty Player = null;
+    public TrainerParty Opponent = null;
+}
+

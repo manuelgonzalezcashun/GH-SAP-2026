@@ -20,33 +20,28 @@ public class OpponentAttackState : BattleState
 
 
         List<Battler> eligibleTargets = _system.AllBattlers.Where(battler => battler.Team == Team.PLAYER && battler.Health > 0).ToList();
-        if (eligibleTargets.Count <= 0)
+        if (eligibleTargets.Count <= 0) // If all Player Battlers fainted, Player has lost 
         {
             _system.SetState(new PlayerLoseState(_system));
             yield break;
         }
-        for (int i = 0; i < eligibleTargets.Count;i++)
+
+        eligibleTargets.RemoveAll(battler => !(attacker.getRow() - selectedMove.Distance <= battler.getRow()) && attacker.getRow() + selectedMove.Distance >= battler.getRow());
+        if (eligibleTargets.Count <= 0) // Targets are out of range
         {
-            if(!(attacker.getRow()-selectedMove.Distance <= eligibleTargets[i].getRow() && attacker.getRow() + selectedMove.Distance >= eligibleTargets[i].getRow()))
-            {
-                eligibleTargets.RemoveAt(i);
-            }
-            if (eligibleTargets.Count<=0)
-            {
-                _system.SetState(new AttackSetupState(_system));
-                yield break;
-            }
+            _system.SetState(new AttackSetupState(_system));
+            yield break;
         }
 
         int index = Random.Range(0, eligibleTargets.Count);
         var target = eligibleTargets[index];
 
         // TODO: Replace with UI Text
-        Debug.Log($"{attacker.Name} Used {move.Name} on {target.Name}!");
+        Debug.Log($"{attacker.Name} Attacked {target.Name} with {selectedMove.Name}!");
         yield return new WaitForSeconds(_system.Delay);
 
-        target.TakeDamage(selectedMove.Damage,selectedMove.Type);
-        
+        target.TakeDamage(selectedMove.Damage, selectedMove.Type);
+
         // if (move.Row)
         // {
         //     for (int i = 0; i < _system.AllBattlers.Count; i++)

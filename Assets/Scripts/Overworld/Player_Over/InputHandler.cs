@@ -27,6 +27,7 @@ public class InputHandler : MonoBehaviour
     public static int playerInput => 0;
     public static int uiInput => 1;
     public static int dialogueInput => 2;
+    public static int combatInput => 3;
 
     // Input Events
     public static bool SubmitPressed => _instance.ContinueDialogueAction.WasPressedThisFrame();

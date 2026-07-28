@@ -4,8 +4,20 @@ using System.Linq;
 using UnityEngine;
 public class BattleSystem : StateMachine
 {
+    #region Singleton
+    public static BattleSystem _instance = null;
+    void Awake()
+    {
+        if (_instance != null && _instance != this)
+            Destroy(gameObject);
+
+        _instance = this;
+    }
+    #endregion
+
     [SerializeField] TrainerParty _playerParty = null;
     [SerializeField] TrainerParty _oppParty = null;
+    [SerializeField] RectTransform battleCanvas = null;
     Zone[] _zones;
 
     public Queue<Battler> TurnQueue { get; private set; } = new Queue<Battler>();
@@ -23,21 +35,41 @@ public class BattleSystem : StateMachine
     void OnEnable()
     {
         EventBus.Subscribe<MoveSelectedEvent>(OnMoveSelected);
+        EventBus.Subscribe<EndBattleEvent>(EndBattle);
     }
     void OnDisable()
     {
         EventBus.UnSubscribe<MoveSelectedEvent>(OnMoveSelected);
+        EventBus.UnSubscribe<EndBattleEvent>(EndBattle);
     }
 
     // TODO: Change Start to Custom Method For Entering Battle
-    void Start()
-    {
-        SetState(new SetupBattleState(this));
-    }
+
+    // void Start()
+    // {
+    //     SetState(new SetupBattleState(this));
+    // }
     void Update()
     {
+        if (_currentState == null) return;
+
         _currentState.UpdateState();
     }
+    public void EnterBattle(TrainerParty _playerParty, TrainerParty _oppParty)
+    {
+        this._playerParty = _playerParty;
+        this._oppParty = _oppParty;
+
+        InputHandler.ChangeActionMaps(InputHandler.combatInput);
+        ShowBattleCanvas(true);
+        SetState(new SetupBattleState(this));
+    }
+
+    public void ShowBattleCanvas(bool show)
+    {
+        battleCanvas.gameObject.SetActive(show);
+    }
+
     public void OnMoveSelected(MoveSelectedEvent data)
     {
         StartCoroutine(_currentState.Attack(data.move));
@@ -59,6 +91,15 @@ public class BattleSystem : StateMachine
         .Concat(_oppParty.Battlers)
         .OrderByDescending(battler => battler.Initiative)
         .ToList();
+    }
+    void EndBattle(EndBattleEvent data)
+    {
+        _playerParty = null;
+        _oppParty = null;
+        ActiveBattler = null;
+
+        TurnQueue.Clear();
+        AllBattlers.Clear();
     }
     public void SetupTurnQueue()
     {
