@@ -42,7 +42,7 @@ public class OpponentAttackState : BattleState
         var target = eligibleTargets[index];
 
         // TODO: Replace with UI Text
-        Debug.Log($"{attacker.Name} Attacked {target.Name}!");
+        Debug.Log($"{attacker.Name} Used {move.Name} on {target.Name}!");
         yield return new WaitForSeconds(_system.Delay);
 
         target.TakeDamage(selectedMove.Damage,selectedMove.Type);
