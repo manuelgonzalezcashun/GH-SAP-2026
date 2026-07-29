@@ -71,4 +71,9 @@ public class EnterBattleEvent
     public TrainerParty Player = null;
     public TrainerParty Opponent = null;
 }
+public class SetCameraBoundsEvent
+{
+    public Vector2 camBounds = Vector2.zero;
+    public Vector3 camPos = Vector3.zero;
+}
 

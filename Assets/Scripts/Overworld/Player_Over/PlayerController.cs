@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour
     {
         SpawnpointX = data._X;
         SpawnpointY = data._Y;
+
+        transform.position = new Vector2(SpawnpointX, SpawnpointY);
     }
     private void CanPlayerMove(PlayerMoveEvent data)
     {
