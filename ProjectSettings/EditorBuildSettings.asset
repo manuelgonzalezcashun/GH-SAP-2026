@@ -35,8 +35,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Alpha Build/Levels/Mitzi_House.unity
     guid: 433a3fa5b016d4cb6b906dc7ec6be5f8
-  - enabled: 0
-    path: Assets/Scenes/Alpha Build/Levels/Path_1.unity
-    guid: b6f175fd8ebe646528f3b8af9ee1a4a9
+  - enabled: 1
+    path: Assets/Scenes/Alpha Build/City.unity
+    guid: 46401145910b5794688be43a35702eba
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
