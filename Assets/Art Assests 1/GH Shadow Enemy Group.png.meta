@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: eea92557ac664b6409ee86ca07f8bad8
+guid: 7fe63dac03ddccc4abcefbbd4045c3de
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 833560129088999986
-    second: GH Boss Enemy Concept_0
+      213: 5908164850217419824
+    second: GH Shadow Enemy Group_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GH Boss Enemy Concept_0
+      name: GH Shadow Enemy Group_0
       rect:
         serializedVersion: 2
-        x: 70
-        y: 0
-        width: 2703
-        height: 1940
+        x: 552
+        y: 200
+        width: 2690
+        height: 1825
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 23257416586619b00800000000000000
-      internalID: 833560129088999986
+      spriteID: 03488a3e0a40ef150800000000000000
+      internalID: 5908164850217419824
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GH Boss Enemy Concept_0: 833560129088999986
+      GH Shadow Enemy Group_0: 5908164850217419824
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
