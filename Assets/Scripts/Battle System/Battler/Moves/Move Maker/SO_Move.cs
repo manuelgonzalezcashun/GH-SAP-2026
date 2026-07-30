@@ -32,7 +32,7 @@ public class SO_Move : ScriptableObject
         .WithRow(_HitsAllInRow)
         .WithAllyHit(_CanTargetAlly)
         .WithCategory(_Category)
-        .WithEffect(_Effect.Select(effect => effect.MakeEffect()).ToArray())
+        //.WithEffect(_Effect.Select(effect => effect.MakeEffect()).ToArray())
         .Make();
     }
 }
