@@ -1,28 +1,32 @@
+VAR AdityaChara = "Aditya"
+VAR MitzliCHara = "Mitzli"
+VAR BNpc1 = "Sacinte"
+VAR ChildNPC = "ChildNPC"
+VAR DevTeam = "Dev Team"
+
+
 -> PostBusExploration
 
 ===PostBusExploration===
 
 Where is everyone?  #Speaker:Aditya
--> DONE
+
 
 ===POI1===
 What a strange tree... #SpeakerAditya
--> DONE
 
 ===POI2===
-Was the water always this murky? #Speaker:Aditya
-->DONE
+Was the water always this murky? #SpeakerAditya
 
 ===POI3===
 Poor fawn. How long have you been left here to rot? #Speaker:Aditya
-->DONE
 
 ===MitzliHouse===
 
 *[Object 1] 
 A small black box. The key seems to be broken off inside of the lock, keeping it's contents sealed shut. #Speaker:Aditya
     **[Keep Looking] ->MitzliHouse
-    **[Talk to Mitzli] ->TalkToMitzli
+    **[Talk to Mitzli] ->ProgressionCheckPoint
 *[Object 2] 
 A simple handmade toy. You recognize the clothes it's wearing though it's face has long since faded. #Speaker:Aditya
     **[Keep Looking] ->MitzliHouse
@@ -37,6 +41,9 @@ A bottle of glimmering, unidentified pink liquid. It smells vaguely of rose peta
 * ->TalkToMitzli
 ===TalkToMitzli===
 Aditya! I didn't hear you come in. When did you get back? #Speaker:Mitzli
+
+*[Flighty as ever I see.]
+*[I got in a few minutes ago...]
 
 We have much to discuss. #Speaker:Mitzli
 
@@ -97,21 +104,17 @@ Of course. #Speaker:Aditya
 ===OpenWorldExploration===
 
 Where was Mrs.Sacinte's house again? #Speaker:Aditya
-->DONE
 
 ===POI4===
-Thats a rock. Never seen a rock before?
-->DONE
+Thats a rock. Never seen a rock before? #Speaker: Dev Team
 
 
 ===POI5===
 
-Thats a tree... You don't get out much do you?
-->DONE
+Thats a tree... You don't get out much do you? #Speaker: Dev Team
 
 ===POI6===
-Wow! A tree, but in green. Exhilerating.
-->DONE
+Wow! A tree, but in green. Exhilerating. #Speaker: Dev Team
 
 
 ===SacinteHouse===
@@ -140,7 +143,8 @@ No, for real this time. Some little girl came up to us and said there was a mons
 
 Monster? We don't have monsters here. Only Pneuma and forest beasts. #Speaker:Sacinte
 
-Monster of the alchemic variety it sounds like... #Speaker"Aditya
+*[I can find out is origin later!]
+*[Monster of the alchemic variety it sounds like...]
 
 I won't keep you then. What do you need. #Speaker:Sacinte
 
@@ -167,7 +171,7 @@ Yes, this is perfect, thank you! #Speaker:Aditya
 
 Now remember, these things aren't much help on their own.You gotta combine them to get the EFFECT you want from it, ya' hear? #Speaker:Sacinte
 
-Yes ma'am combine Ingredient 1, with Ingredient 2 and Ingredient 3 to get Recipe1. #Speaker:Aditya
+Yes ma'am. Combine Ingredient 1, with Ingredient 2 and Ingredient 3 to get Recipe1. #Speaker:Aditya
 
 Good. Now hurry along, go help our friends. #Speaker:Sacinte
 
