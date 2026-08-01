@@ -4328,6 +4328,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7236382182505825408, guid: baa7015a4cf8c4b448417a276d8baeaa, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2733161258680390263, guid: 8746d6c368c7b2641a5f63aae6a40ccd, type: 3}
     - target: {fileID: 7392465442727560991, guid: baa7015a4cf8c4b448417a276d8baeaa, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -4336,12 +4340,20 @@ PrefabInstance:
       propertyPath: m_UsedByEffector
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7392465442727560991, guid: baa7015a4cf8c4b448417a276d8baeaa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392465442727560991, guid: baa7015a4cf8c4b448417a276d8baeaa, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.9944445
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 895429064760470953, guid: baa7015a4cf8c4b448417a276d8baeaa, type: 3}
-      insertIndex: -1
+      insertIndex: 6
       addedObject: {fileID: 599033806}
   m_SourcePrefab: {fileID: 100100000, guid: baa7015a4cf8c4b448417a276d8baeaa, type: 3}
 --- !u!4 &1835740892828276320 stripped

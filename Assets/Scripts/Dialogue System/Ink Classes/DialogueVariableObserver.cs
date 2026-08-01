@@ -7,11 +7,15 @@ public class DialogueVariableObserver
     public Dictionary<string, Object> Variables => variables;
     public void StartListening(Story story)
     {
+        if (story == null) return;
+
         VariablesToStory(story);
         story.variablesState.variableChangedEvent += VariableChanged;
     }
     public void StopListening(Story story)
     {
+        if (story == null) return;
+
         story.variablesState.variableChangedEvent -= VariableChanged;
     }
     private void VariableChanged(string var_name, Object value)
