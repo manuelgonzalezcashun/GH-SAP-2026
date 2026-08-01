@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: de820bb940230429b83dbd60aa03c21d
+guid: f15652c7e3e7c984e98a7ee34480d55c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4668775367406808942
-    second: GH Enemy Plague Bird Concept_0
+      213: -594866346881508313
+    second: GH Enemy Seal Concept_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,43 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GH Enemy Plague Bird Concept_0
+      name: GH Enemy Seal Concept_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 41
-        width: 793
-        height: 1086
+        x: 112
+        y: 29
+        width: 1097
+        height: 1592
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2909f912a8d253fb0800000000000000
-      internalID: -4668775367406808942
+      spriteID: 72c1b41953c9eb7f0800000000000000
+      internalID: -594866346881508313
       vertices: []
       indices: 
       edges: []
@@ -135,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GH Enemy Plague Bird Concept_0: -4668775367406808942
+      GH Enemy Seal Concept_0: -594866346881508313
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

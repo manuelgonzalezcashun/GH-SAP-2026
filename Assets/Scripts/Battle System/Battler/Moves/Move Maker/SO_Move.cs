@@ -10,7 +10,7 @@ public class SO_Move : ScriptableObject
     [Range(-1, 2)][SerializeField] private int _Distance;
     [SerializeField] private bool _HitsAllInRow;
     [SerializeField] private bool _CanTargetAlly;
-    [SerializeField] private Type _Type; 
+    [SerializeField] private Type _Type;
     [SerializeField] private string _Description;
     [SerializeField] private MoveCategory _Category;
     [SerializeField] private SO_Effect[] _Effect;

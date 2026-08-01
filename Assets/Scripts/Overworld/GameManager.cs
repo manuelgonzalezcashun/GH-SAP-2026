@@ -15,16 +15,16 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    public void EnterScene()
+    public void EnterScene(SceneReference scene)
     {
-
+        SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
     }
-    public void LoadScene()
+    public void LoadScene(SceneReference scene)
     {
-
+        SceneManager.LoadSceneAsync(scene);
     }
-    public void UnloadScene()
+    public void UnloadScene(SceneReference scene)
     {
-
+        SceneManager.UnloadSceneAsync(scene);
     }
 }

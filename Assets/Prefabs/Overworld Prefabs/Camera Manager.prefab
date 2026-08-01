@@ -295,6 +295,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8545394741383087553}
+  - component: {fileID: 6730746839430796185}
   m_Layer: 0
   m_Name: Camera Manager
   m_TagString: Untagged
@@ -321,6 +322,19 @@ Transform:
   - {fileID: 464139547262574869}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6730746839430796185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5324788387160165441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab7527c2e9d27734580b2cd0739e214f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraManager
+  followCameraConstraints: {fileID: 1483336677039336397}
 --- !u!1 &7043474650389552997
 GameObject:
   m_ObjectHideFlags: 0

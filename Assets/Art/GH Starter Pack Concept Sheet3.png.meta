@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d86d5ab0cf200451b97f9834f8b7189c
+guid: fef6308e7200a87499e5975b7ad601f7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -594866346881508313
-    second: GH Enemy Seal Concept_0
+      213: -7023909970684590059
+    second: GH Starter Pack Concept Sheet3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,43 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GH Enemy Seal Concept_0
+      name: GH Starter Pack Concept Sheet3_0
       rect:
         serializedVersion: 2
-        x: 112
-        y: 29
-        width: 1097
-        height: 1592
+        x: 22
+        y: 12
+        width: 1048
+        height: 1004
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 72c1b41953c9eb7f0800000000000000
-      internalID: -594866346881508313
+      spriteID: 518450f881f068e90800000000000000
+      internalID: -7023909970684590059
       vertices: []
       indices: 
       edges: []
@@ -135,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GH Enemy Seal Concept_0: -594866346881508313
+      GH Starter Pack Concept Sheet3_0: -7023909970684590059
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

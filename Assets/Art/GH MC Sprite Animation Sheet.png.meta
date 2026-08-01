@@ -1,0 +1,506 @@
+fileFormatVersion: 2
+guid: 474a461b87e6e7d4fa7c5e2fcc034b0d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7468569346173533773
+    second: GH MC Sprite Animation Sheet_0
+  - first:
+      213: 5398025581734367843
+    second: GH MC Sprite Animation Sheet_1
+  - first:
+      213: 7822922462487149298
+    second: GH MC Sprite Animation Sheet_2
+  - first:
+      213: 2519427626657990714
+    second: GH MC Sprite Animation Sheet_3
+  - first:
+      213: 4027963445938687145
+    second: GH MC Sprite Animation Sheet_4
+  - first:
+      213: 8368994688206742283
+    second: GH MC Sprite Animation Sheet_5
+  - first:
+      213: 6470686567547873728
+    second: GH MC Sprite Animation Sheet_6
+  - first:
+      213: 2317727065475597686
+    second: GH MC Sprite Animation Sheet_7
+  - first:
+      213: 244391670180504672
+    second: GH MC Sprite Animation Sheet_8
+  - first:
+      213: -5164354156656324570
+    second: GH MC Sprite Animation Sheet_9
+  - first:
+      213: 1719170817421752772
+    second: GH MC Sprite Animation Sheet_10
+  - first:
+      213: 2122909113005834431
+    second: GH MC Sprite Animation Sheet_11
+  - first:
+      213: -2192604410498466473
+    second: GH MC Sprite Animation Sheet_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 180
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GH MC Sprite Animation Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 1172
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b184f4ffbf4a5890800000000000000
+      internalID: -7468569346173533773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GH MC Sprite Animation Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1310
+        y: 1164
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3629fb7aaa3a9ea40800000000000000
+      internalID: 5398025581734367843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GH MC Sprite Animation Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 857
+        width: 263
+        height: 301
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fa78f1388a909c60800000000000000
+      internalID: 7822922462487149298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GH MC Sprite Animation Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 864
+        width: 262
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a384144f31ec6f220800000000000000
+      internalID: 2519427626657990714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GH MC Sprite Animation Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 849
+        width: 263
+        height: 301
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ac0f6bb96336e730800000000000000
+      internalID: 4027963445938687145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GH MC Sprite Animation Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 849
+        width: 262
+        height: 301
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b03a1bdf354a42470800000000000000
+      internalID: 8368994688206742283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GH MC Sprite Animation Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 462
+        width: 222
+        height: 331
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c92597662f7cc950800000000000000
+      internalID: 6470686567547873728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GH MC Sprite Animation Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 461
+        width: 236
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6754bf77c783a2020800000000000000
+      internalID: 2317727065475597686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GH MC Sprite Animation Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 464
+        width: 212
+        height: 318
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0646c2fdde0446300800000000000000
+      internalID: 244391670180504672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GH MC Sprite Animation Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 454
+        width: 218
+        height: 326
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6201036a1478458b0800000000000000
+      internalID: -5164354156656324570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GH MC Sprite Animation Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 118
+        width: 243
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c934a8ffb8bbd710800000000000000
+      internalID: 1719170817421752772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GH MC Sprite Animation Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 118
+        width: 243
+        height: 303
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb007233796167d10800000000000000
+      internalID: 2122909113005834431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GH MC Sprite Animation Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 121
+        width: 242
+        height: 303
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75db843d7ed4291e0800000000000000
+      internalID: -2192604410498466473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GH MC Sprite Animation Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 113
+        width: 243
+        height: 308
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39316f8c53ce3cf40b3f9d075fc640e9
+      internalID: -188971625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ecf76676fc37b2245a3ce6d5bdb2b9f0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      GH MC Sprite Animation Sheet_0: -7468569346173533773
+      GH MC Sprite Animation Sheet_1: 5398025581734367843
+      GH MC Sprite Animation Sheet_10: 1719170817421752772
+      GH MC Sprite Animation Sheet_11: 2122909113005834431
+      GH MC Sprite Animation Sheet_12: -2192604410498466473
+      GH MC Sprite Animation Sheet_13: -188971625
+      GH MC Sprite Animation Sheet_2: 7822922462487149298
+      GH MC Sprite Animation Sheet_3: 2519427626657990714
+      GH MC Sprite Animation Sheet_4: 4027963445938687145
+      GH MC Sprite Animation Sheet_5: 8368994688206742283
+      GH MC Sprite Animation Sheet_6: 6470686567547873728
+      GH MC Sprite Animation Sheet_7: 2317727065475597686
+      GH MC Sprite Animation Sheet_8: 244391670180504672
+      GH MC Sprite Animation Sheet_9: -5164354156656324570
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

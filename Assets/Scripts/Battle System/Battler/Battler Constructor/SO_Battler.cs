@@ -12,7 +12,8 @@ public class SO_Battler : ScriptableObject
     [SerializeField] private Type type2;
 
     [Header("Battler Display")]
-    [SerializeField] private Color _color = Color.white;
+    // [SerializeField] private Color _color = Color.white;
+    [SerializeField] private Sprite _sprite = null;
 
     public Battler CreateBattler()
     {
@@ -23,7 +24,7 @@ public class SO_Battler : ScriptableObject
     {
         return new Battler.Builder()
         .WithName(name)
-        .WithColor(_color)
+        .WithSprite(_sprite)
         .WithMaxHealth(_maxHealth)
         .WithHealth()
         .WithInitiative(_initiative)
