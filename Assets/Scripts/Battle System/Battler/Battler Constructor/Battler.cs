@@ -21,7 +21,8 @@ public class Battler
     // for when customizing movesets is added, its the max amount of moves a creature can have
     [SerializeField] private StatusEffectsUI statusEffectsUI;
     private Dictionary<StatusType, int> statusEffects = new();
-    public Color Color { get; private set; }
+    // public Color Color { get; private set; }
+    public Sprite Sprite { get; private set; }
     public Team Team { get; private set; }
 
     public bool TakeDamage(int damage, Type type)
@@ -69,16 +70,17 @@ public class Battler
 
         // Battler Display //
         private string name = "Foo";
-        private Color color = Color.softRed;
+        // private Color color = Color.softRed;
+        private Sprite sprite = null;
 
         public Builder WithName(string name)
         {
             this.name = name;
             return this;
         }
-        public Builder WithColor(Color color)
+        public Builder WithSprite(Sprite sprite)
         {
-            this.color = color;
+            this.sprite = sprite;
             return this;
         }
         public Builder WithInitiative(int initiative)
@@ -121,7 +123,7 @@ public class Battler
             var battler = new Battler
             {
                 Name = name,
-                Color = color,
+                Sprite = sprite,
                 Initiative = initiative,
                 MaxHealth = maxHealth,
                 Health = health,

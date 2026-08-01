@@ -20,4 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e730c1b8b7500480eb42f597bd8d2b54, type: 2}
   type1: 6
   type2: 0
-  _color: {r: 1, g: 1, b: 1, a: 1}
+  _sprite: {fileID: 21300000, guid: e11dda0144c1f0b4e90b910c562031f8, type: 3}
