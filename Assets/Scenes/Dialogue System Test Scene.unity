@@ -1135,7 +1135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   view: {fileID: 1347242586}
   model:
-    _storyJson: {fileID: 4900000, guid: 44013b8f32016450dbed1a747dd2e156, type: 3}
+    _storyJson: {fileID: 4900000, guid: 90a18a5cc2aea4fff97753a8ce9f000e, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
