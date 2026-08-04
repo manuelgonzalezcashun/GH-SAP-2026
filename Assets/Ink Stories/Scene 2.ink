@@ -5,28 +5,30 @@ VAR ChildNPC = "ChildNPC"
 VAR DevTeam = "Dev Team"
 
 
--> PostBusExploration
+-> TalkToMitzli
 
 ===PostBusExploration===
-
 Where is everyone?  #Speaker:Aditya
-
+-> DONE
 
 ===POI1===
 What a strange tree... #SpeakerAditya
+-> DONE
 
 ===POI2===
 Was the water always this murky? #SpeakerAditya
+-> DONE
 
 ===POI3===
 Poor fawn. How long have you been left here to rot? #Speaker:Aditya
+-> DONE
 
 ===MitzliHouse===
 
 *[Object 1] 
 A small black box. The key seems to be broken off inside of the lock, keeping it's contents sealed shut. #Speaker:Aditya
     **[Keep Looking] ->MitzliHouse
-    **[Talk to Mitzli] ->ProgressionCheckPoint
+    **[Talk to Mitzli] ->TalkToMitzli
 *[Object 2] 
 A simple handmade toy. You recognize the clothes it's wearing though it's face has long since faded. #Speaker:Aditya
     **[Keep Looking] ->MitzliHouse
@@ -42,9 +44,10 @@ A bottle of glimmering, unidentified pink liquid. It smells vaguely of rose peta
 ===TalkToMitzli===
 Aditya! I didn't hear you come in. When did you get back? #Speaker:Mitzli
 
-*[Flighty as ever I see.]
-*[I got in a few minutes ago...]
+* Flighty as ever I see. -> Next
+* I got in a few minutes ago... -> Next
 
+=== Next ===
 We have much to discuss. #Speaker:Mitzli
 
 Tell me everything. #Speaker:Aditya
@@ -60,8 +63,7 @@ Besides yourself and a suspension of disbelief? No.
 Let me know when you're ready and I'll take the lead.
 
 Are you ready to leave?
-*[Yes]
--> ExitHouse
+*[Yes] -> ExitHouse
 *[No]
 What's that over there? #Speaker:Aditya
 ->MitzliHouse
@@ -102,20 +104,20 @@ Of course. #Speaker:Aditya
 ->OpenWorldExploration
 
 ===OpenWorldExploration===
-
 Where was Mrs.Sacinte's house again? #Speaker:Aditya
+-> DONE
 
 ===POI4===
 Thats a rock. Never seen a rock before? #Speaker: Dev Team
-
+-> DONE
 
 ===POI5===
-
 Thats a tree... You don't get out much do you? #Speaker: Dev Team
+-> DONE
 
 ===POI6===
 Wow! A tree, but in green. Exhilerating. #Speaker: Dev Team
-
+-> DONE
 
 ===SacinteHouse===
 
