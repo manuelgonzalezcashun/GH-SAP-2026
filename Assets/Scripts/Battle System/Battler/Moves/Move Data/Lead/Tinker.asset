@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e93fd1865023414eab16b42e318b52f, type: 3}
   m_Name: Tinker
   m_EditorClassIdentifier: Assembly-CSharp::SO_Move
-  _Damage: 4
+  _Damage: 3
   _Healing: 0
   _Distance: 1
   _HitsAllInRow: 0
