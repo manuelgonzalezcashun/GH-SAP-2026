@@ -7,6 +7,7 @@ public enum Type { NONE, SALT, SULFUR, MERCURY, LEAD, PHOSPHORUS, ANTIMONY, BISM
 [Serializable]
 public class Battler
 {
+    public Species Species { get; private set; }
     public event Action<float, float> onHealthChanged;
     // Getters //
     public int Health { get; private set; }
@@ -61,6 +62,7 @@ public class Battler
     public class Builder
     {
         // Battler Stats //
+        private Species species = null;
         private int maxHealth = 50;
         private int initiative = 5;
         private int health = -1;
@@ -73,6 +75,11 @@ public class Battler
         // private Color color = Color.softRed;
         private Sprite sprite = null;
 
+        public Builder WithSpecies(Species species)
+        {
+            this.species = species;
+            return this;
+        }
         public Builder WithName(string name)
         {
             this.name = name;
@@ -83,14 +90,14 @@ public class Battler
             this.sprite = sprite;
             return this;
         }
-        public Builder WithInitiative(int initiative)
+        public Builder WithInitiative()
         {
-            this.initiative = initiative;
+            initiative = species.Initiative;
             return this;
         }
-        public Builder WithMaxHealth(int maxHealth)
+        public Builder WithMaxHealth()
         {
-            this.maxHealth = maxHealth;
+            maxHealth = species.MaxHealth;
             return this;
         }
         public Builder WithHealth(int currentHealth)
@@ -108,14 +115,14 @@ public class Battler
             this.moves = moves;
             return this;
         }
-        public Builder WithFirstType(Type type)
+        public Builder WithFirstType()
         {
-            this.firstType = type;
+            firstType = species.FirstType;
             return this;
         }
-        public Builder WithSecondType(Type type)
+        public Builder WithSecondType()
         {
-            this.secondType = type;
+            secondType = species.SecondType;
             return this;
         }
         public Battler Build()
