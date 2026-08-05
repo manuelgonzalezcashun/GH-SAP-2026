@@ -22,6 +22,7 @@ public class Move
     public string Name { get; private set; }
     //the display name
     public string Desc { get; private set; }
+    public string Info { get; private set; }
     //the description/explanation of the move
     
 
@@ -42,6 +43,7 @@ public class Move
         private Type type = Type.LEAD;
         private string name = "Slam";
         private string desc = "A normal punch";
+        private string info = "2 Damage Normal Range";
         private MoveCategory category = MoveCategory.DAMAGING;
         private Effect[] effect = null;
 
@@ -58,6 +60,11 @@ public class Move
         public Maker WithDesc(string desc)
         {
             this.desc = desc;
+            return this;
+        }
+        public Maker WithInfo(string info)
+        {
+            this.info = info;
             return this;
         }
         public Maker WithDamage(int damage)
@@ -102,6 +109,7 @@ public class Move
                 Name = name,
                 Type = type,
                 Desc = desc,
+                Info = info,
                 Damage = damage,
                 Healing = healing,
                 Distance = distance,

@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf0336dd64b84851a1fc096b1845169, type: 3}
+  m_Name: Bird 2a
+  m_EditorClassIdentifier: Assembly-CSharp::SO_Species
+  _pneuma: Bird 2a
+  _maxHealth: 15
+  _initiative: 18
+  _aptitude: 3
+  type1: 6
+  type2: 0
+  _one:
+  - {fileID: 11400000, guid: 8b29feb86a0994d119977ddb1189d1ad, type: 2}
+  - {fileID: 11400000, guid: b6f1a39aa9fb94eb6be3ea1fb97a15a8, type: 2}
+  - {fileID: 11400000, guid: e730c1b8b7500480eb42f597bd8d2b54, type: 2}
+  _two:
+  - {fileID: 11400000, guid: 8b29feb86a0994d119977ddb1189d1ad, type: 2}
+  - {fileID: 11400000, guid: b6f1a39aa9fb94eb6be3ea1fb97a15a8, type: 2}
+  - {fileID: 11400000, guid: e730c1b8b7500480eb42f597bd8d2b54, type: 2}
+  _three:
+  - {fileID: 11400000, guid: 8b29feb86a0994d119977ddb1189d1ad, type: 2}
+  - {fileID: 11400000, guid: c912d735bd6a64367b80f09ddca5cf1a, type: 2}
+  - {fileID: 11400000, guid: 37af1e8542bee4e8e849b7780958bbea, type: 2}
+  _four:
+  - {fileID: 11400000, guid: 5807074419d4c4a7b9e5cbf5897d8f1d, type: 2}
+  - {fileID: 11400000, guid: 8b29feb86a0994d119977ddb1189d1ad, type: 2}
+  - {fileID: 11400000, guid: c912d735bd6a64367b80f09ddca5cf1a, type: 2}
+  - {fileID: 11400000, guid: 37af1e8542bee4e8e849b7780958bbea, type: 2}
+  _five:
+  - {fileID: 11400000, guid: 441b73a61e4dd46ce979220a8d6e1224, type: 2}
+  - {fileID: 11400000, guid: 11e230fcebf0242bdbc7305d92008b7f, type: 2}
+  - {fileID: 11400000, guid: c912d735bd6a64367b80f09ddca5cf1a, type: 2}
+  - {fileID: 11400000, guid: 8b29feb86a0994d119977ddb1189d1ad, type: 2}
+  - {fileID: 11400000, guid: 5807074419d4c4a7b9e5cbf5897d8f1d, type: 2}

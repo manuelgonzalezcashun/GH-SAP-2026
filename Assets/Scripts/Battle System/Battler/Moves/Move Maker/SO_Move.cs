@@ -12,6 +12,8 @@ public class SO_Move : ScriptableObject
     [SerializeField] private bool _CanTargetAlly;
     [SerializeField] private Type _Type;
     [SerializeField] private string _Description;
+    [SerializeField] private string _Information;
+
     [SerializeField] private MoveCategory _Category;
     [SerializeField] private SO_Effect[] _Effect;
 
@@ -25,6 +27,7 @@ public class SO_Move : ScriptableObject
         return new Move.Maker()
         .WithName(name)
         .WithDesc(_Description)
+        .WithInfo(_Information)
         .WithType(_Type)
         .WithDamage(_Damage)
         .WithHealing(_Healing)
