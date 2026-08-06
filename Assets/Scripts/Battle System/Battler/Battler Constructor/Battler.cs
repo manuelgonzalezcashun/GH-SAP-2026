@@ -18,7 +18,7 @@ public class Battler
     public int Initiative { get; private set; }
     public string Name { get; private set; }
     private int Row;
-    // public int aptitude { get; private set; }
+    public int Aptitude { get; private set; }
     // for when customizing movesets is added, its the max amount of moves a creature can have
     [SerializeField] private StatusEffectsUI statusEffectsUI;
     private Dictionary<StatusType, int> statusEffects = new();
@@ -66,6 +66,7 @@ public class Battler
         private int maxHealth = 50;
         private int initiative = 5;
         private int health = -1;
+        private int aptitude = 3;
         private Move[] moves = null;
         private Type firstType = Type.LEAD;
         private Type secondType = Type.NONE;
@@ -93,6 +94,11 @@ public class Battler
         public Builder WithInitiative()
         {
             initiative = species.Initiative;
+            return this;
+        }
+        public Builder WithAptitude()
+        {
+            aptitude = species.Aptitude;
             return this;
         }
         public Builder WithMaxHealth()
@@ -132,6 +138,7 @@ public class Battler
                 Name = name,
                 Sprite = sprite,
                 Initiative = initiative,
+                Aptitude = aptitude,
                 MaxHealth = maxHealth,
                 Health = health,
                 Moves = moves,
