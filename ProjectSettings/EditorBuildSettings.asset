@@ -44,5 +44,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Alpha Build/Levels/Wild_Part1.unity
     guid: c43f168bcaea745adb6cf358fe1c9509
+  - enabled: 1
+    path: Assets/Scenes/Alpha Build/Levels/Wild_Part2.unity
+    guid: bd90d93d48a5343f5bde5f996c0eb0f8
+  - enabled: 1
+    path: Assets/Scenes/Alpha Build/Levels/Sacinte_House.unity
+    guid: d6131fb0101374c84b67efa56e350a6f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

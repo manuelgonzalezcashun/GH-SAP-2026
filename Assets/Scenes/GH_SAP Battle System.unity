@@ -772,6 +772,7 @@ MonoBehaviour:
   delay: 1.5
   _playerParty: {fileID: 1097428575}
   _oppParty: {fileID: 1317992696}
+  battleCanvas: {fileID: 0}
 --- !u!1001 &1765915315
 PrefabInstance:
   m_ObjectHideFlags: 0
