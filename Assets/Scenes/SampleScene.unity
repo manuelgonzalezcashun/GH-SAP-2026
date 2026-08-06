@@ -51409,7 +51409,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 246
-      m_TileSpriteIndex: 251
+      m_TileSpriteIndex: 4294967295
       m_TileMatrixIndex: 0
       m_TileColorIndex: 251
       m_TileObjectToInstantiateIndex: 65535
@@ -51449,7 +51449,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 112
-      m_TileSpriteIndex: 250
+      m_TileSpriteIndex: 4294967295
       m_TileMatrixIndex: 0
       m_TileColorIndex: 251
       m_TileObjectToInstantiateIndex: 65535
@@ -51639,7 +51639,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 246
-      m_TileSpriteIndex: 251
+      m_TileSpriteIndex: 4294967295
       m_TileMatrixIndex: 0
       m_TileColorIndex: 251
       m_TileObjectToInstantiateIndex: 65535
@@ -51849,7 +51849,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 112
-      m_TileSpriteIndex: 250
+      m_TileSpriteIndex: 4294967295
       m_TileMatrixIndex: 0
       m_TileColorIndex: 251
       m_TileObjectToInstantiateIndex: 65535
@@ -51859,7 +51859,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 117
-      m_TileSpriteIndex: 122
+      m_TileSpriteIndex: 4294967295
       m_TileMatrixIndex: 0
       m_TileColorIndex: 251
       m_TileObjectToInstantiateIndex: 65535
@@ -51869,7 +51869,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 117
-      m_TileSpriteIndex: 122
+      m_TileSpriteIndex: 4294967295
       m_TileMatrixIndex: 0
       m_TileColorIndex: 251
       m_TileObjectToInstantiateIndex: 65535
@@ -54611,7 +54611,7 @@ Tilemap:
     m_RefCount: 0
     m_Data: {fileID: 58542156}
   - serializedVersion: 2
-    m_RefCount: 2
+    m_RefCount: 0
     m_Data: {fileID: -3410505935366870666, guid: b3e03b1bc506e654c8cdf678471b8e77, type: 3}
   - serializedVersion: 2
     m_RefCount: 2
@@ -54995,10 +54995,10 @@ Tilemap:
     m_RefCount: 2
     m_Data: {fileID: -1508413131, guid: b3e03b1bc506e654c8cdf678471b8e77, type: 3}
   - serializedVersion: 2
-    m_RefCount: 2
+    m_RefCount: 0
     m_Data: {fileID: 4997632276993255836, guid: b3e03b1bc506e654c8cdf678471b8e77, type: 3}
   - serializedVersion: 2
-    m_RefCount: 2
+    m_RefCount: 0
     m_Data: {fileID: -6694115325704247905, guid: b3e03b1bc506e654c8cdf678471b8e77, type: 3}
   - serializedVersion: 2
     m_RefCount: 2
@@ -61771,7 +61771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
+  m_Color: {r: 0.22264141, g: 0.22264141, b: 0.22264141, a: 0.11764706}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
