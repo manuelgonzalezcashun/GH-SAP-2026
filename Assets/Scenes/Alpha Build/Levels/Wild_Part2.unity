@@ -300,7 +300,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: e5152d7f1829448a291352c9b70e6bff, type: 2}
     - target: {fileID: 1051597185014853860, guid: d4abd66a80e404447afa2b81ccef2deb, type: 3}
       propertyPath: _sprintMod
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1051597185014853860, guid: d4abd66a80e404447afa2b81ccef2deb, type: 3}
       propertyPath: _walkSpeed
@@ -312,7 +312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1338708753555896956, guid: d4abd66a80e404447afa2b81ccef2deb, type: 3}
       propertyPath: _detectionRange
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2941057511685715118, guid: d4abd66a80e404447afa2b81ccef2deb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5872,6 +5872,10 @@ PrefabInstance:
     - target: {fileID: 1153725149087386309, guid: d4abd66a80e404447afa2b81ccef2deb, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153725149087386309, guid: d4abd66a80e404447afa2b81ccef2deb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2941057511685715118, guid: d4abd66a80e404447afa2b81ccef2deb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22155,6 +22159,10 @@ PrefabInstance:
     - target: {fileID: 1153725149087386309, guid: d4abd66a80e404447afa2b81ccef2deb, type: 3}
       propertyPath: m_Name
       value: Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153725149087386309, guid: d4abd66a80e404447afa2b81ccef2deb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2941057511685715118, guid: d4abd66a80e404447afa2b81ccef2deb, type: 3}
       propertyPath: m_LocalPosition.x
