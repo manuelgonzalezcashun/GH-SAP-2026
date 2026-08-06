@@ -57,6 +57,7 @@ public class BattleSystem : StateMachine
     }
     public void EnterBattle(TrainerParty _playerParty, TrainerParty _oppParty)
     {
+        GameManager.Instance.SetState(new InBattleState());
         this._playerParty = _playerParty;
         this._oppParty = _oppParty;
 
@@ -72,11 +73,13 @@ public class BattleSystem : StateMachine
 
     public void OnMoveSelected(MoveSelectedEvent data)
     {
-        StartCoroutine(_currentState.Attack(data.move));
+        if (_currentState is BattleState battleState)
+            StartCoroutine(battleState.Attack(data.move));
     }
     public void OnHealButton()
     {
-        StartCoroutine(_currentState.Heal());
+        if (_currentState is BattleState battleState)
+            StartCoroutine(battleState.Heal());
     }
     public void OnRunButton()
     {
@@ -100,6 +103,7 @@ public class BattleSystem : StateMachine
 
         TurnQueue.Clear();
         AllBattlers.Clear();
+        GameManager.Instance.SetState(new InOverworldState());
     }
     public void SetupTurnQueue()
     {

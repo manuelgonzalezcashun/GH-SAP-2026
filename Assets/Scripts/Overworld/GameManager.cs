@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : StateMachine
 {
     #region Singleton
     public static GameManager Instance { get; private set; }
@@ -14,7 +14,11 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(Instance);
     }
     #endregion
-
+    public GameState CurrentState => _currentState as GameState;
+    void Start()
+    {
+        SetState(new InOverworldState());
+    }
     public void EnterScene(SceneReference scene)
     {
         SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);

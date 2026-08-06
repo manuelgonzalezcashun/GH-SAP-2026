@@ -1,17 +1,11 @@
 using System.Collections;
 
-public abstract class BattleState
+public abstract class BattleState : State
 {
     protected BattleSystem _system;
     public BattleState(BattleSystem system)
     {
         _system = system;
-    }
-
-    public abstract void EnterState();
-    public virtual void UpdateState()
-    {
-
     }
     public virtual IEnumerator Attack(Move move)
     {

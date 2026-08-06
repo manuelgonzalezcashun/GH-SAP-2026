@@ -34,7 +34,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Awake()
     {
-        _runSpeed=_walkSpeed+_sprintMod;
+        _runSpeed = _walkSpeed + _sprintMod;
         _rigidbody = GetComponent<Rigidbody2D>();
         _Awareness = GetComponent<Awareness>();
         _target = transform.up;
@@ -62,18 +62,18 @@ public class EnemyMovement : MonoBehaviour
         PlayerTargeting();
         HandleObstacles();
     }
-    
+
 
     private void PlayerTargeting()
     {
         if (_Awareness.aggro)
         {
-            _speed=_runSpeed;
+            _speed = _runSpeed;
             _target = _Awareness.playerLocation;
         }
         else
         {
-            _speed=_walkSpeed;
+            _speed = _walkSpeed;
         }
     }
 
@@ -82,11 +82,11 @@ public class EnemyMovement : MonoBehaviour
         rotCD -= Time.deltaTime;
         if (rotCD <= 0)
         {
-            float angle = Random.Range(-130f,130f);
-            Quaternion rotation = Quaternion.AngleAxis(angle,transform.forward);
-            _target = rotation*_target;
+            float angle = Random.Range(-130f, 130f);
+            Quaternion rotation = Quaternion.AngleAxis(angle, transform.forward);
+            _target = rotation * _target;
 
-            rotCD = Random.Range(1f,4f);
+            rotCD = Random.Range(1f, 4f);
         }
     }
 
@@ -104,10 +104,10 @@ public class EnemyMovement : MonoBehaviour
             contactFilter,
             _obstacleCollisions,
             _obstacleCheckRange);
-        for (int i = 0; i<numberOfCollisions; i++)
+        for (int i = 0; i < numberOfCollisions; i++)
         {
             var obstacleCollision = _obstacleCollisions[i];
-            if(obstacleCollision.collider.gameObject == gameObject)
+            if (obstacleCollision.collider.gameObject == gameObject)
             {
                 continue;
             }
@@ -117,10 +117,10 @@ public class EnemyMovement : MonoBehaviour
                 _obstacleAvoidanceDirection = obstacleCollision.normal;
                 _obCD = 0.5f;
             }
-            
+
 
             var targetRotation = Quaternion.LookRotation(transform.forward, _obstacleAvoidanceDirection);
-            var rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, _rotationSpd *Time.deltaTime);
+            var rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, _rotationSpd * Time.deltaTime);
 
 
             _target = rotation * Vector2.up;
@@ -138,8 +138,12 @@ public class EnemyMovement : MonoBehaviour
 
     private void SetVelocity()
     {
-        
+        if (GameManager.Instance.CurrentState is not InOverworldState)
+        {
+            _rigidbody.linearVelocity = Vector2.zero;
+            return;
+        }
+
         _rigidbody.linearVelocity = transform.up * _speed;
-        
     }
 }

@@ -3,10 +3,10 @@ using UnityEngine;
 
 public abstract class StateMachine : MonoBehaviour
 {
-    protected BattleState _currentState;
+    protected State _currentState;
     [SerializeField] private float delay;
     public float Delay => delay;
-    public void SetState(BattleState state)
+    public virtual void SetState(State state)
     {
         _currentState = state;
         _currentState.EnterState();
