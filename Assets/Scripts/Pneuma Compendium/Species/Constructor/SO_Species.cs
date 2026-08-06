@@ -13,11 +13,11 @@ public class SO_Species : ScriptableObject
     [SerializeField] private int _aptitude;
     [SerializeField] private Type type1;
     [SerializeField] private Type type2;
-    [SerializeField] private SO_Move[] _one;
-    [SerializeField] private SO_Move[] _two;
-    [SerializeField] private SO_Move[] _three;
-    [SerializeField] private SO_Move[] _four;
-    [SerializeField] private SO_Move[] _five;
+    [SerializeField] private SO_Move[] _one; // Level One Moveset
+    [SerializeField] private SO_Move[] _two; // Level Two Moveset
+    [SerializeField] private SO_Move[] _three; // level Three Moveset
+    [SerializeField] private SO_Move[] _four; // Level Four Moveset
+    [SerializeField] private SO_Move[] _five; // Level Five Moveset
 
 
     public Species CreateSpecies()
