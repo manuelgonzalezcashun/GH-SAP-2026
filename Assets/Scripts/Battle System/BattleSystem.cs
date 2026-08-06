@@ -114,9 +114,9 @@ public class BattleSystem : StateMachine
     {
         foreach (var battler in battlers)
         {
+            if (battler.Health <= 0) continue;
+
             battler.SetTeam(faction);
-
-
             EventBus.Raise(new SetupBattleEvent { _Battler = battler, _Zone = zone });
         }
     }

@@ -24,6 +24,8 @@ public class BattleUnit : MonoBehaviour
     public void SetBattlerInUnit(Battler battler)
     {
         _battler = battler;
+        if (_battler == null) return;
+
         battlerImage.sprite = battler.Sprite;
         battlerImage.color = originalColor;
     }

@@ -40,7 +40,10 @@ public class OpponentAttackState : BattleState
         Debug.Log($"{attacker.Name} Attacked {target.Name} with {selectedMove.Name}!");
         yield return new WaitForSeconds(_system.Delay);
 
-        target.TakeDamage(selectedMove.Damage, selectedMove.Type);
+        bool targetFainted = target.TakeDamage(selectedMove.Damage, selectedMove.Type);
+
+        if (targetFainted)
+            EventBus.Raise(new TargetFaintedEvent { _Target = target });
 
         // if (move.Row)
         // {

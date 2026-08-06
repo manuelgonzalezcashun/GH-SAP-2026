@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Alpha Build/Core Scene.unity
     guid: bc5036d1aedc7ec438538842b33bc6f9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Alpha Build/Steam Bus.unity
     guid: a1018143385f2ce42bd70c15670ced3a
   - enabled: 0
@@ -38,9 +38,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Alpha Build/Levels/CityPart_1.unity
     guid: d1a6616d6f4104682aef4d417fa481e0
-  - enabled: 0
-    path: Assets/Scenes/Alpha Build/Levels/Path_1.unity
-    guid: b6f175fd8ebe646528f3b8af9ee1a4a9
   - enabled: 1
     path: Assets/Scenes/Alpha Build/Levels/Wild_Part1.unity
     guid: c43f168bcaea745adb6cf358fe1c9509
