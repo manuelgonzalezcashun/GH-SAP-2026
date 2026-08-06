@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Sulfur 3
   m_EditorClassIdentifier: Assembly-CSharp::SO_Species
   _pneuma: Sulfur 2
-  _maxHealth: 16
+  _maxHealth: 18
   _initiative: 10
   _aptitude: 4
   type1: 2
-  type2: 0
+  type2: 5
   _one:
   - {fileID: 11400000, guid: 95aeb65b24a5b44b0a78c91818922eaa, type: 2}
   - {fileID: 11400000, guid: 90a44eab97e8348eb8005d2ef9b462ca, type: 2}
@@ -34,4 +34,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ad10258b6031a48239f36795e93ab90a, type: 2}
   - {fileID: 11400000, guid: d224757fbadf743969d94fe9f2ee5ad0, type: 2}
   - {fileID: 11400000, guid: a77edebf329294a5a9796a125f1f8fc5, type: 2}
-  _five: []
+  _five:
+  - {fileID: 11400000, guid: ad10258b6031a48239f36795e93ab90a, type: 2}
+  - {fileID: 11400000, guid: d224757fbadf743969d94fe9f2ee5ad0, type: 2}
+  - {fileID: 11400000, guid: a77edebf329294a5a9796a125f1f8fc5, type: 2}
