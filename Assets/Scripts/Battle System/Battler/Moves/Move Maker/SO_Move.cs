@@ -1,10 +1,12 @@
 using UnityEngine;
 using System.Linq;
+using System;
 
 [CreateAssetMenu(fileName = "New Move", menuName = "Battle System/Create new Move")]
 public class SO_Move : ScriptableObject
 {
     [Header("Move Details")]
+    [SerializeField] private string _name;
     [SerializeField] private int _Damage;
     [SerializeField] private int _Healing;
     [Range(-1, 2)][SerializeField] private int _Distance;
@@ -25,7 +27,7 @@ public class SO_Move : ScriptableObject
     private Move MakeBaseMove()
     {
         return new Move.Maker()
-        .WithName(name)
+        .WithName(_name)
         .WithDesc(_Description)
         .WithInfo(_Information)
         .WithType(_Type)

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e93fd1865023414eab16b42e318b52f, type: 3}
   m_Name: Distort
   m_EditorClassIdentifier: Assembly-CSharp::SO_Move
+  _name: Distort
   _Damage: 4
   _Healing: 0
   _Distance: 1
@@ -19,5 +20,6 @@ MonoBehaviour:
   _CanTargetAlly: 0
   _Type: 8
   _Description: 
+  _Information: 4 Damage, Normal Range, Confuses
   _Category: 0
   _Effect: []

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e93fd1865023414eab16b42e318b52f, type: 3}
   m_Name: Tea Party
   m_EditorClassIdentifier: Assembly-CSharp::SO_Move
+  _name: Tea Party
   _Damage: 0
   _Healing: 4
   _Distance: 0
@@ -19,5 +20,6 @@ MonoBehaviour:
   _CanTargetAlly: 1
   _Type: 7
   _Description: 
+  _Information: 4 Healing, Close Range, Hits All in Row
   _Category: 1
   _Effect: []

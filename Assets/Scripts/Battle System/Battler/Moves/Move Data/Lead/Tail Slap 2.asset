@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e93fd1865023414eab16b42e318b52f, type: 3}
   m_Name: Tail Slap 2
   m_EditorClassIdentifier: Assembly-CSharp::SO_Move
+  _name: Tail Slap
   _Damage: 3
   _Healing: 0
   _Distance: 1
@@ -19,6 +20,7 @@ MonoBehaviour:
   _CanTargetAlly: 0
   _Type: 4
   _Description: 
+  _Information: 3 Damage, Knocks Target Back
   _Category: 0
   _Effect:
   - {fileID: 11400000, guid: 841d11abb25cd433c9854e5261b9f037, type: 2}

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e93fd1865023414eab16b42e318b52f, type: 3}
   m_Name: Rabid Assault
   m_EditorClassIdentifier: Assembly-CSharp::SO_Move
+  _name: Rabid Assault
   _Damage: 5
   _Healing: 0
   _Distance: 0
@@ -19,5 +20,6 @@ MonoBehaviour:
   _CanTargetAlly: 0
   _Type: 8
   _Description: 
+  _Information: 5 Damage, Close Range, Confuses
   _Category: 0
   _Effect: []

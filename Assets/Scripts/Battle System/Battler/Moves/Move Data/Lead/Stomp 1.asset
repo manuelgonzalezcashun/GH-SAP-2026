@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e93fd1865023414eab16b42e318b52f, type: 3}
   m_Name: Stomp 1
   m_EditorClassIdentifier: Assembly-CSharp::SO_Move
+  _name: Stomp
   _Damage: 6
   _Healing: 0
   _Distance: 0
@@ -19,5 +20,6 @@ MonoBehaviour:
   _CanTargetAlly: 0
   _Type: 4
   _Description: 
+  _Information: 6 Damage, Close Range
   _Category: 0
   _Effect: []

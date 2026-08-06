@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e93fd1865023414eab16b42e318b52f, type: 3}
   m_Name: Healing Gas
   m_EditorClassIdentifier: Assembly-CSharp::SO_Move
+  _name: Healing Gas
   _Damage: 0
   _Healing: 3
   _Distance: 1
@@ -19,6 +20,7 @@ MonoBehaviour:
   _CanTargetAlly: 1
   _Type: 7
   _Description: The user expells a gas to mend the wounds of its allies
+  _Information: 3 Healing, Normal Range
   _Category: 1
   _Effect:
   - {fileID: 11400000, guid: 841d11abb25cd433c9854e5261b9f037, type: 2}

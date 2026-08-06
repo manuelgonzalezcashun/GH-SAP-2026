@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e93fd1865023414eab16b42e318b52f, type: 3}
   m_Name: Liquid Lash 2
   m_EditorClassIdentifier: Assembly-CSharp::SO_Move
+  _name: Liquid Lash
   _Damage: 4
   _Healing: 0
   _Distance: 2
@@ -19,5 +20,6 @@ MonoBehaviour:
   _CanTargetAlly: 0
   _Type: 3
   _Description: User distorts liquid metal to slash at targets from a distance
+  _Information: 
   _Category: 0
   _Effect: []
