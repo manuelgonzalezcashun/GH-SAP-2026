@@ -11,8 +11,9 @@ public class BattleHUD : MonoBehaviour
     public void SetupBattleHUD(Battler battler)
     {
         _battler = battler;
-        _battler.onHealthChanged += SetHP;
+        if (_battler.Health <= 0) return;
 
+        _battler.onHealthChanged += SetHP;
         nameText.text = _battler.Name;
         SetHP(_battler.Health, _battler.MaxHealth);
         gameObject.SetActive(true);
