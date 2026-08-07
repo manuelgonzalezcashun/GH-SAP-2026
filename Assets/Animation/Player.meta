@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Animation/Player.meta
 guid: 9d7ee607b401abc4f89cc299f3a73315
+========
+guid: c4f356fab675f3749bb82f34376ab823
+>>>>>>>> monica:Assets/Art/Buttons.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
