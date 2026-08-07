@@ -17,6 +17,7 @@ public class Battler
     public Move[] Moves { get; private set; }
     public int Initiative { get; private set; }
     public string Name { get; private set; }
+    public string DisplayName { get; private set; }
     private int Row;
     public int Aptitude { get; private set; }
     // for when customizing movesets is added, its the max amount of moves a creature can have
@@ -45,6 +46,7 @@ public class Battler
         onHealthChanged?.Invoke(Health, MaxHealth);
     }
     public void SetTeam(Team team) => Team = team;
+    public void SetDisplayName(string _name) => DisplayName = _name;
 
     public int getRow()
     {
@@ -136,6 +138,7 @@ public class Battler
             var battler = new Battler
             {
                 Name = name,
+                DisplayName = name,
                 Sprite = sprite,
                 Initiative = initiative,
                 Aptitude = aptitude,

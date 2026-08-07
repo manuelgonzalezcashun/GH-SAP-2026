@@ -6,7 +6,7 @@ public class PlayerLoseState : BattleState
 
     public override void EnterState()
     {
-        Debug.Log("Player Lost...");
+        EventBus.Raise(new DisplayBattleTextEvent { battleText = "Player Lost..." });
         EventBus.Raise(new EndBattleEvent());
         InputHandler.ChangeActionMaps(InputHandler.playerInput);
 

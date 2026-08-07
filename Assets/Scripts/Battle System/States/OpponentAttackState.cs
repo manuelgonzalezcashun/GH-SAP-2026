@@ -36,7 +36,7 @@ public class OpponentAttackState : BattleState
         int index = Random.Range(0, eligibleTargets.Count);
         var target = eligibleTargets[index];
 
-        EventBus.Raise(new DisplayBattleTextEvent { battleText = $"{attacker.Name} Attacked {target.Name} with {selectedMove.Name}!" });
+        EventBus.Raise(new DisplayBattleTextEvent { battleText = $"{attacker.DisplayName} Attacked {target.DisplayName} with {selectedMove.Name}!" });
         yield return new WaitForSeconds(_system.Delay);
 
         bool targetFainted = target.TakeDamage(selectedMove.Damage, selectedMove.Type);
