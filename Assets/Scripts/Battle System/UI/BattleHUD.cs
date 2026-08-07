@@ -14,7 +14,10 @@ public class BattleHUD : MonoBehaviour
         if (_battler.Health <= 0) return;
 
         _battler.onHealthChanged += SetHP;
-        nameText.text = _battler.Name;
+
+        string displayName = _battler.Team != Team.PLAYER ? $"{battler.Name} (Enemy)" : battler.Name;
+        nameText.text = displayName;
+
         SetHP(_battler.Health, _battler.MaxHealth);
         gameObject.SetActive(true);
     }

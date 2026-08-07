@@ -108,8 +108,7 @@ public class PlayerAttackState : BattleState
             EventBus.Raise(new TargetFaintedEvent { _Target = _target });
         }
 
-        // TODO: Replace with UI Text
-        // Debug.Log($"{attacker.Name} Attacked {_target.Name}!");
+        EventBus.Raise(new DisplayBattleTextEvent { battleText = $"{attacker.Name} Attacked {_target.Name} with {move.Name}!" });
         yield return new WaitForSeconds(_system.Delay);
 
         if (eligibleEnemies.Count <= 0)

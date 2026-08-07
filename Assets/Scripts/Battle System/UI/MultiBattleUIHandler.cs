@@ -12,13 +12,15 @@ public class MultiBattleUIHandler : MonoBehaviour
     [SerializeField] GameObject zoneOptionsContainer = null;
     [SerializeField] BattleHUD hudPrefab = null;
     [SerializeField] Button[] moveOptions = null;
-    [SerializeField] Button[] battleOptions = null;
+    [SerializeField] ZoneButton[] zoneButtons;
+    [SerializeField] BattleButton[] battleOptions = null;
     [SerializeField] TMP_Text battleTextLabel = null;
 
     Dictionary<Battler, BattleHUD> activeBattleHUDs = new Dictionary<Battler, BattleHUD>();
     Queue<BattleHUD> hudPool = new Queue<BattleHUD>();
-    ZoneButton[] zoneButtons;
     int buttonIndex = 0;
+    int moveCount = 0;
+    Move[] currentMoves = null;
     void OnEnable()
     {
         EventBus.Subscribe<SetupBattleEvent>(SetupBattleUI);
@@ -41,7 +43,11 @@ public class MultiBattleUIHandler : MonoBehaviour
     }
 
 
-    private void ShowBattleOptions(ShowOptionsEvent data) => battleOptionContainer.SetActive(data.BO_Show);
+    private void ShowBattleOptions(ShowOptionsEvent data)
+    {
+        battleOptionContainer.SetActive(data.BO_Show);
+        battleOptions[0].Select();
+    }
 
     private void ShowMoveOptions(ShowOptionsEvent data)
     {
@@ -53,12 +59,14 @@ public class MultiBattleUIHandler : MonoBehaviour
         }
 
         moveOptionsContainer.SetActive(data.MO_Show);
+        moveOptions[0].Select();
         if (data.MO_Battler != null) SetupMoves(data.MO_Battler);
     }
 
     private void SetupMoves(Battler battler)
     {
-        int moveCount = battler.Moves.Length;
+        currentMoves = battler.Moves;
+        moveCount = currentMoves.Length;
 
         for (int i = 0; i < moveOptions.Length; i++)
         {
@@ -67,18 +75,20 @@ public class MultiBattleUIHandler : MonoBehaviour
             // Sets up each button UI to contain move data
             moveOptions[i].gameObject.SetActive(i < moveCount);
             TMP_Text moveText = moveOptions[i].GetComponentInChildren<TMP_Text>();
-            moveText.text = battler.Moves[i].Name;
+            moveText.text = currentMoves[i].Name;
 
             // Sends Move data to battle System
-            MoveSelectedEvent evtData = new MoveSelectedEvent { move = battler.Moves[i] };
+            MoveSelectedEvent evtData = new MoveSelectedEvent { move = currentMoves[i] };
             moveOptions[i].onClick.AddListener(() => EventBus.Raise(evtData));
             moveOptions[i].onClick.AddListener(() => EventBus.Raise(new ShowOptionsEvent { MO_Show = false, MO_Battler = null }));
+            moveOptions[i].onClick.AddListener(() => currentMoves = null);
+            moveOptions[i].onClick.AddListener(() => EventBus.Raise(new DisplayBattleTextEvent { battleText = string.Empty }));
         }
     }
 
     void Awake()
     {
-        zoneButtons = zoneOptionsContainer.GetComponentsInChildren<ZoneButton>();
+        battleTextLabel.text = string.Empty;
     }
     void Update()
     {
@@ -96,7 +106,7 @@ public class MultiBattleUIHandler : MonoBehaviour
         }
 
         zoneOptionsContainer.SetActive(true);
-        zoneButtons[buttonIndex].CurrentZoneBtn.Select();
+        zoneButtons[0].Select();
         data.ZO_Battler = null;
     }
 
@@ -170,14 +180,12 @@ public class MultiBattleUIHandler : MonoBehaviour
     }
 
     // Helper Methods
-    private Button SelectButton(GameObject buttonContainer, Button[] buttons)
+    private Button ButtonSelectionHandler(int length, Button[] buttons)
     {
-        if (!buttonContainer.activeSelf) return null;
-
         if (InputHandler.SelectedRightButton)
         {
             buttonIndex++;
-            buttonIndex %= buttons.Length;
+            buttonIndex %= length;
         }
 
         if (InputHandler.SelectedLeftButton)
@@ -185,49 +193,35 @@ public class MultiBattleUIHandler : MonoBehaviour
             if (buttonIndex > 0)
                 buttonIndex--;
             else
-                buttonIndex = buttons.Length - 1;
+                buttonIndex = length - 1;
         }
+
         return buttons[buttonIndex];
-    }
-    private Button SelectZoneButton()
-    {
-        if (!zoneOptionsContainer.activeSelf) return null;
-
-        if (InputHandler.SelectedRightButton)
-        {
-            buttonIndex++;
-            buttonIndex %= zoneButtons.Length;
-        }
-
-        if (InputHandler.SelectedLeftButton)
-        {
-            if (buttonIndex > 0)
-                buttonIndex--;
-            else
-                buttonIndex = zoneButtons.Length - 1;
-        }
-        return zoneButtons[buttonIndex].CurrentZoneBtn;
     }
     private void ZoneButtonSelector()
     {
-        Button zoneBtn = SelectZoneButton();
+        if (!zoneOptionsContainer.activeSelf) return;
 
-        if (zoneBtn == null) return;
-        zoneBtn.Select();
+        ZoneButton currentButton = ButtonSelectionHandler(zoneButtons.Length, zoneButtons) as ZoneButton;
+        currentButton.Select();
+        EventBus.Raise(new DisplayBattleTextEvent { battleText = currentButton.Description });
     }
     private void MoveButtonSelector()
     {
-        Button selectedMoveOption = SelectButton(moveOptionsContainer, moveOptions);
+        if (!moveOptionsContainer.activeSelf) return;
 
-        if (selectedMoveOption == null) return;
-        selectedMoveOption.Select(); // Select Move Option
-        // Display Move Description
+        Button currentButton = ButtonSelectionHandler(moveCount, moveOptions);
+        currentButton.Select();
+
+        EventBus.Raise(new DisplayBattleTextEvent { battleText = currentMoves[buttonIndex].Info });
     }
     private void BattleOptionSelector()
     {
-        Button selectedBattleOption = SelectButton(battleOptionContainer, battleOptions);
+        if (!battleOptionContainer.activeSelf) return;
 
-        if (selectedBattleOption == null) return;
-        selectedBattleOption.Select();
+        BattleButton currentButton = ButtonSelectionHandler(battleOptions.Length, battleOptions) as BattleButton;
+        currentButton.Select();
+
+        EventBus.Raise(new DisplayBattleTextEvent { battleText = currentButton.Description });
     }
 }
