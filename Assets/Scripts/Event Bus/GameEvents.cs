@@ -77,3 +77,8 @@ public class SetCameraBoundsEvent
     public Vector3 camPos = Vector3.zero;
 }
 
+public class DisplayBattleTextEvent
+{
+    public string battleText = string.Empty;
+}
+

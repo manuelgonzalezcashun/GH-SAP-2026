@@ -12,10 +12,13 @@ public class MultiBattleUIHandler : MonoBehaviour
     [SerializeField] GameObject zoneOptionsContainer = null;
     [SerializeField] BattleHUD hudPrefab = null;
     [SerializeField] Button[] moveOptions = null;
+    [SerializeField] Button[] battleOptions = null;
+    [SerializeField] TMP_Text battleTextLabel = null;
 
     Dictionary<Battler, BattleHUD> activeBattleHUDs = new Dictionary<Battler, BattleHUD>();
     Queue<BattleHUD> hudPool = new Queue<BattleHUD>();
     ZoneButton[] zoneButtons;
+    int buttonIndex = 0;
     void OnEnable()
     {
         EventBus.Subscribe<SetupBattleEvent>(SetupBattleUI);
@@ -24,6 +27,7 @@ public class MultiBattleUIHandler : MonoBehaviour
         EventBus.Subscribe<ShowOptionsEvent>(ShowMoveOptions);
         EventBus.Subscribe<EndBattleEvent>(ClearBattleUI);
         EventBus.Subscribe<TargetFaintedEvent>(ClearBattleHUD);
+        EventBus.Subscribe<DisplayBattleTextEvent>(DisplayText);
     }
     void OnDisable()
     {
@@ -33,6 +37,7 @@ public class MultiBattleUIHandler : MonoBehaviour
         EventBus.UnSubscribe<ShowOptionsEvent>(ShowMoveOptions);
         EventBus.UnSubscribe<EndBattleEvent>(ClearBattleUI);
         EventBus.UnSubscribe<TargetFaintedEvent>(ClearBattleHUD);
+        EventBus.UnSubscribe<DisplayBattleTextEvent>(DisplayText);
     }
 
 
@@ -75,7 +80,12 @@ public class MultiBattleUIHandler : MonoBehaviour
     {
         zoneButtons = zoneOptionsContainer.GetComponentsInChildren<ZoneButton>();
     }
-
+    void Update()
+    {
+        ZoneButtonSelector();
+        MoveButtonSelector();
+        BattleOptionSelector();
+    }
     private void ShowZoneOptions(ShowOptionsEvent data)
     {
         if (data.ZO_Battler == null) return;
@@ -86,6 +96,7 @@ public class MultiBattleUIHandler : MonoBehaviour
         }
 
         zoneOptionsContainer.SetActive(true);
+        zoneButtons[buttonIndex].CurrentZoneBtn.Select();
         data.ZO_Battler = null;
     }
 
@@ -152,5 +163,71 @@ public class MultiBattleUIHandler : MonoBehaviour
 
         battleHUD.transform.SetParent(hudParent);
         return battleHUD;
+    }
+    private void DisplayText(DisplayBattleTextEvent data)
+    {
+        battleTextLabel.text = data.battleText;
+    }
+
+    // Helper Methods
+    private Button SelectButton(GameObject buttonContainer, Button[] buttons)
+    {
+        if (!buttonContainer.activeSelf) return null;
+
+        if (InputHandler.SelectedRightButton)
+        {
+            buttonIndex++;
+            buttonIndex %= buttons.Length;
+        }
+
+        if (InputHandler.SelectedLeftButton)
+        {
+            if (buttonIndex > 0)
+                buttonIndex--;
+            else
+                buttonIndex = buttons.Length - 1;
+        }
+        return buttons[buttonIndex];
+    }
+    private Button SelectZoneButton()
+    {
+        if (!zoneOptionsContainer.activeSelf) return null;
+
+        if (InputHandler.SelectedRightButton)
+        {
+            buttonIndex++;
+            buttonIndex %= zoneButtons.Length;
+        }
+
+        if (InputHandler.SelectedLeftButton)
+        {
+            if (buttonIndex > 0)
+                buttonIndex--;
+            else
+                buttonIndex = zoneButtons.Length - 1;
+        }
+        return zoneButtons[buttonIndex].CurrentZoneBtn;
+    }
+    private void ZoneButtonSelector()
+    {
+        Button zoneBtn = SelectZoneButton();
+
+        if (zoneBtn == null) return;
+        zoneBtn.Select();
+    }
+    private void MoveButtonSelector()
+    {
+        Button selectedMoveOption = SelectButton(moveOptionsContainer, moveOptions);
+
+        if (selectedMoveOption == null) return;
+        selectedMoveOption.Select(); // Select Move Option
+        // Display Move Description
+    }
+    private void BattleOptionSelector()
+    {
+        Button selectedBattleOption = SelectButton(battleOptionContainer, battleOptions);
+
+        if (selectedBattleOption == null) return;
+        selectedBattleOption.Select();
     }
 }

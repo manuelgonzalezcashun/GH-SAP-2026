@@ -1,7 +1,9 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ZoneButton : MonoBehaviour
 {
+    public Button CurrentZoneBtn => GetComponent<Button>();
     private Battler _activeBattler = null;
     public void MoveBattler(int zoneStep)
     {
