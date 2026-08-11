@@ -29,7 +29,7 @@ public class Battler
     // public Color Color { get; private set; }
     public Sprite Sprite { get; private set; }
     public Team Team { get; private set; }
-    public int Aptitude;
+    public int Aptitude { get; private set; }
 
     public bool TakeDamage(int damage, Type type)
     {
@@ -171,7 +171,8 @@ public class Battler
                 Health = health,
                 Moves = moves,
                 FirstType = firstType,
-                SecondType = secondType
+                SecondType = secondType,
+                Aptitude = aptitude
 
             };
             return battler;
