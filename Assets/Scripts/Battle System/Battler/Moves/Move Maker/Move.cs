@@ -24,7 +24,8 @@ public class Move
     public string Desc { get; private set; }
     public string Info { get; private set; }
     //the description/explanation of the move
-    
+    public int StackAdd { get; private set; }
+    public Stack Stack { get; private set; }
 
     public MoveCategory Category { get; private set; }
     public Effect[] Effect {get; private set; }
@@ -46,6 +47,8 @@ public class Move
         private string info = "2 Damage Normal Range";
         private MoveCategory category = MoveCategory.DAMAGING;
         private Effect[] effect = null;
+        public int stackAdd =0;
+        public Stack stack = Stack.ARMOR;
 
         public Maker WithName(string name)
         {
@@ -102,6 +105,16 @@ public class Move
             this.effect = effect;
             return this;
         }
+        public Maker WithStackAdd(int stackAdd)
+        {
+            this.stackAdd = stackAdd;
+            return this;
+        }
+        public Maker WithStack(Stack stack)
+        {
+            this.stack = stack;
+            return this;
+        }
         public Move Make()
         {
             var move = new Move
@@ -116,7 +129,9 @@ public class Move
                 Row = row,
                 AlliesAffected = alliesAffected,
                 Category = category,
-                Effect = effect
+                Effect = effect,
+                Stack = stack,
+                StackAdd = stackAdd
             };
             return move;
         }

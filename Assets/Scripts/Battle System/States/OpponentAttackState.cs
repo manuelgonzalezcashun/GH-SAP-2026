@@ -40,6 +40,7 @@ public class OpponentAttackState : BattleState
         yield return new WaitForSeconds(_system.Delay);
 
         bool targetFainted = target.TakeDamage(selectedMove.Damage, selectedMove.Type);
+        target.ChangeStack(selectedMove.StackAdd, selectedMove.Stack);
 
         if (targetFainted)
             EventBus.Raise(new TargetFaintedEvent { _Target = target });
