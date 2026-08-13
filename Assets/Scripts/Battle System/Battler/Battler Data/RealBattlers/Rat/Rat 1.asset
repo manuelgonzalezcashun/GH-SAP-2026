@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SO_Battler
   _species: {fileID: 11400000, guid: 1371945de12484a64982746b080f2915, type: 2}
   moves:
-  - {fileID: 11400000, guid: e730c1b8b7500480eb42f597bd8d2b54, type: 2}
-  - {fileID: 11400000, guid: 35543857fc3fd4a1fb014b6bf7bd17be, type: 2}
   - {fileID: 11400000, guid: c912d735bd6a64367b80f09ddca5cf1a, type: 2}
+  - {fileID: 11400000, guid: 35543857fc3fd4a1fb014b6bf7bd17be, type: 2}
+  - {fileID: 11400000, guid: e730c1b8b7500480eb42f597bd8d2b54, type: 2}
   _sprite: {fileID: 21300000, guid: a5a5778bd52f1cf459b6ddb4ee9972bd, type: 3}

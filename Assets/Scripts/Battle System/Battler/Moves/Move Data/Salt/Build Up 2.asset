@@ -10,19 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e93fd1865023414eab16b42e318b52f, type: 3}
-  m_Name: Scratch
+  m_Name: Build Up 2
   m_EditorClassIdentifier: Assembly-CSharp::SO_Move
-  _name: Scratch
-  _Damage: 3
+  _name: Build Up
+  _Damage: 0
   _Healing: 0
-  _Distance: 1
+  _Distance: -1
   _HitsAllInRow: 0
-  _CanTargetAlly: 0
-  _Type: 4
+  _CanTargetAlly: 1
+  _Type: 0
   _Description: 
-  _Information: 3 Damage, Normal Range, Gives 2 Weakness
-  _Category: 0
-  _Stack: 2
-  _StackAdd: 2
-  _Effect:
-  - {fileID: 11400000, guid: 841d11abb25cd433c9854e5261b9f037, type: 2}
+  _Information: Gain 4 Armor
+  _Category: 3
+  _Stack: 1
+  _StackAdd: 4
+  _Effect: []

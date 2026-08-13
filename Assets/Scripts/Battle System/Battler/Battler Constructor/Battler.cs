@@ -47,8 +47,6 @@ public class Battler
         onHealthChanged?.Invoke(Health, MaxHealth);
         Weakness_STK = 0;
         Armor_STK = 0;
-        Debug.Log(Name +"'s Weakness Stacks: " + Weakness_STK);
-        Debug.Log(Name +"'s Armor Stacks: " + Armor_STK);
         return Health <= 0;
     }
     public void ChangeStack(int amt, Stack type)
@@ -61,8 +59,6 @@ public class Battler
         {
             Weakness_STK+=amt;
         }
-        Debug.Log(Name +"'s Weakness Stacks: " + Weakness_STK);
-        Debug.Log(Name +"'s Armor Stacks: " + Armor_STK);
     }
     public void Heal(int healing)
     {
@@ -219,7 +215,6 @@ public class Battler
         {
             if (atk == Type.SULFUR || atk == Type.ARSENIC)
             {
-                Debug.Log(damage);
 
                 return Weakness(damage);
             }

@@ -27,10 +27,9 @@ public class MoveBattlerState : BattleState
         else
         {
             int randomStep = Random.Range(-1, 2);
-            // Debug.Log($"Enemy Row: {_system.ActiveBattler.getRow()} Enemy Selected Step: {randomStep}");
             EventBus.Raise(new OnMoveZoneEvent { _Battler = _system.ActiveBattler, _ZoneStep = randomStep });
         }
-
+        EventBus.Raise(new DisplayBattleTextEvent { battleText = $"{_system.ActiveBattler.DisplayName} Decided Where to Move" });
         yield return new WaitUntil(() => hasMoved);
         yield return new WaitForSeconds(_system.Delay);
 
