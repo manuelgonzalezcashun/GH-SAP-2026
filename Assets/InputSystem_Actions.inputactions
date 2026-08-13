@@ -517,6 +517,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ExitPanel",
+                    "type": "Button",
+                    "id": "26bb9c09-4e61-4abe-83b2-3ef422acc06e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -605,6 +614,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "SelectUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1df719cc-74d1-46a6-bda8-c0cc0c40e1ff",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ExitPanel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -11,8 +12,9 @@ public class MainMenu : MonoBehaviour
     [Header("Mute Controls")]
     [SerializeField] Button musicOnButton = null;
     [SerializeField] Button musicOffButton = null;
-    [Header("Panel")]
+    [Header("Panels")]
     [SerializeField] GameObject mainMenuPanel = null;
+    [SerializeField] GameObject controlsPanel = null;
     [SerializeField] GameObject cutScene = null;
     [SerializeField] GameObject loadingScreen = null;
     [SerializeField] GameObject fogParticles = null;
@@ -26,7 +28,26 @@ public class MainMenu : MonoBehaviour
     [Header("Main Menu Buttons")]
     [SerializeField] Button[] mainMenuButtons = null;
     [SerializeField] Button nextLevelButton = null;
+    [SerializeField] Button controlsExitButton = null;
     int buttonIndex = 0;
+
+    void OnEnable()
+    {
+        foreach (var button in mainMenuButtons)
+        {
+            button.onClick.AddListener(() => EventSystem.current.SetSelectedGameObject(null));
+            button.onClick.AddListener(() => buttonIndex = 0);
+
+        }
+    }
+    void OnDisable()
+    {
+        foreach (var button in mainMenuButtons)
+        {
+            button.onClick.RemoveAllListeners();
+            Debug.Log("Removing All Listeners");
+        }
+    }
 
     void Start()
     {
@@ -36,6 +57,11 @@ public class MainMenu : MonoBehaviour
     void Update()
     {
         MainMenuButtonSelector();
+        if (controlsPanel.activeInHierarchy && InputHandler.ExitPanelPressed)
+        {
+            StopAllCoroutines();
+            OnControlsExit();
+        }
     }
 
     private void MainMenuButtonSelector()
@@ -105,9 +131,27 @@ public class MainMenu : MonoBehaviour
     }
     public void OnControls()
     {
+        StartCoroutine(ControlsSequence());
+    }
+    IEnumerator ControlsSequence()
+    {
+        // Display Controls Panel
+        controlsPanel.SetActive(true);
+        fogParticles.SetActive(false);
+
+        yield return new WaitForSeconds(0.5f);
+
         // Hide Main Menu Panel
         mainMenuPanel.SetActive(false);
-        // Display Controls Panel
+    }
+    public void OnControlsExit()
+    {
+        // Hide Controls Panel
+        controlsPanel.SetActive(false);
+
+        // Display Main Menu
+        mainMenuPanel.SetActive(true);
+        fogParticles.SetActive(true);
     }
     public void OnQuit()
     {

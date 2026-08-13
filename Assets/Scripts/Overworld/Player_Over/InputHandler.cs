@@ -28,6 +28,7 @@ public class InputHandler : MonoBehaviour
     InputAction ConfirmTargetAction => inputActions["ConfirmTarget"];
     InputAction SelectUpAction => inputActions["SelectUp"];
     InputAction SelectDownAction => inputActions["SelectDown"];
+    InputAction EscapeAction => inputActions["ExitPanel"];
 
     // ACTION MAP INDICES //
     public static int playerInput => 0;
@@ -44,6 +45,7 @@ public class InputHandler : MonoBehaviour
     public static bool ConfirmTargetPressed => _instance.ConfirmTargetAction.WasPressedThisFrame();
     public static bool MainMenuSelectUp => _instance.SelectUpAction.WasPerformedThisFrame();
     public static bool MainMenuSelectDown => _instance.SelectDownAction.WasPerformedThisFrame();
+    public static bool ExitPanelPressed => _instance.EscapeAction.WasPressedThisFrame();
     void _ChangeActionMaps(int actionMapIndex)
     {
         currentActionMap = inputActions.actionMaps[actionMapIndex];
