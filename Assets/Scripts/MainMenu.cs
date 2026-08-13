@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -35,9 +35,7 @@ public class MainMenu : MonoBehaviour
     {
         foreach (var button in mainMenuButtons)
         {
-            button.onClick.AddListener(() => EventSystem.current.SetSelectedGameObject(null));
-            button.onClick.AddListener(() => buttonIndex = 0);
-
+            button.onClick.AddListener(() => ResetButtonState());
         }
     }
     void OnDisable()
@@ -45,10 +43,8 @@ public class MainMenu : MonoBehaviour
         foreach (var button in mainMenuButtons)
         {
             button.onClick.RemoveAllListeners();
-            Debug.Log("Removing All Listeners");
         }
     }
-
     void Start()
     {
         InputHandler.ChangeActionMaps(InputHandler.mainMenuInput);
@@ -139,11 +135,27 @@ public class MainMenu : MonoBehaviour
         controlsPanel.SetActive(true);
         fogParticles.SetActive(false);
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
 
         // Hide Main Menu Panel
         mainMenuPanel.SetActive(false);
     }
+
+    // After button is pressed, return to normal state
+    private async void ResetButtonState()
+    {
+        var currentButton = mainMenuButtons[buttonIndex];
+        var normalState = currentButton.animationTriggers.normalTrigger;
+
+        currentButton.transition = Selectable.Transition.None;
+        currentButton.animator.CrossFade(normalState, 0);
+
+        await Task.Delay(200);
+
+        currentButton.transition = Selectable.Transition.Animation;
+        buttonIndex = 0;
+    }
+
     public void OnControlsExit()
     {
         // Hide Controls Panel
