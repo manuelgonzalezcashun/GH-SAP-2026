@@ -65,7 +65,6 @@ public class PlayerAttackState : BattleState
             else
                 _system.StartCoroutine(Heal());
 
-            Debug.Log($"Target Confirmed! Current Selection: {_selectedIndex}");
             _selectedIndex = -1;
             return;
         }
