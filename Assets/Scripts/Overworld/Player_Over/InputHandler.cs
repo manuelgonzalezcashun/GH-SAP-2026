@@ -26,10 +26,12 @@ public class InputHandler : MonoBehaviour
     InputAction SelectRightAction => inputActions["SelectRight"];
     InputAction SelectLeftAction => inputActions["SelectLeft"];
     InputAction ConfirmTargetAction => inputActions["ConfirmTarget"];
+    InputAction SelectUpAction => inputActions["SelectUp"];
+    InputAction SelectDownAction => inputActions["SelectDown"];
 
     // ACTION MAP INDICES //
     public static int playerInput => 0;
-    public static int uiInput => 1;
+    public static int mainMenuInput => 1;
     public static int dialogueInput => 2;
     public static int combatInput => 3;
 
@@ -40,6 +42,8 @@ public class InputHandler : MonoBehaviour
     public static bool SelectedRightButton => _instance.SelectRightAction.WasPressedThisFrame();
     public static bool SelectedLeftButton => _instance.SelectLeftAction.WasPressedThisFrame();
     public static bool ConfirmTargetPressed => _instance.ConfirmTargetAction.WasPressedThisFrame();
+    public static bool MainMenuSelectUp => _instance.SelectUpAction.WasPerformedThisFrame();
+    public static bool MainMenuSelectDown => _instance.SelectDownAction.WasPerformedThisFrame();
     void _ChangeActionMaps(int actionMapIndex)
     {
         currentActionMap = inputActions.actionMaps[actionMapIndex];
