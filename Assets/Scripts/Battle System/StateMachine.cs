@@ -8,6 +8,9 @@ public abstract class StateMachine : MonoBehaviour
     public float Delay => delay;
     public virtual void SetState(State state)
     {
+        if (_currentState != null)
+            _currentState.ExitState();
+
         _currentState = state;
         _currentState.EnterState();
     }
