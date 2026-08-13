@@ -45,8 +45,9 @@ public class MultiBattleUIHandler : MonoBehaviour
 
     private void ShowBattleOptions(ShowOptionsEvent data)
     {
+        buttonIndex = 0;
+        battleOptions[buttonIndex].Select();
         battleOptionContainer.SetActive(data.BO_Show);
-        battleOptions[0].Select();
     }
 
     private void ShowMoveOptions(ShowOptionsEvent data)
@@ -58,8 +59,10 @@ public class MultiBattleUIHandler : MonoBehaviour
             move.gameObject.SetActive(false);
         }
 
+        buttonIndex = 0;
+        moveOptions[buttonIndex].Select();
+
         moveOptionsContainer.SetActive(data.MO_Show);
-        moveOptions[0].Select();
         if (data.MO_Battler != null) SetupMoves(data.MO_Battler);
     }
 
@@ -105,8 +108,9 @@ public class MultiBattleUIHandler : MonoBehaviour
             button.SetActiveBattler(data.ZO_Battler);
         }
 
+        buttonIndex = 0;
+        zoneButtons[buttonIndex].Select();
         zoneOptionsContainer.SetActive(true);
-        zoneButtons[0].Select();
         data.ZO_Battler = null;
     }
 
