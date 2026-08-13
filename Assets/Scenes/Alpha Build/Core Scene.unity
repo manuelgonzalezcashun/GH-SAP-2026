@@ -3394,6 +3394,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8051017274586096551, guid: 7bb17ee32799bc149a32ff1f9df48214, type: 3}
+      propertyPath: overworldTheme
+      value: 
+      objectReference: {fileID: 11400000, guid: 37964601a3440ca4c9d7fef30ac4fe27, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

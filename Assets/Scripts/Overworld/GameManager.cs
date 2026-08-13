@@ -14,10 +14,14 @@ public class GameManager : StateMachine
         DontDestroyOnLoad(Instance);
     }
     #endregion
+    [SerializeField] AudioEffect overworldTheme = null;
+    [SerializeField] AudioEffect battleEffect = null;
     public GameState CurrentState => _currentState as GameState;
+    public AudioEffect OverworldTheme => overworldTheme;
     void Start()
     {
         SetState(new InOverworldState());
+
     }
     public void EnterScene(SceneReference scene)
     {

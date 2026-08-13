@@ -55,13 +55,13 @@ public class PlayerAttackState : BattleState
 
     private void SelectTarget(List<Battler> battlers)
     {
-        EventBus.Raise(new DisplayBattleTextEvent { battleText = $"Enter to Confirm Target \nMovement Keys to Change Target" });
-        if (Keyboard.current.upArrowKey.wasPressedThisFrame || Keyboard.current.rightArrowKey.wasPressedThisFrame)
+        if (_selectedIndex == -1)
         {
-            _selectedIndex--;
-            if (_selectedIndex < 0) _selectedIndex = battlers.Count - 1;
+            _selectedIndex = 0;
+            return;
         }
-        if (InputHandler.ConfirmTargetPressed && _selectedIndex != -1)
+
+        if (InputHandler.ConfirmTargetPressed)
         {
             _target = battlers[_selectedIndex];
             EventBus.Raise(new SelectTargetEvent { _Target = null });
@@ -74,9 +74,8 @@ public class PlayerAttackState : BattleState
             _selectedIndex = -1;
             return;
         }
-        _selectedIndex = 0;
-        EventBus.Raise(new SelectTargetEvent { _Target = battlers[_selectedIndex] });
 
+        EventBus.Raise(new SelectTargetEvent { _Target = battlers[_selectedIndex] });
         if (InputHandler.SelectedRightButton)
         {
             _selectedIndex--;
@@ -87,6 +86,7 @@ public class PlayerAttackState : BattleState
             _selectedIndex++;
             if (_selectedIndex >= battlers.Count) _selectedIndex = 0;
         }
+
     }
 
     public override IEnumerator Attack(Move move)
