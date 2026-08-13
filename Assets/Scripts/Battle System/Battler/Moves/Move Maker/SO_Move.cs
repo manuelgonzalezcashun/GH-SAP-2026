@@ -17,6 +17,8 @@ public class SO_Move : ScriptableObject
     [SerializeField] private string _Information;
 
     [SerializeField] private MoveCategory _Category;
+    [SerializeField] private Stack _Stack;
+    [SerializeField] private int _StackAdd;
     [SerializeField] private SO_Effect[] _Effect;
 
     public Move MakeMove()
@@ -37,6 +39,8 @@ public class SO_Move : ScriptableObject
         .WithRow(_HitsAllInRow)
         .WithAllyHit(_CanTargetAlly)
         .WithCategory(_Category)
+        .WithStack(_Stack)
+        .WithStackAdd(_StackAdd)
         //.WithEffect(_Effect.Select(effect => effect.MakeEffect()).ToArray())
         .Make();
     }

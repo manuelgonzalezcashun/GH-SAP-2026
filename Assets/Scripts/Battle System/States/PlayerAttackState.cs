@@ -93,6 +93,7 @@ public class PlayerAttackState : BattleState
     {
         var attacker = _system.ActiveBattler;
         bool targetFainted = _target.TakeDamage(move.Damage, move.Type);
+        _target.ChangeStack(move.StackAdd, move.Stack);
 
         if (move.Row)
         {
@@ -108,6 +109,7 @@ public class PlayerAttackState : BattleState
                         //EventBus.Raise(new TargetFaintedEvent { _Target = _system.AllBattlers[i] });
                         //}
                         _system.AllBattlers[i].Heal(move.Healing);
+                        _system.AllBattlers[i].ChangeStack(move.StackAdd, move.Stack);
                     }
                 }
             }

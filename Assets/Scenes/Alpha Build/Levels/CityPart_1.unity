@@ -303,6 +303,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 9016835212534987543, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -431,7 +435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5972546210253799951, guid: 0892bf6e99588499bb95a6f561821610, type: 3}
       propertyPath: yDropOff
-      value: -6.9
+      value: -6.4
       objectReference: {fileID: 0}
     - target: {fileID: 5972546210253799951, guid: 0892bf6e99588499bb95a6f561821610, type: 3}
       propertyPath: SceneToLoad

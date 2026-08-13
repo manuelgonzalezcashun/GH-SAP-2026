@@ -22,4 +22,6 @@ MonoBehaviour:
   _Description: 
   _Information: 5 Damage, Close Range, Adds Poison
   _Category: 0
+  _Stack: 0
+  _StackAdd: 0
   _Effect: []

@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
 
 
 public enum Type { NONE, SALT, SULFUR, MERCURY, LEAD, PHOSPHORUS, ANTIMONY, BISMUTH, ARSENIC }
+public enum Stack { NONE, ARMOR, WEAKNESS }
+
 [Serializable]
 public class Battler
 {
@@ -19,24 +22,43 @@ public class Battler
     public string Name { get; private set; }
     public string DisplayName { get; private set; }
     private int Row;
-    public int Aptitude { get; private set; }
-    // for when customizing movesets is added, its the max amount of moves a creature can have
+    private int Armor_STK = 0;
+    private int Weakness_STK = 0;
     [SerializeField] private StatusEffectsUI statusEffectsUI;
     private Dictionary<StatusType, int> statusEffects = new();
     // public Color Color { get; private set; }
     public Sprite Sprite { get; private set; }
     public Team Team { get; private set; }
+    public int Aptitude { get; private set; }
 
     public bool TakeDamage(int damage, Type type)
     {
+        if(damage == 0)
+        {
+            return Health <= 0;
+        }
         damage = LoopTypes(FirstType, type, damage);
         damage = LoopTypes(SecondType, type, damage);
+
+        damage = StackCalcs(damage);
         Health -= damage;
         Health = Health < 0 ? 0 : Health;
 
         onHealthChanged?.Invoke(Health, MaxHealth);
-
+        Weakness_STK = 0;
+        Armor_STK = 0;
         return Health <= 0;
+    }
+    public void ChangeStack(int amt, Stack type)
+    {
+        if (type == Stack.ARMOR)
+        {
+            Armor_STK+=amt;
+        }
+        else if(type == Stack.WEAKNESS)
+        {
+            Weakness_STK+=amt;
+        }
     }
     public void Heal(int healing)
     {
@@ -141,12 +163,12 @@ public class Battler
                 DisplayName = name,
                 Sprite = sprite,
                 Initiative = initiative,
-                Aptitude = aptitude,
                 MaxHealth = maxHealth,
                 Health = health,
                 Moves = moves,
                 FirstType = firstType,
-                SecondType = secondType
+                SecondType = secondType,
+                Aptitude = aptitude
 
             };
             return battler;
@@ -193,7 +215,6 @@ public class Battler
         {
             if (atk == Type.SULFUR || atk == Type.ARSENIC)
             {
-                Debug.Log(damage);
 
                 return Weakness(damage);
             }
@@ -304,8 +325,24 @@ public class Battler
             }
             else
             {
-                return 1;
+                return 1+Weakness_STK-Armor_STK;
             }
+        }
+    }
+    public int StackCalcs(int dam)
+    {
+        if (dam == 0)
+        {
+            return 0;
+        }
+        else
+        {
+            dam+=Weakness_STK-Armor_STK;
+            if (dam < 0)
+            {
+                return 0;
+            }
+            return dam;
         }
     }
 }

@@ -29,7 +29,7 @@ public class MoveBattlerState : BattleState
             int randomStep = Random.Range(-1, 2);
             EventBus.Raise(new OnMoveZoneEvent { _Battler = _system.ActiveBattler, _ZoneStep = randomStep });
         }
-
+        EventBus.Raise(new DisplayBattleTextEvent { battleText = $"{_system.ActiveBattler.DisplayName} Decided Where to Move" });
         yield return new WaitUntil(() => hasMoved);
         yield return new WaitForSeconds(_system.Delay);
 

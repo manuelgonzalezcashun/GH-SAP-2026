@@ -16,10 +16,28 @@ public class OpponentAttackState : BattleState
     public override IEnumerator Attack(Move move)
     {
         var attacker = _system.ActiveBattler;
-        Move selectedMove = attacker.Moves[Random.Range(0, attacker.Moves.Length)];
-
+        Move selectedMove = null;
 
         List<Battler> eligibleTargets = _system.AllBattlers.Where(battler => battler.Team == Team.PLAYER && battler.Health > 0).ToList();
+
+
+        
+        for (int i = 0; i<attacker.Moves.Length; i++)
+        {
+            selectedMove = attacker.Moves[i];
+            eligibleTargets.RemoveAll(battler => !(attacker.getRow() - selectedMove.Distance <= battler.getRow()) && attacker.getRow() + selectedMove.Distance >= battler.getRow());
+            if (eligibleTargets.Count <= 0) // Targets are out of range
+            {
+                eligibleTargets = _system.AllBattlers.Where(battler => battler.Team == Team.PLAYER && battler.Health > 0).ToList();
+            }
+            else
+            {
+                break;
+            }
+        }
+        
+
+
         if (eligibleTargets.Count <= 0) // If all Player Battlers fainted, Player has lost 
         {
             _system.SetState(new PlayerLoseState(_system));
@@ -40,6 +58,7 @@ public class OpponentAttackState : BattleState
         yield return new WaitForSeconds(_system.Delay);
 
         bool targetFainted = target.TakeDamage(selectedMove.Damage, selectedMove.Type);
+        target.ChangeStack(selectedMove.StackAdd, selectedMove.Stack);
 
         if (targetFainted)
             EventBus.Raise(new TargetFaintedEvent { _Target = target });
