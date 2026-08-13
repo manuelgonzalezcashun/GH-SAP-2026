@@ -55,19 +55,12 @@ public class PlayerAttackState : BattleState
 
     private void SelectTarget(List<Battler> battlers)
     {
-        EventBus.Raise(new SelectTargetEvent { _Target = battlers[_selectedIndex] });
         EventBus.Raise(new DisplayBattleTextEvent { battleText = $"Enter to Confirm Target \nMovement Keys to Change Target" });
         if (Keyboard.current.upArrowKey.wasPressedThisFrame || Keyboard.current.rightArrowKey.wasPressedThisFrame)
         {
             _selectedIndex--;
             if (_selectedIndex < 0) _selectedIndex = battlers.Count - 1;
         }
-        else if (Keyboard.current.downArrowKey.wasPressedThisFrame || Keyboard.current.leftArrowKey.wasPressedThisFrame)
-        {
-            _selectedIndex++;
-            if (_selectedIndex >= battlers.Count) _selectedIndex = 0;
-        }
-        else if (Keyboard.current.enterKey.wasPressedThisFrame)
         if (InputHandler.ConfirmTargetPressed && _selectedIndex != -1)
         {
             _target = battlers[_selectedIndex];
