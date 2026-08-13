@@ -27,7 +27,6 @@ public class MoveBattlerState : BattleState
         else
         {
             int randomStep = Random.Range(-1, 2);
-            // Debug.Log($"Enemy Row: {_system.ActiveBattler.getRow()} Enemy Selected Step: {randomStep}");
             EventBus.Raise(new OnMoveZoneEvent { _Battler = _system.ActiveBattler, _ZoneStep = randomStep });
         }
 

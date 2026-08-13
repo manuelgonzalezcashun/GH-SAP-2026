@@ -86,6 +86,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "290f6f32-7bc0-4108-b3b4-21ec794401f3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -471,6 +480,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "479b4626-2532-49b0-a1a8-d571b3e97db6",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -1041,6 +1061,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ConfirmTarget",
+                    "type": "Button",
+                    "id": "eb55ab83-8a9d-4569-a6bd-1aa1256dcff4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1085,6 +1114,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "SelectRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a4a45b56-6574-4fc4-b197-8ee0fd0d539a",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Touch",
+                    "action": "ConfirmTarget",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
