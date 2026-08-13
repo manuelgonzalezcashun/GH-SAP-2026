@@ -12,14 +12,13 @@ public class PlayerAttackState : BattleState
     List<Battler> eligibleEnemies => _system.AllBattlers.Where(battler => battler.Team == Team.OPPONENT && battler.Health > 0).ToList();
     List<Battler> eligibleAllies => _system.AllBattlers.Where(battler => battler.Team == Team.PLAYER && battler.Health > 0).ToList();
     Battler _target = null;
-    int _selectedIndex = 0;
+    int _selectedIndex = -1;
     Move currentMove = null;
 
     public override void EnterState()
     {
         EventBus.Raise(new ShowOptionsEvent { BO_Show = false });
         _target = null;
-        _selectedIndex = 0;
     }
     public override void UpdateState()
     {
@@ -50,6 +49,7 @@ public class PlayerAttackState : BattleState
             i.Add(_system.ActiveBattler);
             targets = i;
         }
+
         SelectTarget(targets);
     }
 
@@ -68,6 +68,7 @@ public class PlayerAttackState : BattleState
             if (_selectedIndex >= battlers.Count) _selectedIndex = 0;
         }
         else if (Keyboard.current.enterKey.wasPressedThisFrame)
+        if (InputHandler.ConfirmTargetPressed && _selectedIndex != -1)
         {
             _target = battlers[_selectedIndex];
             EventBus.Raise(new SelectTargetEvent { _Target = null });
@@ -76,6 +77,23 @@ public class PlayerAttackState : BattleState
                 _system.StartCoroutine(Attack(currentMove));
             else
                 _system.StartCoroutine(Heal());
+
+            Debug.Log($"Target Confirmed! Current Selection: {_selectedIndex}");
+            _selectedIndex = -1;
+            return;
+        }
+        _selectedIndex = 0;
+        EventBus.Raise(new SelectTargetEvent { _Target = battlers[_selectedIndex] });
+
+        if (InputHandler.SelectedRightButton)
+        {
+            _selectedIndex--;
+            if (_selectedIndex < 0) _selectedIndex = battlers.Count - 1;
+        }
+        else if (InputHandler.SelectedLeftButton)
+        {
+            _selectedIndex++;
+            if (_selectedIndex >= battlers.Count) _selectedIndex = 0;
         }
     }
 

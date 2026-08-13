@@ -25,6 +25,7 @@ public class InputHandler : MonoBehaviour
     InputAction ContinueDialogueAction => inputActions["ContinueDialogue"];
     InputAction SelectRightAction => inputActions["SelectRight"];
     InputAction SelectLeftAction => inputActions["SelectLeft"];
+    InputAction ConfirmTargetAction => inputActions["ConfirmTarget"];
 
     // ACTION MAP INDICES //
     public static int playerInput => 0;
@@ -38,6 +39,7 @@ public class InputHandler : MonoBehaviour
     public static Vector2 Movement => _instance.MoveAction.ReadValue<Vector2>();
     public static bool SelectedRightButton => _instance.SelectRightAction.WasPressedThisFrame();
     public static bool SelectedLeftButton => _instance.SelectLeftAction.WasPressedThisFrame();
+    public static bool ConfirmTargetPressed => _instance.ConfirmTargetAction.WasPressedThisFrame();
     void _ChangeActionMaps(int actionMapIndex)
     {
         currentActionMap = inputActions.actionMaps[actionMapIndex];
