@@ -240,7 +240,7 @@ public class MultiBattleUIHandler : MonoBehaviour
         BattleButton currentButton = ButtonSelectionHandler(battleOptions.Length, battleOptions) as BattleButton;
         currentButton.Select();
 
-        EventBus.Raise(new DisplayBattleTextEvent { battleText = currentButton.Description });
+        EventBus.Raise(new DisplayBattleTextEvent { battleText = currentButton.Description + "\nMove to Change Option" });
     }
     private async void ResetButtonState()
     {

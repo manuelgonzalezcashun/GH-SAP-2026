@@ -13625,7 +13625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5972546210253799951, guid: 0892bf6e99588499bb95a6f561821610, type: 3}
       propertyPath: xDropOff
-      value: 7.9
+      value: 7.4
       objectReference: {fileID: 0}
     - target: {fileID: 5972546210253799951, guid: 0892bf6e99588499bb95a6f561821610, type: 3}
       propertyPath: yDropOff

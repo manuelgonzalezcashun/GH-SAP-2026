@@ -20,7 +20,7 @@ public class ZoneButton : Button
     protected override void OnEnable()
     {
         base.OnEnable();
-        onClick.AddListener(() => EventBus.Raise(new DisplayBattleTextEvent { battleText = string.Empty }));
+        //onClick.AddListener(() => EventBus.Raise(new DisplayBattleTextEvent { battleText = string.Empty }));
     }
     protected override void OnDisable()
     {
