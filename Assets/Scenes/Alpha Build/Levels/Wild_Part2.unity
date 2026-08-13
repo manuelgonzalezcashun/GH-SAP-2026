@@ -185,7 +185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5972546210253799951, guid: 0892bf6e99588499bb95a6f561821610, type: 3}
       propertyPath: yDropOff
-      value: -6.9
+      value: -6.4
       objectReference: {fileID: 0}
     - target: {fileID: 5972546210253799951, guid: 0892bf6e99588499bb95a6f561821610, type: 3}
       propertyPath: SceneToLoad
