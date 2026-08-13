@@ -29,4 +29,16 @@ public class PlayerTurnState : BattleState
         BattleState state = new AttackSetupState(_system);
         _system.SetState(state);
     }
+    public override IEnumerator Pass()
+    {
+        EventBus.Raise(new ShowOptionsEvent { BO_Show = false });
+
+        var attacker = _system.ActiveBattler;
+        string displayText = $"{attacker.DisplayName} decided to pass his turn!";
+
+        EventBus.Raise(new DisplayBattleTextEvent { battleText = displayText });
+        yield return new WaitForSeconds(_system.Delay);
+
+        _system.SetState(new AttackSetupState(_system));
+    }
 }

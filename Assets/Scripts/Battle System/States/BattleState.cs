@@ -27,4 +27,8 @@ public abstract class BattleState : State
     {
         yield break;
     }
+    public virtual IEnumerator Pass()
+    {
+        yield break;
+    }
 }

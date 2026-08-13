@@ -76,14 +76,15 @@ public class BattleSystem : StateMachine
         if (_currentState is BattleState battleState)
             StartCoroutine(battleState.Attack(data.move));
     }
-    public void OnHealButton()
+    public void OnPassButton()
     {
         if (_currentState is BattleState battleState)
-            StartCoroutine(battleState.Heal());
+            StartCoroutine(battleState.Pass());
     }
     public void OnRunButton()
     {
-        Debug.Log("Player Selected to Run Away!");
+        if (_currentState is BattleState battleState)
+            return;
     }
     public void SetupBattle()
     {
