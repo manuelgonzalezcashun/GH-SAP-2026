@@ -128,7 +128,15 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 761530762904053814, guid: d4abd66a80e404447afa2b81ccef2deb, type: 3}
+      propertyPath: _members.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 761530762904053814, guid: d4abd66a80e404447afa2b81ccef2deb, type: 3}
       propertyPath: '_members.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 899c07e208c9a4b4a969b00a61937e63, type: 2}
+    - target: {fileID: 761530762904053814, guid: d4abd66a80e404447afa2b81ccef2deb, type: 3}
+      propertyPath: '_members.Array.data[1]'
       value: 
       objectReference: {fileID: 11400000, guid: 899c07e208c9a4b4a969b00a61937e63, type: 2}
     - target: {fileID: 1153725149087386309, guid: d4abd66a80e404447afa2b81ccef2deb, type: 3}

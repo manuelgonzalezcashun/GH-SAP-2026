@@ -55,6 +55,8 @@ public class PlayerAttackState : BattleState
 
     private void SelectTarget(List<Battler> battlers)
     {
+        EventBus.Raise(new DisplayBattleTextEvent { battleText = $"Enter to Confirm Target \nMovement Keys to Change Target" });
+
         if (_selectedIndex == -1)
         {
             _selectedIndex = 0;
