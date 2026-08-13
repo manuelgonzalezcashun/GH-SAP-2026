@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerLoseState : BattleState
@@ -6,12 +7,9 @@ public class PlayerLoseState : BattleState
 
     public override void EnterState()
     {
-        EventBus.Raise(new DisplayBattleTextEvent { battleText = "Player Lost..." });
-        EventBus.Raise(new EndBattleEvent());
-        InputHandler.ChangeActionMaps(InputHandler.playerInput);
+        // Player Lose Conditions
 
-        _system.UpdateAttackPhaseFlag(false);
-        _system.UpdateMovePhaseFlag(false);
-        _system.ShowBattleCanvas(false);
+        // Initial End Battle Sequence
+        _system.EndBattle();
     }
 }

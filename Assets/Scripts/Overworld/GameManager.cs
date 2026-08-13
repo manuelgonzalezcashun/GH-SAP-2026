@@ -21,7 +21,6 @@ public class GameManager : StateMachine
     void Start()
     {
         SetState(new InOverworldState());
-
     }
     public void EnterScene(SceneReference scene)
     {

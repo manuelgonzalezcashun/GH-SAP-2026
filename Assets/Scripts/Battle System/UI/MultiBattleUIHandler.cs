@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class MultiBattleUIHandler : MonoBehaviour
@@ -45,7 +47,12 @@ public class MultiBattleUIHandler : MonoBehaviour
 
     private void ShowBattleOptions(ShowOptionsEvent data)
     {
-        buttonIndex = 0;
+        foreach (var button in battleOptions)
+        {
+            button.onClick.RemoveAllListeners();
+            button.onClick.AddListener(() => ResetButtonState());
+        }
+
         battleOptions[buttonIndex].Select();
         battleOptionContainer.SetActive(data.BO_Show);
     }
@@ -59,7 +66,6 @@ public class MultiBattleUIHandler : MonoBehaviour
             move.gameObject.SetActive(false);
         }
 
-        buttonIndex = 0;
         moveOptions[buttonIndex].Select();
 
         moveOptionsContainer.SetActive(data.MO_Show);
@@ -86,6 +92,7 @@ public class MultiBattleUIHandler : MonoBehaviour
             moveOptions[i].onClick.AddListener(() => EventBus.Raise(new ShowOptionsEvent { MO_Show = false, MO_Battler = null }));
             moveOptions[i].onClick.AddListener(() => currentMoves = null);
             moveOptions[i].onClick.AddListener(() => EventBus.Raise(new DisplayBattleTextEvent { battleText = string.Empty }));
+            moveOptions[i].onClick.AddListener(() => ResetButtonState());
         }
     }
 
@@ -105,10 +112,12 @@ public class MultiBattleUIHandler : MonoBehaviour
 
         foreach (var button in zoneButtons)
         {
+            button.onClick.RemoveAllListeners();
+
+            button.onClick.AddListener(() => ResetButtonState());
             button.SetActiveBattler(data.ZO_Battler);
         }
 
-        buttonIndex = 0;
         zoneButtons[buttonIndex].Select();
         zoneOptionsContainer.SetActive(true);
         data.ZO_Battler = null;
@@ -134,6 +143,11 @@ public class MultiBattleUIHandler : MonoBehaviour
         foreach (var zoneBtn in zoneButtons)
         {
             zoneBtn.SetActiveBattler(null);
+            zoneBtn.onClick.RemoveAllListeners();
+        }
+        foreach (var button in battleOptions)
+        {
+            button.onClick.RemoveAllListeners();
         }
     }
 
@@ -227,5 +241,18 @@ public class MultiBattleUIHandler : MonoBehaviour
         currentButton.Select();
 
         EventBus.Raise(new DisplayBattleTextEvent { battleText = currentButton.Description });
+    }
+    private async void ResetButtonState()
+    {
+        var currentButton = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
+        var normalState = currentButton.colors.normalColor;
+
+        EventSystem.current.SetSelectedGameObject(null);
+        currentButton.transition = Selectable.Transition.None;
+        currentButton.image.color = normalState;
+
+        await Task.Delay(100);
+        buttonIndex = 0;
+        currentButton.transition = Selectable.Transition.ColorTint;
     }
 }

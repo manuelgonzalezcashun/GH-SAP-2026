@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerWinState : BattleState
@@ -6,12 +7,9 @@ public class PlayerWinState : BattleState
 
     public override void EnterState()
     {
-        EventBus.Raise(new DisplayBattleTextEvent { battleText = "Player Won!" });
-        EventBus.Raise(new EndBattleEvent());
-        InputHandler.ChangeActionMaps(InputHandler.playerInput);
+        // Win Conditions
 
-        _system.UpdateAttackPhaseFlag(false);
-        _system.UpdateMovePhaseFlag(false);
-        _system.ShowBattleCanvas(false);
+        // Initiate End Battle Sequence
+        _system.EndBattle();
     }
 }

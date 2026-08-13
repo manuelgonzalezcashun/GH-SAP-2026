@@ -6,4 +6,8 @@ public class InOverworldState : GameState
     {
         EventBus.Raise(new PlayAudioEvent { audioEffect = GameManager.Instance.OverworldTheme });
     }
+    public override void ExitState()
+    {
+        EventBus.Raise(new StopAudioEvent { audioEffect = GameManager.Instance.OverworldTheme });
+    }
 }
