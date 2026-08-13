@@ -41,4 +41,26 @@ public class PlayerTurnState : BattleState
 
         _system.SetState(new AttackSetupState(_system));
     }
+    public override IEnumerator Run()
+    {
+        EventBus.Raise(new ShowOptionsEvent { BO_Show = false });
+
+        int escapeChance = Random.Range(0, 10);
+        if (escapeChance > 5)
+        {
+            string displayLine = $"{_system.ActiveBattler.DisplayName} was able to escape!";
+            EventBus.Raise(new DisplayBattleTextEvent { battleText = displayLine });
+            yield return new WaitForSeconds(_system.Delay);
+
+            _system.SetState(new PlayerEscapeState(_system));
+        }
+        else
+        {
+            string displayLine = $"{_system.ActiveBattler.DisplayName} couldn't escape!";
+            EventBus.Raise(new DisplayBattleTextEvent { battleText = displayLine });
+            yield return new WaitForSeconds(_system.Delay);
+
+            _system.SetState(new AttackSetupState(_system));
+        }
+    }
 }

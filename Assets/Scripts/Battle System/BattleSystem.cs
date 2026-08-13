@@ -84,7 +84,7 @@ public class BattleSystem : StateMachine
     public void OnRunButton()
     {
         if (_currentState is BattleState battleState)
-            return;
+            StartCoroutine(battleState.Run());
     }
     public void SetupBattle()
     {
