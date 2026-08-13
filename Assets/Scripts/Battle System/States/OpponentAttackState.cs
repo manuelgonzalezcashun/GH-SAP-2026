@@ -21,8 +21,8 @@ public class OpponentAttackState : BattleState
         List<Battler> eligibleTargets = _system.AllBattlers.Where(battler => battler.Team == Team.PLAYER && battler.Health > 0).ToList();
 
 
-        
-        for (int i = 0; i<attacker.Moves.Length; i++)
+
+        for (int i = 0; i < attacker.Moves.Length; i++)
         {
             selectedMove = attacker.Moves[i];
             eligibleTargets.RemoveAll(battler => !(attacker.getRow() - selectedMove.Distance <= battler.getRow()) && attacker.getRow() + selectedMove.Distance >= battler.getRow());
@@ -35,11 +35,14 @@ public class OpponentAttackState : BattleState
                 break;
             }
         }
-        
+
 
 
         if (eligibleTargets.Count <= 0) // If all Player Battlers fainted, Player has lost 
         {
+            EventBus.Raise(new DisplayBattleTextEvent { battleText = "Player Lost..." });
+            yield return new WaitForSeconds(_system.Delay);
+
             _system.SetState(new PlayerLoseState(_system));
             yield break;
         }

@@ -17,6 +17,7 @@ public class PlayerTurnState : BattleState
     public override IEnumerator Heal()
     {
         EventBus.Raise(new ShowOptionsEvent { BO_Show = false });
+        yield return null;
 
         var healer = _system.ActiveBattler;
 
@@ -32,10 +33,10 @@ public class PlayerTurnState : BattleState
     public override IEnumerator Pass()
     {
         EventBus.Raise(new ShowOptionsEvent { BO_Show = false });
+        yield return null;
 
         var attacker = _system.ActiveBattler;
         string displayText = $"{attacker.DisplayName} decided to pass his turn!";
-
         EventBus.Raise(new DisplayBattleTextEvent { battleText = displayText });
         yield return new WaitForSeconds(_system.Delay);
 
@@ -44,22 +45,23 @@ public class PlayerTurnState : BattleState
     public override IEnumerator Run()
     {
         EventBus.Raise(new ShowOptionsEvent { BO_Show = false });
+        yield return null;
 
         int escapeChance = Random.Range(0, 10);
         if (escapeChance > 5)
         {
-            string displayLine = $"{_system.ActiveBattler.DisplayName} was able to escape!";
+            string displayLine = $"{_system.ActiveBattler.DisplayName} was able to find an opening!";
             EventBus.Raise(new DisplayBattleTextEvent { battleText = displayLine });
-            yield return new WaitForSeconds(_system.Delay);
 
+            yield return new WaitForSeconds(_system.Delay);
             _system.SetState(new PlayerEscapeState(_system));
         }
         else
         {
             string displayLine = $"{_system.ActiveBattler.DisplayName} couldn't escape!";
             EventBus.Raise(new DisplayBattleTextEvent { battleText = displayLine });
-            yield return new WaitForSeconds(_system.Delay);
 
+            yield return new WaitForSeconds(_system.Delay);
             _system.SetState(new AttackSetupState(_system));
         }
     }

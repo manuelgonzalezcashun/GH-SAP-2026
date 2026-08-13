@@ -35,12 +35,10 @@ public class BattleSystem : StateMachine
     void OnEnable()
     {
         EventBus.Subscribe<MoveSelectedEvent>(OnMoveSelected);
-        EventBus.Subscribe<EndBattleEvent>(EndBattle);
     }
     void OnDisable()
     {
         EventBus.UnSubscribe<MoveSelectedEvent>(OnMoveSelected);
-        EventBus.UnSubscribe<EndBattleEvent>(EndBattle);
     }
 
     // TODO: Change Start to Custom Method For Entering Battle
@@ -96,8 +94,10 @@ public class BattleSystem : StateMachine
         .OrderByDescending(battler => battler.Initiative)
         .ToList();
     }
-    void EndBattle(EndBattleEvent data)
+    public void EndBattle()
     {
+        EventBus.Raise(new EndBattleEvent());
+
         _playerParty = null;
         _oppParty = null;
         ActiveBattler = null;
@@ -105,6 +105,11 @@ public class BattleSystem : StateMachine
         TurnQueue.Clear();
         AllBattlers.Clear();
         GameManager.Instance.SetState(new InOverworldState());
+
+        InputHandler.ChangeActionMaps(InputHandler.playerInput);
+        UpdateAttackPhaseFlag(false);
+        UpdateMovePhaseFlag(false);
+        ShowBattleCanvas(false);
     }
     public void SetupTurnQueue()
     {

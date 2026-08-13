@@ -125,6 +125,9 @@ public class PlayerAttackState : BattleState
 
         if (eligibleEnemies.Count <= 0)
         {
+            EventBus.Raise(new DisplayBattleTextEvent { battleText = "Player Won!" });
+            yield return new WaitForSeconds(_system.Delay);
+
             _system.SetState(new PlayerWinState(_system));
             yield break;
         }

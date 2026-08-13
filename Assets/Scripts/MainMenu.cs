@@ -147,6 +147,8 @@ public class MainMenu : MonoBehaviour
         var currentButton = mainMenuButtons[buttonIndex];
         var normalState = currentButton.animationTriggers.normalTrigger;
 
+        if (!currentButton.gameObject.activeInHierarchy) return; // Not a bug, but helps with performance
+
         currentButton.transition = Selectable.Transition.None;
         currentButton.animator.CrossFade(normalState, 0);
 

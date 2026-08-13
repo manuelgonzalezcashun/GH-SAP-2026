@@ -4,11 +4,9 @@ public class PlayerEscapeState : BattleState
 
     public override void EnterState()
     {
-        EventBus.Raise(new EndBattleEvent());
-        InputHandler.ChangeActionMaps(InputHandler.playerInput);
+        // Player Escape Conditions
 
-        _system.UpdateAttackPhaseFlag(false);
-        _system.UpdateMovePhaseFlag(false);
-        _system.ShowBattleCanvas(false);
+        // Initial End Battle Sequence
+        _system.EndBattle();
     }
 }
