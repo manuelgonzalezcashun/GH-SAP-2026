@@ -2703,7 +2703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1456770735
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8904,6 +8904,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoadingScreenCanva
       objectReference: {fileID: 0}
+    - target: {fileID: 5231051080081753554, guid: 75e6c47c46e8e3040acc40be79dabf75, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8234803535728816480, guid: 75e6c47c46e8e3040acc40be79dabf75, type: 3}
       propertyPath: m_Camera
       value: 
@@ -9008,6 +9012,10 @@ PrefabInstance:
     - target: {fileID: 8545548133399363550, guid: bd3818e13ae3cd646a1477e6d5aa779b, type: 3}
       propertyPath: m_Name
       value: RevLoadScreenCanva
+      objectReference: {fileID: 0}
+    - target: {fileID: 8545548133399363550, guid: bd3818e13ae3cd646a1477e6d5aa779b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
