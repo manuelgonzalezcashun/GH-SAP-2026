@@ -29,6 +29,7 @@ public class InputHandler : MonoBehaviour
     InputAction SelectUpAction => inputActions["SelectUp"];
     InputAction SelectDownAction => inputActions["SelectDown"];
     InputAction EscapeAction => inputActions["ExitPanel"];
+    InputAction EnableCraftingAction => inputActions["EnableCraftingMenu"];
 
     // ACTION MAP INDICES //
     public static int playerInput => 0;
@@ -46,6 +47,7 @@ public class InputHandler : MonoBehaviour
     public static bool MainMenuSelectUp => _instance.SelectUpAction.WasPerformedThisFrame();
     public static bool MainMenuSelectDown => _instance.SelectDownAction.WasPerformedThisFrame();
     public static bool ExitPanelPressed => _instance.EscapeAction.WasPressedThisFrame();
+    public static bool EnableCraftingMenuPressed => _instance.EnableCraftingAction.WasPerformedThisFrame();
     void _ChangeActionMaps(int actionMapIndex)
     {
         currentActionMap = inputActions.actionMaps[actionMapIndex];

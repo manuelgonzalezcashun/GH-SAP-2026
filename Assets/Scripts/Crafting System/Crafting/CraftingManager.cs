@@ -6,6 +6,7 @@ namespace CraftingSystem
 {
     public class CraftingManager : MonoBehaviour
     {
+        [SerializeField] GameObject craftingSystem = null;
         [SerializeField] CraftingSlot[] slots;
         [SerializeField] CraftingSlot outputSlot = null;
         [SerializeField] SO_Recipe[] recipes;
@@ -25,7 +26,20 @@ namespace CraftingSystem
                 return items;
             }
         }
+        void Update()
+        {
+            if (InputHandler.EnableCraftingMenuPressed)
+            {
+                EnableCraftingSystemUI();
+            }
+        }
+        void EnableCraftingSystemUI()
+        {
+            if (craftingSystem == null) return;
 
+            bool enabled = craftingSystem.activeSelf;
+            craftingSystem.SetActive(!enabled);
+        }
         public void CraftRecipe()
         {
             if (slots.Length <= 0 || recipes.Length <= 0) return;
