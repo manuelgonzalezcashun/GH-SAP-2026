@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ec7fc06cc338fdc4fa095668d792e8d7
+guid: 5c4ee14a0e2617e4caf56227d51d841c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3737897332693287829
-    second: Bar_0
+      213: 3030471693697620713
+    second: Quest Log Alt_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bar_0
+      name: Quest Log Alt_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 11
-        width: 1920
-        height: 234
+        x: 1
+        y: 0
+        width: 864
+        height: 495
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5934012e1ddafd330800000000000000
-      internalID: 3737897332693287829
+      spriteID: 9ea19b403f56e0a20800000000000000
+      internalID: 3030471693697620713
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bar_0: 3737897332693287829
+      Quest Log Alt_0: 3030471693697620713
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
