@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using System.Linq;
+using InventorySystem;
 using UnityEngine;
 
 namespace CraftingSystem
@@ -5,8 +8,7 @@ namespace CraftingSystem
     [CreateAssetMenu(menuName = "Crafting System/New Recipe", fileName = "New Recipe")]
     public class SO_Recipe : ScriptableObject
     {
-        [SerializeField] SO_Item so_Component_A;
-        [SerializeField] SO_Item so_Component_B;
+        [SerializeField] SO_Item[] so_RecipeItems = null;
         [SerializeField] SO_Item so_Output_Item;
 
         private Recipe _recipe = null;
@@ -14,20 +16,31 @@ namespace CraftingSystem
         {
             get
             {
-                _recipe ??= new Recipe(so_Component_A.Item, so_Component_B.Item, so_Output_Item.Item);
+                _recipe ??= new Recipe(Items(), so_Output_Item.Item);
                 return _recipe;
             }
         }
-        private bool ValidateRecipeInputs(SO_Item input_a, SO_Item input_b)
-        {
-            if (so_Component_A == input_a && so_Component_B == input_b) return true;
-            if (so_Component_A == input_b && so_Component_B == input_a) return true;
-            return false;
-        }
 
-        public SO_Item GetOutputItem(SO_Item a, SO_Item b)
+        public SO_Item GetOutputItem(SO_Item[] inputItems)
         {
-            return !ValidateRecipeInputs(a, b) ? null : so_Output_Item;
+            if (inputItems == null || so_RecipeItems == null) return null;
+
+            var filteredItems = inputItems.Where(item => item != null).ToArray();
+
+            bool isMatchingItems = filteredItems.Length == so_RecipeItems.Length &&
+            !filteredItems.Except(so_RecipeItems).Any();
+
+            return isMatchingItems ? so_Output_Item : null;
+        }
+        private Item[] Items()
+        {
+            Item[] items = new Item[so_RecipeItems.Length];
+            for (int i = 0; i < so_RecipeItems.Length; i++)
+            {
+                if (so_RecipeItems[i]?.Item != null)
+                    items[i] = so_RecipeItems[i].Item;
+            }
+            return items;
         }
     }
 }

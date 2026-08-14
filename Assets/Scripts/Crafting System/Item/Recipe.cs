@@ -1,34 +1,33 @@
 using UnityEngine;
 using InventorySystem;
+using System.Linq;
 
 
 namespace CraftingSystem
 {
     public class Recipe
     {
-        private Item component_A;
-        private Item component_B;
+        private Item[] recipeItems = null;
         public Item OutputItem { get; private set; }
-        public Recipe(Item component_A, Item component_B, Item outputItem)
+        public Recipe(Item[] recipeItems, Item outputItem)
         {
-            this.component_A = component_A;
-            this.component_B = component_B;
+            this.recipeItems = recipeItems;
             OutputItem = outputItem;
         }
-        private bool _Validate(Item a, Item b)
+        private bool _Validate(Item[] items)
         {
-            return component_A.Name == a.Name
-            && component_B.Name == b.Name;
-        }
-        public Item Craft(Item a, Item b)
-        {
-            if (!_Validate(a, b)) return null;
+            if (items == null || recipeItems == null) return false;
 
-            return OutputItem;
+            var filteredItems = items.Where(item => item != null).ToArray();
+
+            bool isMatchingItems = filteredItems.Length == recipeItems.Length &&
+            !filteredItems.Except(recipeItems).Any();
+
+            return isMatchingItems;
         }
-        public override string ToString()
+        public Item Craft(Item[] items)
         {
-            return $"Component A: {component_A.Name}, Component B: {component_B.Name}, Output: {OutputItem.Name}";
+            return _Validate(items) ? OutputItem : null;
         }
     }
 }

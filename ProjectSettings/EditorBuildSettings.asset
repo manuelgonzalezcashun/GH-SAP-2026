@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Alpha Build/Core Scene.unity
     guid: bc5036d1aedc7ec438538842b33bc6f9
   - enabled: 0
-    path: Assets/Scenes/Alpha Build/Steam Bus.unity
+    path: Assets/Scenes/Crafting Rework.unity
     guid: a1018143385f2ce42bd70c15670ced3a
   - enabled: 0
     path: Assets/Scenes/Overworld Scenes/OverWorld.unity

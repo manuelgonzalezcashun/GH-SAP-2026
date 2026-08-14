@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31e0f492fb1a291479046b48817d6541, type: 3}
   m_Name: Lavender
   m_EditorClassIdentifier: Assembly-CSharp::CraftingSystem.SO_Item
-  name: 
   description: 
-  sprite: {fileID: 0}
+  sprite: {fileID: -6009711840265445420, guid: d979cec8fcc16f0408533dbb80ffb783, type: 3}
