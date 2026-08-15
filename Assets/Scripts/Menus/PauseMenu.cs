@@ -11,20 +11,6 @@ public class PauseMenu : MonoBehaviour
     private bool gameIsPaused = false;
     private int buttonIndex = 0;
     private int delay = 200; // in milliseconds
-                             // void OnEnable()
-                             // {
-                             //     foreach (var button in pauseMenuButtons)
-                             //     {
-                             //         button.onClick.AddListener(() => ResetButtonState());
-                             //     }
-                             // }
-                             // void OnDisable()
-                             // {
-                             //     foreach (var button in pauseMenuButtons)
-                             //     {
-                             //         button.onClick.RemoveAllListeners();
-                             //     }
-                             // }
 
     void Update()
     {
