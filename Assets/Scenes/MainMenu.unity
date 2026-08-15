@@ -8433,6 +8433,7 @@ MonoBehaviour:
   - {fileID: 1282172355}
   nextLevelButton: {fileID: 431420173}
   controlsExitButton: {fileID: 1166343797}
+  delay: 200
 --- !u!1 &1834901139
 GameObject:
   m_ObjectHideFlags: 0
