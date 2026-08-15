@@ -1,4 +1,6 @@
 // * BO = Battle Options, ZO = Zone Options, MO = Move Options
+using CraftingSystem;
+using InventorySystem;
 using UnityEngine;
 
 public class ShowOptionsEvent
@@ -80,5 +82,15 @@ public class SetCameraBoundsEvent
 public class DisplayBattleTextEvent
 {
     public string battleText = string.Empty;
+}
+
+public class AddItemEvent
+{
+    public SO_Item item;
+}
+
+public class RemoveItemEvent
+{
+    public SO_Item item;
 }
 

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31e0f492fb1a291479046b48817d6541, type: 3}
   m_Name: Golden Oil
   m_EditorClassIdentifier: Assembly-CSharp::CraftingSystem.SO_Item
-  description: 
+  description: Viscous oil that glitters when appearing under direct light.
   sprite: {fileID: -4866244220402940282, guid: b3e03b1bc506e654c8cdf678471b8e77, type: 3}

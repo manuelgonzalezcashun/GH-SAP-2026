@@ -5,13 +5,11 @@ using UnityEngine;
 public class Collectable : Interactable
 {
     [SerializeField] SO_Item itemData = null;
-    void Awake()
-    {
-        if (itemData == null) return;
-    }
     public override void OnInteract()
     {
-        // If Item isn't null, add it to the inventory
-        // Remove Item from location
+        if (itemData == null) return;
+
+        EventBus.Raise(new AddItemEvent { item = itemData }); // If Item isn't null, add it to the inventory
+        Destroy(gameObject); // Remove Item from location
     }
 }
