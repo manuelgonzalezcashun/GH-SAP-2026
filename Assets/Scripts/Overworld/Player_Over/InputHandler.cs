@@ -29,7 +29,7 @@ public class InputHandler : MonoBehaviour
     InputAction SelectDownAction => inputActions["SelectDown"];
     InputAction EscapeAction => inputActions["ExitPanel"];
     InputAction EnableCraftingAction => inputActions["EnableCraftingMenu"];
-
+    InputAction PauseAction => inputActions["PauseGame"];
     // ACTION MAP INDICES //
     public static int playerInput => 0;
     public static int mainMenuInput => 1;
@@ -48,7 +48,7 @@ public class InputHandler : MonoBehaviour
     public static bool ExitPanelPressed => _instance.EscapeAction.WasPressedThisFrame();
     public static bool EnableCraftingMenuPressed => _instance.EnableCraftingAction.WasPerformedThisFrame();
     public static bool CursorToggleEnabled => _instance.cursorToggle;
-
+    public static bool PauseGamePressed => _instance.PauseAction.WasPressedThisFrame();
     void Update()
     {
         CursorToggleMode();
