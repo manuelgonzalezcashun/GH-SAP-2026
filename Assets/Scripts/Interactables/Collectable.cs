@@ -5,13 +5,9 @@ using UnityEngine;
 public class Collectable : Interactable
 {
     [SerializeField] SO_Item itemData = null;
-
-    SpriteRenderer spriteRenderer = null;
-
     void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = itemData.Item.Sprite;
+        if (itemData == null) return;
     }
     public override void OnInteract()
     {

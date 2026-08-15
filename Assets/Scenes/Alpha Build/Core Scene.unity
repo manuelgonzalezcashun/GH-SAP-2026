@@ -1794,7 +1794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   view: {fileID: 7166029}
   model:
-    _storyJson: {fileID: 4900000, guid: 161fca40623b14597a180abebe079dde, type: 3}
+    _storyJson: {fileID: 4900000, guid: 3380e9ba0df60401781995100a4d9f12, type: 3}
 --- !u!4 &496806975
 Transform:
   m_ObjectHideFlags: 0
@@ -9756,6 +9756,10 @@ PrefabInstance:
     - target: {fileID: 7392465442727560991, guid: baa7015a4cf8c4b448417a276d8baeaa, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.9944445
+      objectReference: {fileID: 0}
+    - target: {fileID: 8019437179848534313, guid: baa7015a4cf8c4b448417a276d8baeaa, type: 3}
+      propertyPath: interactDistance
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

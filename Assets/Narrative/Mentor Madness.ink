@@ -37,11 +37,11 @@ I can't believe my eyes. Aditya? Erasmus' little girl right?  #Speaker: Customer
 
 ===OverworldTownie1=== //Little Boy who is also the requested sick kid//
 //*cough cough* this is supposed to be a separate sentence in italics I don't want the * to mess up the code// 
-Have you seen the grey fog? 
+Have you seen the grey fog? #Speaker: Little Boy
 It's at the edge of town! 
 It was white before, but now it's like the stories. Y'know, when the gods fight? #Speaker: Little Boy
 
-Don't tell me you mean Battle at Mid Umbra? Didjyer auntie run out of bedtime stories and have to pull that tale outta the crypt? #SpeakerAditya
+Don't tell me you mean Battle at Mid Umbra? Didjyer auntie run out of bedtime stories and have to pull that tale outta the crypt? #Speaker: Aditya
 
 //*cough cough*// 
 It's real! It's on the horizon now! #Speaker: Little Boy
@@ -75,15 +75,15 @@ It's fine I'll do it myself. Capture it by the throat..  cut it myself. I can't 
 ===OverworldTownie7=== //Male Teen 2//
 Is it east? No... north from here..... #Speaker: Teen Boy 2
 
-H-Hey! Do you know the fastest way to get to the heart of the forest? I need meat before sunset. #Speaker Teen Boy 2
+H-Hey! Do you know the fastest way to get to the heart of the forest? I need meat before sunset. #Speaker: Teen Boy 2
 
 I think it's- #Speaker:Aditya
 
-No, wait! Nevermind I can figure it out... I'll never get it if I keep asking for help. #SpeakerL Teen Boy 2
+No, wait! Nevermind I can figure it out... I'll never get it if I keep asking for help. #Speaker: Teen Boy 2
 -> DONE
 
 ===OverworldTownie8=== //Female Teen 2//
-Blue bells, cockle shells,
+Blue bells, cockle shells, #Speaker: Teen Girl
 evie, ivy oooooover....
 -> DONE
 

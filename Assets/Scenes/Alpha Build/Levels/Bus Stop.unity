@@ -7403,6 +7403,87 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0892bf6e99588499bb95a6f561821610, type: 3}
+--- !u!1001 &825183317
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 976595151215523184, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_Size.y
+      value: 2.05058
+      objectReference: {fileID: 0}
+    - target: {fileID: 976595151215523184, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.052529037
+      objectReference: {fileID: 0}
+    - target: {fileID: 976595151215523184, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.2502347
+      objectReference: {fileID: 0}
+    - target: {fileID: 976595151215523184, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.1666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738070619654238220, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8896999157439812380, guid: 180584529104d408da1b80ec05a055ae, type: 3}
+    - target: {fileID: 7018097929992030909, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: KnotName
+      value: OverworldTownie2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016835212534987543, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_Name
+      value: NPC
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
 --- !u!1 &993487912
 GameObject:
   m_ObjectHideFlags: 0
@@ -15756,3 +15837,4 @@ SceneRoots:
   - {fileID: 2033863972}
   - {fileID: 1444797904}
   - {fileID: 1708834736}
+  - {fileID: 825183317}
