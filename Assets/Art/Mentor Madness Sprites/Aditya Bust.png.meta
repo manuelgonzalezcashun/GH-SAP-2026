@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: e92919915f6b24c3d81034ab44cc413c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2914399615996448707
+    second: Aditya Bust_0
+  - first:
+      213: -6138827104677861322
+    second: Aditya Bust_1
+  - first:
+      213: 8993864480922150930
+    second: Aditya Bust_2
+  - first:
+      213: 3923606304078738711
+    second: Aditya Bust_3
+  - first:
+      213: 1273005649739712381
+    second: Aditya Bust_4
+  - first:
+      213: -1975494826237874777
+    second: Aditya Bust_5
+  - first:
+      213: 4242661221106058938
+    second: Aditya Bust_6
+  - first:
+      213: -718210638157742903
+    second: Aditya Bust_7
+  - first:
+      213: 8564015556321923593
+    second: Aditya Bust_8
+  - first:
+      213: 7657421184363089969
+    second: Aditya Bust_9
+  - first:
+      213: -3308303909100193742
+    second: Aditya Bust_10
+  - first:
+      213: 3406846062894926005
+    second: Aditya Bust_11
+  - first:
+      213: 5904226635779359758
+    second: Aditya Bust_12
+  - first:
+      213: -7568130584595051425
+    second: Aditya Bust_13
+  - first:
+      213: -114913433970552369
+    second: Aditya Bust_14
+  - first:
+      213: 4255786983938891251
+    second: Aditya Bust_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Aditya Bust_0
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1647
+        width: 530
+        height: 1305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cfc0057207027820800000000000000
+      internalID: 2914399615996448707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditya Bust_1
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 1647
+        width: 530
+        height: 1305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 638e220f5418ecaa0800000000000000
+      internalID: -6138827104677861322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditya Bust_2
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 1647
+        width: 530
+        height: 1305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2182e570810a0dc70800000000000000
+      internalID: 8993864480922150930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditya Bust_3
+      rect:
+        serializedVersion: 2
+        x: 2663
+        y: 1647
+        width: 530
+        height: 1305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 715b8193523737630800000000000000
+      internalID: 3923606304078738711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditya Bust_4
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 1633
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d770dcdc4ef9aa110800000000000000
+      internalID: 1273005649739712381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditya Bust_5
+      rect:
+        serializedVersion: 2
+        x: 1292
+        y: 1633
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ad28721ce1a594e0800000000000000
+      internalID: -1975494826237874777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditya Bust_6
+      rect:
+        serializedVersion: 2
+        x: 2167
+        y: 1633
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab60a5ae6e5f0ea30800000000000000
+      internalID: 4242661221106058938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditya Bust_7
+      rect:
+        serializedVersion: 2
+        x: 3015
+        y: 1633
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cc73b6da376806f0800000000000000
+      internalID: -718210638157742903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditya Bust_8
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 245
+        width: 530
+        height: 1305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 902dc7d36ce79d670800000000000000
+      internalID: 8564015556321923593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditya Bust_9
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 245
+        width: 530
+        height: 1305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13053851fff944a60800000000000000
+      internalID: 7657421184363089969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditya Bust_10
+      rect:
+        serializedVersion: 2
+        x: 1803
+        y: 245
+        width: 530
+        height: 1305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 238fb017f1b8612d0800000000000000
+      internalID: -3308303909100193742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditya Bust_11
+      rect:
+        serializedVersion: 2
+        x: 2651
+        y: 245
+        width: 530
+        height: 1305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b84a47a17c874f20800000000000000
+      internalID: 3406846062894926005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditya Bust_12
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 231
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e044703e7d600f150800000000000000
+      internalID: 5904226635779359758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditya Bust_13
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 231
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5c417bb45998f690800000000000000
+      internalID: -7568130584595051425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditya Bust_14
+      rect:
+        serializedVersion: 2
+        x: 2155
+        y: 231
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc1d34437deb76ef0800000000000000
+      internalID: -114913433970552369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Aditya Bust_15
+      rect:
+        serializedVersion: 2
+        x: 3003
+        y: 231
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fd9869b6b79f0b30800000000000000
+      internalID: 4255786983938891251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Aditya Bust_0: 2914399615996448707
+      Aditya Bust_1: -6138827104677861322
+      Aditya Bust_10: -3308303909100193742
+      Aditya Bust_11: 3406846062894926005
+      Aditya Bust_12: 5904226635779359758
+      Aditya Bust_13: -7568130584595051425
+      Aditya Bust_14: -114913433970552369
+      Aditya Bust_15: 4255786983938891251
+      Aditya Bust_2: 8993864480922150930
+      Aditya Bust_3: 3923606304078738711
+      Aditya Bust_4: 1273005649739712381
+      Aditya Bust_5: -1975494826237874777
+      Aditya Bust_6: 4242661221106058938
+      Aditya Bust_7: -718210638157742903
+      Aditya Bust_8: 8564015556321923593
+      Aditya Bust_9: 7657421184363089969
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
