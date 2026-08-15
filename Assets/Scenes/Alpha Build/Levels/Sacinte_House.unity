@@ -11899,6 +11899,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.9692755
       objectReference: {fileID: 0}
@@ -11938,9 +11946,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 976595151215523184, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_Size.y
+      value: 1.9220744
+      objectReference: {fileID: 0}
+    - target: {fileID: 976595151215523184, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.14489728
+      objectReference: {fileID: 0}
+    - target: {fileID: 976595151215523184, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.3333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 976595151215523184, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.1668296
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738070619654238220, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3862970766810101425, guid: 61d2c67df91d34b2fb3164a136a5ab8e, type: 3}
     - target: {fileID: 7018097929992030909, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: KnotName
-      value: Sacinte
+      value: OverworldTownie8
       objectReference: {fileID: 0}
     - target: {fileID: 9016835212534987543, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_Name
@@ -11948,7 +11976,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9016835212534987543, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

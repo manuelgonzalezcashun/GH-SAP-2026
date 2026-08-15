@@ -21,7 +21,7 @@ namespace CraftingSystem
             _unit = eventData.pointerDrag.GetComponent<ItemUnit>();
         }
 
-        public void SeUnitInSlot(ItemUnit itemUnit)
+        public void SetUnitInSlot(ItemUnit itemUnit)
         {
             if (!isOutputSlot) return;
 

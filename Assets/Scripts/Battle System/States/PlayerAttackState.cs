@@ -57,13 +57,7 @@ public class PlayerAttackState : BattleState
     {
         EventBus.Raise(new DisplayBattleTextEvent { battleText = $"Select to Confirm Target \nMove to Change Target" });
 
-        if (_selectedIndex == -1)
-        {
-            _selectedIndex = 0;
-            return;
-        }
-
-        if (InputHandler.ConfirmTargetPressed)
+        if (InputHandler.ConfirmTargetPressed && _selectedIndex != -1)
         {
             _target = battlers[_selectedIndex];
             EventBus.Raise(new SelectTargetEvent { _Target = null });
@@ -74,6 +68,19 @@ public class PlayerAttackState : BattleState
                 _system.StartCoroutine(Heal());
 
             _selectedIndex = -1;
+            return;
+        }
+
+        if (InputHandler.CursorToggleEnabled)
+        {
+            _selectedIndex = 0;
+            EventBus.Raise(new SelectTargetEvent { _Target = battlers[_selectedIndex] });
+            return;
+        }
+
+        if (_selectedIndex == -1)
+        {
+            _selectedIndex = 0;
             return;
         }
 

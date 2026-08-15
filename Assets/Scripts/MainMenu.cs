@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -29,6 +30,9 @@ public class MainMenu : MonoBehaviour
     [SerializeField] Button[] mainMenuButtons = null;
     [SerializeField] Button nextLevelButton = null;
     [SerializeField] Button controlsExitButton = null;
+
+    [Header("Runtime Variables")]
+    [SerializeField] int delay = 200; // delay in ms
     int buttonIndex = 0;
 
     void OnEnable()
@@ -62,6 +66,12 @@ public class MainMenu : MonoBehaviour
 
     private void MainMenuButtonSelector()
     {
+        if (InputHandler.CursorToggleEnabled)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            buttonIndex = 0;
+            return;
+        }
         if (!mainMenuPanel.activeInHierarchy)
         {
             nextLevelButton.Select();
@@ -125,25 +135,25 @@ public class MainMenu : MonoBehaviour
 
         cutScene.SetActive(true);
     }
+
     public void OnControls()
     {
         StartCoroutine(ControlsSequence());
     }
-    IEnumerator ControlsSequence()
+    private IEnumerator ControlsSequence()
     {
-        // Display Controls Panel
         controlsPanel.SetActive(true);
         fogParticles.SetActive(false);
 
-        yield return new WaitForSeconds(0.2f);
-
-        // Hide Main Menu Panel
+        float s_Delay = delay / 1000f; // convert delay from ms into secs
+        yield return new WaitForSeconds(s_Delay);
         mainMenuPanel.SetActive(false);
     }
 
     // After button is pressed, return to normal state
     private async void ResetButtonState()
     {
+        EventSystem.current.SetSelectedGameObject(null);
         var currentButton = mainMenuButtons[buttonIndex];
         var normalState = currentButton.animationTriggers.normalTrigger;
 
@@ -152,7 +162,7 @@ public class MainMenu : MonoBehaviour
         currentButton.transition = Selectable.Transition.None;
         currentButton.animator.CrossFade(normalState, 0);
 
-        await Task.Delay(200);
+        await Task.Delay(delay);
 
         currentButton.transition = Selectable.Transition.Animation;
         buttonIndex = 0;

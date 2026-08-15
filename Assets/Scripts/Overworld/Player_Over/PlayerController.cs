@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] Rigidbody2D rb;
-    [SerializeField] float interactDistance = 1.5f;
+    [SerializeField] float interactDistance = 2f;
     [SerializeField] float speed = 3;
     private bool canMove = true;
     private static float SpawnpointX;

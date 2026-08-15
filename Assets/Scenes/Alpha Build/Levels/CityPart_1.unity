@@ -295,9 +295,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 976595151215523184, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_Size.y
+      value: 2.2516751
+      objectReference: {fileID: 0}
+    - target: {fileID: 976595151215523184, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.03831649
+      objectReference: {fileID: 0}
+    - target: {fileID: 976595151215523184, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.3340495
+      objectReference: {fileID: 0}
+    - target: {fileID: 976595151215523184, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738070619654238220, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3493565139691573341, guid: bb7cd0c006d4341a0a41603c01cc3570, type: 3}
+    - target: {fileID: 4738070619654238220, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738070619654238220, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738070619654238220, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7018097929992030909, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: KnotName
-      value: Kid
+      value: OverworldTownie6
       objectReference: {fileID: 0}
     - target: {fileID: 9016835212534987543, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_Name
@@ -305,7 +337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9016835212534987543, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

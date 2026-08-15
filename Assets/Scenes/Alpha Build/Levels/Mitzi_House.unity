@@ -2971,6 +2971,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.5105095
       objectReference: {fileID: 0}
@@ -3010,9 +3018,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4738070619654238220, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1928549971813321774, guid: 380ab570d22274151a9a82986328ea74, type: 3}
     - target: {fileID: 7018097929992030909, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: KnotName
-      value: Sick Kid (LMAO)
+      value: OverworldTownie1
       objectReference: {fileID: 0}
     - target: {fileID: 9016835212534987543, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_Name
@@ -3020,7 +3032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9016835212534987543, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11814,6 +11826,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.915207
       objectReference: {fileID: 0}
@@ -11853,9 +11873,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 976595151215523184, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_Size.y
+      value: 1.8685088
+      objectReference: {fileID: 0}
+    - target: {fileID: 976595151215523184, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.076633215
+      objectReference: {fileID: 0}
+    - target: {fileID: 976595151215523184, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.2502347
+      objectReference: {fileID: 0}
+    - target: {fileID: 976595151215523184, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.1666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738070619654238220, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2229024304836932106, guid: 09408068fadc34f6b8daff22e132d189, type: 3}
     - target: {fileID: 7018097929992030909, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: KnotName
-      value: Mitzi
+      value: OverworldTownie7
       objectReference: {fileID: 0}
     - target: {fileID: 9016835212534987543, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_Name
@@ -11863,7 +11903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9016835212534987543, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

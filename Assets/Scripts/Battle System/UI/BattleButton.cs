@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class BattleButton : Button
@@ -13,5 +14,15 @@ public class BattleButton : Button
     protected override void OnDisable()
     {
         onClick.RemoveAllListeners();
+    }
+    public override void OnPointerEnter(PointerEventData eventData)
+    {
+        base.OnPointerEnter(eventData);
+        EventBus.Raise(new DisplayBattleTextEvent { battleText = Description });
+    }
+    public override void OnPointerExit(PointerEventData eventData)
+    {
+        base.OnPointerExit(eventData);
+        EventBus.Raise(new DisplayBattleTextEvent { battleText = string.Empty });
     }
 }

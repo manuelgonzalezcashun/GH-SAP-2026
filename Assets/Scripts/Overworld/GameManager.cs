@@ -15,7 +15,6 @@ public class GameManager : StateMachine
     }
     #endregion
     [SerializeField] AudioEffect overworldTheme = null;
-    [SerializeField] AudioEffect battleEffect = null;
     public GameState CurrentState => _currentState as GameState;
     public AudioEffect OverworldTheme => overworldTheme;
     void Start()
