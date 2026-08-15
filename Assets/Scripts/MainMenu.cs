@@ -99,6 +99,8 @@ public class MainMenu : MonoBehaviour
 
         // Stop Main Menu Music
         EventBus.Raise(new StopAudioEvent { audioEffect = mainMenuAudioEffect });
+        if (GameManager.Instance != null)
+            GameManager.Instance.SetState(new InOverworldState());
     }
     IEnumerator RunLoadingOperations()
     {
@@ -180,6 +182,7 @@ public class MainMenu : MonoBehaviour
     public void OnQuit()
     {
         // Quit Game
+        Application.Quit();
     }
     public void OnMute(bool toggle)
     {

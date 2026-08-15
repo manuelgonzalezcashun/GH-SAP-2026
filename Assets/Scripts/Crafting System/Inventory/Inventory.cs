@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using CraftingSystem;
 
 namespace InventorySystem
 {
@@ -9,28 +10,43 @@ namespace InventorySystem
     {
         [SerializeField] RectTransform flavorTextContainer;
         [SerializeField] TMP_Text flavorText;
-        [SerializeField] ItemUnit[] units;
+        [SerializeField] InventorySlot[] slots;
+        [SerializeField] ItemUnit unitPrefab;
         List<Item> items = new List<Item>();
+
+        int itemCount = 0;
 
         void OnEnable()
         {
+            EventBus.Subscribe<AddItemEvent>(AddItem);
+            EventBus.Subscribe<RemoveItemEvent>(RemoveItem);
             InventorySlot.onHoverSlot += ShowItemDescription;
         }
-
-
-
         void OnDisable()
         {
+            EventBus.UnSubscribe<AddItemEvent>(AddItem);
+            EventBus.UnSubscribe<RemoveItemEvent>(RemoveItem);
             InventorySlot.onHoverSlot -= ShowItemDescription;
         }
-
-        public void AddItem(Item item)
+        private void AddItem(AddItemEvent data)
+        {
+            ItemUnit unit = Instantiate(unitPrefab, slots[itemCount].transform);
+            AddItem(data.item.Item);
+            unit.SetSOItem(data.item);
+        }
+        private void RemoveItem(RemoveItemEvent data)
+        {
+            RemoveItem(data.item.Item);
+        }
+        private void AddItem(Item item)
         {
             items.Add(item);
+            itemCount++;
         }
-        public void RemoveItem(Item item)
+        private void RemoveItem(Item item)
         {
             items.Remove(item);
+            itemCount--;
         }
         private void ShowItemDescription(string description, bool show)
         {

@@ -9,15 +9,16 @@ namespace InventorySystem
     public class ItemUnit : SlotUnit
     {
         [SerializeField] SO_Item so_item = null;
-        Image itemImage = null;
         public SO_Item SO_Item => so_item;
+        Image itemImage => GetComponent<Image>();
 
         protected override void Awake()
         {
             base.Awake();
-            itemImage = GetComponent<Image>();
-
-            SetUnitSprite();
+            if (so_item != null)
+            {
+                SetUnitSprite();
+            }
         }
 
         private void SetUnitSprite()
