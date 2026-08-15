@@ -31,7 +31,9 @@ public class DialogueController : MonoBehaviour
 
     void StartDialogueAtKnot(string knotName)
     {
-        if (knotName != null && knotName != string.Empty)
+        if (knotName == null || knotName == string.Empty) return;
+
+        if (model.Story.KnotContainerWithName(knotName))
         {
             view.ShowDialogue(true);
             model.Story.ChoosePathString(knotName);

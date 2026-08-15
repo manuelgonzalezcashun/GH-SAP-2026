@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
 public class InputHandler : MonoBehaviour
 {
     #region Singleton Code
@@ -48,6 +47,22 @@ public class InputHandler : MonoBehaviour
     public static bool MainMenuSelectDown => _instance.SelectDownAction.WasPerformedThisFrame();
     public static bool ExitPanelPressed => _instance.EscapeAction.WasPressedThisFrame();
     public static bool EnableCraftingMenuPressed => _instance.EnableCraftingAction.WasPerformedThisFrame();
+    public static bool CursorToggleEnabled => _instance.cursorToggle;
+
+    void Update()
+    {
+        CursorToggleMode();
+    }
+
+    private bool cursorToggle = false;
+    void CursorToggleMode()
+    {
+        bool isMoving = Mouse.current.delta.ReadValue().sqrMagnitude > 0.01f;
+
+        if (isMoving) cursorToggle = true;
+        if (MainMenuSelectUp || MainMenuSelectDown) cursorToggle = false;
+        if (SelectedLeftButton || SelectedRightButton) cursorToggle = false;
+    }
     void _ChangeActionMaps(int actionMapIndex)
     {
         currentActionMap = inputActions.actionMaps[actionMapIndex];
