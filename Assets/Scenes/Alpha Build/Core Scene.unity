@@ -1568,6 +1568,7 @@ MonoBehaviour:
   _playerParty: {fileID: 0}
   _oppParty: {fileID: 0}
   battleCanvas: {fileID: 2136410589}
+  battleTheme: {fileID: 11400000, guid: 8fed3876562c87d44815d653de941b45, type: 2}
 --- !u!1001 &424360101
 PrefabInstance:
   m_ObjectHideFlags: 0

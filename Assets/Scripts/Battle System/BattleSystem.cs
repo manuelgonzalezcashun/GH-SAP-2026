@@ -18,6 +18,7 @@ public class BattleSystem : StateMachine
     [SerializeField] TrainerParty _playerParty = null;
     [SerializeField] TrainerParty _oppParty = null;
     [SerializeField] RectTransform battleCanvas = null;
+    [SerializeField] AudioEffect battleTheme = null;
     Zone[] _zones;
 
     public Queue<Battler> TurnQueue { get; private set; } = new Queue<Battler>();
@@ -55,6 +56,7 @@ public class BattleSystem : StateMachine
     }
     public void EnterBattle(TrainerParty _playerParty, TrainerParty _oppParty)
     {
+        EventBus.Raise(new PlayAudioEvent { audioEffect = battleTheme });
         GameManager.Instance.SetState(new InBattleState());
         this._playerParty = _playerParty;
         this._oppParty = _oppParty;
@@ -97,6 +99,7 @@ public class BattleSystem : StateMachine
     public void EndBattle()
     {
         EventBus.Raise(new EndBattleEvent());
+        EventBus.Raise(new StopAudioEvent { audioEffect = battleTheme });
 
         _playerParty = null;
         _oppParty = null;
