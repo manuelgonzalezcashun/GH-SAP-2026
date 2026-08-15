@@ -4371,9 +4371,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Item Text
-
-'
+  m_text: "Scientific Name : \nItem Description : \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 732afaa5b5d920d489164ef82601fffa, type: 2}
   m_sharedMaterial: {fileID: -2027952418414430670, guid: 732afaa5b5d920d489164ef82601fffa, type: 2}

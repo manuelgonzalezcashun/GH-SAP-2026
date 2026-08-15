@@ -6,7 +6,7 @@ namespace CraftingSystem
     [CreateAssetMenu(menuName = "Crafting System/New Item", fileName = "New Item")]
     public class SO_Item : ScriptableObject
     {
-        [SerializeField] string description;
+        [TextArea(3, 5)][SerializeField] string description;
         [SerializeField] Sprite sprite;
 
         private Item _item = null;
