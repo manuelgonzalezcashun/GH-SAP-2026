@@ -8,11 +8,15 @@ public class InputHandler : MonoBehaviour
     public static InputHandler Instance => _instance;
     void Awake()
     {
-        if (_instance != null && _instance != this)
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(Instance);
+        }
+        else
+        {
             Destroy(gameObject);
-
-        _instance = this;
-        DontDestroyOnLoad(Instance);
+        }
     }
     #endregion
     [SerializeField] InputActionAsset inputActions;

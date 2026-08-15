@@ -7,10 +7,16 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance { get; private set; } = null;
     void Awake()
     {
-        if (Instance != null && Instance != this) Destroy(gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(Instance);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 
-        Instance = this;
-        DontDestroyOnLoad(Instance);
     }
     #endregion
     Dictionary<AudioEffect, AudioSource> loadedAudioSources = new Dictionary<AudioEffect, AudioSource>();
