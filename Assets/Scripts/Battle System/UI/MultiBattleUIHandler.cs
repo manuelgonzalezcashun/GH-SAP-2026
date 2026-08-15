@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -13,7 +14,7 @@ public class MultiBattleUIHandler : MonoBehaviour
     [SerializeField] GameObject moveOptionsContainer = null;
     [SerializeField] GameObject zoneOptionsContainer = null;
     [SerializeField] BattleHUD hudPrefab = null;
-    [SerializeField] Button[] moveOptions = null;
+    [SerializeField] MoveButton[] moveOptions = null;
     [SerializeField] ZoneButton[] zoneButtons;
     [SerializeField] BattleButton[] battleOptions = null;
     [SerializeField] TMP_Text battleTextLabel = null;
@@ -80,18 +81,13 @@ public class MultiBattleUIHandler : MonoBehaviour
         for (int i = 0; i < moveOptions.Length; i++)
         {
             if (i >= moveCount) return;
-
+            Move currentMove = currentMoves[i];
             // Sets up each button UI to contain move data
             moveOptions[i].gameObject.SetActive(i < moveCount);
-            TMP_Text moveText = moveOptions[i].GetComponentInChildren<TMP_Text>();
-            moveText.text = currentMoves[i].Name;
+            moveOptions[i].SetupMoveButton(currentMove);
 
-            // Sends Move data to battle System
-            MoveSelectedEvent evtData = new MoveSelectedEvent { move = currentMoves[i] };
-            moveOptions[i].onClick.AddListener(() => EventBus.Raise(evtData));
-            moveOptions[i].onClick.AddListener(() => EventBus.Raise(new ShowOptionsEvent { MO_Show = false, MO_Battler = null }));
+            // Reset Buttons
             moveOptions[i].onClick.AddListener(() => currentMoves = null);
-            moveOptions[i].onClick.AddListener(() => EventBus.Raise(new DisplayBattleTextEvent { battleText = string.Empty }));
             moveOptions[i].onClick.AddListener(() => ResetButtonState());
         }
     }
@@ -218,6 +214,12 @@ public class MultiBattleUIHandler : MonoBehaviour
     }
     private void ZoneButtonSelector()
     {
+        if (InputHandler.CursorToggleEnabled)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            buttonIndex = 0;
+            return;
+        }
         if (!zoneOptionsContainer.activeSelf) return;
 
         ZoneButton currentButton = ButtonSelectionHandler(zoneButtons.Length, zoneButtons) as ZoneButton;
@@ -226,6 +228,12 @@ public class MultiBattleUIHandler : MonoBehaviour
     }
     private void MoveButtonSelector()
     {
+        if (InputHandler.CursorToggleEnabled)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            buttonIndex = 0;
+            return;
+        }
         if (!moveOptionsContainer.activeSelf) return;
 
         Button currentButton = ButtonSelectionHandler(moveCount, moveOptions);
@@ -235,6 +243,12 @@ public class MultiBattleUIHandler : MonoBehaviour
     }
     private void BattleOptionSelector()
     {
+        if (InputHandler.CursorToggleEnabled)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            buttonIndex = 0;
+            return;
+        }
         if (!battleOptionContainer.activeSelf) return;
 
         BattleButton currentButton = ButtonSelectionHandler(battleOptions.Length, battleOptions) as BattleButton;
@@ -244,6 +258,8 @@ public class MultiBattleUIHandler : MonoBehaviour
     }
     private async void ResetButtonState()
     {
+        if (EventSystem.current.currentSelectedGameObject == null) return;
+
         var currentButton = EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
         var normalState = currentButton.colors.normalColor;
 
