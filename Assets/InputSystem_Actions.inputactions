@@ -539,7 +539,7 @@
             ]
         },
         {
-            "name": "MainMenu",
+            "name": "Menu",
             "id": "900440ef-3e50-4d7d-b151-13728d6bfba5",
             "actions": [
                 {
@@ -564,6 +564,15 @@
                     "name": "ExitPanel",
                     "type": "Button",
                     "id": "26bb9c09-4e61-4abe-83b2-3ef422acc06e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Skip",
+                    "type": "Button",
+                    "id": "f4b45bb1-db84-48fc-a2a9-f8b3b338f372",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -678,6 +687,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "ExitPanel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a49f21cd-ef20-4ad3-80c6-d491ecd5a023",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6a97556f-6aed-4b3e-9b42-d7c389f42180",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skip",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

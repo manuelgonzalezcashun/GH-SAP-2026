@@ -7,20 +7,25 @@ public class GameManager : StateMachine
     public static GameManager Instance { get; private set; }
     void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(Instance);
+        }
+        else
+        {
             Destroy(gameObject);
-
-        Instance = this;
-        DontDestroyOnLoad(Instance);
+        }
     }
     #endregion
     [SerializeField] AudioEffect overworldTheme = null;
     public GameState CurrentState => _currentState as GameState;
     public AudioEffect OverworldTheme => overworldTheme;
-    void Start()
-    {
-        SetState(new InOverworldState());
-    }
+    // void Start()
+    // {
+    //     if (_currentState == null)
+    //         SetState(new InOverworldState());
+    // }
     public void EnterScene(SceneReference scene)
     {
         SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);

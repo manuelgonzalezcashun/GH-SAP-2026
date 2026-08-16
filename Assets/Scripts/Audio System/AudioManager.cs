@@ -40,7 +40,6 @@ public class AudioManager : MonoBehaviour
     {
         AudioSource audioSource = GetAudioSource();
         LoadAudioSource(effect, audioSource);
-        loadedAudioSources[effect] = audioSource;
 
         activeAudioSources.Add(audioSource);
         audioSource.Play();
@@ -58,9 +57,9 @@ public class AudioManager : MonoBehaviour
     void Stop(AudioEffect effect)
     {
         AudioSource audioSource = loadedAudioSources[effect];
-        audioSource.Stop();
         ReturnSourceToPool(audioSource);
-        loadedAudioSources.Remove(effect);
+
+        audioSource.Stop();
         activeAudioSources.Remove(audioSource);
     }
 
@@ -79,14 +78,11 @@ public class AudioManager : MonoBehaviour
         : sourcePool.Dequeue();
 
         source.gameObject.SetActive(true);
-
         return source;
     }
     private void ReturnSourceToPool(AudioSource source)
     {
         sourcePool.Enqueue(source);
-        ClearAudioSource(source);
-        source.gameObject.SetActive(false);
     }
 
     #region Audio Manager Helper Methods
@@ -106,6 +102,8 @@ public class AudioManager : MonoBehaviour
         audioSource.playOnAwake = effect.PlayOnAwake;
         audioSource.volume = effect.Volume;
         audioSource.pitch = effect.Pitch;
+
+        loadedAudioSources[effect] = audioSource;
     }
 
     private void ClearAudioSource(AudioSource source)

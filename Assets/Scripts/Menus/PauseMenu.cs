@@ -14,6 +14,9 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
+        PauseMenuButtonSelector();
+
+        // Pause Handling
         if (InputHandler.PauseGamePressed)
             PauseGame();
 
@@ -25,7 +28,6 @@ public class PauseMenu : MonoBehaviour
 
         if (gameIsPaused)
         {
-            Time.timeScale = 0f;
             GameManager.Instance.SetState(new GamePausedState());
         }
         else OnResume();
@@ -34,8 +36,6 @@ public class PauseMenu : MonoBehaviour
     {
         GameManager.Instance.SetState(new InOverworldState());
         gameIsPaused = false;
-
-        Time.timeScale = 1f;
     }
     public void OnQuest()
     {
@@ -43,13 +43,15 @@ public class PauseMenu : MonoBehaviour
     }
     public void OnMainMenu()
     {
-        Time.timeScale = 1f;
+        GameManager.Instance.SetState(new InMenuState());
         GameManager.Instance.LoadScene(mainMenuScene);
     }
     public void OnQuit()
     {
         Application.Quit();
     }
+
+    #region Pause Menu Helper Method
     private async void ResetButtonState()
     {
         EventSystem.current.SetSelectedGameObject(null);
@@ -66,4 +68,30 @@ public class PauseMenu : MonoBehaviour
         currentButton.transition = Selectable.Transition.ColorTint;
         buttonIndex = 0;
     }
+    // Button Selection Code
+    private void PauseMenuButtonSelector()
+    {
+        if (InputHandler.CursorToggleEnabled)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            buttonIndex = 0;
+            return;
+        }
+        if (!pauseMenuPanel.activeInHierarchy) return;
+
+        if (InputHandler.MenuSelectDown)
+        {
+            buttonIndex++;
+            buttonIndex %= pauseMenuButtons.Length;
+        }
+        else if (InputHandler.MenuSelectUp)
+        {
+            if (buttonIndex > 0)
+                buttonIndex--;
+            else
+                buttonIndex = pauseMenuButtons.Length - 1;
+        }
+        pauseMenuButtons[buttonIndex].Select();
+    }
+    #endregion
 }

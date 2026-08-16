@@ -33,6 +33,8 @@ public class MainMenu : MonoBehaviour
 
     [Header("Runtime Variables")]
     [SerializeField] int delay = 200; // delay in ms
+    [SerializeField] Camera mainCamera = null;
+    [SerializeField] Animator cutsceneAnimation = null;
     int buttonIndex = 0;
 
     void OnEnable()
@@ -51,7 +53,7 @@ public class MainMenu : MonoBehaviour
     }
     void Start()
     {
-        InputHandler.ChangeActionMaps(InputHandler.mainMenuInput);
+        InputHandler.ChangeActionMaps(InputHandler.menuInput);
         EventBus.Raise(new PlayAudioEvent { audioEffect = mainMenuAudioEffect });
     }
     void Update()
@@ -62,72 +64,12 @@ public class MainMenu : MonoBehaviour
             StopAllCoroutines();
             OnControlsExit();
         }
+        if (InputHandler.CutsceneSkipPressed)
+        {
+            SkipCutscene();
+        }
     }
 
-    private void MainMenuButtonSelector()
-    {
-        if (InputHandler.CursorToggleEnabled)
-        {
-            EventSystem.current.SetSelectedGameObject(null);
-            buttonIndex = 0;
-            return;
-        }
-        if (!mainMenuPanel.activeInHierarchy)
-        {
-            nextLevelButton.Select();
-            return;
-        }
-
-        if (InputHandler.MainMenuSelectDown)
-        {
-            buttonIndex++;
-            buttonIndex %= mainMenuButtons.Length;
-        }
-        else if (InputHandler.MainMenuSelectUp)
-        {
-            if (buttonIndex > 0)
-                buttonIndex--;
-            else
-                buttonIndex = mainMenuButtons.Length - 1;
-        }
-        mainMenuButtons[buttonIndex].Select();
-    }
-    public void EnterCoreScene()
-    {
-        // Load Scenes
-        StartCoroutine(RunLoadingOperations());
-
-        // Stop Main Menu Music
-        EventBus.Raise(new StopAudioEvent { audioEffect = mainMenuAudioEffect });
-        if (GameManager.Instance != null)
-            GameManager.Instance.SetState(new InOverworldState());
-    }
-    IEnumerator RunLoadingOperations()
-    {
-        nextLevelButton.enabled = false;
-        loadingScreen.SetActive(true);
-
-        var coreOperation = SceneManager.LoadSceneAsync(coreScene, LoadSceneMode.Additive);
-        var levelOperation = SceneManager.LoadSceneAsync(levelOneScene, LoadSceneMode.Additive);
-
-        loadingOperations.Add(coreOperation);
-        loadingOperations.Add(levelOperation);
-
-        for (int i = 0; i < loadingOperations.Count; i++)
-        {
-            while (!loadingOperations[i].isDone)
-            {
-                yield return null;
-            }
-        }
-        var activeCoreScene = SceneManager.GetSceneByName(coreScene.SceneName);
-        SceneManager.SetActiveScene(activeCoreScene);
-
-        AsyncOperation unloadMenu = SceneManager.UnloadSceneAsync(mainMenuScene);
-        while (!unloadMenu.isDone) yield return null;
-
-        loadingScreen.SetActive(false);
-    }
     public void OnPlay()
     {
         mainMenuPanel.SetActive(false);
@@ -151,25 +93,6 @@ public class MainMenu : MonoBehaviour
         yield return new WaitForSeconds(s_Delay);
         mainMenuPanel.SetActive(false);
     }
-
-    // After button is pressed, return to normal state
-    private async void ResetButtonState()
-    {
-        EventSystem.current.SetSelectedGameObject(null);
-        var currentButton = mainMenuButtons[buttonIndex];
-        var normalState = currentButton.animationTriggers.normalTrigger;
-
-        if (!currentButton.gameObject.activeInHierarchy) return; // Not a bug, but helps with performance
-
-        currentButton.transition = Selectable.Transition.None;
-        currentButton.animator.CrossFade(normalState, 0);
-
-        await Task.Delay(delay);
-
-        currentButton.transition = Selectable.Transition.Animation;
-        buttonIndex = 0;
-    }
-
     public void OnControlsExit()
     {
         // Hide Controls Panel
@@ -193,4 +116,101 @@ public class MainMenu : MonoBehaviour
         // Toggle whether music is muted
         AudioManager.Instance.Mute(toggle);
     }
+    private void SkipCutscene()
+    {
+        string skipCutsceneHash = "CutsceneEnd";
+        if (!cutScene.activeInHierarchy) return;
+
+        AnimatorStateInfo sceneInfo = cutsceneAnimation.GetCurrentAnimatorStateInfo(0);
+        if (sceneInfo.IsName(skipCutsceneHash) || sceneInfo.normalizedTime < 0.05f) return;
+
+        cutsceneAnimation.CrossFade(skipCutsceneHash, 0f);
+        nextLevelButton.Select();
+    }
+
+    #region Main Menu Helper Methods
+    private void MainMenuButtonSelector()
+    {
+        if (InputHandler.CursorToggleEnabled)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            buttonIndex = 0;
+            return;
+        }
+        if (!mainMenuPanel.activeInHierarchy)
+        {
+            nextLevelButton.Select();
+            return;
+        }
+
+        if (InputHandler.MenuSelectDown)
+        {
+            buttonIndex++;
+            buttonIndex %= mainMenuButtons.Length;
+        }
+        else if (InputHandler.MenuSelectUp)
+        {
+            if (buttonIndex > 0)
+                buttonIndex--;
+            else
+                buttonIndex = mainMenuButtons.Length - 1;
+        }
+        mainMenuButtons[buttonIndex].Select();
+    }
+    public void EnterCoreScene()
+    {
+        mainCamera.gameObject.SetActive(false);
+
+        // Load Scenes
+        StartCoroutine(RunLoadingOperations());
+
+        // Stop Main Menu Music
+        EventBus.Raise(new StopAudioEvent { audioEffect = mainMenuAudioEffect });
+    }
+    IEnumerator RunLoadingOperations()
+    {
+        nextLevelButton.enabled = false;
+        loadingScreen.SetActive(true);
+
+        var coreOperation = SceneManager.LoadSceneAsync(coreScene, LoadSceneMode.Additive);
+        var levelOperation = SceneManager.LoadSceneAsync(levelOneScene, LoadSceneMode.Additive);
+
+        loadingOperations.Add(coreOperation);
+        loadingOperations.Add(levelOperation);
+
+        for (int i = 0; i < loadingOperations.Count; i++)
+        {
+            while (!loadingOperations[i].isDone)
+            {
+                yield return null;
+            }
+        }
+        var activeCoreScene = SceneManager.GetSceneByName(coreScene.SceneName);
+
+        SceneManager.SetActiveScene(activeCoreScene);
+        if (GameManager.Instance != null) GameManager.Instance.SetState(new InOverworldState());
+
+        AsyncOperation unloadMenu = SceneManager.UnloadSceneAsync(mainMenuScene);
+        while (!unloadMenu.isDone) yield return null;
+
+        loadingScreen.SetActive(false);
+    }
+    // After button is pressed, return to normal state
+    private async void ResetButtonState()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        var currentButton = mainMenuButtons[buttonIndex];
+        var normalState = currentButton.animationTriggers.normalTrigger;
+
+        if (!currentButton.gameObject.activeInHierarchy) return; // Not a bug, but helps with performance
+
+        currentButton.transition = Selectable.Transition.None;
+        currentButton.animator.CrossFade(normalState, 0);
+
+        await Task.Delay(delay);
+
+        currentButton.transition = Selectable.Transition.Animation;
+        buttonIndex = 0;
+    }
+    #endregion
 }
