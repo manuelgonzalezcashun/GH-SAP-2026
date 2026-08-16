@@ -19,18 +19,15 @@ public class PauseMenu : MonoBehaviour
         // Pause Handling
         if (InputHandler.PauseGamePressed)
             PauseGame();
+        if (InputHandler.ExitPanelPressed)
+            OnResume();
 
         pauseMenuPanel.SetActive(gameIsPaused);
     }
     private void PauseGame()
     {
-        gameIsPaused = !gameIsPaused;
-
-        if (gameIsPaused)
-        {
-            GameManager.Instance.SetState(new GamePausedState());
-        }
-        else OnResume();
+        gameIsPaused = true;
+        GameManager.Instance.SetState(new GamePausedState());
     }
     public void OnResume()
     {

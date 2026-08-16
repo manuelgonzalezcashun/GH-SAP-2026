@@ -10,8 +10,15 @@ public class PlayerController : MonoBehaviour
     private static float SpawnpointX;
     private static float SpawnpointY;
     private Animator animator;
-    private int currentState;
 
+    #region Player Animation States
+    private readonly int Horizontal = Animator.StringToHash("Horizontal");
+    private readonly int Vertical = Animator.StringToHash("Vertical");
+    private readonly int LastVert = Animator.StringToHash("LastVertical");
+    private readonly int LastHor = Animator.StringToHash("LastHorizontal");
+    public readonly int Idle = Animator.StringToHash("Idle");
+    public readonly int Movement = Animator.StringToHash("Movement");
+    #endregion
     void OnEnable()
     {
         EventBus.Subscribe<SceneTransition>(EntryPoint);
@@ -38,12 +45,7 @@ public class PlayerController : MonoBehaviour
         if (InputHandler.InteractPressed) PlayerInteract();
 
         EventBus.Raise(new ItemSearchEvent { _interactDistance = interactDistance, _interactPosition = transform.position });
-
-        int state = GetState();
-        if (currentState == state) return;
-
-        animator.CrossFade(state, 0, 0);
-        currentState = state;
+        ChangePlayerAnimationState();
     }
     void FixedUpdate()
     {
@@ -53,8 +55,6 @@ public class PlayerController : MonoBehaviour
     {
         if (canMove)
             rb.linearVelocity = InputHandler.Movement.normalized * speed;
-
-        PlayerFlip();
     }
     private void PlayerFlip()
     {
@@ -63,6 +63,30 @@ public class PlayerController : MonoBehaviour
         if (InputHandler.Movement.x < 0) flip_X = 1;
 
         transform.localScale = new Vector3(flip_X, transform.localScale.y);
+    }
+    private void ChangePlayerAnimationState()
+    {
+        float velX = InputHandler.Movement.x;
+        float velY = InputHandler.Movement.y;
+
+        if (InputHandler.Movement != Vector2.zero)
+        {
+            // Sets the last horizontal/vertical velocity for idle animation
+            animator.SetFloat(LastHor, velX);
+            animator.SetFloat(LastVert, velY);
+
+            // Set the current movement velocity to play walking animation
+            animator.SetFloat(Horizontal, velX);
+            animator.SetFloat(Vertical, velY);
+
+            PlayerFlip();
+            animator.CrossFade(Movement, 0, 0);
+        }
+        else
+        {
+            PlayerFlip();
+            animator.CrossFade(Idle, 0, 0);
+        }
     }
     void PlayerInteract()
     {
@@ -80,22 +104,4 @@ public class PlayerController : MonoBehaviour
         canMove = data.canMove;
         rb.linearVelocity = Vector2.zero;
     }
-
-    private int GetState()
-    {
-        if (InputHandler.Movement.y < 0) return AnimationState.WalkSouth;
-        if (InputHandler.Movement.y > 0) return AnimationState.WalkNorth;
-        if (InputHandler.Movement.x != 0) return AnimationState.WalkSide;
-        if (InputHandler.Movement == Vector2.zero) return AnimationState.Idle;
-
-        return -1;
-    }
-}
-
-public struct AnimationState
-{
-    public static readonly int WalkNorth = Animator.StringToHash("PlayerWalkNorth");
-    public static readonly int WalkSouth = Animator.StringToHash("PlayerWalkSouth");
-    public static readonly int WalkSide = Animator.StringToHash("PlayerWalkSide");
-    public static readonly int Idle = Animator.StringToHash("PlayerIdle");
 }
