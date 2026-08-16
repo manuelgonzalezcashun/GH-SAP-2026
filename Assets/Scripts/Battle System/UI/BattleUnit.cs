@@ -8,7 +8,7 @@ public class BattleUnit : MonoBehaviour
     private Battler _battler;
     public Battler Battler => _battler;
     Color originalColor => Color.white;
-    Color selectedColor => Color.yellow;
+    Color selectedColor => Color.red;
 
     void OnEnable()
     {

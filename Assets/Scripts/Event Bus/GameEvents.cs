@@ -93,4 +93,9 @@ public class RemoveItemEvent
 {
     public SO_Item item;
 }
+public class DisplayBattleTurnEvent
+{
+    public Battler currentBattler = null;
+    public bool isCurrentTurn = false;
+}
 

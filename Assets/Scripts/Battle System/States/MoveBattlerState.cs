@@ -31,8 +31,9 @@ public class MoveBattlerState : BattleState
         }
         EventBus.Raise(new DisplayBattleTextEvent { battleText = $"{_system.ActiveBattler.DisplayName} Decided Where to Move" });
         yield return new WaitUntil(() => hasMoved);
-        yield return new WaitForSeconds(_system.Delay);
 
+        EventBus.Raise(new DisplayBattleTurnEvent { currentBattler = _system.ActiveBattler, isCurrentTurn = false });
+        yield return new WaitForSeconds(_system.Delay);
         _system.SetState(new MoveSetupState(_system));
     }
 

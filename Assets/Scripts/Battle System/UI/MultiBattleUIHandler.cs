@@ -33,6 +33,7 @@ public class MultiBattleUIHandler : MonoBehaviour
         EventBus.Subscribe<EndBattleEvent>(ClearBattleUI);
         EventBus.Subscribe<TargetFaintedEvent>(ClearBattleHUD);
         EventBus.Subscribe<DisplayBattleTextEvent>(DisplayText);
+        EventBus.Subscribe<DisplayBattleTurnEvent>(DisplayCurrentBattler);
     }
     void OnDisable()
     {
@@ -43,6 +44,7 @@ public class MultiBattleUIHandler : MonoBehaviour
         EventBus.UnSubscribe<EndBattleEvent>(ClearBattleUI);
         EventBus.UnSubscribe<TargetFaintedEvent>(ClearBattleHUD);
         EventBus.UnSubscribe<DisplayBattleTextEvent>(DisplayText);
+        EventBus.UnSubscribe<DisplayBattleTurnEvent>(DisplayCurrentBattler);
     }
 
 
@@ -174,6 +176,10 @@ public class MultiBattleUIHandler : MonoBehaviour
     private void ClearBattleHUD(TargetFaintedEvent data)
     {
         ReturnToHudPool(data._Target);
+    }
+    public void DisplayCurrentBattler(DisplayBattleTurnEvent data)
+    {
+        activeBattleHUDs[data.currentBattler].ChangeNameColor(data.isCurrentTurn);
     }
     private BattleHUD GetBattleHUD(Battler battler)
     {

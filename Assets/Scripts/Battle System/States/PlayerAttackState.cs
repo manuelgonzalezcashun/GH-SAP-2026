@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using System.Linq;
-using UnityEngine.InputSystem;
 using System.Collections.Generic;
 
 public class PlayerAttackState : BattleState
@@ -19,6 +18,10 @@ public class PlayerAttackState : BattleState
     {
         EventBus.Raise(new ShowOptionsEvent { BO_Show = false });
         _target = null;
+    }
+    public override void ExitState()
+    {
+        EventBus.Raise(new DisplayBattleTurnEvent { currentBattler = _system.ActiveBattler, isCurrentTurn = false });
     }
     public override void UpdateState()
     {

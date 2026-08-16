@@ -532,6 +532,8 @@ MonoBehaviour:
   nameText: {fileID: 6028148448135232393}
   healthText: {fileID: 8776047532092934785}
   healthBar: {fileID: 6649306577463598291}
+  nameTagColorHighlight: {r: 0, g: 0, b: 1, a: 1}
+  hudColorHighlight: {r: 1, g: 0, b: 0, a: 0.39215687}
 --- !u!1 &8753995850705179312
 GameObject:
   m_ObjectHideFlags: 0

@@ -41,13 +41,6 @@ public class BattleSystem : StateMachine
     {
         EventBus.UnSubscribe<MoveSelectedEvent>(OnMoveSelected);
     }
-
-    // TODO: Change Start to Custom Method For Entering Battle
-
-    // void Start()
-    // {
-    //     SetState(new SetupBattleState(this));
-    // }
     void Update()
     {
         if (_currentState == null) return;
@@ -60,8 +53,6 @@ public class BattleSystem : StateMachine
         GameManager.Instance.SetState(new InBattleState());
         this._playerParty = _playerParty;
         this._oppParty = _oppParty;
-
-        InputHandler.ChangeActionMaps(InputHandler.combatInput);
         ShowBattleCanvas(true);
         SetState(new SetupBattleState(this));
     }
@@ -75,6 +66,7 @@ public class BattleSystem : StateMachine
     {
         if (_currentState is BattleState battleState)
             StartCoroutine(battleState.Attack(data.move));
+
     }
     public void OnPassButton()
     {
@@ -109,7 +101,6 @@ public class BattleSystem : StateMachine
         AllBattlers.Clear();
         GameManager.Instance.SetState(new InOverworldState());
 
-        InputHandler.ChangeActionMaps(InputHandler.playerInput);
         UpdateAttackPhaseFlag(false);
         UpdateMovePhaseFlag(false);
         ShowBattleCanvas(false);
