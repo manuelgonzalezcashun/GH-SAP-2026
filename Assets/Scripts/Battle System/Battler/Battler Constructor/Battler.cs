@@ -33,10 +33,12 @@ public class Battler
 
     public bool TakeDamage(int damage, Type type)
     {
-        if(damage == 0)
+        if (damage == 0)
         {
             return Health <= 0;
         }
+
+        EventBus.Raise(new DamageUnitEvent { battler = this });
         damage = LoopTypes(FirstType, type, damage);
         damage = LoopTypes(SecondType, type, damage);
 
@@ -53,11 +55,11 @@ public class Battler
     {
         if (type == Stack.ARMOR)
         {
-            Armor_STK+=amt;
+            Armor_STK += amt;
         }
-        else if(type == Stack.WEAKNESS)
+        else if (type == Stack.WEAKNESS)
         {
-            Weakness_STK+=amt;
+            Weakness_STK += amt;
         }
     }
     public void Heal(int healing)
@@ -325,7 +327,7 @@ public class Battler
             }
             else
             {
-                return 1+Weakness_STK-Armor_STK;
+                return 1 + Weakness_STK - Armor_STK;
             }
         }
     }
@@ -337,7 +339,7 @@ public class Battler
         }
         else
         {
-            dam+=Weakness_STK-Armor_STK;
+            dam += Weakness_STK - Armor_STK;
             if (dam < 0)
             {
                 return 0;

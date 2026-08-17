@@ -18,9 +18,9 @@ public class MultiBattleUIHandler : MonoBehaviour
     [SerializeField] ZoneButton[] zoneButtons;
     [SerializeField] BattleButton[] battleOptions = null;
     [SerializeField] TMP_Text battleTextLabel = null;
-
     Dictionary<Battler, BattleHUD> activeBattleHUDs = new Dictionary<Battler, BattleHUD>();
     Queue<BattleHUD> hudPool = new Queue<BattleHUD>();
+
     int buttonIndex = 0;
     int moveCount = 0;
     Move[] currentMoves = null;

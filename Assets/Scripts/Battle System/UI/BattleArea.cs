@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public enum Zone { P_BACK = 0, P_FRONT = 1, O_FRONT = 2, O_BACK = 3 }
