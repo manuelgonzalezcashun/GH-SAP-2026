@@ -35,6 +35,7 @@ public class InputHandler : MonoBehaviour
     InputAction EnableCraftingAction => inputActions["EnableCraftingMenu"];
     InputAction PauseAction => inputActions["PauseGame"];
     InputAction SkipAction => inputActions["Skip"];
+    InputAction GoBackAction => inputActions["Go Back"];
     // ACTION MAP INDICES //
     public static int playerInput => 0;
     public static int menuInput => 1;
@@ -55,7 +56,7 @@ public class InputHandler : MonoBehaviour
     public static bool CursorToggleEnabled => _instance.cursorToggle;
     public static bool PauseGamePressed => _instance.PauseAction.WasPressedThisFrame();
     public static bool CutsceneSkipPressed => _instance.SkipAction.WasPressedThisFrame();
-
+    public static bool GoBackPressed => _instance.GoBackAction.WasPressedThisFrame();
     void Update()
     {
         CursorToggleMode();

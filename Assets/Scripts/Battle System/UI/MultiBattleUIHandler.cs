@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -46,8 +45,6 @@ public class MultiBattleUIHandler : MonoBehaviour
         EventBus.UnSubscribe<DisplayBattleTextEvent>(DisplayText);
         EventBus.UnSubscribe<DisplayBattleTurnEvent>(DisplayCurrentBattler);
     }
-
-
     private void ShowBattleOptions(ShowOptionsEvent data)
     {
         foreach (var button in battleOptions)
@@ -100,6 +97,13 @@ public class MultiBattleUIHandler : MonoBehaviour
     }
     void Update()
     {
+        if (InputHandler.GoBackPressed && moveOptionsContainer.activeInHierarchy)
+        {
+            buttonIndex = 0;
+            moveOptionsContainer.SetActive(false);
+            battleOptionContainer.SetActive(true);
+        }
+
         ZoneButtonSelector();
         MoveButtonSelector();
         BattleOptionSelector();
