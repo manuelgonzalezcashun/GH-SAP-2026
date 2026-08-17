@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e93fd1865023414eab16b42e318b52f, type: 3}
   m_Name: Shake Up
   m_EditorClassIdentifier: Assembly-CSharp::SO_Move
+  _name: Shake Up
   _Damage: 3
   _Healing: 0
   _Distance: 0
@@ -19,5 +20,6 @@ MonoBehaviour:
   _CanTargetAlly: 0
   _Type: 1
   _Description: 
+  _Information: 
   _Category: 0
   _Effect: []

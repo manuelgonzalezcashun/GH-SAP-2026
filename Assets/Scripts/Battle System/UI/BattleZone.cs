@@ -15,10 +15,12 @@ public class BattleZone : MonoBehaviour
     void OnEnable()
     {
         EventBus.Subscribe<OnZoneSelectedEvent>(ClearBattler);
+        EventBus.Subscribe<EndBattleEvent>(ClearBattler);
     }
     void OnDisable()
     {
         EventBus.UnSubscribe<OnZoneSelectedEvent>(ClearBattler);
+        EventBus.Subscribe<EndBattleEvent>(ClearBattler);
     }
     public void ClearBattler(OnZoneSelectedEvent data)
     {
@@ -37,7 +39,10 @@ public class BattleZone : MonoBehaviour
 
     private BattleUnit GetBattleUnit()
     {
-        BattleUnit _battleUnit = unitPool.Count > 0 ? unitPool.Dequeue() : Instantiate(unitPrefab, transform);
+        BattleUnit _battleUnit = unitPool.Count > 0
+        ? unitPool.Dequeue()
+        : Instantiate(unitPrefab, transform);
+
         _battleUnit.gameObject.SetActive(true);
         return _battleUnit;
     }
@@ -45,10 +50,31 @@ public class BattleZone : MonoBehaviour
     {
         if (activeBattleUnits.TryGetValue(battler, out BattleUnit unit))
         {
-            unit.ClearUnit();
-            unitPool.Enqueue(unit);
+            ReturnToUnitPool(unit);
             activeBattleUnits.Remove(battler);
         }
+    }
+
+    private void ReturnToUnitPool(BattleUnit unit)
+    {
+        unit.ClearUnit();
+        unitPool.Enqueue(unit);
+    }
+    private void ReturnToUnitPool()
+    {
+        BattleUnit[] units = transform.GetComponentsInChildren<BattleUnit>();
+
+        foreach (BattleUnit unit in units)
+        {
+            unit.ClearUnit();
+            unitPool.Enqueue(unit);
+        }
+    }
+
+    void ClearBattler(EndBattleEvent data)
+    {
+        ReturnToUnitPool();
+        activeBattleUnits.Clear();
     }
     private bool CanMoveToThisZone(Battler battler, Zone zone)
     {

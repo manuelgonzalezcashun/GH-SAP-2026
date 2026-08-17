@@ -31,23 +31,19 @@ public class PlayerAttackState : BattleState
             return;
         }
         var targets = currentMove.AlliesAffected ? eligibleTargets : eligibleEnemies;
-        if (targets.Count<=0)
+        if (targets.Count <= 0)
         {
             _system.SetState(new AttackSetupState(_system));
             return;
         }
-        for (int i = 0; i < targets.Count;i++)
+
+        targets.RemoveAll(battler => !(_system.ActiveBattler.getRow() - currentMove.Distance <= battler.getRow() && _system.ActiveBattler.getRow() + currentMove.Distance >= battler.getRow()));
+        if (targets.Count <= 0)
         {
-            if(!(_system.ActiveBattler.getRow()-currentMove.Distance <= targets[i].getRow() && _system.ActiveBattler.getRow() + currentMove.Distance >= targets[i].getRow()))
-            {
-                targets.RemoveAt(i);
-            }
-            if (targets.Count<=0)
-            {
-                _system.SetState(new AttackSetupState(_system));
-                return;
-            }
+            _system.SetState(new AttackSetupState(_system));
+            return;
         }
+
         if (currentMove.Distance == -1)
         {
             List<Battler> i = new List<Battler>();
@@ -99,21 +95,20 @@ public class PlayerAttackState : BattleState
                         bool Faint = _system.AllBattlers[i].TakeDamage(move.Damage, move.Type);
                         //if (Faint)
                         //{
-                            //EventBus.Raise(new TargetFaintedEvent { _Target = _system.AllBattlers[i] });
+                        //EventBus.Raise(new TargetFaintedEvent { _Target = _system.AllBattlers[i] });
                         //}
                         _system.AllBattlers[i].Heal(move.Healing);
                     }
                 }
             }
         }
-    
+
         if (targetFainted)
         {
             EventBus.Raise(new TargetFaintedEvent { _Target = _target });
         }
 
-        // TODO: Replace with UI Text
-        Debug.Log($"{attacker.Name} Attacked {_target.Name}!");
+        EventBus.Raise(new DisplayBattleTextEvent { battleText = $"{attacker.DisplayName} Attacked {_target.DisplayName} with {move.Name}!" });
         yield return new WaitForSeconds(_system.Delay);
 
         if (eligibleEnemies.Count <= 0)
@@ -127,8 +122,6 @@ public class PlayerAttackState : BattleState
     public override IEnumerator Heal()
     {
         EventBus.Raise(new ShowOptionsEvent { BO_Show = false });
-
-        var healer = _system.ActiveBattler;
 
         // TODO: replace with UI text
         // Debug.Log($"{healer.Name} is recovering strength!");

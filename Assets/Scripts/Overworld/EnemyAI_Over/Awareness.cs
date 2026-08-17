@@ -2,28 +2,27 @@ using UnityEngine;
 
 public class Awareness : MonoBehaviour
 {
-    public bool aggro {get; private set;}
+    public bool aggro { get; private set; }
 
-    public Vector2 playerLocation {get; private set;}
+    public Vector2 playerLocation { get; private set; }
 
     [SerializeField]
     private float _detectionRange;
-
-    private Transform player;
+    private PlayerController player;
     private bool aggroToggle = true;
-
+    public PlayerController Player => player;
 
     private void Awake()
     {
-        player = FindAnyObjectByType<PlayerController>().transform;
+        player = FindAnyObjectByType<PlayerController>();
     }
 
     void Update()
     {
-        Vector2 attackVect = player.position - transform.position;
+        Vector2 attackVect = player.transform.position - transform.position;
         playerLocation = attackVect.normalized;
 
-        if (attackVect.magnitude <= _detectionRange )
+        if (attackVect.magnitude <= _detectionRange)
         {
             if (aggroToggle == false)
             {
@@ -33,7 +32,7 @@ public class Awareness : MonoBehaviour
             {
                 aggro = true;
             }
-            
+
         }
         else
         {

@@ -541,8 +541,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TrainerParty
   PARTY_SIZE: 4
   _members:
-  - {fileID: 11400000, guid: e0cd79e5a025dd849a8da6809ab677a7, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 3a10c8fe3481f45a39c6a6a108847a7e, type: 2}
+  - {fileID: 11400000, guid: e94a53dbc2d6347189f592c296852d7b, type: 2}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!1 &1160670290
@@ -723,7 +723,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TrainerParty
   PARTY_SIZE: -1
   _members:
-  - {fileID: 11400000, guid: d2568cef5134a4438a773d35e8fb7825, type: 2}
+  - {fileID: 11400000, guid: 899c07e208c9a4b4a969b00a61937e63, type: 2}
+  - {fileID: 11400000, guid: e5152d7f1829448a291352c9b70e6bff, type: 2}
 --- !u!1 &1761198130
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,6 +772,7 @@ MonoBehaviour:
   delay: 1.5
   _playerParty: {fileID: 1097428575}
   _oppParty: {fileID: 1317992696}
+  battleCanvas: {fileID: 0}
 --- !u!1001 &1765915315
 PrefabInstance:
   m_ObjectHideFlags: 0

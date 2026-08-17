@@ -6485,7 +6485,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Project Moon \nGarden"
+  m_text: Hinterlands
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 90fffae6dda8ac449a2cbb550891f151, type: 2}
   m_sharedMaterial: {fileID: -5457435562255397450, guid: 90fffae6dda8ac449a2cbb550891f151, type: 2}

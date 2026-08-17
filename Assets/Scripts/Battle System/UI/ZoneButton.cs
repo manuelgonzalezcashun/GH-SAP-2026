@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ZoneButton : MonoBehaviour
+public class ZoneButton : Button
 {
+    [SerializeField] string description;
+    public string Description => description;
     private Battler _activeBattler = null;
     public void MoveBattler(int zoneStep)
     {
@@ -13,5 +16,15 @@ public class ZoneButton : MonoBehaviour
     public void SetActiveBattler(Battler battler)
     {
         _activeBattler = battler;
+    }
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        onClick.AddListener(() => EventBus.Raise(new DisplayBattleTextEvent { battleText = string.Empty }));
+    }
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+        onClick.RemoveAllListeners();
     }
 }

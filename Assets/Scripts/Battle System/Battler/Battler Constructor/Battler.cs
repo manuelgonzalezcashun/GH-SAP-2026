@@ -7,6 +7,7 @@ public enum Type { NONE, SALT, SULFUR, MERCURY, LEAD, PHOSPHORUS, ANTIMONY, BISM
 [Serializable]
 public class Battler
 {
+    public Species Species { get; private set; }
     public event Action<float, float> onHealthChanged;
     // Getters //
     public int Health { get; private set; }
@@ -16,12 +17,14 @@ public class Battler
     public Move[] Moves { get; private set; }
     public int Initiative { get; private set; }
     public string Name { get; private set; }
+    public string DisplayName { get; private set; }
     private int Row;
-    // public int aptitude { get; private set; }
+    public int Aptitude { get; private set; }
     // for when customizing movesets is added, its the max amount of moves a creature can have
     [SerializeField] private StatusEffectsUI statusEffectsUI;
     private Dictionary<StatusType, int> statusEffects = new();
-    public Color Color { get; private set; }
+    // public Color Color { get; private set; }
+    public Sprite Sprite { get; private set; }
     public Team Team { get; private set; }
 
     public bool TakeDamage(int damage, Type type)
@@ -43,6 +46,7 @@ public class Battler
         onHealthChanged?.Invoke(Health, MaxHealth);
     }
     public void SetTeam(Team team) => Team = team;
+    public void SetDisplayName(string _name) => DisplayName = _name;
 
     public int getRow()
     {
@@ -60,35 +64,48 @@ public class Battler
     public class Builder
     {
         // Battler Stats //
+        private Species species = null;
         private int maxHealth = 50;
         private int initiative = 5;
         private int health = -1;
+        private int aptitude = 3;
         private Move[] moves = null;
         private Type firstType = Type.LEAD;
         private Type secondType = Type.NONE;
 
         // Battler Display //
         private string name = "Foo";
-        private Color color = Color.softRed;
+        // private Color color = Color.softRed;
+        private Sprite sprite = null;
 
+        public Builder WithSpecies(Species species)
+        {
+            this.species = species;
+            return this;
+        }
         public Builder WithName(string name)
         {
             this.name = name;
             return this;
         }
-        public Builder WithColor(Color color)
+        public Builder WithSprite(Sprite sprite)
         {
-            this.color = color;
+            this.sprite = sprite;
             return this;
         }
-        public Builder WithInitiative(int initiative)
+        public Builder WithInitiative()
         {
-            this.initiative = initiative;
+            initiative = species.Initiative;
             return this;
         }
-        public Builder WithMaxHealth(int maxHealth)
+        public Builder WithAptitude()
         {
-            this.maxHealth = maxHealth;
+            aptitude = species.Aptitude;
+            return this;
+        }
+        public Builder WithMaxHealth()
+        {
+            maxHealth = species.MaxHealth;
             return this;
         }
         public Builder WithHealth(int currentHealth)
@@ -106,14 +123,14 @@ public class Battler
             this.moves = moves;
             return this;
         }
-        public Builder WithFirstType(Type type)
+        public Builder WithFirstType()
         {
-            this.firstType = type;
+            firstType = species.FirstType;
             return this;
         }
-        public Builder WithSecondType(Type type)
+        public Builder WithSecondType()
         {
-            this.secondType = type;
+            secondType = species.SecondType;
             return this;
         }
         public Battler Build()
@@ -121,8 +138,10 @@ public class Battler
             var battler = new Battler
             {
                 Name = name,
-                Color = color,
+                DisplayName = name,
+                Sprite = sprite,
                 Initiative = initiative,
+                Aptitude = aptitude,
                 MaxHealth = maxHealth,
                 Health = health,
                 Moves = moves,

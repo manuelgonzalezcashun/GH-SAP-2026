@@ -18,6 +18,8 @@ public class DialogueModel
     public DialogueVariableObserver Observer => observer;
     public void Initialize()
     {
+        if (_storyJson == null) return;
+
         Story = new Story(_storyJson.text);
         if (!string.IsNullOrEmpty(_loadedState))
         {

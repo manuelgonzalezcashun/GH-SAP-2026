@@ -13,6 +13,7 @@ public class InputHandler : MonoBehaviour
             Destroy(gameObject);
 
         _instance = this;
+        DontDestroyOnLoad(Instance);
     }
     #endregion
     [SerializeField] InputActionAsset inputActions;
@@ -22,16 +23,21 @@ public class InputHandler : MonoBehaviour
     InputAction MoveAction => inputActions["Move"];
     InputAction InteractAction => inputActions["Interact"];
     InputAction ContinueDialogueAction => inputActions["ContinueDialogue"];
+    InputAction SelectRightAction => inputActions["SelectRight"];
+    InputAction SelectLeftAction => inputActions["SelectLeft"];
 
     // ACTION MAP INDICES //
     public static int playerInput => 0;
     public static int uiInput => 1;
     public static int dialogueInput => 2;
+    public static int combatInput => 3;
 
     // Input Events
     public static bool SubmitPressed => _instance.ContinueDialogueAction.WasPressedThisFrame();
     public static bool InteractPressed => _instance.InteractAction.WasPressedThisFrame();
     public static Vector2 Movement => _instance.MoveAction.ReadValue<Vector2>();
+    public static bool SelectedRightButton => _instance.SelectRightAction.WasPressedThisFrame();
+    public static bool SelectedLeftButton => _instance.SelectLeftAction.WasPressedThisFrame();
     void _ChangeActionMaps(int actionMapIndex)
     {
         currentActionMap = inputActions.actionMaps[actionMapIndex];

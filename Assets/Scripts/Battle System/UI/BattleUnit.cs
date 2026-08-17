@@ -7,8 +7,8 @@ public class BattleUnit : MonoBehaviour
     [SerializeField] Image battlerImage = null;
     private Battler _battler;
     public Battler Battler => _battler;
-    Color originalColor;
-    Color selectedColor = Color.yellow;
+    Color originalColor => Color.white;
+    Color selectedColor => Color.yellow;
 
     void OnEnable()
     {
@@ -24,7 +24,9 @@ public class BattleUnit : MonoBehaviour
     public void SetBattlerInUnit(Battler battler)
     {
         _battler = battler;
-        originalColor = _battler.Color;
+        if (_battler == null) return;
+
+        battlerImage.sprite = battler.Sprite;
         battlerImage.color = originalColor;
     }
     public void ClearUnit(TargetFaintedEvent data)
@@ -35,7 +37,8 @@ public class BattleUnit : MonoBehaviour
     public void ClearUnit()
     {
         _battler = null;
-        battlerImage.color = Color.white;
+        battlerImage.sprite = null;
+        battlerImage.color = Color.hotPink;
         gameObject.SetActive(false);
     }
     void HighlightBattler(SelectTargetEvent data)

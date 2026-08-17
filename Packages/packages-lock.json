@@ -7,13 +7,6 @@
       "dependencies": {},
       "hash": "770b372042728fc9df9d26ae19287cf6145d47a5"
     },
-    "com.mgcdev.inkdialoguegraphtool": {
-      "version": "https://github.com/manuelgonzalezcashun/InkDialogueGraphTool.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "6e0e989a6b493b7005b69d7b518accdf1b1d196e"
-    },
     "com.unity.2d.animation": {
       "version": "14.0.4",
       "depth": 0,
