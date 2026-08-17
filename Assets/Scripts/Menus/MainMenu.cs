@@ -39,17 +39,17 @@ public class MainMenu : MonoBehaviour
 
     void OnEnable()
     {
-        foreach (var button in mainMenuButtons)
-        {
-            button.onClick.AddListener(() => ResetButtonState());
-        }
+        foreach (var button in mainMenuButtons) button.onClick.AddListener(() => ResetButtonState());
+        musicOnButton.onClick.AddListener(() => ResetButtonState());
+        musicOffButton.onClick.AddListener(() => ResetButtonState());
+
+        mainMenuButtons[0].Select();
     }
     void OnDisable()
     {
-        foreach (var button in mainMenuButtons)
-        {
-            button.onClick.RemoveAllListeners();
-        }
+        foreach (var button in mainMenuButtons) button.onClick.RemoveAllListeners();
+        musicOnButton.onClick.RemoveAllListeners();
+        musicOffButton.onClick.RemoveAllListeners();
     }
     void Start()
     {
@@ -112,6 +112,7 @@ public class MainMenu : MonoBehaviour
         // Toggle Mute Icon
         musicOnButton.gameObject.SetActive(!toggle);
         musicOffButton.gameObject.SetActive(toggle);
+        buttonIndex = 0;
 
         // Toggle whether music is muted
         AudioManager.Instance.Mute(toggle);
@@ -150,11 +151,13 @@ public class MainMenu : MonoBehaviour
         }
         else if (InputHandler.MenuSelectUp)
         {
-            if (buttonIndex > 0)
+            if (buttonIndex > -1)
                 buttonIndex--;
             else
                 buttonIndex = mainMenuButtons.Length - 1;
         }
+
+        if (buttonIndex <= -1 || buttonIndex >= mainMenuButtons.Length) return;
         mainMenuButtons[buttonIndex].Select();
     }
     public void EnterCoreScene()
