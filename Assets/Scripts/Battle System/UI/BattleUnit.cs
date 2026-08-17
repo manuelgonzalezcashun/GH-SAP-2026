@@ -70,6 +70,6 @@ public class BattleUnit : MonoBehaviour
         animator.CrossFade(takeDamageHash, 0, 0);
         yield return new WaitForSeconds(1f);
         animator.enabled = false;
-        animator.CrossFade(idleHash, 0, 0);
+        battlerImage.color = originalColor;
     }
 }
