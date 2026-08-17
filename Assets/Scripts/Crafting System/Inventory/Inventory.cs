@@ -28,12 +28,22 @@ namespace InventorySystem
         }
         private void AddItem(AddItemEvent data)
         {
-            ItemUnit unit = Instantiate(unitPrefab, slots[itemCount].transform);
-            AddItem(data.item.Item);
-            unit.SetSOItem(data.item);
+            if (data.item != null)
+            {
+                ItemUnit unit = Instantiate(unitPrefab, slots[itemCount].transform);
+                unit.SetSOItem(data.item);
+                AddItem(data.item.Item);
+            }
+            else
+            {
+                AddItem();
+            }
+
         }
         private void RemoveItem(RemoveItemEvent data)
         {
+            if (data.item.Item == null) return;
+
             RemoveItem(data.item.Item);
         }
         private void AddItem(Item item)
@@ -42,6 +52,13 @@ namespace InventorySystem
 
             items.Add(item);
             itemCount++;
+            Debug.Log(itemCount);
+        }
+        private void AddItem()
+        {
+            if (itemCount >= slots.Length) return;
+            itemCount++;
+            Debug.Log(itemCount);
         }
         private void RemoveItem(Item item)
         {
@@ -49,6 +66,7 @@ namespace InventorySystem
 
             items.Remove(item);
             itemCount--;
+            Debug.Log(itemCount);
         }
         private void ShowItemDescription(string description, bool show)
         {

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Linq;
 using InventorySystem;
+using System.Threading.Tasks;
 
 namespace CraftingSystem
 {
@@ -61,7 +62,16 @@ namespace CraftingSystem
 
             outputSlot.SetUnitInSlot(outputUnit);
 
+            // We don't need to create a new item inside of inventory when we craft it
+            EventBus.Raise(new AddItemEvent { item = null });
+
             DestroyUnits();
+
+            foreach (var item in Items)
+            {
+                if (item == null) return;
+                EventBus.Raise(new RemoveItemEvent { item = item });
+            }
         }
 
         private void DestroyUnits()
