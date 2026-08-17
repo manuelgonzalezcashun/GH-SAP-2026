@@ -36,11 +36,15 @@ public class InputHandler : MonoBehaviour
     InputAction PauseAction => inputActions["PauseGame"];
     InputAction SkipAction => inputActions["Skip"];
     InputAction GoBackAction => inputActions["Go Back"];
+    InputAction CloseInventoryAction => inputActions["CloseInventory"];
+    InputAction SlotMoveAction => inputActions["SlotMovement"];
+
     // ACTION MAP INDICES //
     public static int playerInput => 0;
     public static int menuInput => 1;
     public static int dialogueInput => 2;
     public static int combatInput => 3;
+    public static int inventoryInput => 4;
 
     // Input Events
     public static bool SubmitPressed => _instance.ContinueDialogueAction.WasPressedThisFrame();
@@ -57,6 +61,8 @@ public class InputHandler : MonoBehaviour
     public static bool PauseGamePressed => _instance.PauseAction.WasPressedThisFrame();
     public static bool CutsceneSkipPressed => _instance.SkipAction.WasPressedThisFrame();
     public static bool GoBackPressed => _instance.GoBackAction.WasPressedThisFrame();
+    public static bool CloseInventoryPressed => _instance.CloseInventoryAction.WasPressedThisFrame();
+    public static Vector2 SlotMovement => _instance.SlotMoveAction.ReadValue<Vector2>();
     void Update()
     {
         CursorToggleMode();

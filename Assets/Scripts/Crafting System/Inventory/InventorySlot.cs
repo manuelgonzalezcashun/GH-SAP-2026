@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using SlotObject;
 using InventorySystem;
+using UnityEngine.UI;
 
 namespace InventorySystem
 {
