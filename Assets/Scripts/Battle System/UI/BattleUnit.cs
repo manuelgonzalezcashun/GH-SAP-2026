@@ -36,6 +36,7 @@ public class BattleUnit : MonoBehaviour
 
         battlerImage.sprite = battler.Sprite;
         battlerImage.color = originalColor;
+        animator.enabled = false;
     }
     public void ClearUnit(TargetFaintedEvent data)
     {
@@ -60,12 +61,15 @@ public class BattleUnit : MonoBehaviour
     void DamageUnit(DamageUnitEvent data)
     {
         if (data.battler != Battler) return;
+
+        animator.enabled = true;
         StartCoroutine(PlayDamageAnimation());
     }
     IEnumerator PlayDamageAnimation()
     {
         animator.CrossFade(takeDamageHash, 0, 0);
         yield return new WaitForSeconds(1f);
+        animator.enabled = false;
         animator.CrossFade(idleHash, 0, 0);
     }
 }
