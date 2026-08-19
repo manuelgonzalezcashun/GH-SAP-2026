@@ -2972,11 +2972,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.6
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3021,7 +3021,7 @@ PrefabInstance:
     - target: {fileID: 4738070619654238220, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1928549971813321774, guid: 380ab570d22274151a9a82986328ea74, type: 3}
+      objectReference: {fileID: 8466672319293531365, guid: b1762fbe7607053479a1bae90aff6cb0, type: 3}
     - target: {fileID: 7018097929992030909, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: KnotName
       value: OverworldTownie1
@@ -11892,7 +11892,7 @@ PrefabInstance:
     - target: {fileID: 4738070619654238220, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -2229024304836932106, guid: 09408068fadc34f6b8daff22e132d189, type: 3}
+      objectReference: {fileID: -3421700633595281804, guid: f2786304f3ae4e440acf0058191ccb19, type: 3}
     - target: {fileID: 7018097929992030909, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: KnotName
       value: OverworldTownie7

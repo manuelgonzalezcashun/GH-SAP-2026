@@ -52,13 +52,11 @@ namespace InventorySystem
 
             items.Add(item);
             itemCount++;
-            Debug.Log(itemCount);
         }
         private void AddItem()
         {
             if (itemCount >= slots.Length) return;
             itemCount++;
-            Debug.Log(itemCount);
         }
         private void RemoveItem(Item item)
         {
