@@ -201,7 +201,7 @@
                 {
                     "name": "",
                     "id": "40b2e7bf-f39a-4296-ba5e-847e7935d407",
-                    "path": "<Keyboard>/c",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -223,7 +223,7 @@
                 {
                     "name": "",
                     "id": "9cc937a0-b853-46f3-85dd-1bf87aacdb24",
-                    "path": "<Keyboard>/p",
+                    "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -684,7 +684,7 @@
                 {
                     "name": "",
                     "id": "da942d78-c243-46bd-899e-1b1c9fb0bad3",
-                    "path": "<Keyboard>/c",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
