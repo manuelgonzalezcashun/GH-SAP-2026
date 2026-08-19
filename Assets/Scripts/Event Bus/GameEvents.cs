@@ -47,3 +47,7 @@ public class RemoveItemEvent
     public SO_Item item;
 }
 
+public class GetKeyEvent
+{
+    public string[] PlayerKeys;
+}
