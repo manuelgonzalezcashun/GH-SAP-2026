@@ -11815,12 +11815,28 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 895429064760470953, guid: baa7015a4cf8c4b448417a276d8baeaa, type: 3}
       insertIndex: 6
       addedObject: {fileID: 599033806}
+    - targetCorrespondingSourceObject: {fileID: 895429064760470953, guid: baa7015a4cf8c4b448417a276d8baeaa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1835740892828276327}
   m_SourcePrefab: {fileID: 100100000, guid: baa7015a4cf8c4b448417a276d8baeaa, type: 3}
 --- !u!4 &1835740892828276320 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2977173829559509576, guid: baa7015a4cf8c4b448417a276d8baeaa, type: 3}
   m_PrefabInstance: {fileID: 1835740892828276319}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1835740892828276327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 599033792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cf68c9864f384279aa0db699c8cc5e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerKeyHolder
+  KeysHeld: []
 --- !u!1001 &5343486764789501232
 PrefabInstance:
   m_ObjectHideFlags: 0

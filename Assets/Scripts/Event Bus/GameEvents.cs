@@ -1,4 +1,5 @@
 // * BO = Battle Options, ZO = Zone Options, MO = Move Options
+using System.Collections.Generic;
 using CraftingSystem;
 using InventorySystem;
 using UnityEngine;
@@ -49,5 +50,9 @@ public class RemoveItemEvent
 
 public class GetKeyEvent
 {
-    public string[] PlayerKeys;
+    public List<string> PlayerKeys;
+}
+public class AddKeyEvent
+{
+    public string AddedKey;
 }
