@@ -15,6 +15,7 @@ public abstract class Interactable : MonoBehaviour
     }
     public void EnableInteractIcon(InteractionWithinRangeEvent data)
     {
+        if (interactIcon == null) return;
         interactIcon.SetActive(data.enableIcon);
     }
     public abstract void OnInteract();
