@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f2786304f3ae4e440acf0058191ccb19
+guid: 657cf11f3312f6a46be6547a27c31a50
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3421700633595281804
-    second: npc4_0
+      213: 786467779759100646
+    second: CusorDefault_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -24,7 +24,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 0
+  isReadable: 1
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 500
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: npc4_0
+      name: CusorDefault_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 13
-        width: 501
-        height: 948
+        x: 5
+        y: 5
+        width: 117
+        height: 118
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 47ef2d6176da380d0800000000000000
-      internalID: -3421700633595281804
+      spriteID: 6e2d4df57481aea00800000000000000
+      internalID: 786467779759100646
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      npc4_0: -3421700633595281804
+      CusorDefault_0: 786467779759100646
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

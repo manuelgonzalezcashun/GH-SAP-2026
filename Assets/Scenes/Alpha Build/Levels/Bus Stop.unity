@@ -7461,16 +7461,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 976595151215523184, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.2502347
+      value: 1.048
       objectReference: {fileID: 0}
     - target: {fileID: 976595151215523184, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2.1666667
+      value: 1.71
       objectReference: {fileID: 0}
     - target: {fileID: 4738070619654238220, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -8896999157439812380, guid: 180584529104d408da1b80ec05a055ae, type: 3}
+      objectReference: {fileID: 8224124334607301300, guid: 2feb47e5349a5064299a2c26c4ecd331, type: 3}
     - target: {fileID: 7018097929992030909, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: KnotName
       value: OverworldTownie2

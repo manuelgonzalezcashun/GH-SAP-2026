@@ -31,7 +31,10 @@ public class ItemSearchEvent
     public Vector2 _interactPosition = Vector2.zero;
 }
 public class PlayerInteractEvent { }
-
+public class InteractionWithinRangeEvent
+{
+    public bool enableIcon = false;
+}
 
 public class SetCameraBoundsEvent
 {

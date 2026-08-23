@@ -55,11 +55,7 @@ public class InteractableManager
             }
         }
 
-        if (closestInteractable != null) HandleInteraction(closestInteractable);
-    }
-    public void HandleInteraction(Interactable closest)
-    {
-        if (closest == null) return;
+        EventBus.Raise(new InteractionWithinRangeEvent { enableIcon = closestInteractable != null });
     }
     public void Interact(PlayerInteractEvent data)
     {
