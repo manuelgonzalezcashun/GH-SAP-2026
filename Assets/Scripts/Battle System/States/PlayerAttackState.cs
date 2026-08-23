@@ -115,7 +115,7 @@ public class PlayerAttackState : BattleState
                 {
                     if ((_system.AllBattlers[i] != _target) && (_system.AllBattlers[i] != _system.ActiveBattler))
                     {
-                        bool Faint = _system.AllBattlers[i].TakeDamage(move.Damage, move.Type);
+                        bool Faint = _system.AllBattlers[i].TakeDamage(move.Damage+_system.ActiveBattler.StackDamageChange(), move.Type);
                         //if (Faint)
                         //{
                         //EventBus.Raise(new TargetFaintedEvent { _Target = _system.AllBattlers[i] });
