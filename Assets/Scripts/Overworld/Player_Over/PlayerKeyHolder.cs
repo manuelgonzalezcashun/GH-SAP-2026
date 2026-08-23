@@ -6,22 +6,25 @@ public class PlayerKeyHolder : MonoBehaviour
     public List<string> KeysHeld = new List<string> { };
     void OnEnable()
     {
-        EventBus.Subscribe<SceneTransition>(OutputKeys);
+        EventBus.Subscribe<SetCameraBoundsEvent>(OutputKeys);
         EventBus.Subscribe<AddKeyEvent>(InputKeys);
     }
 
     void OnDisable()
     {
-        EventBus.UnSubscribe<SceneTransition>(OutputKeys);
+        EventBus.UnSubscribe<SetCameraBoundsEvent>(OutputKeys);
         EventBus.Subscribe<AddKeyEvent>(InputKeys);
     }
-    public void OutputKeys(SceneTransition data)
+    public void OutputKeys(SetCameraBoundsEvent data)
     {
         EventBus.Raise(new GetKeyEvent { PlayerKeys = KeysHeld });
     }
     public void InputKeys(AddKeyEvent data)
     {
-        KeysHeld.Add(data.AddedKey);
+        if (!KeysHeld.Contains(data.AddedKey))
+        {
+            KeysHeld.Add(data.AddedKey);
+        }
     }
 
 }
