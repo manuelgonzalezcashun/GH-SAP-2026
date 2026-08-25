@@ -23,5 +23,5 @@ MonoBehaviour:
   _Information: Gain 4 Armor
   _Category: 3
   _Stack: 1
-  _StackAdd: 4
+  _StackAdd: -4
   _Effect: []
