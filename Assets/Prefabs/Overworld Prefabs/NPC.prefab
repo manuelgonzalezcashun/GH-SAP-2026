@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2626243388301522474
 Transform:
   m_ObjectHideFlags: 0
@@ -197,6 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfcc086a0564b12458fe986aa923b24e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  interactIcon: {fileID: 4989336830903025267}
   KnotName: 
 --- !u!61 &976595151215523184
 BoxCollider2D:

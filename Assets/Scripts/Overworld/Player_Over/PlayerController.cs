@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
         if (InputHandler.InteractPressed) PlayerInteract();
 
         EventBus.Raise(new ItemSearchEvent { _interactDistance = interactDistance, _interactPosition = transform.position });
+
         ChangePlayerAnimationState();
     }
     void FixedUpdate()

@@ -13479,6 +13479,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Custom Controller Mouse
       objectReference: {fileID: 0}
+    - target: {fileID: 6436841976937483611, guid: c23cbe6fb8a60704c85e08769c00af36, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7168446070415180010, guid: c23cbe6fb8a60704c85e08769c00af36, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -13505,11 +13509,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7168446070415180010, guid: c23cbe6fb8a60704c85e08769c00af36, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7168446070415180010, guid: c23cbe6fb8a60704c85e08769c00af36, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7168446070415180010, guid: c23cbe6fb8a60704c85e08769c00af36, type: 3}
       propertyPath: m_LocalPosition.x
