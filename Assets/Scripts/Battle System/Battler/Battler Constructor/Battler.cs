@@ -22,10 +22,10 @@ public class Battler
     public string Name { get; private set; }
     public string DisplayName { get; private set; }
     private int Row;
-    private int Armor_STK = 0;
+    public int Armor_STK = 0;
     //positive increases damage negative reduces (weakness and armor)
-    private int Poison_STK = 0;
-    private int Hope_STK = 0;
+    public int Poison_STK = 0;
+    public int Hope_STK = 0;
     //positive adds damage negative subtracts (inspiration and hopelessness)
 
     [SerializeField] private StatusEffectsUI statusEffectsUI;
@@ -68,7 +68,7 @@ public class Battler
         {
             Hope_STK += amt;
         }
-
+        
     }
     public void ClearStack(Stack type)
     {
@@ -81,15 +81,7 @@ public class Battler
             Poison_STK = 0;
         }
     }
-    public void TickStack()
-    {
-        if (Poison_STK > 0)
-        {
-            ChangeStack(-1,Stack.POISON);
-            TakeDamage(1,Type.NONE);
-            ChangeStack(1,Stack.HOPE);
-        }
-    }
+    
     public int StackDamageChange()
     {
         int dam = Hope_STK;
