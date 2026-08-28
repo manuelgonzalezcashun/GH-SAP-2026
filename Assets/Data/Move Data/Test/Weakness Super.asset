@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e93fd1865023414eab16b42e318b52f, type: 3}
   m_Name: Weakness Super
   m_EditorClassIdentifier: Assembly-CSharp::SO_Move
-  _name: 
+  _name: Poison Super
   _Damage: 0
   _Healing: 0
-  _Distance: 0
+  _Distance: 2
   _HitsAllInRow: 0
-  _CanTargetAlly: 0
+  _CanTargetAlly: 1
   _Type: 0
   _Description: 
   _Information: 
   _Category: 0
-  _Stack: 0
-  _StackAdd: 0
+  _Stack: 4
+  _StackAdd: -10
   _Effect: []
