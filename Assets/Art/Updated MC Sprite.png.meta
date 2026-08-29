@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: f6787a839dbf0564d8f84d7518cf8c3c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2734380971894074126
+    second: Updated MC Sprite_0
+  - first:
+      213: 3025927254806984176
+    second: Updated MC Sprite_1
+  - first:
+      213: -6676649356753013227
+    second: Updated MC Sprite_2
+  - first:
+      213: -1413740886273866387
+    second: Updated MC Sprite_3
+  - first:
+      213: -7677749948573830644
+    second: Updated MC Sprite_4
+  - first:
+      213: -903475135357116407
+    second: Updated MC Sprite_5
+  - first:
+      213: 3655859951176040290
+    second: Updated MC Sprite_6
+  - first:
+      213: 4617877019860090488
+    second: Updated MC Sprite_7
+  - first:
+      213: -4225532723844728922
+    second: Updated MC Sprite_8
+  - first:
+      213: -6954273899606827378
+    second: Updated MC Sprite_9
+  - first:
+      213: -2394086442409701492
+    second: Updated MC Sprite_10
+  - first:
+      213: -1480813638388924011
+    second: Updated MC Sprite_11
+  - first:
+      213: 5831422492870347900
+    second: Updated MC Sprite_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Updated MC Sprite_0
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 1164
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0b655ea10972f520800000000000000
+      internalID: 2734380971894074126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Sprite_1
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 826
+        width: 264
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f571f26ec04ef920800000000000000
+      internalID: 3025927254806984176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Sprite_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 848
+        width: 264
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51675e0d8c6c753a0800000000000000
+      internalID: -6676649356753013227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Sprite_3
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 784
+        width: 308
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d65433d7722616ce0800000000000000
+      internalID: -1413740886273866387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Sprite_4
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 840
+        width: 263
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c02bbf8a917237590800000000000000
+      internalID: -7677749948573830644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Sprite_5
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 475
+        width: 222
+        height: 329
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90024a5b6263673f0800000000000000
+      internalID: -903475135357116407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Sprite_6
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 470
+        width: 228
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26fbc6a81493cb230800000000000000
+      internalID: 3655859951176040290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Sprite_7
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 479
+        width: 213
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87e3339deaef51040800000000000000
+      internalID: 4617877019860090488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Sprite_8
+      rect:
+        serializedVersion: 2
+        x: 1756
+        y: 477
+        width: 218
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a732702064eb55c0800000000000000
+      internalID: -4225532723844728922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Sprite_9
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 131
+        width: 244
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8e1a2fcbb47d7f90800000000000000
+      internalID: -6954273899606827378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Sprite_10
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 129
+        width: 243
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8f4796a01f76ced0800000000000000
+      internalID: -2394086442409701492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Sprite_11
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 131
+        width: 243
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 591464177d7137be0800000000000000
+      internalID: -1480813638388924011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Sprite_12
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 129
+        width: 244
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7c82ce6cdf5de050800000000000000
+      internalID: 5831422492870347900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Updated MC Sprite_0: 2734380971894074126
+      Updated MC Sprite_1: 3025927254806984176
+      Updated MC Sprite_10: -2394086442409701492
+      Updated MC Sprite_11: -1480813638388924011
+      Updated MC Sprite_12: 5831422492870347900
+      Updated MC Sprite_2: -6676649356753013227
+      Updated MC Sprite_3: -1413740886273866387
+      Updated MC Sprite_4: -7677749948573830644
+      Updated MC Sprite_5: -903475135357116407
+      Updated MC Sprite_6: 3655859951176040290
+      Updated MC Sprite_7: 4617877019860090488
+      Updated MC Sprite_8: -4225532723844728922
+      Updated MC Sprite_9: -6954273899606827378
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
