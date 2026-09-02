@@ -11,5 +11,7 @@ public class PlayerLoseState : BattleState
 
         // Initial End Battle Sequence
         _system.EndBattle();
+        //GameManager.Instance.SetState(new InMenuState());
+        //GameManager.Instance.LoadScene();
     }
 }
