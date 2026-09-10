@@ -22,7 +22,7 @@ MonoBehaviour:
   _Description: 
   _Information: 3 Damage, Normal Range, Gives 2 Weakness
   _Category: 0
-  _Stack: 2
+  _Stack: 1
   _StackAdd: 2
   _Effect:
   - {fileID: 11400000, guid: 841d11abb25cd433c9854e5261b9f037, type: 2}

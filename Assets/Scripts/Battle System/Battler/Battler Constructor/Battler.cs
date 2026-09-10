@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 public enum Type { NONE, SALT, SULFUR, MERCURY, LEAD, PHOSPHORUS, ANTIMONY, BISMUTH, ARSENIC }
-public enum Stack { NONE, ARMOR, WEAKNESS }
+public enum Stack { NONE, ARMOR,POISON, BURN, HOPE }
 
 [Serializable]
 public class Battler
@@ -22,8 +22,12 @@ public class Battler
     public string Name { get; private set; }
     public string DisplayName { get; private set; }
     private int Row;
-    private int Armor_STK = 0;
-    private int Weakness_STK = 0;
+    public int Armor_STK = 0;
+    //positive increases damage negative reduces (weakness and armor)
+    public int Poison_STK = 0;
+    public int Hope_STK = 0;
+    //positive adds damage negative subtracts (inspiration and hopelessness)
+
     [SerializeField] private StatusEffectsUI statusEffectsUI;
     private Dictionary<StatusType, int> statusEffects = new();
     // public Color Color { get; private set; }
@@ -47,8 +51,7 @@ public class Battler
         Health = Health < 0 ? 0 : Health;
 
         onHealthChanged?.Invoke(Health, MaxHealth);
-        Weakness_STK = 0;
-        Armor_STK = 0;
+        ClearStack(Stack.ARMOR);
         return Health <= 0;
     }
     public void ChangeStack(int amt, Stack type)
@@ -57,10 +60,33 @@ public class Battler
         {
             Armor_STK += amt;
         }
-        else if (type == Stack.WEAKNESS)
+        else if (type == Stack.POISON)
         {
-            Weakness_STK += amt;
+            Poison_STK += amt;
         }
+        else if (type == Stack.HOPE)
+        {
+            Hope_STK += amt;
+        }
+        
+    }
+    public void ClearStack(Stack type)
+    {
+        if (type == Stack.ARMOR)
+        {
+            Armor_STK = 0;
+        }
+        else if (type == Stack.POISON)
+        {
+            Poison_STK = 0;
+        }
+    }
+    
+    public int StackDamageChange()
+    {
+        int dam = Hope_STK;
+        ClearStack(Stack.HOPE);
+        return dam;
     }
     public void Heal(int healing)
     {
@@ -327,7 +353,7 @@ public class Battler
             }
             else
             {
-                return 1 + Weakness_STK - Armor_STK;
+                return 1;
             }
         }
     }
@@ -339,7 +365,7 @@ public class Battler
         }
         else
         {
-            dam += Weakness_STK - Armor_STK;
+            dam += Armor_STK;
             if (dam < 0)
             {
                 return 0;
