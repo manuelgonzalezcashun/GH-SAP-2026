@@ -36,20 +36,25 @@ I can't believe my eyes. Aditya? Erasmus' little girl right?  #Speaker: Customer
 
 
 ===OverworldTownie1=== //Little Boy who is also the requested sick kid//
-//*cough cough* this is supposed to be a separate sentence in italics I don't want the * to mess up the code// 
+cough cough #Speaker: Little Boy
 Have you seen the grey fog? #Speaker: Little Boy
-It's at the edge of town! 
+It's at the edge of town! #Speaker: Little Boy
 It was white before, but now it's like the stories. Y'know, when the gods fight? #Speaker: Little Boy
 
-Don't tell me you mean Battle at Mid Umbra? Didjyer auntie run out of bedtime stories and have to pull that tale outta the crypt? #Speaker: Aditya
+Gods fighting? Didjyer auntie run out of bedtime stories and hafta pull a tale outta old Anean legends? #Speaker: Aditya
 
-//*cough cough*// 
+cough cough  #Speaker: Little Boy 
 It's real! It's on the horizon now! #Speaker: Little Boy
-//*cough cough* *hack*//
+cough, cough. hack #Speaker: Little Boy
 -> DONE
 
 ===OverworldTownie2=== //Male Teen 1//
-Outta my way skinny. If I miss the bus I'll be late for work. #Speaker: Teen Boy 1
+If this bus takes any longer, I'll be late. #Speaker: Teen Boy 1
+Oh! Hello! #Speaker: Teen Boy 1
+I'm Surprised to see a lady like you, way out here. #Speaker: Teen Boy 1
+Pardon me ma'am but I need to keep an eye out for the bus and practice my lines. I scored a big interview. #Speaker: Teen Boy 1
+You mean that bus over there? #Speaker: Aditya
+Huh?! What bus?! -'Scuse me! #Speaker: Teen Boy 1
 -> DONE
 
 
@@ -62,11 +67,11 @@ I'm gonna catch a Sulfasail in the tidepools after high tide! #Speaker: Little G
 -> DONE
 
 ===OverworldTownie5=== //Female Teen 1 aka girl with the watering can//
-No matter how much I weed or give these plants clean water, they get smothered by this sticky plant and wither away. This plot is doomed #Speaker: Female Teen 1
+No matter how much I weed and weed, my tomatoes get smothered by this sticky stuff and withers away. This plot is doomed. #Speaker: Female Teen 1
 -> DONE
 
 ===OverworldTownie6=== //Adult Female Townie/
-No rabbits in the traps, no fish in the river... We'll hafto start buying meat from those uppity factory men in a minute. #Speaker: Neighbor 2
+No rabbits in the traps, no fish in the river... We'll hafta start buying our food from those factory men in a minute, too. #Speaker: Neighbor 2
 
 //alt line that would get repeated as the final line in the dialogue interaction.//
 It's fine I'll do it myself. Capture it by the throat..  cut it myself. I can't afford to wait for someone to rescue me. #Speaker: Neighbor 2
@@ -127,6 +132,7 @@ gwuaaaah.
 -> DONE
 
 ===WhiteCreature===
+Raaaahhh
 
 -> DONE
 
@@ -136,9 +142,9 @@ auegh...
 -> DONE
 
 ===Fungai===
-Portabella or Porchini? #Speaker: Mushroom
+muuuh? #Speaker: Mushroom
 
-What? #Speaker: Aditya
+A Pneuma?! Here? Are you an actual Pneuma? #Speaker: Aditya
 
 hup hup hup? #Speaker: Mushroom 
 
@@ -152,5 +158,3 @@ reaaaaaahhhh reaaaaaahhhh
 
 hurgggh
 -> DONE
-
- 
