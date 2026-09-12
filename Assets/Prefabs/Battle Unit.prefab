@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7601819520503339131}
   - component: {fileID: 2641384429262980352}
   - component: {fileID: 6678162820303551197}
+  - component: {fileID: 2906870871239793050}
   m_Layer: 5
   m_Name: Battle Unit
   m_TagString: Untagged
@@ -89,3 +90,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BattleUnit
   battlerImage: {fileID: 2641384429262980352}
+--- !u!95 &2906870871239793050
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4050817858745000159}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2e243a27123f65440820091637d8faef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

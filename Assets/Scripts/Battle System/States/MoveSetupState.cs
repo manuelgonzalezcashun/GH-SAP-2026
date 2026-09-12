@@ -22,6 +22,7 @@ public class MoveSetupState : BattleState
         }
 
         _system.SetActiveBattler(activeBattler);
+        if (_system.ActiveBattler.Team == Team.PLAYER) EventBus.Raise(new DisplayBattleTurnEvent { currentBattler = _system.ActiveBattler, isCurrentTurn = true });
         _system.SetState(new MoveBattlerState(_system));
     }
 

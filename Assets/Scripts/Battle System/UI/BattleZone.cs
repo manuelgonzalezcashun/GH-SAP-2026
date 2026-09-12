@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,19 +8,20 @@ public class BattleZone : MonoBehaviour
     const int ZONE_SIZE = 20;
     Dictionary<Battler, BattleUnit> activeBattleUnits = new Dictionary<Battler, BattleUnit>();
     Queue<BattleUnit> unitPool = new Queue<BattleUnit>();
-
+    [SerializeField] Animator damageAnimator = null;
     [SerializeField] Zone _zone;
     [SerializeField] BattleUnit unitPrefab;
-
     void OnEnable()
     {
         EventBus.Subscribe<OnZoneSelectedEvent>(ClearBattler);
         EventBus.Subscribe<EndBattleEvent>(ClearBattler);
+        EventBus.Subscribe<DamageUnitEvent>(SetupDamageAnimation);
     }
     void OnDisable()
     {
         EventBus.UnSubscribe<OnZoneSelectedEvent>(ClearBattler);
         EventBus.Subscribe<EndBattleEvent>(ClearBattler);
+        EventBus.UnSubscribe<DamageUnitEvent>(SetupDamageAnimation);
     }
     public void ClearBattler(OnZoneSelectedEvent data)
     {
@@ -76,6 +77,15 @@ public class BattleZone : MonoBehaviour
         ReturnToUnitPool();
         activeBattleUnits.Clear();
     }
+    private void SetupDamageAnimation(DamageUnitEvent data)
+    {
+        if (activeBattleUnits.TryGetValue(data.battler, out BattleUnit unit))
+        {
+            Transform unitTransform = unit.transform;
+            damageAnimator.gameObject.transform.position = unitTransform.position;
+            StartCoroutine(PlayDamageAnimation());
+        }
+    }
     private bool CanMoveToThisZone(Battler battler, Zone zone)
     {
         if (_zone != zone) return false; // Ignores Battler if not set to this zone
@@ -84,4 +94,18 @@ public class BattleZone : MonoBehaviour
 
         return true;
     }
+
+    #region Damage Animation: Slash Attack
+    readonly int damageHash = Animator.StringToHash("SliceAttack");
+    readonly int idleHash = Animator.StringToHash("Idle");
+    IEnumerator PlayDamageAnimation()
+    {
+        damageAnimator.gameObject.SetActive(true);
+        damageAnimator.CrossFade(damageHash, 0, 0);
+
+        yield return new WaitForSeconds(1f);
+        damageAnimator.CrossFade(idleHash, 0, 0);
+        damageAnimator.gameObject.SetActive(false);
+    }
+    #endregion
 }

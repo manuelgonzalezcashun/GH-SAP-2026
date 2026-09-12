@@ -32,6 +32,7 @@ public class PlayerTurnState : BattleState
     }
     public override IEnumerator Pass()
     {
+        EventBus.Raise(new DisplayBattleTurnEvent { currentBattler = _system.ActiveBattler, isCurrentTurn = false });
         EventBus.Raise(new ShowOptionsEvent { BO_Show = false });
         yield return null;
 
@@ -44,6 +45,7 @@ public class PlayerTurnState : BattleState
     }
     public override IEnumerator Run()
     {
+        EventBus.Raise(new DisplayBattleTurnEvent { currentBattler = _system.ActiveBattler, isCurrentTurn = false });
         EventBus.Raise(new ShowOptionsEvent { BO_Show = false });
         yield return null;
 

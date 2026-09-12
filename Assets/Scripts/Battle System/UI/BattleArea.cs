@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public enum Zone { P_BACK = 0, P_FRONT = 1, O_FRONT = 2, O_BACK = 3 }
@@ -17,6 +16,7 @@ public class BattleArea : MonoBehaviour
         EventBus.UnSubscribe<OnMoveZoneEvent>(SetBattlerInZone);
         EventBus.UnSubscribe<SetupBattleEvent>(SetBattlerInZone);
     }
+
     private void SetBattlerInZone(OnMoveZoneEvent data)
     {
         if (data._ZoneStep == 0) return;
@@ -26,7 +26,7 @@ public class BattleArea : MonoBehaviour
         targetZoneIndex = Mathf.Clamp(targetZoneIndex, 0, battleZones.Length - 1);
         Zone destinationZone = (Zone)targetZoneIndex;
         EventBus.Raise(new OnZoneSelectedEvent { _Battler = data._Battler });
-
+        EventBus.Raise(new DisplayBattleTextEvent { battleText = $"{data._Battler.DisplayName} Decided Where to Move" });
         battleZones[targetZoneIndex].SetBattlerInZone(data._Battler, destinationZone);
     }
 
