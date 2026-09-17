@@ -31,12 +31,12 @@ It's been a while Adi. Yer folks well?  #Speaker: Customer 1
 ===Customer2=== //Customer 2 Sprite//
 I can't believe my eyes. Aditya? Erasmus' little girl right?  #Speaker: Customer 2
 
-'Mnot little anymore, sir. #SpeakerAditya
+'Mnot little anymore, sir. #Speaker: Aditya
 -> DONE
 
 
 ===OverworldTownie1=== //Little Boy who is also the requested sick kid//
-cough cough #Speaker: Little Boy
+cough cough #Speaker:Little Boy
 Have you seen the grey fog? #Speaker: Little Boy
 It's at the edge of town! #Speaker: Little Boy
 It was white before, but now it's like the stories. Y'know, when the gods fight? #Speaker: Little Boy
@@ -82,7 +82,7 @@ Is it east? No... north from here..... #Speaker: Teen Boy 2
 
 H-Hey! Do you know the fastest way to get to the heart of the forest? I need meat before sunset. #Speaker: Teen Boy 2
 
-I think it's- #Speaker:Aditya
+I think it's- #Speaker: Aditya
 
 No, wait! Nevermind I can figure it out... I'll never get it if I keep asking for help. #Speaker: Teen Boy 2
 -> DONE
@@ -142,11 +142,11 @@ auegh...
 -> DONE
 
 ===Fungai===
-muuuh? #Speaker: Mushroom
+muuuh? #Speaker: Mushroom Pneuma
 
 A Pneuma?! Here? Are you an actual Pneuma? #Speaker: Aditya
 
-hup hup hup? #Speaker: Mushroom 
+hup hup hup? #Speaker: Mushroom Pneuma
 
 -> DONE
 
@@ -161,33 +161,33 @@ hurgggh
 
 
 ===PostBusExploration===
-Where is everyone?  #Speaker:Aditya
+Where is everyone?  #Speaker: Aditya
 -> DONE
 
 ===POI1===
-What a strange tree... #SpeakerAditya
+What a strange tree... #Speaker: Aditya
 -> DONE
 
 ===POI2===
-Was the water always this murky? #SpeakerAditya
+Was the water always this murky? #Speaker: Aditya
 -> DONE
 
 ===POI3===
-Poor fawn. How long have you been left here to rot? #Speaker:Aditya
+Poor fawn. How long have you been left here to rot? #Speaker: Aditya
 -> DONE
 
 ===MitzliHouse===
 
 *[Object 1] 
-A small black box. The key seems to be broken off inside of the lock, keeping it's contents sealed shut. #Speaker:Aditya
+A small black box. The key seems to be broken off inside of the lock, keeping it's contents sealed shut. #Speaker: Aditya
     **[Keep Looking] ->MitzliHouse
     **[Talk to Mitzli] ->TalkToMitzli
 *[Object 2] 
-A simple handmade toy. You recognize the clothes it's wearing though it's face has long since faded. #Speaker:Aditya
+A simple handmade toy. You recognize the clothes it's wearing though it's face has long since faded. #Speaker: Aditya
     **[Keep Looking] ->MitzliHouse
     **[Talk to Mitzli] ->TalkToMitzli
 *[Object 3 3] 
-A bottle of glimmering, unidentified pink liquid. It smells vaguely of rose petals. #Speaker:Aditya
+A bottle of glimmering, unidentified pink liquid. It smells vaguely of rose petals. #Speaker: Aditya
     **[Keep Looking] ->MitzliHouse
     **[Talk To Mitzli] ->TalkToMitzli
 
@@ -195,29 +195,31 @@ A bottle of glimmering, unidentified pink liquid. It smells vaguely of rose peta
 
 * ->TalkToMitzli
 ===TalkToMitzli===
-Aditya! I didn't hear you come in. When did you get back? #Speaker:Mitzli
+Aditya! I didn't hear you come in. When did you get back? #Speaker: Mitzli
 
 * Flighty as ever I see. -> Next
 * I got in a few minutes ago... -> Next
 
 === Next ===
-We have much to discuss. #Speaker:Mitzli
+We have much to discuss. #Speaker: Mitzli
 
-Tell me everything. #Speaker:Aditya
+Tell me everything. #Speaker: Aditya
 
 1 hour later.
 
-That's all I know so far. #Speaker:Mitzli
-What can I do to help? #Speaker:Aditya
-There's not much light left in the day. Follow me.
-If we can get to Forest Edge Name while there's still daylight, you can look at the state of things yourself. We can even maybe collect some samples to test back here. #Speaker:Mitzli
-Should I bring anything? #Speaker:Aditya
-Besides yourself and a suspension of disbelief? No.
-Let me know when you're ready and I'll take the lead.
+That's all I know so far. #Speaker: Mitzli
+What can I do to help? #Speaker: Aditya
+There's not much light left in the day. Follow me. #Speaker: Mitzli
+If we can get to Forest Edge Name while there's still daylight, you can look at the state of things yourself. #Speaker: Mitzli
+We can even maybe collect some samples to test back here. #Speaker:Mitzli
+Should I bring anything? #Speaker: Aditya
+Besides yourself and a suspension of disbelief? No. #Speaker: Mitzli
+Let me know when you're ready and I'll take the lead. #Speaker: Mitzli
 
 Are you ready to leave?
 *[Yes] -> ExitHouse
 *[No]
+
 What's that over there? #Speaker:Aditya
 ->MitzliHouse
 
@@ -236,11 +238,11 @@ Mitzli helpeed the little girl up, dusting off her dirtied smock.
 
 What ails you, Name? #Speaker:Mitzli
 
-Not me! It's Townie1! Some monster attacked her house while Townie2 was away. We gotta help them! Cmon, lets go! NOW! #Speaker: ChildNPC
+Not me! It's Townie1! Some monster attacked her house while Townie2 was away. We gotta help them! Cmon, lets go! NOW! #Speaker:ChildNPC
 
 Slow down. What did the monster look like? #Speaker: Mitzli
 
-Does it matter– #Speaker Aditya
+Does it matter– #Speaker:Aditya
 
 I wouldn't bother asking if it didn't. What did it look like, Name? #Speaker:Mitzli
 
@@ -248,7 +250,7 @@ I-I don't know. A black mist? I only saw it for a second after Townie1 screamed.
 
 Mitzli muttered under his breath.
 
-Black mist... seen at dusk...
+Black mist... seen at dusk... #Speaker: Mitzli
 
 Aditya! Go find Sacinte and ask her for these ingredients (Recipe1)! Meet me back at Townie1's house, quickly. #Speaker:Mitzli
 
@@ -261,15 +263,15 @@ Where was Mrs.Sacinte's house again? #Speaker:Aditya
 -> DONE
 
 ===POI4===
-Thats a rock. Never seen a rock before? #Speaker: Dev Team
+Thats a rock. Never seen a rock before? #Speaker:Dev Team
 -> DONE
 
 ===POI5===
-Thats a tree... You don't get out much do you? #Speaker: Dev Team
+Thats a tree... You don't get out much do you? #Speaker: DevTeam
 -> DONE
 
 ===POI6===
-Wow! A tree, but in green. Exhilerating. #Speaker: Dev Team
+Wow! A tree, but in green. Exhilerating. #Speaker: DevTeam
 -> DONE
 
 ===SacinteHouse===
