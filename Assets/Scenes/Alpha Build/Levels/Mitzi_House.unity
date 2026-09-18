@@ -125,27 +125,27 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1564071328}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.40491554
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.40491554
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5061444
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -961.33
+      value: -1.79
       objectReference: {fileID: 0}
     - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -539.43
+      value: 1.07
       objectReference: {fileID: 0}
     - target: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_LocalPosition.z
@@ -189,16 +189,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 976595151215523184, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.28
+      value: 7.95
       objectReference: {fileID: 0}
     - target: {fileID: 976595151215523184, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.28
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4738070619654238220, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: babb5f3e1f2fe72498a62c41f6479530, type: 3}
+      objectReference: {fileID: 363115248, guid: ae8e3d59b7dd440b1968b390e3f70d00, type: 3}
+    - target: {fileID: 4738070619654238220, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4989336830903025267, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -221,10 +225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1973412101}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
 --- !u!1 &338272248
@@ -10963,11 +10964,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!4 &1266415738 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 364006579404607675, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
-  m_PrefabInstance: {fileID: 13775299}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1266515505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17083,10 +17079,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1564071328}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -776.99634, y: -480.16003}
-  m_SizeDelta: {x: 71.01, y: 118.253}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -265, y: 320}
+  m_SizeDelta: {x: 500, y: 780}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1535171529
 MonoBehaviour:
@@ -17108,7 +17104,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3996063162418551289, guid: ae8e3d59b7dd440b1968b390e3f70d00, type: 3}
+  m_Sprite: {fileID: 363115248, guid: ae8e3d59b7dd440b1968b390e3f70d00, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17145,7 +17141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1564071324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17251,7 +17247,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1266415738}
+  - {fileID: 1973412101}
   - {fileID: 1683134565}
   - {fileID: 1535171528}
   m_Father: {fileID: 0}
@@ -19743,10 +19739,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1564071328}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -924.6, y: -480.16}
-  m_SizeDelta: {x: 50.0853, y: 103.7704}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 180, y: 320}
+  m_SizeDelta: {x: 310, y: 780}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1683134566
 MonoBehaviour:
@@ -20032,16 +20028,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973412100}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -197.57207}
-  m_LocalScale: {x: 2.4696507, y: 2.4696507, z: 1.9757206}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1266415738}
+  m_Father: {fileID: 1564071328}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 286.30652, y: 168.99823}
-  m_SizeDelta: {x: 224.9907, y: 107.8079}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1973412102
 MonoBehaviour:
@@ -21660,4 +21656,5 @@ SceneRoots:
   - {fileID: 394989594}
   - {fileID: 1122113108}
   - {fileID: 1513742285}
+  - {fileID: 13775299}
   - {fileID: 1564071328}
