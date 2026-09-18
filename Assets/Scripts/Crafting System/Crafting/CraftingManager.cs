@@ -1,12 +1,14 @@
 using UnityEngine;
 using System.Linq;
 using InventorySystem;
+using System.Threading.Tasks;
 
 namespace CraftingSystem
 {
     public class CraftingManager : MonoBehaviour
     {
         [SerializeField] GameObject craftingSystem = null;
+        [SerializeField] GameObject customCursor = null;
         [SerializeField] CraftingSlot[] slots;
         [SerializeField] CraftingSlot outputSlot = null;
         [SerializeField] SO_Recipe[] recipes;
@@ -28,7 +30,7 @@ namespace CraftingSystem
         }
         void Update()
         {
-            if (InputHandler.EnableCraftingMenuPressed)
+            if (InputHandler.EnableCraftingMenuPressed || InputHandler.CloseInventoryPressed)
             {
                 EnableCraftingSystemUI();
             }
@@ -37,8 +39,12 @@ namespace CraftingSystem
         {
             if (craftingSystem == null) return;
 
-            bool enabled = craftingSystem.activeSelf;
-            craftingSystem.SetActive(!enabled);
+            bool enabled = !craftingSystem.activeSelf;
+            var map = !enabled ? InputHandler.playerInput : InputHandler.inventoryInput;
+
+            InputHandler.ChangeActionMaps(map);
+            craftingSystem.SetActive(enabled);
+            customCursor.SetActive(enabled);
         }
         public void CraftRecipe()
         {
@@ -56,7 +62,16 @@ namespace CraftingSystem
 
             outputSlot.SetUnitInSlot(outputUnit);
 
+            // We don't need to create a new item inside of inventory when we craft it
+            EventBus.Raise(new AddItemEvent { item = null });
+
             DestroyUnits();
+
+            foreach (var item in Items)
+            {
+                if (item == null) return;
+                EventBus.Raise(new RemoveItemEvent { item = item });
+            }
         }
 
         private void DestroyUnits()

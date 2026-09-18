@@ -138,111 +138,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled_Artwork 71_0
+      name: Sacinte Bases_0
       rect:
         serializedVersion: 2
-        x: 178
-        y: 359
-        width: 771
-        height: 1204
+        x: 170
+        y: 360
+        width: 795
+        height: 1200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 706a400d9b12b88c0800000000000000
-      internalID: -3996063162418551289
+      spriteID: 9d0aa5960351b1e4b9ad3fe52da7bbe0
+      internalID: 363115248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork 71_1
+      name: Sacinte Bases_1
       rect:
         serializedVersion: 2
-        x: 509
-        y: 1545
-        width: 12
-        height: 15
+        x: 1200
+        y: 130
+        width: 795
+        height: 1200
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3ffe91e7b96b1e590800000000000000
-      internalID: -7646629913346576397
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Untitled_Artwork 71_2
-      rect:
-        serializedVersion: 2
-        x: 1668
-        y: 1351
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3d25d4542e270c440800000000000000
-      internalID: 4954085906258416339
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Untitled_Artwork 71_3
-      rect:
-        serializedVersion: 2
-        x: 1216
-        y: 131
-        width: 774
-        height: 1206
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bb2b6e8c069d0ffd0800000000000000
-      internalID: -2310107599130414405
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Untitled_Artwork 71_4
-      rect:
-        serializedVersion: 2
-        x: 1547
-        y: 1318
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 841f223042487e680800000000000000
-      internalID: -8725860462800735928
+      spriteID: 5998c9a30caf1d54687582711a44c464
+      internalID: -463841794
       vertices: []
       indices: 
       edges: []
@@ -261,6 +195,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Sacinte Bases_0: 363115248
+      Sacinte Bases_1: -463841794
       Untitled_Artwork 71_0: -3996063162418551289
       Untitled_Artwork 71_1: -7646629913346576397
       Untitled_Artwork 71_2: 4954085906258416339

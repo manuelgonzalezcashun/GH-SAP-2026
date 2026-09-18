@@ -1,0 +1,275 @@
+fileFormatVersion: 2
+guid: 342e66ca901b0de418fc521c480c9f5b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4159716781881703286
+    second: SparkleEffect_0
+  - first:
+      213: 202339918302281460
+    second: SparkleEffect_1
+  - first:
+      213: -6434294355073962175
+    second: SparkleEffect_2
+  - first:
+      213: 4475081805707592820
+    second: SparkleEffect_3
+  - first:
+      213: -8309406846962484141
+    second: SparkleEffect_4
+  - first:
+      213: 7314967026314518975
+    second: SparkleEffect_5
+  - first:
+      213: 4905740227317146777
+    second: SparkleEffect_6
+  - first:
+      213: 1741723822127119791
+    second: SparkleEffect_7
+  - first:
+      213: -1778873019871995663
+    second: SparkleEffect_8
+  - first:
+      213: -8069312486455311638
+    second: SparkleEffect_9
+  - first:
+      213: -7537152752035404545
+    second: SparkleEffect_10
+  - first:
+      213: 156314989891674929
+    second: SparkleEffect_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SparkleEffect_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 20
+        width: 58
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67b3a4ebf584ab930800000000000000
+      internalID: 4159716781881703286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SparkleEffect_1
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 38
+        width: 30
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fef94a651bdec200800000000000000
+      internalID: 202339918302281460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SparkleEffect_2
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 0
+        width: 90
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14fe389df5bc4b6a0800000000000000
+      internalID: -6434294355073962175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SparkleEffect_3
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 0
+        width: 90
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 474c30a313faa1e30800000000000000
+      internalID: 4475081805707592820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SparkleEffect_4
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 0
+        width: 90
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35c3a907f7e0fac80800000000000000
+      internalID: -8309406846962484141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 410db4d9add72a9478d1e7bfb4453b77
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SparkleEffect_0: 4159716781881703286
+      SparkleEffect_1: 202339918302281460
+      SparkleEffect_10: -7537152752035404545
+      SparkleEffect_11: 156314989891674929
+      SparkleEffect_2: -6434294355073962175
+      SparkleEffect_3: 4475081805707592820
+      SparkleEffect_4: -8309406846962484141
+      SparkleEffect_5: 7314967026314518975
+      SparkleEffect_6: 4905740227317146777
+      SparkleEffect_7: 1741723822127119791
+      SparkleEffect_8: -1778873019871995663
+      SparkleEffect_9: -8069312486455311638
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

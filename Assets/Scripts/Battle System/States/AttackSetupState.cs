@@ -20,10 +20,16 @@ public class AttackSetupState : BattleState
 
         _system.SetActiveBattler(activeBattler);
 
-        BattleState state = _system.ActiveBattler.Team == Team.PLAYER
-        ? new PlayerTurnState(_system)
-        : new OpponentAttackState(_system);
-
+        BattleState state;
+        if (_system.ActiveBattler.Team == Team.PLAYER)
+        {
+            state = new PlayerTurnState(_system);
+            EventBus.Raise(new DisplayBattleTurnEvent { currentBattler = _system.ActiveBattler, isCurrentTurn = true });
+        }
+        else
+        {
+            state = new OpponentAttackState(_system);
+        }
 
         _system.SetState(state);
     }

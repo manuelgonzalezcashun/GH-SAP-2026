@@ -8,11 +8,15 @@ public class InputHandler : MonoBehaviour
     public static InputHandler Instance => _instance;
     void Awake()
     {
-        if (_instance != null && _instance != this)
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(Instance);
+        }
+        else
+        {
             Destroy(gameObject);
-
-        _instance = this;
-        DontDestroyOnLoad(Instance);
+        }
     }
     #endregion
     [SerializeField] InputActionAsset inputActions;
@@ -29,12 +33,18 @@ public class InputHandler : MonoBehaviour
     InputAction SelectDownAction => inputActions["SelectDown"];
     InputAction EscapeAction => inputActions["ExitPanel"];
     InputAction EnableCraftingAction => inputActions["EnableCraftingMenu"];
+    InputAction PauseAction => inputActions["PauseGame"];
+    InputAction SkipAction => inputActions["Skip"];
+    InputAction GoBackAction => inputActions["Go Back"];
+    InputAction CloseInventoryAction => inputActions["CloseInventory"];
+    InputAction SlotMoveAction => inputActions["SlotMovement"];
 
     // ACTION MAP INDICES //
     public static int playerInput => 0;
-    public static int mainMenuInput => 1;
+    public static int menuInput => 1;
     public static int dialogueInput => 2;
     public static int combatInput => 3;
+    public static int inventoryInput => 4;
 
     // Input Events
     public static bool SubmitPressed => _instance.ContinueDialogueAction.WasPressedThisFrame();
@@ -43,12 +53,16 @@ public class InputHandler : MonoBehaviour
     public static bool SelectedRightButton => _instance.SelectRightAction.WasPressedThisFrame();
     public static bool SelectedLeftButton => _instance.SelectLeftAction.WasPressedThisFrame();
     public static bool ConfirmTargetPressed => _instance.ConfirmTargetAction.WasPressedThisFrame();
-    public static bool MainMenuSelectUp => _instance.SelectUpAction.WasPerformedThisFrame();
-    public static bool MainMenuSelectDown => _instance.SelectDownAction.WasPerformedThisFrame();
+    public static bool MenuSelectUp => _instance.SelectUpAction.WasPerformedThisFrame();
+    public static bool MenuSelectDown => _instance.SelectDownAction.WasPerformedThisFrame();
     public static bool ExitPanelPressed => _instance.EscapeAction.WasPressedThisFrame();
     public static bool EnableCraftingMenuPressed => _instance.EnableCraftingAction.WasPerformedThisFrame();
     public static bool CursorToggleEnabled => _instance.cursorToggle;
-
+    public static bool PauseGamePressed => _instance.PauseAction.WasPressedThisFrame();
+    public static bool CutsceneSkipPressed => _instance.SkipAction.WasPressedThisFrame();
+    public static bool GoBackPressed => _instance.GoBackAction.WasPressedThisFrame();
+    public static bool CloseInventoryPressed => _instance.CloseInventoryAction.WasPressedThisFrame();
+    public static Vector2 SlotMovement => _instance.SlotMoveAction.ReadValue<Vector2>();
     void Update()
     {
         CursorToggleMode();
@@ -60,7 +74,7 @@ public class InputHandler : MonoBehaviour
         bool isMoving = Mouse.current.delta.ReadValue().sqrMagnitude > 0.01f;
 
         if (isMoving) cursorToggle = true;
-        if (MainMenuSelectUp || MainMenuSelectDown) cursorToggle = false;
+        if (MenuSelectUp || MenuSelectDown) cursorToggle = false;
         if (SelectedLeftButton || SelectedRightButton) cursorToggle = false;
     }
     void _ChangeActionMaps(int actionMapIndex)

@@ -13,9 +13,7 @@ namespace InventorySystem
         [SerializeField] InventorySlot[] slots;
         [SerializeField] ItemUnit unitPrefab;
         List<Item> items = new List<Item>();
-
         int itemCount = 0;
-
         void OnEnable()
         {
             EventBus.Subscribe<AddItemEvent>(AddItem);
@@ -30,23 +28,43 @@ namespace InventorySystem
         }
         private void AddItem(AddItemEvent data)
         {
-            ItemUnit unit = Instantiate(unitPrefab, slots[itemCount].transform);
-            AddItem(data.item.Item);
-            unit.SetSOItem(data.item);
+            if (data.item != null)
+            {
+                ItemUnit unit = Instantiate(unitPrefab, slots[itemCount].transform);
+                unit.SetSOItem(data.item);
+                AddItem(data.item.Item);
+            }
+            else
+            {
+                AddItem();
+            }
+
         }
         private void RemoveItem(RemoveItemEvent data)
         {
+            if (data.item.Item == null) return;
+
             RemoveItem(data.item.Item);
         }
         private void AddItem(Item item)
         {
+            if (itemCount >= slots.Length) return;
+
             items.Add(item);
+            itemCount++;
+        }
+        private void AddItem()
+        {
+            if (itemCount >= slots.Length) return;
             itemCount++;
         }
         private void RemoveItem(Item item)
         {
+            if (itemCount <= 0) return;
+
             items.Remove(item);
             itemCount--;
+            Debug.Log(itemCount);
         }
         private void ShowItemDescription(string description, bool show)
         {

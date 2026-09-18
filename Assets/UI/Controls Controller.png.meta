@@ -17,6 +17,51 @@ TextureImporter:
   - first:
       213: -8491780688960896651
     second: Controls Controller_4
+  - first:
+      213: -5253490369728596243
+    second: Controls Controller_5
+  - first:
+      213: 5987744965444449902
+    second: Controls Controller_6
+  - first:
+      213: 4190934897926885308
+    second: Controls Controller_7
+  - first:
+      213: 3321934769347462612
+    second: Controls Controller_8
+  - first:
+      213: 1476260691624724966
+    second: Controls Controller_9
+  - first:
+      213: -7228723377498077101
+    second: Controls Controller_10
+  - first:
+      213: 8599128601597335289
+    second: Controls Controller_11
+  - first:
+      213: 7131474668024277056
+    second: Controls Controller_12
+  - first:
+      213: 5540978973305869053
+    second: Controls Controller_13
+  - first:
+      213: -6316977449883736825
+    second: Controls Controller_14
+  - first:
+      213: -8527152426702386139
+    second: Controls Controller_15
+  - first:
+      213: -7901580003567149780
+    second: Controls Controller_16
+  - first:
+      213: -5690907041548978801
+    second: Controls Controller_17
+  - first:
+      213: 4542769448924961725
+    second: Controls Controller_18
+  - first:
+      213: -3763932735667593736
+    second: Controls Controller_19
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,10 +160,10 @@ TextureImporter:
       name: Controls Controller_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 337
-        width: 23
-        height: 19
+        x: 32
+        y: 113
+        width: 388
+        height: 279
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,10 +182,10 @@ TextureImporter:
       name: Controls Controller_1
       rect:
         serializedVersion: 2
-        x: 23
-        y: 336
-        width: 21
-        height: 20
+        x: 215
+        y: 385
+        width: 16
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,10 +204,10 @@ TextureImporter:
       name: Controls Controller_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 88
-        width: 388
-        height: 324
+        x: 228
+        y: 385
+        width: 21
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,9 +226,9 @@ TextureImporter:
       name: Controls Controller_3
       rect:
         serializedVersion: 2
-        x: 404
-        y: 233
-        width: 17
+        x: 246
+        y: 384
+        width: 21
         height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -203,10 +248,10 @@ TextureImporter:
       name: Controls Controller_4
       rect:
         serializedVersion: 2
-        x: 420
-        y: 234
-        width: 20
-        height: 19
+        x: 266
+        y: 384
+        width: 13
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,6 +262,336 @@ TextureImporter:
       bones: []
       spriteID: 571c6fb6472272a80800000000000000
       internalID: -8491780688960896651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Controller_5
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 385
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de63469c75ad717b0800000000000000
+      internalID: -5253490369728596243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Controller_6
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 376
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6633f6525eb81350800000000000000
+      internalID: 5987744965444449902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Controller_7
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 375
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbf48bbc511392a30800000000000000
+      internalID: 4190934897926885308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Controller_8
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 362
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d589f58212e91e20800000000000000
+      internalID: 3321934769347462612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Controller_9
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 361
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e90a28074bbc7410800000000000000
+      internalID: 1476260691624724966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Controller_10
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 351
+        width: 44
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3584aa8336a6eab90800000000000000
+      internalID: -7228723377498077101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Controller_11
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 259
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f65c1c27ed365770800000000000000
+      internalID: 8599128601597335289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Controller_12
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 95
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 048a8482d6618f260800000000000000
+      internalID: 7131474668024277056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Controller_13
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 95
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df21ec3d40385ec40800000000000000
+      internalID: 5540978973305869053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Controller_14
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 96
+        width: 35
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 705e6856a769558a0800000000000000
+      internalID: -6316977449883736825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Controller_15
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 71
+        width: 22
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52c4bc4fb0879a980800000000000000
+      internalID: -8527152426702386139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Controller_16
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 71
+        width: 51
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2ddc03e9d2f75290800000000000000
+      internalID: -7901580003567149780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Controller_17
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 71
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8534ba8236d501b0800000000000000
+      internalID: -5690907041548978801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Controller_18
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 71
+        width: 29
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbb5ba3ceb82b0f30800000000000000
+      internalID: 4542769448924961725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Controls Controller_19
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 71
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fd911c7e13d3cbc0800000000000000
+      internalID: -3763932735667593736
       vertices: []
       indices: 
       edges: []
@@ -237,9 +612,24 @@ TextureImporter:
     nameFileIdTable:
       Controls Controller_0: -3900533467863989152
       Controls Controller_1: -5832104344905326009
+      Controls Controller_10: -7228723377498077101
+      Controls Controller_11: 8599128601597335289
+      Controls Controller_12: 7131474668024277056
+      Controls Controller_13: 5540978973305869053
+      Controls Controller_14: -6316977449883736825
+      Controls Controller_15: -8527152426702386139
+      Controls Controller_16: -7901580003567149780
+      Controls Controller_17: -5690907041548978801
+      Controls Controller_18: 4542769448924961725
+      Controls Controller_19: -3763932735667593736
       Controls Controller_2: -5279427148316245586
       Controls Controller_3: -3122381411661112830
       Controls Controller_4: -8491780688960896651
+      Controls Controller_5: -5253490369728596243
+      Controls Controller_6: 5987744965444449902
+      Controls Controller_7: 4190934897926885308
+      Controls Controller_8: 3321934769347462612
+      Controls Controller_9: 1476260691624724966
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

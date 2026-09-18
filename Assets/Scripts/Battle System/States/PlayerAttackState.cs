@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using System.Linq;
-using UnityEngine.InputSystem;
 using System.Collections.Generic;
 
 public class PlayerAttackState : BattleState
@@ -19,6 +18,10 @@ public class PlayerAttackState : BattleState
     {
         EventBus.Raise(new ShowOptionsEvent { BO_Show = false });
         _target = null;
+    }
+    public override void ExitState()
+    {
+        EventBus.Raise(new DisplayBattleTurnEvent { currentBattler = _system.ActiveBattler, isCurrentTurn = false });
     }
     public override void UpdateState()
     {
@@ -55,6 +58,8 @@ public class PlayerAttackState : BattleState
 
     private void SelectTarget(List<Battler> battlers)
     {
+        EventBus.Raise(new DisplayBattleTextEvent { battleText = $"Select to Confirm Target \nMove to Change Target" });
+
         if (InputHandler.ConfirmTargetPressed && _selectedIndex != -1)
         {
             _target = battlers[_selectedIndex];
@@ -110,7 +115,7 @@ public class PlayerAttackState : BattleState
                 {
                     if ((_system.AllBattlers[i] != _target) && (_system.AllBattlers[i] != _system.ActiveBattler))
                     {
-                        bool Faint = _system.AllBattlers[i].TakeDamage(move.Damage, move.Type);
+                        bool Faint = _system.AllBattlers[i].TakeDamage(move.Damage+_system.ActiveBattler.StackDamageChange(), move.Type);
                         //if (Faint)
                         //{
                         //EventBus.Raise(new TargetFaintedEvent { _Target = _system.AllBattlers[i] });

@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: 6d0b1bdeb68fc5c4397cbc3cd0b38c55
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6390357879671611005
+    second: Updated MC Idle Stance color_0
+  - first:
+      213: -3201523580166367897
+    second: Updated MC Idle Stance color_1
+  - first:
+      213: 591754857023379995
+    second: Updated MC Idle Stance color_2
+  - first:
+      213: -6419363941338751968
+    second: Updated MC Idle Stance color_3
+  - first:
+      213: -1354897941358351664
+    second: Updated MC Idle Stance color_4
+  - first:
+      213: 6987877637722519983
+    second: Updated MC Idle Stance color_5
+  - first:
+      213: -7701377517225983273
+    second: Updated MC Idle Stance color_6
+  - first:
+      213: -4190030684420942092
+    second: Updated MC Idle Stance color_7
+  - first:
+      213: 5001786645591004224
+    second: Updated MC Idle Stance color_8
+  - first:
+      213: -7096016759118820482
+    second: Updated MC Idle Stance color_9
+  - first:
+      213: -4715608698546931551
+    second: Updated MC Idle Stance color_10
+  - first:
+      213: -8892092636228055350
+    second: Updated MC Idle Stance color_11
+  - first:
+      213: -1082768896647371085
+    second: Updated MC Idle Stance color_12
+  - first:
+      213: -5499787002946894704
+    second: Updated MC Idle Stance color_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Updated MC Idle Stance color_0
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 999
+        width: 271
+        height: 401
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7ed17d42ac1fa850800000000000000
+      internalID: 6390357879671611005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Idle Stance color_1
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 991
+        width: 272
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76595282447e193d0800000000000000
+      internalID: -3201523580166367897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Idle Stance color_2
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 998
+        width: 270
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1a9dfe38e5563800800000000000000
+      internalID: 591754857023379995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Idle Stance color_3
+      rect:
+        serializedVersion: 2
+        x: 1735
+        y: 987
+        width: 272
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02c5d80b186d9e6a0800000000000000
+      internalID: -6419363941338751968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Idle Stance color_4
+      rect:
+        serializedVersion: 2
+        x: 2049
+        y: 1277
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0da6d6a308f623de0800000000000000
+      internalID: -1354897941358351664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Idle Stance color_5
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 567
+        width: 318
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa9b85a20bde9f060800000000000000
+      internalID: 6987877637722519983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Idle Stance color_6
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 559
+        width: 318
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d2c094a3f53f1590800000000000000
+      internalID: -7701377517225983273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Idle Stance color_7
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 562
+        width: 316
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f65a11da450ad5c0800000000000000
+      internalID: -4190030684420942092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Idle Stance color_8
+      rect:
+        serializedVersion: 2
+        x: 1794
+        y: 555
+        width: 318
+        height: 399
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0449ebc147ae96540800000000000000
+      internalID: 5001786645591004224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Idle Stance color_9
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 118
+        width: 359
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7b01889a52e58d90800000000000000
+      internalID: -7096016759118820482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Idle Stance color_10
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 118
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a83e5f7fdace8eb0800000000000000
+      internalID: -4715608698546931551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Idle Stance color_11
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 111
+        width: 355
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ace82c31cd0f89480800000000000000
+      internalID: -8892092636228055350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Idle Stance color_12
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 116
+        width: 359
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b6ed7ddc6b39f0f0800000000000000
+      internalID: -1082768896647371085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Updated MC Idle Stance color_13
+      rect:
+        serializedVersion: 2
+        x: 1775
+        y: 115
+        width: 356
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0944a052cd4dca3b0800000000000000
+      internalID: -5499787002946894704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Updated MC Idle Stance color_0: 6390357879671611005
+      Updated MC Idle Stance color_1: -3201523580166367897
+      Updated MC Idle Stance color_10: -4715608698546931551
+      Updated MC Idle Stance color_11: -8892092636228055350
+      Updated MC Idle Stance color_12: -1082768896647371085
+      Updated MC Idle Stance color_13: -5499787002946894704
+      Updated MC Idle Stance color_2: 591754857023379995
+      Updated MC Idle Stance color_3: -6419363941338751968
+      Updated MC Idle Stance color_4: -1354897941358351664
+      Updated MC Idle Stance color_5: 6987877637722519983
+      Updated MC Idle Stance color_6: -7701377517225983273
+      Updated MC Idle Stance color_7: -4190030684420942092
+      Updated MC Idle Stance color_8: 5001786645591004224
+      Updated MC Idle Stance color_9: -7096016759118820482
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

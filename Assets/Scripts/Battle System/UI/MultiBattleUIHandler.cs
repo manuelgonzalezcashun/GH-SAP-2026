@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -18,9 +17,9 @@ public class MultiBattleUIHandler : MonoBehaviour
     [SerializeField] ZoneButton[] zoneButtons;
     [SerializeField] BattleButton[] battleOptions = null;
     [SerializeField] TMP_Text battleTextLabel = null;
-
     Dictionary<Battler, BattleHUD> activeBattleHUDs = new Dictionary<Battler, BattleHUD>();
     Queue<BattleHUD> hudPool = new Queue<BattleHUD>();
+
     int buttonIndex = 0;
     int moveCount = 0;
     Move[] currentMoves = null;
@@ -33,6 +32,7 @@ public class MultiBattleUIHandler : MonoBehaviour
         EventBus.Subscribe<EndBattleEvent>(ClearBattleUI);
         EventBus.Subscribe<TargetFaintedEvent>(ClearBattleHUD);
         EventBus.Subscribe<DisplayBattleTextEvent>(DisplayText);
+        EventBus.Subscribe<DisplayBattleTurnEvent>(DisplayCurrentBattler);
     }
     void OnDisable()
     {
@@ -43,9 +43,8 @@ public class MultiBattleUIHandler : MonoBehaviour
         EventBus.UnSubscribe<EndBattleEvent>(ClearBattleUI);
         EventBus.UnSubscribe<TargetFaintedEvent>(ClearBattleHUD);
         EventBus.UnSubscribe<DisplayBattleTextEvent>(DisplayText);
+        EventBus.UnSubscribe<DisplayBattleTurnEvent>(DisplayCurrentBattler);
     }
-
-
     private void ShowBattleOptions(ShowOptionsEvent data)
     {
         foreach (var button in battleOptions)
@@ -98,6 +97,13 @@ public class MultiBattleUIHandler : MonoBehaviour
     }
     void Update()
     {
+        if (InputHandler.GoBackPressed && moveOptionsContainer.activeInHierarchy)
+        {
+            buttonIndex = 0;
+            moveOptionsContainer.SetActive(false);
+            battleOptionContainer.SetActive(true);
+        }
+
         ZoneButtonSelector();
         MoveButtonSelector();
         BattleOptionSelector();
@@ -174,6 +180,10 @@ public class MultiBattleUIHandler : MonoBehaviour
     private void ClearBattleHUD(TargetFaintedEvent data)
     {
         ReturnToHudPool(data._Target);
+    }
+    public void DisplayCurrentBattler(DisplayBattleTurnEvent data)
+    {
+        activeBattleHUDs[data.currentBattler].ChangeNameColor(data.isCurrentTurn);
     }
     private BattleHUD GetBattleHUD(Battler battler)
     {
@@ -254,7 +264,7 @@ public class MultiBattleUIHandler : MonoBehaviour
         BattleButton currentButton = ButtonSelectionHandler(battleOptions.Length, battleOptions) as BattleButton;
         currentButton.Select();
 
-        EventBus.Raise(new DisplayBattleTextEvent { battleText = currentButton.Description });
+        EventBus.Raise(new DisplayBattleTextEvent { battleText = currentButton.Description + "\nMove to Change Option" });
     }
     private async void ResetButtonState()
     {
