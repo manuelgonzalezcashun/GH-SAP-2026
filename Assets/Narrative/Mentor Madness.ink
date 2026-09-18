@@ -36,25 +36,25 @@ I can't believe my eyes. Aditya? Erasmus' little girl right?  #Speaker: Customer
 
 
 ===OverworldTownie1=== //Little Boy who is also the requested sick kid//
-cough cough #Speaker:Little Boy
-Have you seen the grey fog? #Speaker: Little Boy
-It's at the edge of town! #Speaker: Little Boy
-It was white before, but now it's like the stories. Y'know, when the gods fight? #Speaker: Little Boy
+cough cough #Speaker:Little Tariq
+Have you seen the grey fog? #Speaker: Little Tariq
+It's at the edge of town! #Speaker: Little  Tariq
+It was white before, but now it's like the stories. Y'know, when the gods fight? #Speaker: Little Tariq
 
 Gods fighting? Didjyer auntie run out of bedtime stories and hafta pull a tale outta old Anean legends? #Speaker: Aditya
 
-cough cough  #Speaker: Little Boy 
-It's real! It's on the horizon now! #Speaker: Little Boy
-cough, cough. hack #Speaker: Little Boy
+cough cough  #Speaker: Little Tariq 
+It's real! It's on the horizon now! #Speaker: Little Tariq
+cough, cough. hack #Speaker: Little Tariq
 -> DONE
 
 ===OverworldTownie2=== //Male Teen 1//
-If this bus takes any longer, I'll be late. #Speaker: Teen Boy 1
-Oh! Hello! #Speaker: Teen Boy 1
-I'm Surprised to see a lady like you, way out here. #Speaker: Teen Boy 1
-Pardon me ma'am but I need to keep an eye out for the bus and practice my lines. I scored a big interview. #Speaker: Teen Boy 1
+If this bus takes any longer, I'll be late. #Speaker: Jaziel
+Oh! Hello! #Speaker: Jaziel
+I'm surprised to see a lady like you, way out here. #Speaker: Jaziel
+Pardon me ma'am but I need to keep an eye out for the bus and practice my lines. I scored a big interview. #Speaker: Jaziel
 You mean that bus over there? #Speaker: Aditya
-Huh?! What bus?! -'Scuse me! #Speaker: Teen Boy 1
+Huh?! What bus?! -'Scuse me! #Speaker: Jaziel
 -> DONE
 
 
@@ -71,25 +71,25 @@ No matter how much I weed and weed, my tomatoes get smothered by this sticky stu
 -> DONE
 
 ===OverworldTownie6=== //Adult Female Townie/
-No rabbits in the traps, no fish in the river... We'll hafta start buying our food from those factory men in a minute, too. #Speaker: Neighbor 2
+No rabbits in the traps, no fish in the river... We'll hafta start buying our food from those factory men in a minute, too. #Speaker: Ms. Aqilah
 
 //alt line that would get repeated as the final line in the dialogue interaction.//
-It's fine I'll do it myself. Capture it by the throat..  cut it myself. I can't afford to wait for someone to rescue me. #Speaker: Neighbor 2
+It's fine I'll do it myself. Capture it by the throat..  cut it myself. I can't afford to wait for someone to rescue me. #Speaker: Ms. Aqilah
 -> DONE
 
 ===OverworldTownie7=== //Male Teen 2//
-Is it east? No... north from here..... #Speaker: Teen Boy 2
+Is it east? No... north from here..... #Speaker: Kael
 
-H-Hey! Do you know the fastest way to get to the heart of the forest? I need meat before sunset. #Speaker: Teen Boy 2
+H-Hey! Do you know the fastest way to get to the heart of the forest? I need meat before sunset. #Speaker: Kael
 
 I think it's- #Speaker: Aditya
 
-No, wait! Nevermind I can figure it out... I'll never get it if I keep asking for help. #Speaker: Teen Boy 2
+No, wait! Nevermind I can figure it out... I'll never get it if I keep asking for help. #Speaker: Kael
 -> DONE
 
 ===OverworldTownie8=== //Female Teen 2//
-Blue bells, cockle shells, #Speaker: Teen Girl
-evie, ivy oooooover....
+Blue bells, cockle shells, #Speaker: Arcelia
+evie, ivy oooooover.... #Speaker: Arcelia
 -> DONE
 
 ===Lavender===
@@ -164,6 +164,11 @@ hurgggh
 Where is everyone?  #Speaker: Aditya
 -> DONE
 
+===POI0===
+The trees... so many are cut from their roots. #Speaker: Aditya
+How did this happen? What concievable reason could possess someone to do this? #Speaker: Aditya
+-> DONE
+
 ===POI1===
 What a strange tree... #Speaker: Aditya
 -> DONE
@@ -220,7 +225,7 @@ Are you ready to leave?
 *[Yes] -> ExitHouse
 *[No]
 
-What's that over there? #Speaker:Aditya
+What's that over there? #Speaker: Aditya
 ->MitzliHouse
 
 
@@ -228,38 +233,38 @@ What's that over there? #Speaker:Aditya
 ===ExitHouse===
 You could barely get a foot out the door when something small barrels into you.
 
-Ow! #Speaker:ChildNPC 
+Ow! #Speaker: Mitzli's Apprentice
 
-I'm sorry– #Speaker:Aditya
+I'm sorry– #Speaker: Aditya
 
-Dr. Mitzli, you gotta come quick! #Speaker:ChildNPC
+Dr. Mitzli, you gotta come quick! #Speaker: Mitzli's Apprentice
 
-Mitzli helpeed the little girl up, dusting off her dirtied smock. 
+Mitzli helpeed the little girl up, dusting off her dirtied smock. #Speaker: Narrator
 
-What ails you, Name? #Speaker:Mitzli
+What ails you, Name? #Speaker: Mitzli
 
-Not me! It's Townie1! Some monster attacked her house while Townie2 was away. We gotta help them! Cmon, lets go! NOW! #Speaker:ChildNPC
+Not me! It's Townie1! Some monster attacked her house while Townie2 was away. We gotta help them! Cmon, lets go! NOW! #Speaker:Mitzli's Apprentice
 
 Slow down. What did the monster look like? #Speaker: Mitzli
 
-Does it matter– #Speaker:Aditya
+Does it matter– #Speaker: Aditya
 
-I wouldn't bother asking if it didn't. What did it look like, Name? #Speaker:Mitzli
+I wouldn't bother asking if it didn't. What did it look like, Name? #Speaker: Mitzli
 
-I-I don't know. A black mist? I only saw it for a second after Townie1 screamed. I came to you as quick as I could. #Speaker:ChildNPC
+I-I don't know. A black mist? I only saw it for a second after Townie1 screamed. I came to you as quick as I could. #Speaker: Mitzli's Apprentice
 
-Mitzli muttered under his breath.
+Mitzli muttered under his breath. #Speaker: Narrator
 
 Black mist... seen at dusk... #Speaker: Mitzli
 
-Aditya! Go find Sacinte and ask her for these ingredients (Recipe1)! Meet me back at Townie1's house, quickly. #Speaker:Mitzli
+Aditya! Go find Sacinte and ask her for these ingredients (Recipe1)! Meet me back at Townie1's house, quickly. #Speaker: Mitzli
 
-Of course. #Speaker:Aditya
+Of course. #Speaker: Aditya
 
 ->OpenWorldExploration
 
 ===OpenWorldExploration===
-Where was Mrs.Sacinte's house again? #Speaker:Aditya
+Where was Mrs.Sacinte's house again? #Speaker: Aditya
 -> DONE
 
 ===POI4===
@@ -267,69 +272,70 @@ Thats a rock. Never seen a rock before? #Speaker:Dev Team
 -> DONE
 
 ===POI5===
-Thats a tree... You don't get out much do you? #Speaker: DevTeam
+Thats a tree... #Speaker: Dev Team
+You don't get out much do you? #Speaker: Dev Team
 -> DONE
 
 ===POI6===
-Wow! A tree, but in green. Exhilerating. #Speaker: DevTeam
+Wow! A tree, but in green! Exhilerating. #Speaker: Dev Team
 -> DONE
 
 ===SacinteHouse===
 
 You enter a house rich in the scent of damp wood and warm spices. Steam is wafting off of a small pot kept hot by a small fire.
 
-Mrs? Mrs. Sacinte are you in? It's urgent! #Speaker:Aditya
+Mrs? Mrs. Sacinte are you in? It's urgent! #Speaker: Aditya
 
 There is a creaking upstairs.
 
-Is that there John and Irma's little girl I hear down there? Certainly not. #Speaker:Sacinte
+Is that there John and Irma's little girl I hear down there? Certainly not. #Speaker: Sacinte
 
 A surprisingly short woman for the voice paired with her, rounds the corner as she descends downstairs.
 
-It is ma'am, how are yo- #Speaker:Aditya
+It is ma'am, how are yo- #Speaker: Aditya
 
 Ooooooh weee! I ain't seen you since you were- what? Fifteen-Sixteen? Now look atcha. Still a whole lotta trouble packed in ya, little lady? #Speaker:Sacinte
 
-Aditya felt warm all over, like she had made herself at home in Sacinte's soup pot.
+Aditya felt warm all over, like she had made herself at home in Sacinte's soup pot. #Speaker: Narrator
 
-You betcha– Say I hate to interrupt our reunion, but Mitzli sent me over with very important duties. Something is up with Townie1. #Speaker:Aditya
+You betcha– Say I hate to interrupt our reunion, but Mitzli sent me over with very important duties. Something is up with Townie1. #Speaker: Aditya
 
-Child, something is always up with Townie1... #Speaker:Sacinte
+Child, something is always up with Townie1... #Speaker: Sacinte
 
 No, for real this time. Some little girl came up to us and said there was a monster attacking their house. #Speaker:Aditya
 
-Monster? We don't have monsters here. Only Pneuma and forest beasts. #Speaker:Sacinte
+Monster? We don't have monsters here. Only Pneuma and forest beasts. #Speaker: Sacinte
 
 *[I can find out is origin later!]
 *[Monster of the alchemic variety it sounds like...]
 
-I won't keep you then. What do you need. #Speaker:Sacinte
+I won't keep you then. What do you need. #Speaker: Sacinte
 
 These ingredients. #Speaker:Aditya
 
-Makeing yourself Recipe1? That will only work if it is a pneuma affected with StatusEffectName. #Speaker:Sacinte
+Makeing yourself Recipe1? That will only work if it is a pneuma affected with StatusEffectName. #Speaker: Sacinte
 
 Seems like that's a risk Mitzli is willing to take. #Speaker:Aditya
 
-That boy. Feet facing front, head on backwards. If he wasn't so hard headed, we wouldn't be in this mess as is... #Speaker:Sacinte
+That boy. Feet facing front, head on backwards. If he wasn't so hard headed, we wouldn't be in this mess as is... #Speaker: Sacinte
 
-What is going on in Anea lately? #Speaker:Aditya
+What is going on in Anea lately? #Speaker: Aditya
 
 Sacinte went to her cabinet and riffled through it as she talked, mostly to herself. 
 
 
 Let me hush. No use in speaking on conjecture.
 
-Here girl, is this what you need? #Speaker:Sacinte
+Here girl, is this what you need? #Speaker: Sacinte
 
 You've obtained Ingredient 1, Ingredient 2, and Ingredient 3. You can now make Recipe1!
 
-Yes, this is perfect, thank you! #Speaker:Aditya
+Yes, this is perfect, thank you! #Speaker: Aditya
 
-Now remember, these things aren't much help on their own.You gotta combine them to get the EFFECT you want from it, ya' hear? #Speaker:Sacinte
+Now remember, these things aren't much help on their own.You gotta combine them to get the EFFECT you want from it, ya' hear? #Speaker: Sacinte
 
-Yes ma'am. Combine Ingredient 1, with Ingredient 2 and Ingredient 3 to get Recipe1. #Speaker:Aditya
+Yes ma'am. Combine Ingredient 1, with Ingredient 2 and Ingredient 3 to get Recipe1. #Speaker: Aditya
 
-Good. Now hurry along, go help our friends. #Speaker:Sacinte
+Good. Now hurry along, go help our friends. #Speaker: Sacinte
 
 -> END 
