@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeca71c66f444194096309de615670b1, type: 3}
   m_Name: Battle Theme
   m_EditorClassIdentifier: Assembly-CSharp::AudioEffect
-  clip: {fileID: 8300000, guid: e31d9098e6a58ff41bd7d202f102c8a5, type: 3}
+  clip: {fileID: 8300000, guid: 23c0a7c57d932e445aa642bc7f7a8635, type: 3}
   mute: 0
   playOnAwake: 0
   loop: 1

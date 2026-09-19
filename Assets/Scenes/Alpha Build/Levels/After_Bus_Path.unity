@@ -30367,7 +30367,7 @@ PrefabInstance:
     - target: {fileID: 4738070619654238220, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -654737500350741434, guid: 2bf47e3d869534fdca8ced4015adaed3, type: 3}
+      objectReference: {fileID: -6204828195291954563, guid: 2a14bed6154b31e4295b73396dead940, type: 3}
     - target: {fileID: 7018097929992030909, guid: c6d5605664995c348839d1f2addb0a81, type: 3}
       propertyPath: KnotName
       value: Fungai
