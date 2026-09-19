@@ -64,10 +64,6 @@ public class MainMenu : MonoBehaviour
             StopAllCoroutines();
             OnControlsExit();
         }
-        if (InputHandler.CutsceneSkipPressed)
-        {
-            SkipCutscene();
-        }
     }
 
     public void OnPlay()
