@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: ae8e3d59b7dd440b1968b390e3f70d00
+guid: 8744f14781cea4633a7182b377e4becc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3996063162418551289
-    second: Untitled_Artwork 71_0
-  - first:
-      213: -7646629913346576397
-    second: Untitled_Artwork 71_1
-  - first:
-      213: 4954085906258416339
-    second: Untitled_Artwork 71_2
-  - first:
-      213: -2310107599130414405
-    second: Untitled_Artwork 71_3
-  - first:
-      213: -8725860462800735928
-    second: Untitled_Artwork 71_4
+      213: 5044212593993754403
+    second: forest_bridge_lovewood_bg_by_ladyicepaw_dej3g68-pre_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -138,45 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sacinte Bases_0
+      name: forest_bridge_lovewood_bg_by_ladyicepaw_dej3g68-pre_0
       rect:
         serializedVersion: 2
-        x: 170
-        y: 360
-        width: 795
-        height: 1200
+        x: 0
+        y: 0
+        width: 1192
+        height: 670
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9d0aa5960351b1e4b9ad3fe52da7bbe0
-      internalID: 363115248
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sacinte Bases_1
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 130
-        width: 795
-        height: 1200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5998c9a30caf1d54687582711a44c464
-      internalID: -463841794
+      spriteID: 327ac8cf0a4a00640800000000000000
+      internalID: 5044212593993754403
       vertices: []
       indices: 
       edges: []
@@ -185,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b873fc00bfcc443bb8c5783d35e443c6
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -195,13 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Sacinte Bases_0: 363115248
-      Sacinte Bases_1: -463841794
-      Untitled_Artwork 71_0: -3996063162418551289
-      Untitled_Artwork 71_1: -7646629913346576397
-      Untitled_Artwork 71_2: 4954085906258416339
-      Untitled_Artwork 71_3: -2310107599130414405
-      Untitled_Artwork 71_4: -8725860462800735928
+      forest_bridge_lovewood_bg_by_ladyicepaw_dej3g68-pre_0: 5044212593993754403
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

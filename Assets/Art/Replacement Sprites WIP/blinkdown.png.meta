@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: ae8e3d59b7dd440b1968b390e3f70d00
+guid: 06d22963d114648be8fdccb3bb79f834
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3996063162418551289
-    second: Untitled_Artwork 71_0
-  - first:
-      213: -7646629913346576397
-    second: Untitled_Artwork 71_1
-  - first:
-      213: 4954085906258416339
-    second: Untitled_Artwork 71_2
-  - first:
-      213: -2310107599130414405
-    second: Untitled_Artwork 71_3
-  - first:
-      213: -8725860462800735928
-    second: Untitled_Artwork 71_4
+      213: -6284198177663139691
+    second: blinkdown_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -138,45 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sacinte Bases_0
+      name: blinkdown_0
       rect:
         serializedVersion: 2
-        x: 170
-        y: 360
-        width: 795
-        height: 1200
+        x: 0
+        y: 0
+        width: 1280
+        height: 970
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 9d0aa5960351b1e4b9ad3fe52da7bbe0
-      internalID: 363115248
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sacinte Bases_1
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 130
-        width: 795
-        height: 1200
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5998c9a30caf1d54687582711a44c464
-      internalID: -463841794
+      spriteID: 5904b327d0b0ac8a0800000000000000
+      internalID: -6284198177663139691
       vertices: []
       indices: 
       edges: []
@@ -185,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b873fc00bfcc443bb8c5783d35e443c6
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -195,13 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Sacinte Bases_0: 363115248
-      Sacinte Bases_1: -463841794
-      Untitled_Artwork 71_0: -3996063162418551289
-      Untitled_Artwork 71_1: -7646629913346576397
-      Untitled_Artwork 71_2: 4954085906258416339
-      Untitled_Artwork 71_3: -2310107599130414405
-      Untitled_Artwork 71_4: -8725860462800735928
+      blinkdown_0: -6284198177663139691
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
