@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CraftingSystem.SO_Item
   description: Made from tightly woven cotton fibers. Its jagged edges suggests it
     was torn from a larger bolt or discarded.
-  sprite: {fileID: -1843968612, guid: d979cec8fcc16f0408533dbb80ffb783, type: 3}
+  sprite: {fileID: 6420234250001483265, guid: f77b7bca28ad0074ba2482fc9bbdeb98, type: 3}

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Golden Oil
   m_EditorClassIdentifier: Assembly-CSharp::CraftingSystem.SO_Item
   description: Viscous oil that glitters when appearing under direct light.
-  sprite: {fileID: -4866244220402940282, guid: b3e03b1bc506e654c8cdf678471b8e77, type: 3}
+  sprite: {fileID: -8362673218255151570, guid: b6c50db6806012549b067063bb723756, type: 3}

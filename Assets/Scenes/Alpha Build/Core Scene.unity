@@ -215,6 +215,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1317403332}
     m_Modifications:
+    - target: {fileID: 348233361269239634, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2306881380104044991, guid: de244b6a8dac29f4e9db6e0502e88cd5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

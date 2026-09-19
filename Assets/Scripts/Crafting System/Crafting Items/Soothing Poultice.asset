@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Soothing Poultice
   m_EditorClassIdentifier: Assembly-CSharp::CraftingSystem.SO_Item
   description: 
-  sprite: {fileID: -1176694358151524581, guid: d979cec8fcc16f0408533dbb80ffb783, type: 3}
+  sprite: {fileID: -8919210699860706570, guid: 121c389f46f331d43a7498afd1729752, type: 3}
